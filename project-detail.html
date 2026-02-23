@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - RuyanQin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 详情页专属样式，简单的单栏排版 */
+        .project-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .project-content img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .project-text {
+            font-size: 16px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 复制 index.html 的左侧 sidebar 代码放到这里，保持导航一致 -->
+    <header class="sidebar">
+        <div class="top-section">
+            <h1 class="logo">Ruyan Qin</h1>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">All Projects</a></li> <!-- 改为返回首页 -->
+                    <li><a href="#">Artwork</a></li>
+                    <li><a href="#">Editorial</a></li>
+                    <!-- 其他链接... -->
+                </ul>
+            </nav>
+        </div>
+        <!-- ... -->
+    </header>
+
+    <!-- 右侧内容区域：详情展示 -->
+    <main class="main-content">
+        <div class="project-content">
+            <a href="index.html" class="back-btn">← Back to Index</a>
+
+            <h2>Abyss - Physics Based VR Narrative Horror Experience</h2>
+            <p class="project-text">This physics-based VR narrative horror prototype explores vulnerability and human insignificance within a Lovecraftian cosmic setting. Gesture-driven locomotion and interaction meaningfully integrate the player’s body into the gameplay, while physics systems reinforce instability and tension. VR’s spatial immersion and 3D audio amplify scale perception and fear of the unknown, transforming horror into an embodied experience.</p>
+
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Jfq4dHgv87M?si=X2fIQ2jOro5qNJO7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="project-details">
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Physics-based interaction emphasising instability and loss of control</li>
+                    <li>Gesture-driven locomotion using hand and finger tracking</li>
+                    <li>Exaggerated spatial scale and 3D audio to evoke megalophobia</li>
+                    <li>Environmental storytelling within an immersive VR space</li>
+                </ul>
+
+                <h3>Design Focus</h3>
+                <ul>
+                    <li>Transforming horror from observed to embodied</li>
+                    <li>Exploring cosmic insignificance and fragile human agency</li>
+                </ul>
+            </div>
+            <!-- 大图展示 -->
+            <img src="images/aybss1.png" alt="Project Detail 1">
+            <img src="images/abyss2.png" alt="Project Detail 2">
+            <img src="images/abyss3.png" alt="Project Detail 3">
+        </div>
+    </main>
+</div>
+
+</body>
+</html>
