@@ -261,7 +261,55 @@ ul {
         padding-bottom: 15px;
     }
 }
+/* 首页简介区域容器 */
+.home-intro {
+    padding: 40px 0 60px 0; /* 增加底部间距，与项目网格分开 */
+    border-bottom: 1px solid #eee; /* 可选：加一条淡淡的分割线 */
+    margin-bottom: 50px;
+}
 
+.intro-content {
+    display: flex;
+    gap: 40px;
+    align-items: center; /* 头像与文字垂直居中 */
+    max-width: 900px;
+}
+
+/* 头像样式 */
+.intro-avatar {
+    width: 180px; /* 首页可以比 About 页面稍小一点，保持紧凑 */
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+/* 标题样式 */
+.intro-text h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: #333;
+}
+
+/* 段落样式 */
+.intro-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .intro-content {
+        flex-direction: column; /* 手机端改为上下排列 */
+        text-align: center;
+        gap: 20px;
+    }
+    .intro-avatar {
+        width: 150px;
+    }
+}
 /* 6. 移动端适配 (响应式) */
 @media (max-width: 768px) {
     .container {
