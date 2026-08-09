@@ -1,0 +1,2476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Portfolio Wireframe</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Portfolio Wireframe" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Portfolio Wireframe&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: var(--border-radius-lg, 12.5px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+    [aria-pressed=&quot;true&quot;],
+    [aria-selected=&quot;true&quot;],
+    .is-selected
+  ) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: 16px !important;
+  height: 16px !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;ruyan-portfolio-wireframe&quot;&gt;
+  &lt;style&gt;
+    #ruyan-portfolio-wireframe {
+      color-scheme: light dark;
+      --rq-page: light-dark(#f7f7f4, #171717);
+      --rq-surface: light-dark(#ffffff, #222222);
+      --rq-ink: light-dark(#202020, #f4f4f1);
+      --rq-secondary-ink: light-dark(#62625e, #bdbdb6);
+      --rq-line: light-dark(#c8c8c1, #555550);
+      --rq-block: light-dark(#deded8, #3d3d39);
+      --rq-block-strong: light-dark(#b8b8b0, #60605a);
+      width: 100%;
+      background: var(--rq-page);
+      color: var(--rq-ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;
+    }
+    #ruyan-portfolio-wireframe * { box-sizing: border-box; }
+    #ruyan-portfolio-wireframe button,
+    #ruyan-portfolio-wireframe a { font: inherit; }
+    #ruyan-portfolio-wireframe .rq-prototype-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px;
+      background: transparent;
+    }
+    #ruyan-portfolio-wireframe .rq-prototype-controls button {
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid var(--rq-line);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--rq-ink);
+      cursor: pointer;
+    }
+    #ruyan-portfolio-wireframe .rq-prototype-controls button[aria-pressed=&quot;true&quot;] {
+      background: var(--rq-ink);
+      color: var(--rq-page);
+      border-color: var(--rq-ink);
+    }
+    #ruyan-portfolio-wireframe .rq-screen {
+      background: var(--rq-surface);
+    }
+    #ruyan-portfolio-wireframe .rq-screen[hidden] { display: none; }
+    #ruyan-portfolio-wireframe .rq-shell {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+      padding-inline: clamp(20px, 5vw, 64px);
+    }
+    #ruyan-portfolio-wireframe .rq-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      border-bottom: 1px solid var(--rq-line);
+    }
+    #ruyan-portfolio-wireframe .rq-name { font-weight: 500; letter-spacing: .04em; }
+    #ruyan-portfolio-wireframe .rq-nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(12px, 2.4vw, 28px);
+      color: var(--rq-secondary-ink);
+    }
+    #ruyan-portfolio-wireframe .rq-nav-links span:last-child {
+      border: 1px solid var(--rq-line);
+      border-radius: 999px;
+      padding: 7px 10px;
+      color: var(--rq-ink);
+    }
+    #ruyan-portfolio-wireframe .rq-hero {
+      display: flex;
+      align-items: center;
+      min-height: 150px;
+      padding-block: 30px;
+      border-bottom: 1px solid var(--rq-line);
+    }
+    #ruyan-portfolio-wireframe h1,
+    #ruyan-portfolio-wireframe h2,
+    #ruyan-portfolio-wireframe h3,
+    #ruyan-portfolio-wireframe p { margin: 0; }
+    #ruyan-portfolio-wireframe h1 {
+      max-width: 15ch;
+      font-size: clamp(2.3rem, 6vw, 5rem);
+      line-height: 1.04;
+      letter-spacing: -.03em;
+      font-weight: 500;
+    }
+    #ruyan-portfolio-wireframe h2 {
+      font-size: clamp(1.7rem, 4vw, 3.1rem);
+      line-height: 1.08;
+      letter-spacing: -.025em;
+      font-weight: 500;
+    }
+    #ruyan-portfolio-wireframe h3 {
+      font-size: 1.1rem;
+      line-height: 1.3;
+      font-weight: 500;
+    }
+    #ruyan-portfolio-wireframe .rq-role-line,
+    #ruyan-portfolio-wireframe .rq-project-meta,
+    #ruyan-portfolio-wireframe .rq-caption {
+      color: var(--rq-secondary-ink);
+    }
+    #ruyan-portfolio-wireframe .rq-compact-intro {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      font-size: clamp(1.45rem, 3.2vw, 2.55rem);
+      line-height: 1.15;
+      letter-spacing: -.025em;
+      font-weight: 500;
+    }
+    #ruyan-portfolio-wireframe .rq-role-window {
+      display: inline-grid;
+      min-width: 12.8ch;
+      max-width: 100%;
+      height: 1.55em;
+      overflow: hidden;
+      padding: .16em .42em;
+      background: var(--rq-block);
+      border-radius: 10px;
+      color: var(--rq-ink);
+    }
+    #ruyan-portfolio-wireframe .rq-role-reel {
+      display: grid;
+      align-items: center;
+      transition: transform 420ms cubic-bezier(.2,.8,.2,1);
+    }
+    #ruyan-portfolio-wireframe .rq-role-reel span {
+      display: flex;
+      align-items: center;
+      height: 1.23em;
+      white-space: nowrap;
+    }
+    #ruyan-portfolio-wireframe .rq-type-cursor {
+      display: inline-block;
+      width: .08em;
+      height: .9em;
+      margin-left: .08em;
+      background: currentColor;
+      transform: translateY(.08em);
+      animation: rq-cursor-blink 820ms steps(1, end) infinite;
+    }
+    @keyframes rq-cursor-blink { 50% { opacity: 0; } }
+    #ruyan-portfolio-wireframe .rq-availability {
+      width: 100%;
+      min-height: 3em;
+      margin-top: 12px;
+      color: var(--rq-secondary-ink);
+      font-size: .95rem;
+      line-height: 1.5;
+      letter-spacing: 0;
+      font-weight: 400;
+    }
+    #ruyan-portfolio-wireframe .rq-intro {
+      max-width: 62ch;
+      margin-top: 26px;
+      color: var(--rq-secondary-ink);
+      line-height: 1.65;
+    }
+    #ruyan-portfolio-wireframe .rq-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    #ruyan-portfolio-wireframe .rq-action {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid var(--rq-line);
+      color: var(--rq-ink);
+      text-decoration: none;
+    }
+    #ruyan-portfolio-wireframe .rq-action-primary { background: var(--rq-ink); color: var(--rq-surface); border-color: var(--rq-ink); }
+    #ruyan-portfolio-wireframe .rq-media {
+      display: grid;
+      place-items: center;
+      min-height: 220px;
+      background: var(--rq-block);
+      color: var(--rq-secondary-ink);
+      border: 1px solid var(--rq-line);
+      text-align: center;
+      padding: 16px;
+    }
+    #ruyan-portfolio-wireframe .rq-proof {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-block: 1px solid var(--rq-line);
+    }
+    #ruyan-portfolio-wireframe .rq-proof-item { padding: 22px 14px; border-right: 1px solid var(--rq-line); }
+    #ruyan-portfolio-wireframe .rq-proof-item:last-child { border-right: 0; }
+    #ruyan-portfolio-wireframe .rq-proof-item strong { display: block; margin-bottom: 6px; font-size: 1.1rem; font-weight: 500; }
+    #ruyan-portfolio-wireframe .rq-proof-item span { color: var(--rq-secondary-ink); }
+    #ruyan-portfolio-wireframe .rq-section { padding-block: clamp(54px, 8vw, 96px); }
+    #ruyan-portfolio-wireframe .rq-first-section { padding-top: 34px; }
+    #ruyan-portfolio-wireframe .rq-section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+    #ruyan-portfolio-wireframe .rq-section-label {
+      margin-bottom: 12px;
+      color: var(--rq-secondary-ink);
+      font-size: .86rem;
+      letter-spacing: .03em;
+    }
+    #ruyan-portfolio-wireframe .rq-section-head p { max-width: 42ch; color: var(--rq-secondary-ink); line-height: 1.55; }
+    #ruyan-portfolio-wireframe .rq-feature-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+      gap: 36px 22px;
+    }
+    #ruyan-portfolio-wireframe .rq-project { min-width: 0; }
+    #ruyan-portfolio-wireframe .rq-project .rq-media { min-height: 240px; margin-bottom: 15px; }
+    #ruyan-portfolio-wireframe .rq-project h3 { margin-bottom: 7px; }
+    #ruyan-portfolio-wireframe .rq-project-meta { font-size: .93rem; line-height: 1.45; }
+    #ruyan-portfolio-wireframe .rq-feature-grid .rq-project:last-child { grid-column: auto; }
+    #ruyan-portfolio-wireframe .rq-wide-project .rq-media { min-height: 290px; }
+    #ruyan-portfolio-wireframe .rq-polaroid-scene {
+      position: relative;
+      overflow: hidden;
+      min-height: 390px;
+      background: transparent;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-stage {
+      position: relative;
+      min-width: 0;
+      padding: 76px 0 36px;
+      overflow: hidden;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-rope {
+      position: absolute;
+      top: 50px;
+      left: -3%;
+      width: 106%;
+      height: 28px;
+      border-top: 2px solid var(--rq-secondary-ink);
+      border-radius: 50%;
+      transform: rotate(.4deg);
+      pointer-events: none;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-track {
+      display: flex;
+      gap: clamp(18px, 3vw, 34px);
+      overflow-x: scroll;
+      padding: 18px clamp(26px, 5vw, 62px) 34px;
+      scroll-snap-type: none;
+      overscroll-behavior-inline: contain;
+      scrollbar-width: none;
+      cursor: grab;
+      user-select: none;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-track::-webkit-scrollbar { display: none; }
+    #ruyan-portfolio-wireframe .rq-polaroid-track:active { cursor: grabbing; }
+    #ruyan-portfolio-wireframe .rq-polaroid-rail {
+      position: relative;
+      z-index: 3;
+      min-width: 0;
+      padding: 14px 10px;
+      border-left: 1px solid var(--rq-line);
+      background: var(--rq-surface);
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-rail-label {
+      margin-bottom: 10px;
+      color: var(--rq-secondary-ink);
+      font-size: .72rem;
+      line-height: 1.2;
+      text-align: center;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-index { display: grid; gap: 7px; }
+    #ruyan-portfolio-wireframe .rq-index-item {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      padding: 0;
+      border: 1px solid var(--rq-line);
+      background: var(--rq-block);
+      color: var(--rq-secondary-ink);
+      cursor: pointer;
+      overflow: hidden;
+      transition: opacity 180ms ease, transform 360ms cubic-bezier(.16,1,.3,1);
+    }
+    #ruyan-portfolio-wireframe .rq-index-item.is-receiving {
+      opacity: 0;
+      transform: translateY(-10px) scale(.92);
+    }
+    #ruyan-portfolio-wireframe .rq-index-item::after {
+      content: attr(data-number);
+      position: absolute;
+      top: 4px;
+      left: 5px;
+      font-size: .68rem;
+      font-variant-numeric: tabular-nums;
+    }
+    #ruyan-portfolio-wireframe .rq-index-item[aria-current=&quot;true&quot;] {
+      background: var(--rq-ink);
+      color: var(--rq-surface);
+      border-color: var(--rq-ink);
+    }
+    #ruyan-portfolio-wireframe .rq-flying-polaroid {
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      overflow: hidden;
+      transform-origin: top left;
+      background: var(--rq-surface);
+      color: var(--rq-ink);
+      border: 1px solid var(--rq-line);
+      box-shadow: 0 16px 32px light-dark(rgba(32,32,32,.18), rgba(0,0,0,.38));
+    }
+    #ruyan-portfolio-wireframe .rq-flying-polaroid .rq-polaroid-image { margin: 0; height: 100%; }
+    #ruyan-portfolio-wireframe .rq-flying-polaroid h3,
+    #ruyan-portfolio-wireframe .rq-flying-polaroid .rq-project-meta,
+    #ruyan-portfolio-wireframe .rq-flying-polaroid::before { display: none; }
+    #ruyan-portfolio-wireframe .rq-scroll-index {
+      position: fixed;
+      z-index: 80;
+      top: 14px;
+      right: 0;
+      width: 104px;
+      max-height: calc(100vh - 28px);
+      padding: 10px;
+      display: grid;
+      grid-template-rows: auto auto minmax(0, 1fr);
+      overflow: hidden;
+      border: 1px solid var(--rq-line);
+      border-right: 0;
+      background: var(--rq-surface);
+      opacity: 0;
+      transform: translateX(100%);
+      transition: transform 260ms cubic-bezier(.16,1,.3,1), opacity 180ms ease;
+      pointer-events: none;
+    }
+    #ruyan-portfolio-wireframe .rq-scroll-index[data-visible=&quot;true&quot;] {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+    #ruyan-portfolio-wireframe .rq-scroll-index[data-collapsed=&quot;true&quot;] {
+      transform: translateX(66px);
+    }
+    #ruyan-portfolio-wireframe .rq-scroll-index[data-collapsed=&quot;true&quot;] .rq-scroll-index-list {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #ruyan-portfolio-wireframe .rq-scroll-index[data-collapsed=&quot;true&quot;] .rq-scroll-stack {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #ruyan-portfolio-wireframe .rq-scroll-index-toggle {
+      width: 100%;
+      min-height: 44px;
+      margin-bottom: 10px;
+      border: 1px solid var(--rq-line);
+      background: transparent;
+      color: var(--rq-ink);
+      cursor: pointer;
+    }
+    #ruyan-portfolio-wireframe .rq-scroll-index-list {
+      display: grid;
+      align-content: start;
+      gap: 8px;
+      min-height: 0;
+      overflow-y: auto;
+      padding-right: 4px;
+      transition: opacity 160ms ease;
+    }
+    #ruyan-portfolio-wireframe .rq-scroll-stack {
+      position: relative;
+      display: none;
+      width: 100%;
+      height: 92px;
+      margin-bottom: 10px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--rq-ink);
+      cursor: pointer;
+      transition: opacity 160ms ease;
+    }
+    #ruyan-portfolio-wireframe .rq-scroll-stack[data-visible=&quot;true&quot;] { display: block; }
+    #ruyan-portfolio-wireframe .rq-stack-card {
+      position: absolute;
+      left: 50%;
+      top: 7px;
+      width: 58px;
+      height: 68px;
+      border: 1px solid var(--rq-line);
+      box-shadow: 0 7px 12px light-dark(rgba(32,32,32,.16), rgba(0,0,0,.38));
+      transform-origin: 50% 100%;
+    }
+    #ruyan-portfolio-wireframe .rq-stack-card:nth-child(1) { background: light-dark(#596b80, #384b61); transform: translateX(-61%) rotate(-7deg); }
+    #ruyan-portfolio-wireframe .rq-stack-card:nth-child(2) { background: light-dark(#66735d, #43533f); transform: translateX(-56%) rotate(-4deg); }
+    #ruyan-portfolio-wireframe .rq-stack-card:nth-child(3) { background: light-dark(#7b5260, #633843); transform: translateX(-51%) rotate(-1deg); }
+    #ruyan-portfolio-wireframe .rq-stack-card:nth-child(4) { background: light-dark(#b14c30, #9f4029); transform: translateX(-46%) rotate(3deg); }
+    #ruyan-portfolio-wireframe .rq-stack-card:last-of-type::before {
+      content: &#x27;&#x27;;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, transparent 53%, light-dark(rgba(255,255,255,.09), rgba(255,255,255,.05)) 54%);
+    }
+    #ruyan-portfolio-wireframe .rq-stack-count,
+    #ruyan-portfolio-wireframe .rq-stack-title {
+      position: absolute;
+      z-index: 2;
+      color: light-dark(#fff, #f6f3ef);
+      pointer-events: none;
+    }
+    #ruyan-portfolio-wireframe .rq-stack-count { left: 22px; top: 14px; font-size: .52rem; }
+    #ruyan-portfolio-wireframe .rq-stack-title { left: 25px; right: 9px; bottom: 15px; font-size: .55rem; line-height: 1.05; text-align: center; }
+    #ruyan-portfolio-wireframe .rq-scroll-thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid var(--rq-line);
+      background: var(--rq-block);
+      color: var(--rq-ink);
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(-8px) scale(.92);
+    }
+    #ruyan-portfolio-wireframe .rq-scroll-thumb.is-arrived {
+      opacity: 1;
+      transform: none;
+      transition: opacity 180ms ease, transform 300ms cubic-bezier(.16,1,.3,1);
+    }
+    #ruyan-portfolio-wireframe .rq-scroll-thumb span {
+      position: absolute;
+      inset: auto 4px 4px;
+      font-size: .58rem;
+      line-height: 1.05;
+      text-align: left;
+    }
+    #ruyan-portfolio-wireframe .rq-scroll-flight {
+      position: fixed;
+      z-index: 90;
+      left: 0;
+      top: 0;
+      width: 160px;
+      height: 190px;
+      padding: 10px;
+      border: 1px solid var(--rq-line);
+      background: var(--rq-surface);
+      color: var(--rq-ink);
+      box-shadow: 0 16px 34px light-dark(rgba(32,32,32,.18), rgba(0,0,0,.4));
+      transform-origin: top left;
+      pointer-events: none;
+    }
+    #ruyan-portfolio-wireframe .rq-scroll-flight::before {
+      content: &#x27;&#x27;;
+      display: block;
+      height: 128px;
+      margin-bottom: 9px;
+      background: var(--rq-block);
+    }
+    #ruyan-portfolio-wireframe .rq-scroll-flight span {
+      display: block;
+      font-size: .74rem;
+      line-height: 1.15;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid {
+      position: relative;
+      flex: 0 0 clamp(220px, 29vw, 288px);
+      min-height: 278px;
+      padding: 14px 14px 22px;
+      background: var(--rq-surface);
+      color: var(--rq-ink);
+      border: 1px solid var(--rq-line);
+      box-shadow: 0 12px 24px light-dark(rgba(32,32,32,.12), rgba(0,0,0,.28));
+      transform: rotate(var(--rq-tilt));
+      transition: transform 240ms cubic-bezier(.16,1,.3,1), box-shadow 240ms ease;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid::before {
+      content: &#x27;&#x27;;
+      position: absolute;
+      top: -26px;
+      left: 50%;
+      width: 18px;
+      height: 34px;
+      transform: translateX(-50%);
+      background: var(--rq-block-strong);
+      border: 1px solid var(--rq-line);
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid:hover,
+    #ruyan-portfolio-wireframe .rq-polaroid:focus-within {
+      transform: rotate(0deg) translateY(-8px);
+      box-shadow: 0 18px 32px light-dark(rgba(32,32,32,.16), rgba(0,0,0,.36));
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-image {
+      display: grid;
+      place-items: center;
+      aspect-ratio: 4 / 3;
+      margin-bottom: 16px;
+      padding: 14px;
+      background: var(--rq-block);
+      color: var(--rq-secondary-ink);
+      text-align: center;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid h3 { margin-bottom: 7px; }
+    #ruyan-portfolio-wireframe .rq-vr-grid {
+      display: grid;
+      grid-template-columns: 1.35fr repeat(2, .825fr);
+      gap: 18px;
+    }
+    #ruyan-portfolio-wireframe .rq-vr-item .rq-media { min-height: 180px; margin-bottom: 12px; }
+    #ruyan-portfolio-wireframe .rq-vr-item:first-child .rq-media { min-height: 250px; }
+    #ruyan-portfolio-wireframe .rq-vr-item:first-child { grid-row: span 2; }
+    #ruyan-portfolio-wireframe .rq-evidence-projects {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+      gap: 22px;
+    }
+    #ruyan-portfolio-wireframe .rq-evidence-projects .rq-media { min-height: 260px; margin-bottom: 15px; }
+    #ruyan-portfolio-wireframe .rq-project-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-top: 12px;
+      color: var(--rq-secondary-ink);
+      font-size: .9rem;
+    }
+    #ruyan-portfolio-wireframe .rq-playground {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    #ruyan-portfolio-wireframe .rq-playground .rq-media { min-height: 160px; margin-bottom: 12px; }
+    #ruyan-portfolio-wireframe .rq-capabilities {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--rq-line);
+    }
+    #ruyan-portfolio-wireframe .rq-capability { padding: 24px 18px 0 0; }
+    #ruyan-portfolio-wireframe .rq-capability p { margin-top: 10px; color: var(--rq-secondary-ink); line-height: 1.5; }
+    #ruyan-portfolio-wireframe .rq-about {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 42px;
+      border-top: 1px solid var(--rq-line);
+    }
+    #ruyan-portfolio-wireframe .rq-about p { color: var(--rq-secondary-ink); line-height: 1.65; }
+    #ruyan-portfolio-wireframe .rq-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding-block: 42px;
+      border-top: 1px solid var(--rq-line);
+      color: var(--rq-secondary-ink);
+    }
+    #ruyan-portfolio-wireframe .rq-detail-hero { padding-block: clamp(50px, 8vw, 92px) 34px; }
+    #ruyan-portfolio-wireframe .rq-back { display: inline-block; margin-bottom: 34px; color: var(--rq-secondary-ink); }
+    #ruyan-portfolio-wireframe .rq-detail-title { max-width: 18ch; }
+    #ruyan-portfolio-wireframe .rq-detail-summary { max-width: 62ch; margin-top: 22px; color: var(--rq-secondary-ink); line-height: 1.6; }
+    #ruyan-portfolio-wireframe .rq-detail-visual { min-height: 380px; margin-top: 40px; }
+    #ruyan-portfolio-wireframe .rq-detail-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(210px, .7fr);
+      gap: clamp(36px, 7vw, 88px);
+      align-items: start;
+      padding-block: 60px;
+    }
+    #ruyan-portfolio-wireframe .rq-detail-main { display: grid; gap: 64px; }
+    #ruyan-portfolio-wireframe .rq-copy-block h2 { margin-bottom: 18px; }
+    #ruyan-portfolio-wireframe .rq-copy-block p,
+    #ruyan-portfolio-wireframe .rq-copy-block li { color: var(--rq-secondary-ink); line-height: 1.65; }
+    #ruyan-portfolio-wireframe .rq-copy-block ul { padding-left: 20px; margin: 0; display: grid; gap: 10px; }
+    #ruyan-portfolio-wireframe .rq-facts { border-top: 1px solid var(--rq-line); }
+    #ruyan-portfolio-wireframe .rq-fact { padding: 15px 0; border-bottom: 1px solid var(--rq-line); }
+    #ruyan-portfolio-wireframe .rq-fact span { display: block; color: var(--rq-secondary-ink); margin-bottom: 5px; }
+    #ruyan-portfolio-wireframe .rq-system-map {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      align-items: stretch;
+    }
+    #ruyan-portfolio-wireframe .rq-system-map div {
+      display: grid;
+      place-items: center;
+      min-height: 92px;
+      padding: 10px;
+      text-align: center;
+      background: var(--rq-block);
+      border: 1px solid var(--rq-line);
+    }
+    #ruyan-portfolio-wireframe .rq-system-map b { align-self: center; color: var(--rq-secondary-ink); }
+    #ruyan-portfolio-wireframe .rq-evidence {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    #ruyan-portfolio-wireframe .rq-evidence div {
+      padding: 18px;
+      background: var(--rq-block);
+      border: 1px solid var(--rq-line);
+    }
+    #ruyan-portfolio-wireframe .rq-evidence strong { display: block; margin-bottom: 6px; font-size: 1.3rem; font-weight: 500; }
+    #ruyan-portfolio-wireframe .rq-gallery { display: grid; grid-template-columns: 1.2fr .8fr; gap: 12px; }
+    #ruyan-portfolio-wireframe .rq-gallery .rq-media { min-height: 230px; }
+    #ruyan-portfolio-wireframe .rq-next { padding-block: 54px; border-top: 1px solid var(--rq-line); }
+    #ruyan-portfolio-wireframe .rq-next h2 { margin-top: 10px; }
+    @media (max-width: 900px) {
+      #ruyan-portfolio-wireframe .rq-scroll-index,
+      #ruyan-portfolio-wireframe .rq-scroll-flight { display: none; }
+    }
+    @media (max-width: 720px) {
+      #ruyan-portfolio-wireframe .rq-nav-links span:nth-child(-n+4) { display: none; }
+      #ruyan-portfolio-wireframe .rq-detail-grid,
+      #ruyan-portfolio-wireframe .rq-about { grid-template-columns: 1fr; }
+      #ruyan-portfolio-wireframe .rq-hero { min-height: 132px; padding-block: 24px; }
+      #ruyan-portfolio-wireframe .rq-compact-intro { gap: 7px; }
+      #ruyan-portfolio-wireframe .rq-role-window { min-width: 22ch; font-size: 1.08rem; }
+      #ruyan-portfolio-wireframe .rq-proof { grid-template-columns: repeat(2, 1fr); }
+      #ruyan-portfolio-wireframe .rq-proof-item:nth-child(2) { border-right: 0; }
+      #ruyan-portfolio-wireframe .rq-proof-item:nth-child(-n+2) { border-bottom: 1px solid var(--rq-line); }
+      #ruyan-portfolio-wireframe .rq-section-head { align-items: start; flex-direction: column; }
+      #ruyan-portfolio-wireframe .rq-feature-grid,
+      #ruyan-portfolio-wireframe .rq-vr-grid,
+      #ruyan-portfolio-wireframe .rq-evidence-projects,
+      #ruyan-portfolio-wireframe .rq-playground,
+      #ruyan-portfolio-wireframe .rq-capabilities,
+      #ruyan-portfolio-wireframe .rq-gallery { grid-template-columns: 1fr; }
+      #ruyan-portfolio-wireframe .rq-wide-project { grid-column: auto; }
+      #ruyan-portfolio-wireframe .rq-feature-grid .rq-project:last-child { grid-column: auto; }
+      #ruyan-portfolio-wireframe .rq-wide-project .rq-media,
+      #ruyan-portfolio-wireframe .rq-detail-visual { min-height: 240px; }
+      #ruyan-portfolio-wireframe .rq-vr-item:first-child { grid-row: auto; }
+      #ruyan-portfolio-wireframe .rq-capability { border-bottom: 1px solid var(--rq-line); padding-bottom: 22px; }
+      #ruyan-portfolio-wireframe .rq-system-map { grid-template-columns: 1fr; }
+      #ruyan-portfolio-wireframe .rq-system-map b { display: none; }
+      #ruyan-portfolio-wireframe .rq-evidence { grid-template-columns: 1fr; }
+      #ruyan-portfolio-wireframe .rq-footer { flex-direction: column; }
+      #ruyan-portfolio-wireframe .rq-polaroid-scene { min-height: 350px; }
+      #ruyan-portfolio-wireframe .rq-polaroid-stage { padding-top: 66px; }
+      #ruyan-portfolio-wireframe .rq-polaroid-rail { display: none; }
+      #ruyan-portfolio-wireframe .rq-scroll-index,
+      #ruyan-portfolio-wireframe .rq-scroll-flight { display: none; }
+      #ruyan-portfolio-wireframe .rq-polaroid { flex-basis: min(78vw, 260px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #ruyan-portfolio-wireframe .rq-role-reel { transition: none; }
+      #ruyan-portfolio-wireframe .rq-type-cursor { display: none; animation: none; }
+      #ruyan-portfolio-wireframe .rq-polaroid { transition: none; }
+      #ruyan-portfolio-wireframe .rq-flying-polaroid { display: none; }
+      #ruyan-portfolio-wireframe .rq-scroll-index { transition: none; }
+    }
+  &lt;/style&gt;
+
+  &lt;div class=&quot;rq-prototype-controls&quot; aria-label=&quot;Prototype page selector&quot;&gt;
+    &lt;button type=&quot;button&quot; data-rq-screen=&quot;home&quot; aria-pressed=&quot;true&quot;&gt;Homepage layout&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-rq-screen=&quot;detail&quot; aria-pressed=&quot;false&quot;&gt;Project detail layout&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;section class=&quot;rq-screen&quot; data-rq-panel=&quot;home&quot; aria-label=&quot;Homepage wireframe&quot;&gt;
+    &lt;div class=&quot;rq-shell&quot;&gt;
+      &lt;nav class=&quot;rq-nav&quot; aria-label=&quot;Portfolio navigation&quot;&gt;
+        &lt;div class=&quot;rq-name&quot;&gt;RUYAN QIN&lt;/div&gt;
+        &lt;div class=&quot;rq-nav-links&quot;&gt;&lt;span&gt;Embodied&lt;/span&gt;&lt;span&gt;XR&lt;/span&gt;&lt;span&gt;Process&lt;/span&gt;&lt;span&gt;About&lt;/span&gt;&lt;span&gt;CV&lt;/span&gt;&lt;span&gt;EN / 中文&lt;/span&gt;&lt;/div&gt;
+      &lt;/nav&gt;
+
+      &lt;header class=&quot;rq-hero&quot;&gt;
+        &lt;div class=&quot;rq-compact-intro&quot; aria-label=&quot;Ruyan Qin is a Creative Explorer, Interaction Prototyper, and XR Developer&quot;&gt;
+          &lt;span&gt;Hi, I’m Ruyan —&lt;/span&gt;
+          &lt;span class=&quot;rq-role-window&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;rq-role-reel&quot;&gt;&lt;span&gt;Creative Explorer&lt;/span&gt;&lt;span&gt;Interaction Prototyper&lt;/span&gt;&lt;span&gt;XR Developer&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+          &lt;span class=&quot;rq-availability&quot; aria-label=&quot;I turn gestures, sensors, and emerging technologies into playful, testable XR experiences—rapidly prototyped in Unity and refined through real user feedback.&quot;&gt;&lt;span data-rq-type-text aria-hidden=&quot;true&quot;&gt;I turn gestures, sensors, and emerging technologies into playful, testable XR experiences—rapidly prototyped in Unity and refined through real user feedback.&lt;/span&gt;&lt;span class=&quot;rq-type-cursor&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/header&gt;
+
+      &lt;section class=&quot;rq-section rq-first-section&quot; id=&quot;rq-featured&quot;&gt;
+        &lt;p class=&quot;rq-section-label&quot;&gt;// Work · Embodied Interaction&lt;/p&gt;
+        &lt;div class=&quot;rq-section-head&quot;&gt;&lt;h2&gt;Body as Interface&lt;/h2&gt;&lt;p&gt;Exploring how the body can become an interface—turning muscle signals, motion, gestures, and sensor data into playful interactions.&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;rq-polaroid-scene&quot;&gt;
+          &lt;div class=&quot;rq-polaroid-stage&quot; data-rq-polaroid-stage&gt;
+            &lt;div class=&quot;rq-polaroid-rope&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;rq-polaroid-track&quot; data-rq-polaroid-track aria-label=&quot;Embodied interaction projects&quot;&gt;
+            &lt;article class=&quot;rq-polaroid&quot; style=&quot;--rq-tilt:-2.5deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image&quot;&gt;Gesture-driven gameplay footage&lt;/div&gt;&lt;h3&gt;Gesture Interaction&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Real-time signals · Climb · Dash · Collision · Throw&lt;/p&gt;&lt;/article&gt;
+            &lt;article class=&quot;rq-polaroid&quot; style=&quot;--rq-tilt:1.8deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image&quot;&gt;IMU glove and 3D doll interaction&lt;/div&gt;&lt;h3&gt;IMU Glove Prototype&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Wrist angle · Acceleration · Finger bend · Dynamic grabbing&lt;/p&gt;&lt;/article&gt;
+            &lt;article class=&quot;rq-polaroid&quot; style=&quot;--rq-tilt:-1.2deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image&quot;&gt;EMG armband interaction footage&lt;/div&gt;&lt;h3&gt;EMG Armband Prototype&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Muscle input · Drag · Hook · Slice · Directional throw&lt;/p&gt;&lt;/article&gt;
+            &lt;article class=&quot;rq-polaroid&quot; style=&quot;--rq-tilt:2.2deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image&quot;&gt;Plant Bot physical prototype and AR view&lt;/div&gt;&lt;h3&gt;Plant Bot&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Environmental sensors · Arduino / ESP32 · Unity AR&lt;/p&gt;&lt;/article&gt;
+            &lt;article class=&quot;rq-polaroid&quot; style=&quot;--rq-tilt:-1.8deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image&quot;&gt;Reusable hardware input package demo&lt;/div&gt;&lt;h3&gt;Unity Hardware Input Toolkit&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Virtual devices · Multi-config · Reconnect · Input simulation&lt;/p&gt;&lt;/article&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section class=&quot;rq-section&quot;&gt;
+        &lt;p class=&quot;rq-section-label&quot;&gt;// Work · XR&lt;/p&gt;
+        &lt;div class=&quot;rq-section-head&quot;&gt;&lt;h2&gt;XR Interaction &amp; Spatial Experiences&lt;/h2&gt;&lt;p&gt;Designing spatial experiences through hand tracking, physical interaction, movement, and environmental storytelling.&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;rq-vr-grid&quot;&gt;
+          &lt;article class=&quot;rq-vr-item&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;Abyss: embodied VR locomotion and spatial narrative&lt;/div&gt;&lt;h3&gt;Abyss&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Body-driven locomotion · Physics · Spatial horror narrative&lt;/p&gt;&lt;/article&gt;
+          &lt;article class=&quot;rq-vr-item&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;Emotional Mask video preview&lt;/div&gt;&lt;h3&gt;Emotional Mask&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Hand tracking · Embodied metaphor · Game Jam&lt;/p&gt;&lt;/article&gt;
+          &lt;article class=&quot;rq-vr-item&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;AR Escape Room&lt;/div&gt;&lt;h3&gt;AR Escape Room&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Spatial puzzles · Team project&lt;/p&gt;&lt;/article&gt;
+          &lt;article class=&quot;rq-vr-item&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;Speaking World&lt;/div&gt;&lt;h3&gt;Speaking World&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;AR · AI · Ambient interaction&lt;/p&gt;&lt;/article&gt;
+          &lt;article class=&quot;rq-vr-item&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;WebXR Gallery&lt;/div&gt;&lt;h3&gt;WebXR Gallery&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Mobile immersive interaction&lt;/p&gt;&lt;/article&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section class=&quot;rq-section&quot;&gt;
+        &lt;p class=&quot;rq-section-label&quot;&gt;// Process · Evidence-led Design&lt;/p&gt;
+        &lt;div class=&quot;rq-section-head&quot;&gt;&lt;h2&gt;Test, Learn, Rebuild&lt;/h2&gt;&lt;p&gt;Using playtests, behavioural data, interviews, and observation to decide what to simplify, rebuild, or extend.&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;rq-evidence-projects&quot;&gt;
+          &lt;article class=&quot;rq-project&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;Pizza Delivery gameplay and iteration comparison&lt;/div&gt;&lt;h3&gt;Pizza Delivery&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Core loop · Onboarding · Progression · Three rounds of behavioural testing&lt;/p&gt;&lt;div class=&quot;rq-project-proof&quot;&gt;&lt;span&gt;≈500 players / round&lt;/span&gt;&lt;span&gt;44 sec → 1 min 53 sec&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
+          &lt;article class=&quot;rq-project&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;AR Graffiti study and interaction comparison&lt;/div&gt;&lt;h3&gt;AR Graffiti / AugSoc&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Quest 3 creation tools · Questionnaire · Interviews · Design recommendations&lt;/p&gt;&lt;div class=&quot;rq-project-proof&quot;&gt;&lt;span&gt;18 participants&lt;/span&gt;&lt;span&gt;2D / 3D interaction study&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section class=&quot;rq-section&quot;&gt;
+        &lt;p class=&quot;rq-section-label&quot;&gt;// Experiments · Ongoing&lt;/p&gt;
+        &lt;div class=&quot;rq-section-head&quot;&gt;&lt;h2&gt;Visual &amp; Technical Playground&lt;/h2&gt;&lt;p&gt;Smaller explorations that show visual craft, technical curiosity, and ideas still in motion.&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;rq-playground&quot;&gt;
+          &lt;article class=&quot;rq-project&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;Curated 3D work&lt;/div&gt;&lt;h3&gt;3D Studies&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Modeling · Materials · Animation&lt;/p&gt;&lt;/article&gt;
+          &lt;article class=&quot;rq-project&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;Unity shader and feedback experiments&lt;/div&gt;&lt;h3&gt;Realtime Visual Experiments&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Shader · VFX · Particles · Interaction feedback&lt;/p&gt;&lt;/article&gt;
+          &lt;article class=&quot;rq-project&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;Small game and interaction sketches&lt;/div&gt;&lt;h3&gt;Playable Experiments&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Game Jam · Micro prototypes · Ongoing studies&lt;/p&gt;&lt;/article&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section class=&quot;rq-section&quot;&gt;
+        &lt;div class=&quot;rq-section-head&quot;&gt;&lt;h2&gt;From Input to Experience&lt;/h2&gt;&lt;p&gt;A repeatable process for turning unfamiliar technologies into interactions people can understand and test.&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;rq-capabilities&quot;&gt;
+          &lt;div class=&quot;rq-capability&quot;&gt;&lt;h3&gt;01 · Capture input&lt;/h3&gt;&lt;p&gt;Read gestures, body signals, sensors, or player behaviour.&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;rq-capability&quot;&gt;&lt;h3&gt;02 · Map interaction&lt;/h3&gt;&lt;p&gt;Define actions, system states, thresholds, and feedback.&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;rq-capability&quot;&gt;&lt;h3&gt;03 · Prototype in Unity&lt;/h3&gt;&lt;p&gt;Build the smallest playable system that can answer the design question.&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;rq-capability&quot;&gt;&lt;h3&gt;04 · Test and refine&lt;/h3&gt;&lt;p&gt;Use observation, interviews, and behavioural data to guide iteration.&lt;/p&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section class=&quot;rq-section rq-about&quot; id=&quot;rq-about&quot;&gt;
+        &lt;h2&gt;About Ruyan&lt;/h2&gt;
+        &lt;div&gt;&lt;p&gt;Short personal story connecting Computer Science, XR/VR study, embodied interaction, and evidence-led prototyping.&lt;/p&gt;&lt;div class=&quot;rq-actions&quot;&gt;&lt;a class=&quot;rq-action rq-action-primary&quot; href=&quot;#&quot;&gt;Read more&lt;/a&gt;&lt;a class=&quot;rq-action&quot; href=&quot;#&quot;&gt;Download CV&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;footer class=&quot;rq-footer&quot;&gt;&lt;span&gt;Open to embodied interaction, XR, creative technology, and Unity roles.&lt;/span&gt;&lt;span&gt;Email · LinkedIn · GitHub&lt;/span&gt;&lt;/footer&gt;
+    &lt;/div&gt;
+    &lt;aside class=&quot;rq-scroll-index&quot; data-rq-scroll-index data-visible=&quot;false&quot; data-collapsed=&quot;false&quot; aria-label=&quot;Project quick navigation&quot;&gt;
+      &lt;button class=&quot;rq-scroll-index-toggle&quot; data-rq-index-toggle type=&quot;button&quot; aria-expanded=&quot;true&quot;&gt;Close&lt;/button&gt;
+      &lt;button class=&quot;rq-scroll-stack&quot; data-rq-scroll-stack data-visible=&quot;false&quot; type=&quot;button&quot; aria-label=&quot;Jump to all selected work&quot;&gt;
+        &lt;span class=&quot;rq-stack-card&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;rq-stack-card&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;rq-stack-card&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;rq-stack-card&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;rq-stack-count&quot; data-rq-stack-count&gt;00&lt;/span&gt;
+        &lt;span class=&quot;rq-stack-title&quot;&gt;All&lt;br&gt;Work&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;div class=&quot;rq-scroll-index-list&quot; data-rq-scroll-index-list&gt;&lt;/div&gt;
+    &lt;/aside&gt;
+  &lt;/section&gt;
+
+  &lt;section class=&quot;rq-screen&quot; data-rq-panel=&quot;detail&quot; aria-label=&quot;Project detail wireframe&quot; hidden&gt;
+    &lt;div class=&quot;rq-shell&quot;&gt;
+      &lt;nav class=&quot;rq-nav&quot; aria-label=&quot;Portfolio navigation&quot;&gt;&lt;div class=&quot;rq-name&quot;&gt;RUYAN QIN&lt;/div&gt;&lt;div class=&quot;rq-nav-links&quot;&gt;&lt;span&gt;Work&lt;/span&gt;&lt;span&gt;VR / XR&lt;/span&gt;&lt;span&gt;About&lt;/span&gt;&lt;span&gt;CV&lt;/span&gt;&lt;span&gt;EN / 中文&lt;/span&gt;&lt;/div&gt;&lt;/nav&gt;
+
+      &lt;header class=&quot;rq-detail-hero&quot;&gt;
+        &lt;span class=&quot;rq-back&quot;&gt;← Back to selected work&lt;/span&gt;
+        &lt;h1 class=&quot;rq-detail-title&quot;&gt;Pizza Delivery&lt;/h1&gt;
+        &lt;p class=&quot;rq-detail-summary&quot;&gt;A Unity WebGL delivery game redesigned through three rounds of player testing, combining clearer onboarding, layered order progression, and feedback-rich driving interactions.&lt;/p&gt;
+        &lt;div class=&quot;rq-actions&quot;&gt;&lt;a class=&quot;rq-action rq-action-primary&quot; href=&quot;#&quot;&gt;Play prototype&lt;/a&gt;&lt;a class=&quot;rq-action&quot; href=&quot;#&quot;&gt;Watch video&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;rq-media rq-detail-visual&quot;&gt;Full-width gameplay video / strongest project image&lt;/div&gt;
+      &lt;/header&gt;
+
+      &lt;div class=&quot;rq-detail-grid&quot;&gt;
+        &lt;main class=&quot;rq-detail-main&quot;&gt;
+          &lt;section class=&quot;rq-copy-block&quot;&gt;&lt;h2&gt;Project overview&lt;/h2&gt;&lt;p&gt;Context, intended player experience, central design problem, and what changed during the project.&lt;/p&gt;&lt;/section&gt;
+          &lt;section class=&quot;rq-copy-block&quot;&gt;&lt;h2&gt;Key work&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;Defined the pickup, delivery, and settlement loop, then extended it into multi-order Jobs.&lt;/li&gt;&lt;li&gt;Designed tiered orders and five-Job Zone progression to create visible short- and mid-term goals.&lt;/li&gt;&lt;li&gt;Reworked the opening prompt, target arrow, and task handoff to make the next action clear.&lt;/li&gt;&lt;li&gt;Connected collision damage, zombie pressure, and Shift escape into a readable risk–recovery loop.&lt;/li&gt;&lt;li&gt;Established scene-level tuning and layered validation for repeated AI-assisted iteration.&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;
+          &lt;section class=&quot;rq-copy-block&quot;&gt;&lt;h2&gt;Core interaction map&lt;/h2&gt;&lt;div class=&quot;rq-system-map&quot;&gt;&lt;div&gt;Player input&lt;/div&gt;&lt;b&gt;→&lt;/b&gt;&lt;div&gt;Driving state&lt;/div&gt;&lt;b&gt;→&lt;/b&gt;&lt;div&gt;Pickup / delivery&lt;/div&gt;&lt;b&gt;→&lt;/b&gt;&lt;div&gt;Reward feedback&lt;/div&gt;&lt;b&gt;→&lt;/b&gt;&lt;div&gt;Job / Zone progress&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+          &lt;section class=&quot;rq-copy-block&quot;&gt;&lt;h2&gt;Key decisions &amp; iterations&lt;/h2&gt;&lt;div class=&quot;rq-gallery&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;Before / after onboarding&lt;/div&gt;&lt;div class=&quot;rq-media&quot;&gt;Job progression diagram&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+          &lt;section class=&quot;rq-copy-block&quot;&gt;&lt;h2&gt;Outcome &amp; evidence&lt;/h2&gt;&lt;div class=&quot;rq-evidence&quot;&gt;&lt;div&gt;&lt;strong&gt;44 sec&lt;/strong&gt;&lt;span&gt;Initial average playtime&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;strong&gt;1 min 53 sec&lt;/strong&gt;&lt;span&gt;After three test rounds&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;strong&gt;≈500 players&lt;/strong&gt;&lt;span&gt;Per Poki test round&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;strong&gt;3 rounds&lt;/strong&gt;&lt;span&gt;Observation-led iteration&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+          &lt;section class=&quot;rq-copy-block&quot;&gt;&lt;h2&gt;Contribution &amp; collaboration&lt;/h2&gt;&lt;p&gt;Design direction, system definition, iteration priorities, and acceptance decisions led by Ruyan. Code and scene implementation were substantially AI-assisted, with third-party Unity assets and team feedback identified separately.&lt;/p&gt;&lt;/section&gt;
+          &lt;section class=&quot;rq-copy-block&quot;&gt;&lt;h2&gt;Project gallery&lt;/h2&gt;&lt;div class=&quot;rq-gallery&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;Gameplay scene&lt;/div&gt;&lt;div class=&quot;rq-media&quot;&gt;UI / process evidence&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+        &lt;/main&gt;
+
+        &lt;aside class=&quot;rq-facts&quot; aria-label=&quot;Project facts&quot;&gt;
+          &lt;div class=&quot;rq-fact&quot;&gt;&lt;span&gt;Role&lt;/span&gt;Game Designer · Unity Prototyper&lt;/div&gt;
+          &lt;div class=&quot;rq-fact&quot;&gt;&lt;span&gt;Timeline&lt;/span&gt;May–July 2026&lt;/div&gt;
+          &lt;div class=&quot;rq-fact&quot;&gt;&lt;span&gt;Team&lt;/span&gt;Internship project&lt;/div&gt;
+          &lt;div class=&quot;rq-fact&quot;&gt;&lt;span&gt;Platform&lt;/span&gt;Unity WebGL · Poki&lt;/div&gt;
+          &lt;div class=&quot;rq-fact&quot;&gt;&lt;span&gt;Focus&lt;/span&gt;Gameplay systems · Onboarding · Testing&lt;/div&gt;
+          &lt;div class=&quot;rq-fact&quot;&gt;&lt;span&gt;Tools&lt;/span&gt;Unity · C# · Git · AI-assisted workflow&lt;/div&gt;
+        &lt;/aside&gt;
+      &lt;/div&gt;
+
+      &lt;section class=&quot;rq-next&quot;&gt;&lt;p class=&quot;rq-caption&quot;&gt;Next project&lt;/p&gt;&lt;h2&gt;Abyss — Embodied VR locomotion&lt;/h2&gt;&lt;/section&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;script&gt;
+    (() =&gt; {
+      const root = document.getElementById(&#x27;ruyan-portfolio-wireframe&#x27;);
+      const buttons = root.querySelectorAll(&#x27;[data-rq-screen]&#x27;);
+      const panels = root.querySelectorAll(&#x27;[data-rq-panel]&#x27;);
+      buttons.forEach((button) =&gt; {
+        button.addEventListener(&#x27;click&#x27;, () =&gt; {
+          const target = button.dataset.rqScreen;
+          buttons.forEach((item) =&gt; item.setAttribute(&#x27;aria-pressed&#x27;, String(item === button)));
+          panels.forEach((panel) =&gt; { panel.hidden = panel.dataset.rqPanel !== target; });
+          root.scrollIntoView({ behavior: &#x27;smooth&#x27;, block: &#x27;start&#x27; });
+        });
+      });
+      const typeText = root.querySelector(&#x27;[data-rq-type-text]&#x27;);
+      const typePhrase = &#x27;I turn gestures, sensors, and emerging technologies into playful, testable XR experiences—rapidly prototyped in Unity and refined through real user feedback.&#x27;;
+      const prefersReducedMotion = window.matchMedia(&#x27;(prefers-reduced-motion: reduce)&#x27;).matches;
+      if (typeText &amp;&amp; !prefersReducedMotion) {
+        const characters = Array.from(typePhrase);
+        let characterIndex = 0;
+        typeText.textContent = &#x27;&#x27;;
+        const typeNextCharacter = () =&gt; {
+          typeText.textContent += characters[characterIndex] || &#x27;&#x27;;
+          characterIndex += 1;
+          if (characterIndex &lt; characters.length) {
+            const character = characters[characterIndex - 1];
+            const delay = /[,.—]/.test(character) ? 125 : character === &#x27; &#x27; ? 18 : 28 + Math.random() * 22;
+            window.setTimeout(typeNextCharacter, delay);
+          }
+        };
+        window.setTimeout(typeNextCharacter, 420);
+      }
+      const reel = root.querySelector(&#x27;.rq-role-reel&#x27;);
+      const roleCount = reel ? reel.children.length : 0;
+      let roleIndex = 0;
+      if (reel &amp;&amp; roleCount &gt; 1 &amp;&amp; !prefersReducedMotion) {
+        window.setTimeout(() =&gt; {
+          roleIndex = (roleIndex + 1) % roleCount;
+          reel.style.transform = `translateY(-${roleIndex * 1.23}em)`;
+          window.setInterval(() =&gt; {
+            roleIndex = (roleIndex + 1) % roleCount;
+            reel.style.transform = `translateY(-${roleIndex * 1.23}em)`;
+          }, 2200);
+        }, 4400);
+      }
+      const polaroidTrack = root.querySelector(&#x27;[data-rq-polaroid-track]&#x27;);
+      const polaroidStage = root.querySelector(&#x27;[data-rq-polaroid-stage]&#x27;);
+      const polaroidIndex = root.querySelector(&#x27;[data-rq-polaroid-index]&#x27;);
+      let polaroidLoopWidth = 0;
+      let polaroidCount = 0;
+      let activeProjectId = &#x27;&#x27;;
+      let activeProjectCard = null;
+      let activeUpdateFrame = 0;
+      let wheelLocked = false;
+      const reduceMotion = window.matchMedia(&#x27;(prefers-reduced-motion: reduce)&#x27;).matches;
+      const measurePolaroidLoop = () =&gt; {
+        if (!polaroidTrack || !polaroidCount) return;
+        const firstCard = polaroidTrack.querySelector(&#x27;.rq-polaroid&#x27;);
+        const gap = parseFloat(window.getComputedStyle(polaroidTrack).columnGap) || 0;
+        polaroidLoopWidth = firstCard ? (firstCard.getBoundingClientRect().width + gap) * polaroidCount : 0;
+      };
+      const normalizePolaroidLoop = () =&gt; {
+        if (!polaroidTrack || !polaroidLoopWidth) return 0;
+        if (polaroidTrack.scrollLeft &lt; polaroidLoopWidth * .25) {
+          polaroidTrack.scrollLeft += polaroidLoopWidth;
+          return polaroidLoopWidth;
+        }
+        if (polaroidTrack.scrollLeft &gt; polaroidLoopWidth * 1.75) {
+          polaroidTrack.scrollLeft -= polaroidLoopWidth;
+          return -polaroidLoopWidth;
+        }
+        return 0;
+      };
+      const closestCardToStageCenter = () =&gt; {
+        if (!polaroidStage || !polaroidTrack) return null;
+        const stageRect = polaroidStage.getBoundingClientRect();
+        const stageCenter = stageRect.left + stageRect.width / 2;
+        return Array.from(polaroidTrack.querySelectorAll(&#x27;.rq-polaroid&#x27;)).reduce((closest, card) =&gt; {
+          const rect = card.getBoundingClientRect();
+          const distance = Math.abs(rect.left + rect.width / 2 - stageCenter);
+          return !closest || distance &lt; closest.distance ? { card, distance } : closest;
+        }, null)?.card || null;
+      };
+      const animateCardToIndex = (card, target) =&gt; {
+        if (!card || !target) return;
+        if (reduceMotion || window.innerWidth &lt;= 720) {
+          target.classList.remove(&#x27;is-receiving&#x27;);
+          return;
+        }
+        const from = card.getBoundingClientRect();
+        const to = target.getBoundingClientRect();
+        const flying = card.cloneNode(true);
+        flying.className = &#x27;rq-flying-polaroid&#x27;;
+        flying.setAttribute(&#x27;aria-hidden&#x27;, &#x27;true&#x27;);
+        flying.style.left = `${from.left}px`;
+        flying.style.top = `${from.top}px`;
+        flying.style.width = `${from.width}px`;
+        flying.style.height = `${from.height}px`;
+        root.appendChild(flying);
+        const scaleX = to.width / from.width;
+        const scaleY = to.height / from.height;
+        const travelX = to.left - from.left;
+        const travelY = to.top - from.top;
+        const flight = flying.animate([
+          { offset: 0, transform: &#x27;translate3d(0,0,0) rotate(-1deg) scale(1)&#x27;, opacity: .98, filter: &#x27;blur(0px)&#x27; },
+          { offset: .2, transform: `translate3d(${travelX * .18}px,${Math.max(30, travelY * .08)}px,0) rotate(2.2deg) scale(.9)`, opacity: .98, filter: &#x27;blur(0px)&#x27; },
+          { offset: .58, transform: `translate3d(${travelX * .64}px,${travelY * .5 + 48}px,0) rotate(1.2deg) scale(${Math.max(scaleX, .48)},${Math.max(scaleY, .48)})`, opacity: .94, filter: &#x27;blur(.2px)&#x27; },
+          { offset: .86, transform: `translate3d(${travelX * .94}px,${travelY - 12}px,0) rotate(-.7deg) scale(${scaleX * 1.08},${scaleY * 1.08})`, opacity: .92, filter: &#x27;blur(0px)&#x27; },
+          { offset: 1, transform: `translate3d(${travelX}px,${travelY}px,0) rotate(0deg) scale(${scaleX},${scaleY})`, opacity: 1, filter: &#x27;blur(0px)&#x27; }
+        ], { duration: 680, easing: &#x27;cubic-bezier(.16,1,.3,1)&#x27;, fill: &#x27;forwards&#x27; });
+        flight.finished.finally(() =&gt; {
+          flying.remove();
+          target.classList.remove(&#x27;is-receiving&#x27;);
+        });
+      };
+      const addViewedProject = (projectId, sourceCard) =&gt; {
+        if (!polaroidIndex || !projectId) return;
+        let target = polaroidIndex.querySelector(`[data-project-link=&quot;${projectId}&quot;]`);
+        if (!target) {
+          const projectNumber = Number(projectId) + 1;
+          const title = sourceCard?.querySelector(&#x27;h3&#x27;)?.textContent || `Project ${projectNumber}`;
+          target = document.createElement(&#x27;button&#x27;);
+          target.type = &#x27;button&#x27;;
+          target.className = &#x27;rq-index-item&#x27;;
+          target.classList.add(&#x27;is-receiving&#x27;);
+          target.dataset.projectLink = projectId;
+          target.dataset.number = String(projectNumber).padStart(2, &#x27;0&#x27;);
+          target.setAttribute(&#x27;aria-label&#x27;, `Return to ${title}`);
+          target.addEventListener(&#x27;click&#x27;, () =&gt; {
+            const middleCard = polaroidTrack.querySelector(`.rq-polaroid[data-project-id=&quot;${projectId}&quot;]:not([aria-hidden=&quot;true&quot;])`);
+            if (!middleCard) return;
+            const targetLeft = middleCard.offsetLeft - (polaroidStage.clientWidth - middleCard.offsetWidth) / 2;
+            polaroidTrack.scrollTo({ left: targetLeft, behavior: reduceMotion ? &#x27;auto&#x27; : &#x27;smooth&#x27; });
+          });
+          polaroidIndex.appendChild(target);
+          animateCardToIndex(sourceCard, target);
+        }
+      };
+      const updateActiveProject = (animatePrevious = true) =&gt; {
+        activeUpdateFrame = 0;
+        const closest = closestCardToStageCenter();
+        const nextId = closest?.dataset.projectId || &#x27;&#x27;;
+        if (!nextId || nextId === activeProjectId) return;
+        if (activeProjectId &amp;&amp; animatePrevious) addViewedProject(activeProjectId, activeProjectCard);
+        activeProjectId = nextId;
+        activeProjectCard = closest;
+        polaroidIndex?.querySelectorAll(&#x27;.rq-index-item&#x27;).forEach((item) =&gt; {
+          item.setAttribute(&#x27;aria-current&#x27;, String(item.dataset.projectLink === activeProjectId));
+        });
+      };
+      const scheduleActiveUpdate = () =&gt; {
+        if (activeUpdateFrame) return;
+        activeUpdateFrame = window.requestAnimationFrame(() =&gt; updateActiveProject(true));
+      };
+      if (polaroidTrack &amp;&amp; polaroidTrack.dataset.loopReady !== &#x27;true&#x27;) {
+        const originals = Array.from(polaroidTrack.children);
+        polaroidCount = originals.length;
+        const before = document.createDocumentFragment();
+        const after = document.createDocumentFragment();
+        originals.forEach((card, index) =&gt; {
+          card.dataset.projectId = String(index);
+          const leadingClone = card.cloneNode(true);
+          const trailingClone = card.cloneNode(true);
+          leadingClone.setAttribute(&#x27;aria-hidden&#x27;, &#x27;true&#x27;);
+          trailingClone.setAttribute(&#x27;aria-hidden&#x27;, &#x27;true&#x27;);
+          before.appendChild(leadingClone);
+          after.appendChild(trailingClone);
+        });
+        polaroidTrack.insertBefore(before, polaroidTrack.firstChild);
+        polaroidTrack.appendChild(after);
+        polaroidTrack.dataset.loopReady = &#x27;true&#x27;;
+        window.requestAnimationFrame(() =&gt; {
+          measurePolaroidLoop();
+          polaroidTrack.scrollLeft = polaroidLoopWidth;
+          updateActiveProject(false);
+        });
+      }
+      if (polaroidTrack) {
+        let isDragging = false;
+        let dragStartX = 0;
+        let dragStartScroll = 0;
+        polaroidTrack.addEventListener(&#x27;pointerdown&#x27;, (event) =&gt; {
+          isDragging = true;
+          dragStartX = event.clientX;
+          dragStartScroll = polaroidTrack.scrollLeft;
+          polaroidTrack.setPointerCapture(event.pointerId);
+        });
+        polaroidTrack.addEventListener(&#x27;pointermove&#x27;, (event) =&gt; {
+          if (!isDragging) return;
+          polaroidTrack.scrollLeft = dragStartScroll - (event.clientX - dragStartX);
+        });
+        const stopDragging = () =&gt; {
+          isDragging = false;
+          normalizePolaroidLoop();
+        };
+        polaroidTrack.addEventListener(&#x27;pointerup&#x27;, stopDragging);
+        polaroidTrack.addEventListener(&#x27;pointercancel&#x27;, stopDragging);
+        polaroidTrack.addEventListener(&#x27;scroll&#x27;, () =&gt; {
+          if (!isDragging &amp;&amp; !embodiedStackPlaying) normalizePolaroidLoop();
+          scheduleActiveUpdate();
+        });
+      }
+      if (polaroidStage &amp;&amp; polaroidTrack) {
+        polaroidStage.addEventListener(&#x27;wheel&#x27;, (event) =&gt; {
+          const delta = Math.abs(event.deltaY) &gt;= Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
+          event.preventDefault();
+          event.stopPropagation();
+          if (!delta || wheelLocked) return;
+          wheelLocked = true;
+          const firstCard = polaroidTrack.querySelector(&#x27;.rq-polaroid&#x27;);
+          const gap = parseFloat(window.getComputedStyle(polaroidTrack).columnGap) || 0;
+          const cardSpan = (firstCard?.getBoundingClientRect().width || 240) + gap;
+          polaroidTrack.scrollBy({ left: -Math.sign(delta) * cardSpan, behavior: reduceMotion ? &#x27;auto&#x27; : &#x27;smooth&#x27; });
+          window.setTimeout(() =&gt; {
+            normalizePolaroidLoop();
+            wheelLocked = false;
+          }, reduceMotion ? 80 : 720);
+        }, { passive: false });
+      }
+      const scrollIndex = root.querySelector(&#x27;[data-rq-scroll-index]&#x27;);
+      const scrollIndexList = root.querySelector(&#x27;[data-rq-scroll-index-list]&#x27;);
+      const scrollIndexToggle = root.querySelector(&#x27;[data-rq-index-toggle]&#x27;);
+      const scrollStack = root.querySelector(&#x27;[data-rq-scroll-stack]&#x27;);
+      const scrollStackCount = root.querySelector(&#x27;[data-rq-stack-count]&#x27;);
+      const scrollStackTitle = root.querySelector(&#x27;.rq-stack-title&#x27;);
+      const homePanel = root.querySelector(&#x27;[data-rq-panel=&quot;home&quot;]&#x27;);
+      const embodiedSection = root.querySelector(&#x27;#rq-featured&#x27;);
+      const queuedNavigationIds = new Set();
+      let embodiedNavigationQueued = false;
+      let embodiedStackPlaying = false;
+      let embodiedStackComplete = false;
+      let embodiedReversePlaying = false;
+      let embodiedScrollProgress = 0;
+      let embodiedStartScroll = 0;
+      let embodiedTargetScroll = 0;
+      let embodiedCurrentScroll = 0;
+      let embodiedMotionFrame = 0;
+      let scrollNavigationFrame = 0;
+      let railExpandedGroupIndex = -1;
+      const embodiedNavigationProjects = [
+        { id: &#x27;gesture-interaction&#x27;, title: &#x27;Gesture Interaction&#x27;, target: embodiedSection },
+        { id: &#x27;imu-glove&#x27;, title: &#x27;IMU Glove&#x27;, target: embodiedSection },
+        { id: &#x27;emg-armband&#x27;, title: &#x27;EMG Armband&#x27;, target: embodiedSection },
+        { id: &#x27;plant-bot&#x27;, title: &#x27;Plant Bot&#x27;, target: embodiedSection },
+        { id: &#x27;hardware-toolkit&#x27;, title: &#x27;Input Toolkit&#x27;, target: embodiedSection }
+      ];
+      const laterNavigationProjects = Array.from(root.querySelectorAll(&#x27;.rq-vr-item, .rq-evidence-projects .rq-project, .rq-playground .rq-project&#x27;)).map((element, index) =&gt; {
+        const title = element.querySelector(&#x27;h3&#x27;)?.textContent?.trim() || `Project ${index + 6}`;
+        const id = `rq-project-${index + 6}`;
+        element.id = id;
+        return { id, title, target: element };
+      });
+      const xrSection = root.querySelector(&#x27;.rq-vr-grid&#x27;)?.closest(&#x27;.rq-section&#x27;);
+      const evidenceSection = root.querySelector(&#x27;.rq-evidence-projects&#x27;)?.closest(&#x27;.rq-section&#x27;);
+      const playgroundSection = root.querySelector(&#x27;.rq-playground&#x27;)?.closest(&#x27;.rq-section&#x27;);
+      const projectsInSection = (section) =&gt; laterNavigationProjects.filter((project) =&gt; project.target.closest(&#x27;.rq-section&#x27;) === section);
+      const navigationGroups = [
+        { title: &#x27;Body as Interface&#x27;, section: embodiedSection, projects: embodiedNavigationProjects },
+        { title: &#x27;XR Experiences&#x27;, section: xrSection, projects: projectsInSection(xrSection) },
+        { title: &#x27;Test &amp; Rebuild&#x27;, section: evidenceSection, projects: projectsInSection(evidenceSection) },
+        { title: &#x27;Playground&#x27;, section: playgroundSection, projects: projectsInSection(playgroundSection) }
+      ].filter((group) =&gt; group.section);
+      const updateScrollStack = () =&gt; {
+        const archivedGroups = navigationGroups.slice(0, Math.max(0, railExpandedGroupIndex));
+        const count = archivedGroups.reduce((total, group) =&gt; total + group.projects.length, 0);
+        if (scrollStack) scrollStack.dataset.visible = String(archivedGroups.length &gt; 0);
+        if (scrollStackCount) scrollStackCount.textContent = String(count).padStart(2, &#x27;0&#x27;);
+        if (scrollStackTitle) scrollStackTitle.innerHTML = archivedGroups.length === 1 ? archivedGroups[0].title.replace(&#x27; &#x27;, &#x27;&lt;br&gt;&#x27;) : &#x27;Earlier&lt;br&gt;Work&#x27;;
+      };
+      const createRailThumbnail = (project, arrived = false) =&gt; {
+        if (!scrollIndexList || !project.target) return null;
+        const thumbnail = document.createElement(&#x27;button&#x27;);
+        thumbnail.type = &#x27;button&#x27;;
+        thumbnail.className = `rq-scroll-thumb${arrived ? &#x27; is-arrived&#x27; : &#x27;&#x27;}`;
+        thumbnail.dataset.navProject = project.id;
+        thumbnail.setAttribute(&#x27;aria-label&#x27;, `Jump to ${project.title}`);
+        const label = document.createElement(&#x27;span&#x27;);
+        label.textContent = project.title;
+        thumbnail.appendChild(label);
+        thumbnail.addEventListener(&#x27;click&#x27;, () =&gt; project.target.scrollIntoView({ behavior: reduceMotion ? &#x27;auto&#x27; : &#x27;smooth&#x27;, block: &#x27;start&#x27; }));
+        scrollIndexList.appendChild(thumbnail);
+        return thumbnail;
+      };
+      const animateProjectIntoRail = (project) =&gt; {
+        if (!scrollIndexList || !project.target) return;
+        const thumbnail = createRailThumbnail(project);
+        if (!thumbnail) return;
+        updateScrollStack();
+        if (reduceMotion || window.innerWidth &lt;= 900) {
+          thumbnail.classList.add(&#x27;is-arrived&#x27;);
+          return;
+        }
+        const destination = thumbnail.getBoundingClientRect();
+        const start = { x: (window.innerWidth - 160) / 2, y: (window.innerHeight - 190) / 2, sx: 1, sy: 1, r: -1.5 };
+        const end = { x: destination.left, y: destination.top, sx: destination.width / 160, sy: destination.height / 190, r: 0 };
+        const dx = end.x - start.x;
+        const dy = end.y - start.y;
+        const lift = Math.max(72, Math.min(150, Math.abs(dx) * .2));
+        const flight = document.createElement(&#x27;div&#x27;);
+        flight.className = &#x27;rq-scroll-flight&#x27;;
+        flight.setAttribute(&#x27;aria-hidden&#x27;, &#x27;true&#x27;);
+        const flightLabel = document.createElement(&#x27;span&#x27;);
+        flightLabel.textContent = project.title;
+        flight.appendChild(flightLabel);
+        root.appendChild(flight);
+        const transformOf = (point) =&gt; `translate3d(${point.x}px,${point.y}px,0) rotate(${point.r}deg) scale(${point.sx},${point.sy})`;
+        const animation = flight.animate([
+          { offset: 0, transform: transformOf(start), opacity: .98 },
+          { offset: .22, transform: transformOf({ x: start.x + dx * .18, y: start.y - lift * .55, sx: .92, sy: .92, r: 2.5 }), opacity: .98 },
+          { offset: .58, transform: transformOf({ x: start.x + dx * .58, y: start.y + dy * .34 - lift, sx: (1 + end.sx) * .55, sy: (1 + end.sy) * .55, r: -2 }), opacity: .95 },
+          { offset: .88, transform: transformOf({ x: start.x + dx * .9, y: end.y - 12, sx: end.sx * 1.08, sy: end.sy * 1.08, r: .8 }), opacity: .94 },
+          { offset: 1, transform: transformOf(end), opacity: 1 }
+        ], { duration: 920, easing: &#x27;cubic-bezier(.16,1,.3,1)&#x27;, fill: &#x27;forwards&#x27; });
+        animation.finished.finally(() =&gt; {
+          flight.remove();
+          thumbnail.classList.add(&#x27;is-arrived&#x27;);
+        });
+      };
+      const queueNavigationProject = (project, delay = 0) =&gt; {
+        if (!project || queuedNavigationIds.has(project.id)) return;
+        queuedNavigationIds.add(project.id);
+        window.setTimeout(() =&gt; animateProjectIntoRail(project), delay);
+      };
+      const renderExpandedRailGroup = (groupIndex) =&gt; {
+        if (!scrollIndexList || groupIndex === railExpandedGroupIndex || !navigationGroups[groupIndex]) return;
+        const previousGroupIndex = railExpandedGroupIndex;
+        const movingForward = groupIndex &gt; previousGroupIndex;
+        const outgoingCards = Array.from(scrollIndexList.querySelectorAll(&#x27;.rq-scroll-thumb&#x27;)).map((thumbnail) =&gt; ({
+          rect: thumbnail.getBoundingClientRect(),
+          title: thumbnail.textContent?.trim() || &#x27;Project&#x27;
+        }));
+        railExpandedGroupIndex = groupIndex;
+        queuedNavigationIds.clear();
+        updateScrollStack();
+        scrollIndexList.replaceChildren();
+        scrollIndex.dataset.visible = &#x27;true&#x27;;
+        if (movingForward &amp;&amp; previousGroupIndex &gt;= 0 &amp;&amp; !reduceMotion) {
+          const stackRect = scrollStack?.getBoundingClientRect();
+          if (stackRect) {
+            outgoingCards.forEach((snapshot, index) =&gt; {
+              const flight = document.createElement(&#x27;div&#x27;);
+              flight.className = &#x27;rq-scroll-flight&#x27;;
+              flight.setAttribute(&#x27;aria-hidden&#x27;, &#x27;true&#x27;);
+              const label = document.createElement(&#x27;span&#x27;);
+              label.textContent = snapshot.title;
+              flight.appendChild(label);
+              root.appendChild(flight);
+              const start = {
+                x: snapshot.rect.left,
+                y: snapshot.rect.top,
+                sx: snapshot.rect.width / 160,
+                sy: snapshot.rect.height / 190,
+                r: 0
+              };
+              const end = {
+                x: stackRect.left + (stackRect.width - 58) / 2,
+                y: stackRect.top + 7,
+                sx: 58 / 160,
+                sy: 68 / 190,
+                r: -7 + index * 3
+              };
+              const transformOf = (point) =&gt; `translate3d(${point.x}px,${point.y}px,0) rotate(${point.r}deg) scale(${point.sx},${point.sy})`;
+              const animation = flight.animate([
+                { transform: transformOf(start), opacity: 1 },
+                { offset: .62, transform: transformOf({ x: start.x + (end.x - start.x) * .7, y: end.y + 18, sx: end.sx * 1.15, sy: end.sy * 1.15, r: end.r * .6 }), opacity: .95 },
+                { transform: transformOf(end), opacity: 0 }
+              ], { duration: 620, delay: index * 42, easing: &#x27;cubic-bezier(.16,1,.3,1)&#x27;, fill: &#x27;forwards&#x27; });
+              animation.finished.finally(() =&gt; flight.remove());
+            });
+          }
+          const openingDelay = 260;
+          navigationGroups[groupIndex].projects.forEach((project, index) =&gt; queueNavigationProject(project, openingDelay + index * 70));
+        } else {
+          navigationGroups[groupIndex].projects.forEach((project) =&gt; {
+            queuedNavigationIds.add(project.id);
+            createRailThumbnail(project, true);
+          });
+          if (!reduceMotion) {
+            scrollIndexList.animate([
+              { opacity: 0, transform: &#x27;translateY(12px)&#x27; },
+              { opacity: 1, transform: &#x27;translateY(0)&#x27; }
+            ], { duration: 360, easing: &#x27;cubic-bezier(.16,1,.3,1)&#x27; });
+          }
+        }
+      };
+      const animateProjectOutOfRail = (project, delay = 0) =&gt; {
+        window.setTimeout(() =&gt; {
+          const thumbnail = scrollIndexList?.querySelector(`.rq-scroll-thumb[data-nav-project=&quot;${project.id}&quot;]`);
+          if (!thumbnail) return;
+          if (reduceMotion || window.innerWidth &lt;= 900) {
+            thumbnail.remove();
+            updateScrollStack();
+            return;
+          }
+          const origin = thumbnail.getBoundingClientRect();
+          const start = { x: origin.left, y: origin.top, sx: origin.width / 160, sy: origin.height / 190, r: 0 };
+          const end = { x: (window.innerWidth - 160) / 2, y: (window.innerHeight - 190) / 2, sx: 1, sy: 1, r: -1.5 };
+          const dx = end.x - start.x;
+          const dy = end.y - start.y;
+          const lift = Math.max(72, Math.min(150, Math.abs(dx) * .2));
+          const flight = document.createElement(&#x27;div&#x27;);
+          flight.className = &#x27;rq-scroll-flight&#x27;;
+          flight.setAttribute(&#x27;aria-hidden&#x27;, &#x27;true&#x27;);
+          const flightLabel = document.createElement(&#x27;span&#x27;);
+          flightLabel.textContent = project.title;
+          flight.appendChild(flightLabel);
+          root.appendChild(flight);
+          thumbnail.style.opacity = &#x27;0&#x27;;
+          const transformOf = (point) =&gt; `translate3d(${point.x}px,${point.y}px,0) rotate(${point.r}deg) scale(${point.sx},${point.sy})`;
+          const animation = flight.animate([
+            { offset: 0, transform: transformOf(start), opacity: 1 },
+            { offset: .18, transform: transformOf({ x: start.x + dx * .1, y: start.y - 12, sx: start.sx * 1.08, sy: start.sy * 1.08, r: .8 }), opacity: .98 },
+            { offset: .48, transform: transformOf({ x: start.x + dx * .42, y: start.y + dy * .66 - lift, sx: (1 + start.sx) * .55, sy: (1 + start.sy) * .55, r: -2 }), opacity: .96 },
+            { offset: .78, transform: transformOf({ x: start.x + dx * .82, y: end.y - lift * .55, sx: .92, sy: .92, r: 2.5 }), opacity: .94 },
+            { offset: 1, transform: transformOf(end), opacity: 0 }
+          ], { duration: 760, easing: &#x27;cubic-bezier(.16,1,.3,1)&#x27;, fill: &#x27;forwards&#x27; });
+          animation.finished.finally(() =&gt; {
+            flight.remove();
+            thumbnail.remove();
+            updateScrollStack();
+          });
+        }, delay);
+      };
+      const beginEmbodiedScrollSequence = () =&gt; {
+        if (embodiedNavigationQueued || !embodiedSection || !scrollIndex) return;
+        embodiedNavigationQueued = true;
+        embodiedStackPlaying = true;
+        embodiedSection.dataset.stackPlaying = &#x27;true&#x27;;
+        embodiedSection.scrollIntoView({ behavior: reduceMotion ? &#x27;auto&#x27; : &#x27;smooth&#x27;, block: &#x27;start&#x27; });
+        embodiedStartScroll = polaroidTrack?.scrollLeft || 0;
+        embodiedCurrentScroll = embodiedStartScroll;
+        embodiedTargetScroll = embodiedStartScroll;
+      };
+      const finishEmbodiedScrollSequence = () =&gt; {
+        if (embodiedStackComplete) return;
+        embodiedStackComplete = true;
+        railExpandedGroupIndex = 0;
+        scrollIndex.dataset.visible = &#x27;true&#x27;;
+        const openingDelay = reduceMotion ? 0 : 260;
+        const groupStagger = reduceMotion ? 0 : 70;
+        embodiedNavigationProjects.forEach((item, index) =&gt; queueNavigationProject(item, openingDelay + index * groupStagger));
+        const nextSection = embodiedSection.nextElementSibling;
+        if (nextSection) nextSection.scrollIntoView({ behavior: reduceMotion ? &#x27;auto&#x27; : &#x27;smooth&#x27;, block: &#x27;start&#x27; });
+        const exitDuration = reduceMotion ? 140 : openingDelay + (embodiedNavigationProjects.length - 1) * groupStagger + 1040;
+        window.setTimeout(() =&gt; {
+          embodiedStackPlaying = false;
+          embodiedSection.dataset.stackPlaying = &#x27;false&#x27;;
+        }, exitDuration);
+      };
+      const reverseEmbodiedStackSequence = () =&gt; {
+        if (!embodiedStackComplete || embodiedReversePlaying || embodiedStackPlaying) return;
+        embodiedReversePlaying = true;
+        embodiedStackPlaying = true;
+        embodiedSection.dataset.stackPlaying = &#x27;true&#x27;;
+        embodiedTargetScroll = embodiedStartScroll;
+        if (!embodiedMotionFrame) embodiedMotionFrame = window.requestAnimationFrame(renderEmbodiedMotion);
+        const groupStagger = reduceMotion ? 0 : 70;
+        [...embodiedNavigationProjects].reverse().forEach((item, index) =&gt; animateProjectOutOfRail(item, index * groupStagger));
+        const reverseDuration = reduceMotion ? 80 : 760 + (embodiedNavigationProjects.length - 1) * groupStagger;
+        window.setTimeout(() =&gt; {
+          embodiedNavigationProjects.forEach((item) =&gt; queuedNavigationIds.delete(item.id));
+          embodiedScrollProgress = 0;
+          embodiedCurrentScroll = embodiedStartScroll;
+          embodiedTargetScroll = embodiedStartScroll;
+          if (polaroidTrack) polaroidTrack.scrollLeft = embodiedStartScroll;
+          embodiedStackComplete = false;
+          embodiedNavigationQueued = false;
+          railExpandedGroupIndex = -1;
+          embodiedStackPlaying = false;
+          embodiedReversePlaying = false;
+          embodiedSection.dataset.stackPlaying = &#x27;false&#x27;;
+          if (!scrollIndexList?.children.length) scrollIndex.dataset.visible = &#x27;false&#x27;;
+          scheduleScrollNavigation();
+        }, reverseDuration + 40);
+      };
+      const renderEmbodiedMotion = () =&gt; {
+        embodiedMotionFrame = 0;
+        if (!polaroidTrack) return;
+        const difference = embodiedTargetScroll - embodiedCurrentScroll;
+        embodiedCurrentScroll += difference * (reduceMotion ? 1 : .32);
+        polaroidTrack.scrollLeft = embodiedCurrentScroll;
+        if (Math.abs(difference) &gt; .45) embodiedMotionFrame = window.requestAnimationFrame(renderEmbodiedMotion);
+      };
+      const advanceEmbodiedScrollSequence = (wheelDelta) =&gt; {
+        if (embodiedStackComplete) return;
+        beginEmbodiedScrollSequence();
+        const firstCard = polaroidTrack?.querySelector(&#x27;.rq-polaroid&#x27;);
+        const gap = polaroidTrack ? parseFloat(window.getComputedStyle(polaroidTrack).columnGap) || 0 : 0;
+        const cardSpan = (firstCard?.getBoundingClientRect().width || 240) + gap;
+        const totalDistance = cardSpan * embodiedNavigationProjects.length;
+        const movement = Math.sign(wheelDelta) * Math.min(Math.abs(wheelDelta), 180) * 1.5;
+        embodiedScrollProgress = Math.max(0, Math.min(totalDistance, embodiedScrollProgress + movement));
+        embodiedTargetScroll = embodiedStartScroll - embodiedScrollProgress;
+        if (!embodiedMotionFrame) embodiedMotionFrame = window.requestAnimationFrame(renderEmbodiedMotion);
+        if (embodiedScrollProgress &gt;= totalDistance - .5) finishEmbodiedScrollSequence();
+      };
+      const interceptEmbodiedWheel = (event) =&gt; {
+        if (!homePanel || homePanel.hidden || window.innerWidth &lt;= 900) return;
+        const rect = embodiedSection?.getBoundingClientRect();
+        const sectionIsReturning = rect &amp;&amp; rect.top &lt; window.innerHeight * .72 &amp;&amp; rect.bottom &gt; window.innerHeight * .12;
+        if (embodiedStackComplete) {
+          if (event.deltaY &lt; 0 &amp;&amp; sectionIsReturning &amp;&amp; !embodiedReversePlaying) reverseEmbodiedStackSequence();
+          return;
+        }
+        const sectionIsActive = rect &amp;&amp; rect.top &lt; window.innerHeight * .88 &amp;&amp; rect.bottom &gt; window.innerHeight * .18;
+        if (sectionIsActive &amp;&amp; event.deltaY &gt; 0) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          advanceEmbodiedScrollSequence(event.deltaY);
+        }
+      };
+      const updateScrollNavigation = () =&gt; {
+        scrollNavigationFrame = 0;
+        if (!scrollIndex || !homePanel || homePanel.hidden || window.innerWidth &lt;= 900) {
+          if (scrollIndex) scrollIndex.dataset.visible = &#x27;false&#x27;;
+          return;
+        }
+        let currentSectionIndex = -1;
+        navigationGroups.forEach((group, index) =&gt; {
+          if (group.section.getBoundingClientRect().top &lt; window.innerHeight * .55) currentSectionIndex = index;
+        });
+        const previousSectionIndex = currentSectionIndex - 1;
+        if (previousSectionIndex &gt;= 0 &amp;&amp; !embodiedStackPlaying) {
+          renderExpandedRailGroup(previousSectionIndex);
+        } else if (currentSectionIndex &lt;= 0 &amp;&amp; !embodiedStackComplete &amp;&amp; !embodiedStackPlaying) {
+          railExpandedGroupIndex = -1;
+          scrollIndexList?.replaceChildren();
+          updateScrollStack();
+          scrollIndex.dataset.visible = &#x27;false&#x27;;
+        }
+      };
+      const scheduleScrollNavigation = () =&gt; {
+        if (scrollNavigationFrame) return;
+        scrollNavigationFrame = window.requestAnimationFrame(updateScrollNavigation);
+      };
+      scrollIndexToggle?.addEventListener(&#x27;click&#x27;, () =&gt; {
+        const collapsed = scrollIndex.dataset.collapsed !== &#x27;true&#x27;;
+        scrollIndex.dataset.collapsed = String(collapsed);
+        scrollIndexToggle.textContent = collapsed ? &#x27;Open&#x27; : &#x27;Close&#x27;;
+        scrollIndexToggle.setAttribute(&#x27;aria-expanded&#x27;, String(!collapsed));
+      });
+      scrollStack?.addEventListener(&#x27;click&#x27;, () =&gt; {
+        const archivedTarget = navigationGroups[Math.max(0, railExpandedGroupIndex - 1)]?.section;
+        archivedTarget?.scrollIntoView({ behavior: reduceMotion ? &#x27;auto&#x27; : &#x27;smooth&#x27;, block: &#x27;start&#x27; });
+      });
+      buttons.forEach((button) =&gt; button.addEventListener(&#x27;click&#x27;, scheduleScrollNavigation));
+      window.addEventListener(&#x27;wheel&#x27;, interceptEmbodiedWheel, { passive: false, capture: true });
+      window.addEventListener(&#x27;scroll&#x27;, scheduleScrollNavigation, { passive: true });
+      scheduleScrollNavigation();
+      window.addEventListener(&#x27;resize&#x27;, () =&gt; {
+        measurePolaroidLoop();
+        if (polaroidTrack) polaroidTrack.scrollLeft = polaroidLoopWidth;
+        scheduleScrollNavigation();
+      });
+    })();
+  &lt;/script&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handleLeave = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>
