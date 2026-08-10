@@ -2492,14 +2492,43 @@ html&gt;body{padding:0}&lt;/style&gt;
       let xrMotionFrame = 0;
       let xrCardBurstStart = 0;
       let xrCardBurstActive = false;
-      const xrCardBurstDuration = 1080;
+      const xrCardBurstDuration = 1320;
       const clampUnit = (value) =&gt; Math.max(0, Math.min(1, value));
       const mix = (from, to, amount) =&gt; from + (to - from) * amount;
       const easeOutQuart = (value) =&gt; 1 - Math.pow(1 - clampUnit(value), 4);
-      const easeOutBack = (value) =&gt; {
+      const xrLottieMotionFrames = [
+        { time: 0, distance: 0, scale: 0, rotation: 90 },
+        { time: 7 / 32, distance: .999, scale: 1, rotation: 0 },
+        { time: 10 / 32, distance: 1.1455, scale: 1.1468, rotation: -13.21 },
+        { time: 19 / 32, distance: .9835, scale: .98455, rotation: 1.39 },
+        { time: 26 / 32, distance: .9992, scale: 1.00031, rotation: -.028 },
+        { time: 1, distance: 1, scale: 1, rotation: 0 }
+      ];
+      const sampleXrLottieMotion = (value) =&gt; {
         const amount = clampUnit(value);
-        const overshoot = 1.08;
-        return 1 + (overshoot + 1) * Math.pow(amount - 1, 3) + overshoot * Math.pow(amount - 1, 2);
+        for (let index = 1; index &lt; xrLottieMotionFrames.length; index += 1) {
+          const next = xrLottieMotionFrames[index];
+          if (amount &gt; next.time) continue;
+          const previous = xrLottieMotionFrames[index - 1];
+          const interval = Math.max(.0001, next.time - previous.time);
+          const raw = clampUnit((amount - previous.time) / interval);
+          const blend = index === 1 ? raw : raw * raw * (3 - 2 * raw);
+          return {
+            distance: mix(previous.distance, next.distance, blend),
+            scale: mix(previous.scale, next.scale, blend),
+            rotation: mix(previous.rotation, next.rotation, blend)
+          };
+        }
+        return xrLottieMotionFrames[xrLottieMotionFrames.length - 1];
+      };
+      const applyXrTextMotion = (element, motion, opacity, direction, lift, compression) =&gt; {
+        if (!element) return;
+        const y = lift * (1 - motion.distance);
+        const scale = mix(compression, 1, motion.scale);
+        const rotation = motion.rotation * direction;
+        element.style.opacity = String(opacity);
+        element.style.transform = `translate3d(0, ${y}px, 0) rotateZ(${rotation}deg) scale(${scale})`;
+        element.style.transformOrigin = &#x27;left center&#x27;;
       };
       const xrDistortion = {
         gl: null,
@@ -2951,6 +2980,12 @@ html&gt;body{padding:0}&lt;/style&gt;
           card.style.removeProperty(&#x27;transform&#x27;);
           card.style.removeProperty(&#x27;z-index&#x27;);
           card.style.removeProperty(&#x27;will-change&#x27;);
+          card.querySelectorAll(&#x27;h3, .rq-project-meta&#x27;).forEach((text) =&gt; {
+            text.style.removeProperty(&#x27;opacity&#x27;);
+            text.style.removeProperty(&#x27;transform&#x27;);
+            text.style.removeProperty(&#x27;transform-origin&#x27;);
+            text.style.removeProperty(&#x27;will-change&#x27;);
+          });
         });
         xrCardField?.style.removeProperty(&#x27;transform&#x27;);
         xrCardField?.style.removeProperty(&#x27;will-change&#x27;);
@@ -3003,29 +3038,41 @@ html&gt;body{padding:0}&lt;/style&gt;
           xrCopyTitle.style.willChange = sectionIsNear ? &#x27;transform, opacity&#x27; : &#x27;auto&#x27;;
         }
         if (xrCardField) {
-          const cameraPulse = Math.sin(burst * Math.PI);
-          const cameraX = Math.sin(burst * Math.PI * 2) * stageRect.width * .012;
-          const cameraY = Math.sin(burst * Math.PI) * stageRect.height * -.009;
-          const cameraRoll = Math.sin(burst * Math.PI * 2) * -.55;
-          xrCardField.style.transform = `translate3d(${cameraX}px, ${cameraY}px, ${cameraPulse * 18}px) rotateZ(${cameraRoll}deg)`;
+          const fieldMotion = sampleXrLottieMotion(burst);
+          const recoil = Math.max(0, fieldMotion.distance - 1);
+          xrCardField.style.transform = `translate3d(0, 0, ${recoil * -36}px) scale(${1 - recoil * .025})`;
           xrCardField.style.willChange = sectionIsNear &amp;&amp; burstIsMoving ? &#x27;transform&#x27; : &#x27;auto&#x27;;
         }
         xrCards.forEach((card, index) =&gt; {
           const flightState = xrFlightStates[index] || xrFlightStates[xrFlightStates.length - 1];
           const local = clampUnit((burst - flightState.delay) / (1 - flightState.delay));
-          const reveal = easeOutQuart(local / .16);
-          const spread = easeOutBack(local);
+          const reveal = easeOutQuart(local / .12);
+          const lottieMotion = sampleXrLottieMotion(local);
+          const spread = lottieMotion.distance;
           const targetX = Math.sign(flightState.x) * Math.min(Math.abs(flightState.x) * stageRect.width, flightState.maxX);
           const targetY = flightState.y * stageRect.height;
-          const x = targetX * mix(.035, 1, spread);
-          const y = targetY * mix(.035, 1, spread);
-          const z = mix(-1450 - index * 90, 30 + index * 18, spread);
-          const rotation = flightState.rotation * spread + Math.sin(spread * Math.PI) * (index % 2 ? -1.8 : 1.8);
-          const scale = mix(.68, 1, spread);
+          const x = targetX * spread;
+          const y = targetY * spread;
+          const z = mix(-980 - index * 70, 30 + index * 18, spread);
+          const entryDirection = index % 2 ? -1 : 1;
+          const rotation = flightState.rotation * spread + lottieMotion.rotation * entryDirection;
+          const scale = Math.max(.02, lottieMotion.scale);
+          const title = card.querySelector(&#x27;h3&#x27;);
+          const meta = card.querySelector(&#x27;.rq-project-meta&#x27;);
+          const titleLocal = clampUnit((local - .075) / .925);
+          const metaLocal = clampUnit((local - .14) / .86);
+          const titleReveal = easeOutQuart(titleLocal / .14);
+          const metaReveal = easeOutQuart(metaLocal / .16);
+          const titleMotion = sampleXrLottieMotion(titleLocal);
+          const metaMotion = sampleXrLottieMotion(metaLocal);
           card.style.opacity = String(release * reveal);
           card.style.transform = `translate3d(calc(-50% + ${x}px), calc(-50% + ${y}px), ${z}px) rotateZ(${rotation}deg) scale(${scale})`;
           card.style.zIndex = String(10 - index);
           card.style.willChange = sectionIsNear &amp;&amp; burstIsMoving ? &#x27;transform, opacity&#x27; : &#x27;auto&#x27;;
+          applyXrTextMotion(title, titleMotion, release * titleReveal, entryDirection * .16, 22, .72);
+          applyXrTextMotion(meta, metaMotion, release * metaReveal, entryDirection * -.1, 16, .82);
+          if (title) title.style.willChange = sectionIsNear &amp;&amp; burstIsMoving ? &#x27;transform, opacity&#x27; : &#x27;auto&#x27;;
+          if (meta) meta.style.willChange = sectionIsNear &amp;&amp; burstIsMoving ? &#x27;transform, opacity&#x27; : &#x27;auto&#x27;;
         });
         if ((tearIsMoving || burstIsMoving) &amp;&amp; sectionIsNear &amp;&amp; !xrMotionFrame) {
           xrMotionFrame = window.requestAnimationFrame(renderXrMotion);
