@@ -1,0 +1,53 @@
+from pathlib import Path
+
+from playwright.sync_api import sync_playwright
+
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "output" / "qa"
+OUT.mkdir(parents=True, exist_ok=True)
+
+
+def center_second_card(page, distance):
+    stage = page.locator(".gallery-stage")
+    stage.scroll_into_view_if_needed()
+    box = stage.bounding_box()
+    assert box
+    y = box["y"] + box["height"] * 0.48
+    start_x = box["x"] + box["width"] - 12
+    page.mouse.move(start_x, y)
+    page.mouse.down()
+    page.mouse.move(start_x - distance, y, steps=100)
+    page.mouse.up()
+    page.wait_for_timeout(1400)
+
+
+def verify(viewport, distance, filename):
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch(headless=True)
+        page = browser.new_page(viewport=viewport, device_scale_factor=1)
+        console_errors = []
+        page.on("console", lambda message: console_errors.append(message.text) if message.type == "error" else None)
+        page.goto("http://127.0.0.1:4175/creative/")
+        page.wait_for_load_state("networkidle")
+        center_second_card(page, distance)
+
+        card = page.locator('.polaroid[data-index="1"]')
+        image = card.locator("img")
+        current = page.locator(".gallery-title b").inner_text()
+        assert current == "02 / 05", current
+        assert image.get_attribute("src") == "/media/four-way-kitchen-polaroid-cover.png"
+        assert image.get_attribute("alt") in {
+            "由食材柜、砧板、炉灶和黄色角色重组的四面厨房封面",
+            "Four-way Kitchen cover recomposed from ingredient, chopping, stove, and character elements",
+        }
+        assert image.evaluate("element => element.complete && element.naturalWidth === 1024")
+        assert card.bounding_box()["width"] > 250
+        assert not console_errors, console_errors
+        page.locator(".gallery-stage").screenshot(path=str(OUT / filename))
+        browser.close()
+
+
+verify({"width": 1440, "height": 900}, 400, "four-way-kitchen-polaroid-desktop.png")
+verify({"width": 390, "height": 844}, 225, "four-way-kitchen-polaroid-mobile.png")
+print("four-way kitchen polaroid QA passed")

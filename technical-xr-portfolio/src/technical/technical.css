@@ -1,0 +1,431 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #171717;
+  background: #fff;
+  font-synthesis: none;
+  letter-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #fff;
+}
+
+button,
+a {
+  color: inherit;
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.technical-shell {
+  min-height: 100svh;
+  padding-top: 64px;
+}
+
+.technical-nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  height: 64px;
+  border-bottom: 1px solid #e7e7e7;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+.technical-nav-inner {
+  width: min(1152px, calc(100% - 32px));
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 32px;
+}
+
+.technical-wordmark {
+  justify-self: start;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.technical-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 13px;
+}
+
+.technical-nav-links a,
+.technical-nav-links button,
+.technical-wordmark {
+  transition: opacity 180ms ease;
+}
+
+.technical-nav-links a:hover,
+.technical-nav-links button:hover,
+.technical-wordmark:hover {
+  opacity: 0.52;
+}
+
+.technical-nav-links button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.language-button {
+  justify-self: end;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 6px;
+  border: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  font-size: 12px;
+}
+
+.language-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.technical-surface {
+  width: min(1152px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.technical-intro {
+  padding: 64px 0 48px;
+  border-bottom: 1px solid #dedede;
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: nowrap;
+}
+
+.technical-intro h1 {
+  margin: 0;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 88px;
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.technical-role {
+  width: fit-content;
+  margin: 0 0 2px;
+  padding: 10px 20px 12px;
+  border-radius: 8px;
+  background: #deded9;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 32px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.technical-projects {
+  padding: 12px 0 36px;
+  columns: 3;
+  column-gap: 12px;
+}
+
+.technical-end {
+  padding: 28px 0 72px;
+  border-top: 1px solid #dedede;
+  color: #6c6c6c;
+  font-size: 13px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.technical-end small {
+  max-width: 68ch;
+  color: #858585;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: right;
+}
+
+.technical-card {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  margin: 0 0 12px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 8px;
+  background: #e9e9e9;
+  color: #fff;
+  break-inside: avoid;
+  display: block;
+  text-align: left;
+  isolation: isolate;
+  aspect-ratio: 4 / 3;
+}
+
+.technical-card-claw-machine,
+.technical-card-gothic-hunter {
+  aspect-ratio: 4 / 5;
+}
+
+.technical-card-cat-teaser,
+.technical-card-mole-rhythm {
+  aspect-ratio: 1 / 1;
+}
+
+.technical-card-media,
+.technical-card-media .project-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.technical-card-media .project-media {
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.technical-card-media .media-placeholder {
+  display: grid;
+  place-content: center;
+  gap: 10px;
+  padding: 24px;
+  background: #ededed;
+  color: #585858;
+  text-align: center;
+}
+
+.technical-card-media .media-placeholder svg {
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+}
+
+.technical-card-media .media-placeholder span {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.technical-card-media .media-placeholder small {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.technical-card-shade {
+  position: absolute;
+  inset: 36% 0 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.78));
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.technical-card-copy {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 5px 16px;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.technical-card-meta {
+  grid-column: 1 / -1;
+  font-size: 10px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.technical-card-copy strong {
+  grid-column: 1;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.18;
+}
+
+.technical-card-role {
+  grid-column: 1;
+  max-width: 35ch;
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.technical-card-action {
+  grid-column: 2;
+  grid-row: 2 / 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.technical-card-action svg {
+  width: 14px;
+  height: 14px;
+}
+
+.technical-card:hover .project-media,
+.technical-card:focus-visible .project-media {
+  transform: scale(1.05);
+}
+
+.technical-card:hover .technical-card-copy,
+.technical-card:hover .technical-card-shade,
+.technical-card:focus-visible .technical-card-copy,
+.technical-card:focus-visible .technical-card-shade {
+  opacity: 1;
+}
+
+.technical-card:focus-visible,
+.language-button:focus-visible,
+.technical-nav a:focus-visible {
+  outline: 3px solid #171717;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1024px) {
+  .technical-projects {
+    columns: 2;
+  }
+
+  .technical-end {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .technical-end small {
+    text-align: left;
+  }
+
+  .technical-intro h1 {
+    font-size: 54px;
+  }
+
+  .technical-role {
+    padding: 8px 14px 9px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .technical-nav-inner,
+  .technical-surface {
+    width: calc(100% - 16px);
+  }
+
+  .technical-nav-inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .technical-nav-links {
+    display: none;
+  }
+
+  .technical-intro {
+    padding: 44px 0 36px;
+    gap: 12px;
+  }
+
+  .technical-intro h1 {
+    font-size: 28px;
+  }
+
+  .technical-role {
+    margin-bottom: 0;
+    padding: 6px 10px 7px;
+    font-size: 16px;
+  }
+
+  .technical-projects {
+    columns: 1;
+    padding-bottom: 36px;
+  }
+
+  .technical-card,
+  .technical-card:nth-child(n) {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .technical-card-claw-machine,
+  .technical-card-gothic-hunter {
+    aspect-ratio: 4 / 5;
+  }
+
+  .technical-card-copy,
+  .technical-card-shade {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 380px) {
+  .technical-intro {
+    gap: 8px;
+  }
+
+  .technical-intro h1 {
+    font-size: 24px;
+  }
+
+  .technical-role {
+    padding: 5px 8px 6px;
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .technical-card-media .project-media,
+  .technical-card-copy,
+  .technical-card-shade,
+  .technical-nav a {
+    transition: none;
+  }
+
+  .technical-card:hover .project-media,
+  .technical-card:focus-visible .project-media {
+    transform: none;
+  }
+}

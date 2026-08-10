@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic Hunter - RuyanQin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; }
+        .project-content img { width: 100%; margin-bottom: 20px; }
+        .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
+        .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="sidebar">
+        <div class="top-section">
+            <h1 class="logo">Ruyan Qin</h1>
+            <div class="bio-section">
+                <p>Hi, I'm Ruyan, an XR Designer and UX Researcher focused on immersive interaction and user-centered prototyping in VR/AR.</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">All Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="Assets/CV-RuyanQin_UX3.pdf" target="_blank">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-content">
+            <a href="index.html" class="back-btn">&larr; Back to Index</a>
+            <h2>Gothic Hunter</h2>
+            <div class="project-text">
+                <p>Gothic Hunter is a short-session top-down survival game built in Godot. A finite three-act run combines four evolving weapons, two ultimates, elite encounters, a final boss, and input abstraction for keyboard and wearable gesture control.</p>
+                <p>The project focuses on making weapon growth and combat pressure readable under dense enemy and projectile loads. Runtime telemetry, repeatable debug jumps, capture reviews, and performance tests were used to tune the full experience rather than treating a compiling build as finished.</p>
+            </div>
+
+            <img src="images/gothic-hunter.jpg" alt="Gothic Hunter runtime combat showing the Blood Moon ultimate during Act 3">
+
+            <div class="project-details">
+                <h3>Key Work</h3>
+                <ul>
+                    <li>Defined a deterministic three-act survival run with a finite enemy budget and boss finale</li>
+                    <li>Designed four simultaneous weapons with four visible growth stages and distinct combat roles</li>
+                    <li>Mapped wearable gestures to movement, directional shots, and ultimate actions with keyboard parity</li>
+                    <li>Directed pacing changes through full-run telemetry, weak-player regression tests, and capture review</li>
+                    <li>Validated high-pressure rendering with pooled enemies, projectiles, effects, and streamed world tiles</li>
+                </ul>
+
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Four evolving weapons, two replaceable ultimates, six elites, and one boss</li>
+                    <li>Progress-driven music, combat feedback, meta progression, and display-mode support</li>
+                    <li>Keyboard and Flex-glove input paths behind the same gameplay semantics</li>
+                </ul>
+
+                <h3>My Role</h3>
+                <ul>
+                    <li><strong>Game and Interaction Design:</strong> Defined progression, weapon behavior, input mapping, and feedback priorities</li>
+                    <li><strong>Technical Direction:</strong> Set system boundaries, validation targets, and performance constraints</li>
+                    <li><strong>Playtest Review:</strong> Evaluated pacing, readability, difficulty, and captured runtime evidence</li>
+                </ul>
+
+                <h3>Current Status</h3>
+                <ul>
+                    <li>Playable integrated prototype with a complete five-minute run and recorded runtime proof</li>
+                    <li>Automated tests cover structure, progression, input, pacing, display behavior, and world streaming</li>
+                    <li>High-pressure tests exceeded the 60 FPS target on the documented development laptop</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

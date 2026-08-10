@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand-Input Claw Machine - RuyanQin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; }
+        .project-content img { width: 100%; margin-bottom: 20px; }
+        .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
+        .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="sidebar">
+        <div class="top-section">
+            <h1 class="logo">Ruyan Qin</h1>
+            <div class="bio-section">
+                <p>Hi, I'm Ruyan, an XR Designer and UX Researcher focused on immersive interaction and user-centered prototyping in VR/AR.</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">All Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="Assets/CV-RuyanQin_UX3.pdf" target="_blank">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-content">
+            <a href="index.html" class="back-btn">&larr; Back to Index</a>
+            <h2>Hand-Input Claw Machine</h2>
+            <div class="project-text">
+                <p>This Unity prototype turns a familiar claw machine into a two-hand force-control experience. The left hand positions the claw, while a right-hand grip starts the cycle and controls force after contact. Each prize can define a different successful force window.</p>
+                <p>The project separates input from gameplay so the full cycle can be tested with keyboard and mouse before hardware tuning. It also explores animated claw motion, stable object following, release-specific recovery, radial force feedback, and local visual deformation.</p>
+            </div>
+
+            <img src="images/claw-machine-cover.png" alt="Illustrated cover for the hand-input claw machine prototype">
+
+            <div class="project-details">
+                <h3>Key Work</h3>
+                <ul>
+                    <li>Defined a two-hand interaction model that separates positioning, triggering, and continuous grip force</li>
+                    <li>Designed the full claw cycle from targeting and descent through evaluation, delivery, release, and recovery</li>
+                    <li>Created configurable force windows so different prizes can reward different grip strategies</li>
+                    <li>Designed radial force feedback that compares current grip against a visible target region</li>
+                    <li>Separated keyboard simulation and hardware adapters from the shared gameplay state machine</li>
+                </ul>
+
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Animated and physics-oriented claw experiments with stable held-object behavior</li>
+                    <li>Continuous low-force, success, over-force, manual-release, and empty-grab outcomes</li>
+                    <li>Local contact deformation that changes the rendered mesh without rebuilding the collider</li>
+                </ul>
+
+                <h3>My Role</h3>
+                <ul>
+                    <li><strong>Experience Design:</strong> Turned grip strength into a learnable risk-and-control mechanic</li>
+                    <li><strong>System Design:</strong> Defined states, failure boundaries, recovery paths, and per-object profiles</li>
+                    <li><strong>Prototype Direction:</strong> Compared animation, physics, feedback, and hardware-integration options</li>
+                </ul>
+
+                <h3>Current Status</h3>
+                <ul>
+                    <li>Core claw, force-window, HUD, recovery, and deformation prototypes are implemented</li>
+                    <li>Relevant EditMode and PlayMode logic is covered by project tests</li>
+                    <li>Final practice-scene integration, complete result feedback, object reset, and real-device tuning remain in progress</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

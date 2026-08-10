@@ -1,0 +1,356 @@
+.technical-project-detail {
+  --detail-ink: #171717;
+  --detail-muted: #6b6b6b;
+  --detail-line: #dedede;
+  --detail-soft: #f3f3f1;
+  min-height: 100vh;
+  background: #fff;
+  color: var(--detail-ink);
+  letter-spacing: 0;
+}
+
+.technical-detail-shell {
+  width: min(1024px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 32px 0 112px;
+}
+
+.technical-detail-lead,
+.technical-detail-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--detail-soft);
+}
+
+.technical-detail-lead .project-media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.technical-detail-back {
+  min-height: 44px;
+  margin: 24px 0 20px;
+  padding: 8px 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  color: var(--detail-muted);
+  font-size: 15px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.technical-detail-back svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 160ms ease-out;
+}
+
+.technical-detail-back:hover {
+  color: var(--detail-ink);
+}
+
+.technical-detail-back:hover svg {
+  transform: translateX(-3px);
+}
+
+.technical-detail-back:focus-visible,
+.technical-detail-youtube a:focus-visible {
+  outline: 2px solid var(--detail-ink);
+  outline-offset: 4px;
+}
+
+.technical-detail-header {
+  max-width: 760px;
+}
+
+.technical-detail-header h1 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.technical-detail-header > p {
+  max-width: 65ch;
+  margin: 18px 0 0;
+  color: var(--detail-muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.technical-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr);
+  gap: clamp(56px, 8vw, 96px);
+  margin-top: 72px;
+  align-items: start;
+}
+
+.technical-detail-narrative {
+  display: grid;
+  gap: 64px;
+  min-width: 0;
+}
+
+.technical-project-detail h2,
+.technical-detail-meta dt {
+  margin: 0 0 18px;
+  color: var(--detail-ink);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.technical-detail-overview,
+.technical-detail-status p {
+  max-width: 65ch;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.technical-detail-work,
+.technical-detail-workflow {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--detail-line);
+}
+
+.technical-detail-work li,
+.technical-detail-workflow li {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--detail-line);
+}
+
+.technical-detail-work li > span,
+.technical-detail-workflow li > span {
+  color: var(--detail-muted);
+  font: 11px/1.6 "IBM Plex Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.technical-detail-work p,
+.technical-detail-workflow p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.technical-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.technical-detail-tags span {
+  display: inline-block;
+  max-width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #fff;
+  color: var(--detail-ink);
+  font-size: 12px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.technical-detail-status {
+  padding-top: 24px;
+  border-top: 1px solid var(--detail-ink);
+}
+
+.technical-detail-meta {
+  position: sticky;
+  top: 88px;
+}
+
+.technical-detail-meta dl {
+  margin: 0;
+}
+
+.technical-detail-meta dl > div {
+  padding: 0 0 26px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid var(--detail-line);
+}
+
+.technical-detail-meta dt {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.technical-detail-meta dd {
+  margin: 0;
+  color: var(--detail-muted);
+  font-size: 14px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.technical-detail-meta .technical-detail-tags {
+  gap: 6px;
+}
+
+.technical-detail-supporting,
+.technical-detail-youtube {
+  margin-top: 96px;
+}
+
+.technical-detail-supporting > div {
+  display: grid;
+  gap: 24px;
+}
+
+.technical-detail-supporting img {
+  width: 100%;
+  max-height: 720px;
+  display: block;
+  object-fit: contain;
+  border-radius: 8px;
+  background: var(--detail-soft);
+}
+
+.technical-detail-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.technical-detail-section-heading a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--detail-muted);
+  font-size: 13px;
+  text-underline-offset: 4px;
+}
+
+.technical-detail-section-heading a:hover {
+  color: var(--detail-ink);
+}
+
+.technical-detail-section-heading svg {
+  width: 14px;
+  height: 14px;
+}
+
+.technical-detail-video-frame iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+.technical-detail-video-placeholder {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--detail-muted);
+}
+
+.technical-detail-play {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  border: 1px solid #bdbdb9;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--detail-ink);
+}
+
+.technical-detail-play svg {
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
+}
+
+.technical-detail-video-placeholder strong {
+  color: var(--detail-ink);
+  font-size: 16px;
+}
+
+.technical-detail-video-placeholder p {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .technical-detail-shell {
+    width: calc(100% - 16px);
+    padding: 23px 0 72px;
+  }
+
+  .technical-detail-back {
+    margin: 18px 0 14px;
+  }
+
+  .technical-detail-header h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .technical-detail-header > p {
+    margin-top: 14px;
+    font-size: 16px;
+  }
+
+  .technical-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+    margin-top: 52px;
+  }
+
+  .technical-detail-narrative {
+    gap: 52px;
+  }
+
+  .technical-detail-meta {
+    position: static;
+  }
+
+  .technical-detail-supporting,
+  .technical-detail-youtube {
+    margin-top: 72px;
+  }
+
+  .technical-detail-video-placeholder {
+    padding: 16px;
+  }
+
+  .technical-detail-video-placeholder p {
+    max-width: 32ch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .technical-detail-back svg {
+    transition: none;
+  }
+
+  .technical-detail-back:hover svg {
+    transform: none;
+  }
+}

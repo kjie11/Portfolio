@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "name": "Initial Portfolio Additions",
+    "summary": "Four evidence-backed game and embodied-interaction projects added to the existing static portfolio layout.",
+    "status": "implemented",
+    "timeframe": "2026-08",
+    "confidentiality": "private"
+  },
+  "target": {
+    "audience": "XR, interaction design, technical game design, and creative technology hiring teams",
+    "format": ["evidence", "markdown", "html"],
+    "language": "en"
+  },
+  "sources": [
+    {
+      "id": "DOC-001",
+      "type": "document",
+      "locator": "D:/ClawGame_HandInput/README.md",
+      "title": "Claw Machine and Mole Rhythm implementation summary",
+      "date": "2026-08-10",
+      "access": "private",
+      "notes": "Current implementation scope, tests, and validation boundaries."
+    },
+    {
+      "id": "DOC-002",
+      "type": "document",
+      "locator": "D:/ClawGame_HandInput/docs/ROADMAP.md",
+      "title": "Claw Machine and Mole Rhythm roadmap",
+      "date": "2026-08-10",
+      "access": "private",
+      "notes": "Separates completed prototype work from pending hardware and presentation work."
+    },
+    {
+      "id": "DOC-003",
+      "type": "document",
+      "locator": "C:/Users/brainco/3DhandSlidegame/README.md",
+      "title": "Four-Way Kitchen implementation summary",
+      "date": "2026-08-10",
+      "access": "private",
+      "notes": "Gameplay rules, input modes, and current acceptance boundary."
+    },
+    {
+      "id": "DOC-004",
+      "type": "document",
+      "locator": "C:/Users/brainco/3DhandSlidegame/Docs/IMPLEMENTATION_STATUS.md",
+      "title": "Four-Way Kitchen implementation status",
+      "date": "2026-08-10",
+      "access": "private",
+      "notes": "Detailed implementation and verification record."
+    },
+    {
+      "id": "DOC-005",
+      "type": "document",
+      "locator": "D:/gothic-hunter/README.md",
+      "title": "Gothic Hunter implementation and verification summary",
+      "date": "2026-08-10",
+      "access": "private",
+      "notes": "Current gameplay, input, test, capture, and performance evidence."
+    },
+    {
+      "id": "GIT-001",
+      "type": "commit",
+      "locator": "portfolio-evidence/claw-git-evidence.json",
+      "title": "Claw project bounded Git snapshot",
+      "date": "2026-08-10",
+      "access": "private",
+      "notes": "Thirty commits plus dirty-worktree metadata."
+    },
+    {
+      "id": "GIT-002",
+      "type": "commit",
+      "locator": "portfolio-evidence/kitchen-git-evidence.json",
+      "title": "Kitchen project bounded Git snapshot",
+      "date": "2026-08-10",
+      "access": "private",
+      "notes": "Three commits plus dirty-worktree metadata."
+    },
+    {
+      "id": "GIT-003",
+      "type": "commit",
+      "locator": "portfolio-evidence/gothic-git-evidence.json",
+      "title": "Gothic Hunter bounded Git snapshot",
+      "date": "2026-08-10",
+      "access": "private",
+      "notes": "Four commits plus dirty-worktree metadata."
+    },
+    {
+      "id": "IMAGE-001",
+      "type": "runtime",
+      "locator": "D:/gothic-hunter/screenshots/phase13-survival-balance-contact.png",
+      "title": "Gothic Hunter runtime evidence",
+      "date": "2026-08-10",
+      "access": "private",
+      "notes": "Runtime imagery represented by the public-safe gameplay cover."
+    }
+  ],
+  "contributions": [
+    {
+      "id": "CONTRIB-001",
+      "actor": "user",
+      "role": "Interaction designer and prototype director",
+      "actions": [
+        "Defined gameplay concepts and embodied input mappings",
+        "Set system behavior, scope, and acceptance criteria",
+        "Reviewed runtime feel and requested iterations",
+        "Directed validation and documentation boundaries"
+      ],
+      "boundaries": "Repository activity alone does not establish sole authorship; implementation was AI-assisted.",
+      "source_ids": ["DOC-001", "DOC-002", "DOC-003", "DOC-004", "DOC-005"]
+    },
+    {
+      "id": "CONTRIB-002",
+      "actor": "ai-assisted",
+      "role": "Implementation and verification collaborator",
+      "actions": [
+        "Inspected existing projects",
+        "Expanded specifications into code and editor tooling",
+        "Ran tests and captured diagnostics",
+        "Synchronized technical documentation"
+      ],
+      "boundaries": "AI assistance did not own product judgment, physical interaction decisions, or final acceptance.",
+      "source_ids": ["GIT-001", "GIT-002", "GIT-003"]
+    }
+  ],
+  "claims": [
+    {
+      "id": "CLAIM-001",
+      "statement": "Gothic Hunter is a playable Godot survival prototype with a finite three-act run, evolving weapons, wearable input, automated run checks, and recorded performance evidence.",
+      "status": "proven",
+      "evidence_level": "E3",
+      "source_ids": ["DOC-005", "GIT-003", "IMAGE-001"],
+      "contribution_ids": ["CONTRIB-001", "CONTRIB-002"],
+      "confidence": "high",
+      "public_safe": true
+    },
+    {
+      "id": "CLAIM-002",
+      "statement": "Four-Way Kitchen implements a cooking loop and mutually exclusive keyboard, EMG, camera, and wearable input paths, while complete Play Mode and device acceptance remain pending.",
+      "status": "supported",
+      "evidence_level": "E2",
+      "source_ids": ["DOC-003", "DOC-004", "GIT-002"],
+      "contribution_ids": ["CONTRIB-001", "CONTRIB-002"],
+      "confidence": "high",
+      "public_safe": true
+    },
+    {
+      "id": "CLAIM-003",
+      "statement": "The claw-machine prototype implements force-window gameplay, radial feedback, recovery behavior, and deformation experiments, with final scene and device integration still in progress.",
+      "status": "supported",
+      "evidence_level": "E2",
+      "source_ids": ["DOC-001", "DOC-002", "GIT-001"],
+      "contribution_ids": ["CONTRIB-001", "CONTRIB-002"],
+      "confidence": "high",
+      "public_safe": true
+    },
+    {
+      "id": "CLAIM-004",
+      "statement": "Mole Rhythm implements deterministic offline chart generation, five-finger mapping, DSP timing, and multiple difficulty variants, with final glove and Play Mode acceptance still pending.",
+      "status": "supported",
+      "evidence_level": "E2",
+      "source_ids": ["DOC-001", "DOC-002", "GIT-001"],
+      "contribution_ids": ["CONTRIB-001", "CONTRIB-002"],
+      "confidence": "high",
+      "public_safe": true
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DECISION-001",
+      "context": "The user requested new projects without changing the initial website layout.",
+      "options": ["Rebuild the portfolio", "Reuse the existing cards and detail-page structure"],
+      "chosen": "Reuse the existing cards and detail-page structure",
+      "tradeoffs": "The pages remain visually consistent but intentionally avoid richer media and custom project layouts.",
+      "outcome": "Four new cards and four matching single-column detail pages were added without CSS changes.",
+      "source_ids": ["DOC-001", "DOC-003", "DOC-005"],
+      "confidence": "high"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-07/08",
+      "label": "Source prototypes and input integrations",
+      "status": "prototype",
+      "artifact_ids": ["DOC-001", "DOC-003", "DOC-005"],
+      "source_ids": ["GIT-001", "GIT-002", "GIT-003"]
+    },
+    {
+      "date": "2026-08-10",
+      "label": "Four projects added to the initial static portfolio",
+      "status": "implemented",
+      "artifact_ids": ["CLAIM-001", "CLAIM-002", "CLAIM-003", "CLAIM-004"],
+      "source_ids": ["DOC-001", "DOC-003", "DOC-005"]
+    }
+  ],
+  "gaps": [
+    "The claw-machine, kitchen, and rhythm pages currently use programmatic illustrative covers rather than runtime screenshots.",
+    "Kitchen, claw-machine, and rhythm hardware behavior retains explicit pending-validation wording.",
+    "Public contact links and existing-site encoding issues were outside this request and remain unchanged."
+  ],
+  "assumptions": [
+    "The four selected local projects are approved for inclusion in this private working portfolio.",
+    "Existing project covers may be reused without altering the site's visual layout.",
+    "English copy is appropriate because the initial site and existing details are written in English."
+  ]
+}

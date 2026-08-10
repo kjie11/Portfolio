@@ -1,0 +1,1079 @@
+{
+  "schema_version": "1.0",
+  "repository": {
+    "root": "D:\\gothic-hunter",
+    "branch": "master",
+    "head": "f419c890f463789a725f012c342f97cb2c213059",
+    "is_shallow": false,
+    "dirty": true,
+    "worktree_changes": [
+      " M .gitignore",
+      " M README.md",
+      " M project.godot",
+      " M scenes/BuildGame.cs",
+      " M scenes/Game.tscn",
+      " M scripts/BloodBladeWeapon.cs",
+      " M scripts/Definitions.cs",
+      " M scripts/EnemyAgent.cs",
+      " M scripts/EnemyBulletManager.cs",
+      " M scripts/EnemyManager.cs",
+      " M scripts/FeedbackManager.cs",
+      " M scripts/Game.cs",
+      " M scripts/Hud.cs",
+      " M scripts/InputProvider.cs",
+      " M scripts/PickupManager.cs",
+      " M scripts/Player.cs",
+      " M scripts/RosaryWeapon.cs",
+      " M scripts/RunDirector.cs",
+      " M scripts/UltimateController.cs",
+      " M scripts/WorldStreamer.cs",
+      " M test/RunPacingTest.cs",
+      "?? HANDOFF.md",
+      "?? assets/audio/",
+      "?? assets/sprites/environment/",
+      "?? assets/sprites/rigs/",
+      "?? assets/tiles/regions/",
+      "?? scripts/DisplayPreferences.cs",
+      "?? scripts/GloveInputProvider.cs",
+      "?? scripts/MetaProgression.cs",
+      "?? scripts/MetaProgression.cs.uid",
+      "?? scripts/MusicDirector.cs",
+      "?? scripts/MusicDirector.cs.uid",
+      "?? test/AudioFeedbackTest.cs.uid",
+      "?? test/DebugJumpPresentation.cs",
+      "?? test/DebugJumpTest.cs",
+      "?? test/DebugUltimatePresentation.cs",
+      "?? test/DebugUltimateTest.cs",
+      "?? test/DisplayModePresentation.cs",
+      "?? test/DisplayModeTest.cs",
+      "?? test/EarlyArcPresentation.cs",
+      "?? test/EarlyArcPresentation.cs.uid",
+      "?? test/EnvironmentPresentation.cs",
+      "?? test/EnvironmentPresentation.cs.uid",
+      "?? test/FrontEndInputTest.cs",
+      "?? test/FrontEndInputTest.cs.uid",
+      "?? test/FrontEndPresentation.cs",
+      "?? test/FrontEndPresentation.cs.uid",
+      "?? test/FullRunTelemetry.cs",
+      "?? test/FullRunTelemetry.cs.uid",
+      "?? test/FullscreenLayoutTest.cs",
+      "?? test/FullscreenLayoutTest.cs.uid",
+      "?? test/GloveDebugPresentation.cs",
+      "?? test/GloveDebugTest.cs",
+      "?? test/GloveDebugVideoPresentation.cs",
+      "?? test/GloveInputTest.cs",
+      "?? test/GloveWebSocketTest.cs",
+      "?? test/HighPressurePerformance.cs",
+      "?? test/HighPressurePerformance.cs.uid",
+      "?? test/MetaProgressionTest.cs",
+      "?? test/MetaProgressionTest.cs.uid",
+      "?? test/MusicDirectorTest.cs",
+      "?? test/MusicDirectorTest.cs.uid",
+      "?? test/MusicPresentation.cs",
+      "?? test/MusicPresentation.cs.uid",
+      "?? test/NewPlayerSurvivalTest.cs",
+      "?? test/NewPlayerSurvivalTest.cs.uid",
+      "?? test/SurvivalBalancePresentation.cs",
+      "?? test/SurvivalBalancePresentation.cs.uid",
+      "?? test/ThrallRigPresentation.cs",
+      "?? test/ThrallRigPresentation.cs.uid",
+      "?? test/WorldStreamingTest.cs",
+      "?? test/WorldStreamingTest.cs.uid",
+      "?? test/glove_ws_fixture.py",
+      "?? tools/build_environment_assets.py",
+      "?? tools/build_thrall_rig.py",
+      "?? tools/music/"
+    ]
+  },
+  "range": {
+    "since": null,
+    "until": null,
+    "max_commits": 200,
+    "returned_commits": 4
+  },
+  "commits": [
+    {
+      "id": "COMMIT-001",
+      "sha": "f419c890f463789a725f012c342f97cb2c213059",
+      "authored_at": "2026-08-08T18:03:26+08:00",
+      "author": "kjie11",
+      "parents": [
+        "2f1c1f3cab80afc946a24a66758492e731f6f121"
+      ],
+      "refs": "HEAD -> master",
+      "subject": "circle indicator",
+      "files": [
+        {
+          "status": "M",
+          "path": "README.md"
+        },
+        {
+          "status": "M",
+          "path": "scripts/AudioDirector.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/BloodBladeWeapon.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/EnemyAgent.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/EnemyManager.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/FeedbackManager.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/Game.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/RosaryWeapon.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/UltimateController.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/WeaponController.cs"
+        },
+        {
+          "status": "A",
+          "path": "test/AudioFeedbackTest.cs"
+        },
+        {
+          "status": "M",
+          "path": "test/Presentation.cs"
+        }
+      ]
+    },
+    {
+      "id": "COMMIT-002",
+      "sha": "2f1c1f3cab80afc946a24a66758492e731f6f121",
+      "authored_at": "2026-08-08T17:21:37+08:00",
+      "author": "kjie11",
+      "parents": [
+        "dae0cb6c1cd3e96f4bb8f3ee0d847ee0d6d869ae"
+      ],
+      "refs": "",
+      "subject": "art",
+      "files": [
+        {
+          "status": "M",
+          "path": ".agents/skills/asset-gen/tools/rembg_matting.py"
+        },
+        {
+          "status": "M",
+          "path": "README.md"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/bloodwing/frame_0.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/bloodwing/frame_0.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/bloodwing/frame_1.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/bloodwing/frame_1.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/bloodwing/frame_2.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/bloodwing/frame_2.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/bloodwing/frame_3.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/bloodwing/frame_3.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/bloodwing/frame_4.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/bloodwing/frame_4.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/bloodwing/frame_5.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/bloodwing/frame_5.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/chain_penitent/frame_0.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/chain_penitent/frame_0.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/chain_penitent/frame_1.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/chain_penitent/frame_1.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/chain_penitent/frame_2.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/chain_penitent/frame_2.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/chain_penitent/frame_3.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/chain_penitent/frame_3.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/chain_penitent/frame_4.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/chain_penitent/frame_4.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/chain_penitent/frame_5.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/chain_penitent/frame_5.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/executioner/frame_0.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/executioner/frame_0.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/executioner/frame_1.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/executioner/frame_1.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/executioner/frame_2.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/executioner/frame_2.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/executioner/frame_3.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/executioner/frame_3.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/executioner/frame_4.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/executioner/frame_4.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/executioner/frame_5.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/executioner/frame_5.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/grave_thrall/frame_0.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/grave_thrall/frame_0.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/grave_thrall/frame_1.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/grave_thrall/frame_1.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/grave_thrall/frame_2.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/grave_thrall/frame_2.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/grave_thrall/frame_3.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/grave_thrall/frame_3.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/grave_thrall/frame_4.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/grave_thrall/frame_4.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/grave_thrall/frame_5.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/grave_thrall/frame_5.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hollow_bishop/frame_0.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hollow_bishop/frame_0.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hollow_bishop/frame_1.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hollow_bishop/frame_1.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hollow_bishop/frame_2.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hollow_bishop/frame_2.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hollow_bishop/frame_3.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hollow_bishop/frame_3.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hollow_bishop/frame_4.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hollow_bishop/frame_4.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hollow_bishop/frame_5.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hollow_bishop/frame_5.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hunter/frame_0.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hunter/frame_0.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hunter/frame_1.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hunter/frame_1.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hunter/frame_2.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hunter/frame_2.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hunter/frame_3.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hunter/frame_3.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hunter/frame_4.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hunter/frame_4.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hunter/frame_5.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/animations/hunter/frame_5.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/enemies/bloodwing.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/enemies/bloodwing.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/enemies/chain_penitent.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/enemies/chain_penitent.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/enemies/executioner.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/enemies/executioner.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/enemies/grave_thrall.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/enemies/grave_thrall.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/enemies/hollow_bishop.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/enemies/hollow_bishop.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/hunter.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/hunter.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/items/blood_moon.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/items/blood_moon.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/items/health_potion.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/items/health_potion.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/items/thunder_crown.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/items/thunder_crown.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/vfx/blood_moon_backdrop.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/vfx/blood_moon_backdrop.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/vfx/holy_spark.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/vfx/holy_spark.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/vfx/rosary_bead.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/vfx/rosary_bead.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/vfx/silver_bullet.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/vfx/silver_bullet.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/vfx/thunder_core.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/vfx/thunder_core.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/vfx/thunder_ray.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/vfx/thunder_ray.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/weapons/blood_blade.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/weapons/blood_blade.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/weapons/judgment_seal.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/weapons/judgment_seal.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/weapons/rosary.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/weapons/rosary.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/weapons/silver_gun.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/sprites/weapons/silver_gun.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/tiles/graveyard_0.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/tiles/graveyard_0.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/tiles/graveyard_1.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/tiles/graveyard_1.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/tiles/graveyard_2.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/tiles/graveyard_2.png.import"
+        },
+        {
+          "status": "A",
+          "path": "assets/tiles/graveyard_3.png"
+        },
+        {
+          "status": "A",
+          "path": "assets/tiles/graveyard_3.png.import"
+        },
+        {
+          "status": "M",
+          "path": "project.godot"
+        },
+        {
+          "status": "M",
+          "path": "scripts/BloodBladeWeapon.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/EnemyAgent.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/FeedbackManager.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/Hud.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/JudgmentWeapon.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/PickupManager.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/Player.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/ProjectileManager.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/RosaryWeapon.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/UltimateController.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/WorldStreamer.cs"
+        },
+        {
+          "status": "M",
+          "path": "test/Presentation.cs"
+        },
+        {
+          "status": "A",
+          "path": "tools/build_animation_frames.py"
+        },
+        {
+          "status": "A",
+          "path": "tools/clean_runtime_sprite.py"
+        },
+        {
+          "status": "A",
+          "path": "tools/generate_pixel_assets.py"
+        },
+        {
+          "status": "A",
+          "path": "tools/generate_relay_image.py"
+        },
+        {
+          "status": "A",
+          "path": "tools/split_animation_sheets.py"
+        }
+      ]
+    },
+    {
+      "id": "COMMIT-003",
+      "sha": "dae0cb6c1cd3e96f4bb8f3ee0d847ee0d6d869ae",
+      "authored_at": "2026-08-07T17:56:21+08:00",
+      "author": "kjie11",
+      "parents": [
+        "43a9ecca52528c1b10fb83bd7f5914da6b1ed5de"
+      ],
+      "refs": "",
+      "subject": "temp",
+      "files": [
+        {
+          "status": "M",
+          "path": "GAME_DESIGN.md"
+        },
+        {
+          "status": "M",
+          "path": "README.md"
+        },
+        {
+          "status": "M",
+          "path": "scripts/Definitions.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/EnemyAgent.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/EnemyManager.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/Game.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/PickupManager.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/RunDirector.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/SilverGunWeapon.cs"
+        },
+        {
+          "status": "M",
+          "path": "scripts/WeaponController.cs"
+        },
+        {
+          "status": "M",
+          "path": "test/Phase2Test.cs"
+        },
+        {
+          "status": "M",
+          "path": "test/RunPacingTest.cs"
+        }
+      ]
+    },
+    {
+      "id": "COMMIT-004",
+      "sha": "43a9ecca52528c1b10fb83bd7f5914da6b1ed5de",
+      "authored_at": "2026-08-07T15:49:09+08:00",
+      "author": "kjie11",
+      "parents": [],
+      "refs": "",
+      "subject": "version2",
+      "files": [
+        {
+          "status": "A",
+          "path": ".agents/skills/asset-gen/SKILL.md"
+        },
+        {
+          "status": "A",
+          "path": ".agents/skills/asset-gen/agents/openai.yaml"
+        },
+        {
+          "status": "A",
+          "path": ".agents/skills/asset-gen/rembg.md"
+        },
+        {
+          "status": "A",
+          "path": ".agents/skills/asset-gen/tools/asset_gen.py"
+        },
+        {
+          "status": "A",
+          "path": ".agents/skills/asset-gen/tools/find_loop_frame.py"
+        },
+        {
+          "status": "A",
+          "path": ".agents/skills/asset-gen/tools/grid_slice.py"
+        },
+        {
+          "status": "A",
+          "path": ".agents/skills/asset-gen/tools/rembg_matting.py"
+        },
+        {
+          "status": "A",
+          "path": ".agents/skills/asset-gen/tools/requirements.txt"
+        },
+        {
+          "status": "A",
+          "path": ".agents/skills/asset-gen/tools/tripo3d.py"
+        },
+        {
+          "status": "A",
+          "path": ".editorconfig"
+        },
+        {
+          "status": "A",
+          "path": ".gitattributes"
+        },
+        {
+          "status": "A",
+          "path": ".gitignore"
+        },
+        {
+          "status": "A",
+          "path": "AGENTS.md"
+        },
+        {
+          "status": "A",
+          "path": "GAME_DESIGN.md"
+        },
+        {
+          "status": "A",
+          "path": "GothicHunter.csproj"
+        },
+        {
+          "status": "A",
+          "path": "README.md"
+        },
+        {
+          "status": "A",
+          "path": "godot.md"
+        },
+        {
+          "status": "A",
+          "path": "icon.svg"
+        },
+        {
+          "status": "A",
+          "path": "icon.svg.import"
+        },
+        {
+          "status": "A",
+          "path": "project.godot"
+        },
+        {
+          "status": "A",
+          "path": "scenes/BuildGame.cs"
+        },
+        {
+          "status": "A",
+          "path": "scenes/BuildGame.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scenes/Game.tscn"
+        },
+        {
+          "status": "A",
+          "path": "scripts/AudioDirector.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/AudioDirector.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/BloodBladeWeapon.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/BloodBladeWeapon.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/Definitions.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/Definitions.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/EnemyAgent.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/EnemyAgent.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/EnemyBulletManager.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/EnemyBulletManager.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/EnemyManager.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/EnemyManager.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/FeedbackManager.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/FeedbackManager.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/Game.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/Game.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/Hud.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/Hud.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/InputProvider.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/InputProvider.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/JudgmentWeapon.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/JudgmentWeapon.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/PickupManager.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/PickupManager.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/Player.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/Player.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/ProjectileManager.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/ProjectileManager.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/RosaryWeapon.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/RosaryWeapon.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/RunDirector.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/RunDirector.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/SilverGunWeapon.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/SilverGunWeapon.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/UltimateController.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/UltimateController.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/WeaponController.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/WeaponController.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "scripts/WorldStreamer.cs"
+        },
+        {
+          "status": "A",
+          "path": "scripts/WorldStreamer.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "test/FastUpgradeTest.cs"
+        },
+        {
+          "status": "A",
+          "path": "test/FastUpgradeTest.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "test/Phase2Test.cs"
+        },
+        {
+          "status": "A",
+          "path": "test/Phase2Test.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "test/Presentation.cs"
+        },
+        {
+          "status": "A",
+          "path": "test/Presentation.cs.uid"
+        },
+        {
+          "status": "A",
+          "path": "test/RunPacingTest.cs"
+        },
+        {
+          "status": "A",
+          "path": "test/RunPacingTest.cs.uid"
+        }
+      ]
+    }
+  ],
+  "authorship_caveat": "Git author metadata records commit attribution, not sole authorship, scope ownership, or whether work was paired, generated, rebased, or AI-assisted."
+}
