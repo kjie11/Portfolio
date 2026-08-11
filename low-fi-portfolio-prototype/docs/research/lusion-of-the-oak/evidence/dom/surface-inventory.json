@@ -1,0 +1,104 @@
+{
+  "canvases": [
+    {
+      "className": "",
+      "dataset": {
+        "engine": "three.js r158"
+      },
+      "height": 1350,
+      "id": "surface-1",
+      "parent": "BODY.",
+      "rect": {
+        "height": 900,
+        "width": 1440,
+        "x": 0,
+        "y": 0
+      },
+      "selector": "#canvas",
+      "style": {
+        "mixBlendMode": "normal",
+        "opacity": "1",
+        "pointerEvents": "auto",
+        "position": "fixed",
+        "visibility": "visible",
+        "zIndex": "auto"
+      },
+      "width": 2160
+    },
+    {
+      "className": "",
+      "dataset": {},
+      "height": 90,
+      "id": "surface-2",
+      "parent": "BUTTON.",
+      "rect": {
+        "height": 44.79166793823242,
+        "width": 44.79166793823242,
+        "x": 1052.8125,
+        "y": 106
+      },
+      "selector": "canvas:nth-of-type(2)",
+      "style": {
+        "mixBlendMode": "normal",
+        "opacity": "1",
+        "pointerEvents": "auto",
+        "position": "static",
+        "visibility": "visible",
+        "zIndex": "auto"
+      },
+      "width": 90
+    },
+    {
+      "className": "",
+      "dataset": {},
+      "height": 1353,
+      "id": "surface-3",
+      "parent": "BODY.",
+      "rect": {
+        "height": 902,
+        "width": 1442,
+        "x": 0,
+        "y": 0
+      },
+      "selector": "#transition-overlay",
+      "style": {
+        "mixBlendMode": "normal",
+        "opacity": "1",
+        "pointerEvents": "auto",
+        "position": "fixed",
+        "visibility": "visible",
+        "zIndex": "100"
+      },
+      "width": 2163
+    }
+  ],
+  "domClues": {
+    "bodyClass": "",
+    "htmlClass": "is-desktop is-ready",
+    "sticky": []
+  },
+  "iframes": [
+    {
+      "index": 0,
+      "rect": {
+        "height": 0,
+        "width": 0,
+        "x": 0,
+        "y": 0
+      },
+      "src": "https://player.vimeo.com/video/761102167?title=0&byline=0&controls=0&app_id=122963"
+    }
+  ],
+  "scroll": {
+    "height": 900,
+    "x": 0,
+    "y": 0
+  },
+  "url": "https://lusion.co/projects/of_the_oak",
+  "videos": [],
+  "viewport": {
+    "dpr": 1.0000000298023224,
+    "height": 900,
+    "width": 1440
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 3,
+  "source": {
+    "url": "https://lusion.co/projects/of_the_oak",
+    "canonicalUrl": "https://lusion.co/projects/of_the_oak",
+    "route": "/projects/of_the_oak",
+    "viewport": { "width": 1440, "height": 900, "dpr": 1 },
+    "browser": "Chrome extension browser",
+    "backend": "Three.js r158 WebGL renderer; WebGL2 preferred but exact live context version not directly captured",
+    "capturedAt": "2026-08-11T13:18:33+08:00"
+  },
+  "candidates": [
+    {
+      "id": "surface-1",
+      "selector": "#canvas",
+      "frame": "main",
+      "context": "webgl2-or-webgl",
+      "owner": "main-thread App/Three.js renderer",
+      "visualCoverage": "full viewport",
+      "temporalActivity": "continuous",
+      "ablationImpact": "source and pointer interaction bind ScreenPaint to this renderer",
+      "evidence": ["evidence/dom/surface-inventory.json", "evidence/screenshots/pointer-sweep-1440x900.png", "evidence/source/hoisted.CUO_IjfL.js#L4186"]
+    },
+    {
+      "id": "surface-2",
+      "selector": "button canvas",
+      "frame": "main",
+      "context": "unknown decorative canvas",
+      "owner": "button decoration",
+      "visualCoverage": "44.79px square",
+      "temporalActivity": "not material to target",
+      "ablationImpact": "excluded by bounds and source ownership",
+      "evidence": ["evidence/dom/surface-inventory.json"]
+    },
+    {
+      "id": "surface-3",
+      "selector": "#transition-overlay",
+      "frame": "main",
+      "context": "transition canvas",
+      "owner": "route transition overlay",
+      "visualCoverage": "full viewport but transparent after entry",
+      "temporalActivity": "route transition only",
+      "ablationImpact": "excluded by target-bound ScreenPaint source path",
+      "evidence": ["evidence/dom/surface-inventory.json", "evidence/source/hoisted.CUO_IjfL.js#L4186"]
+    }
+  ],
+  "lockStatus": "locked",
+  "allowedLockStatus": ["unlocked", "provisional", "attributed", "locked"],
+  "allowedTruth": ["SOURCE", "PARTIAL", "GUESS"],
+  "targetSet": ["surface-1"],
+  "alternatives": [
+    { "id": "surface-2", "excludedBecause": "Its visible bounds are only 44.79px square and it belongs to a button." },
+    { "id": "surface-3", "excludedBecause": "The public source identifies it as the transition overlay while ScreenPaint is wired to the Three.js renderer on #canvas." }
+  ],
+  "effectBoundary": "page-coupled",
+  "hypotheses": [
+    {
+      "id": "hyp-1",
+      "statement": "The pointer distortion is a Three.js post effect on #canvas owned by the main-thread App renderer.",
+      "status": "supported",
+      "evidenceFor": ["ev-001", "ev-002", "ev-003"],
+      "evidenceAgainst": [],
+      "truth": "SOURCE"
+    },
+    {
+      "id": "hyp-2",
+      "statement": "The distortion is drawn by #transition-overlay or the small button canvas.",
+      "status": "contradicted",
+      "evidenceFor": [],
+      "evidenceAgainst": ["ev-001", "ev-003"],
+      "truth": "SOURCE"
+    }
+  ],
+  "allowedHypothesisStatus": ["untested", "supported", "contradicted"],
+  "interactions": [
+    {
+      "type": "pointer-sweep",
+      "path": [[180, 720], [270, 660], [380, 610], [500, 550], [630, 500], [760, 450]],
+      "result": "A continuous spectral liquid-membrane trail appeared across the page and remained visibly expanded after 1200ms.",
+      "evidence": ["evidence/screenshots/pointer-sweep-1440x900.png", "evidence/screenshots/pointer-decay-1200ms.png"]
+    }
+  ],
+  "scopeRisk": "medium",
+  "blockingUnknowns": [],
+  "nextProbe": {
+    "type": "frame-capture",
+    "target": "surface-1",
+    "resolves": ["exact live WebGL context version and active optional post-effect set"],
+    "distinguishes": ["hyp-active-smaa-only", "hyp-active-additional-postfx"],
+    "expectedOutcomes": [
+      { "observation": "Only ScreenPaint/PostUfx/SMAA draws are active", "eliminates": ["hyp-active-additional-postfx"] },
+      { "observation": "Bloom/Final/FSR draws are also active", "eliminates": ["hyp-active-smaa-only"] }
+    ]
+  },
+  "evidence": [
+    { "id": "ev-001", "fact": "The target canvas is fixed full viewport #canvas with data-engine three.js r158.", "truth": "SOURCE", "path": "evidence/dom/surface-inventory.json" },
+    { "id": "ev-002", "fact": "Pointer movement produces the requested spectral membrane across the page.", "truth": "SOURCE", "path": "evidence/screenshots/pointer-sweep-1440x900.png" },
+    { "id": "ev-003", "fact": "App.initEngine passes document.getElementById('canvas') to WebGLRenderer and creates ScreenPaintDistortion on that render pipeline.", "truth": "SOURCE", "path": "evidence/source/hoisted.CUO_IjfL.js#L4186" }
+  ],
+  "gateDecision": {
+    "targetAttributed": true,
+    "targetLocked": true,
+    "requiredEvidence": {
+      "visualAttribution": [{ "status": "passed", "evidenceId": "ev-002", "path": "evidence/screenshots/pointer-sweep-1440x900.png", "truth": "SOURCE", "notes": "Pointer sweep exposes the target visual." }],
+      "targetSet": [{ "status": "passed", "evidenceId": "ev-001", "path": "evidence/dom/surface-inventory.json", "truth": "SOURCE", "notes": "surface-1 is the only full-page Three.js scene canvas." }],
+      "contextAndOwner": [{ "status": "passed", "evidenceId": "ev-003", "path": "evidence/source/hoisted.CUO_IjfL.js#L4186", "truth": "SOURCE", "notes": "Main-thread App owns the Three.js renderer; exact WebGL1/2 context remains non-blocking." }],
+      "targetBoundSourceOrFramework": [{ "status": "passed", "evidenceId": "ev-003", "path": "evidence/source/hoisted.CUO_IjfL.js#L4186", "truth": "SOURCE", "notes": "Canvas selector, renderer creation, ScreenPaint update and post chain share the same source path." }],
+      "effectBoundary": [{ "status": "passed", "evidenceId": "ev-002", "path": "evidence/screenshots/pointer-sweep-1440x900.png", "truth": "SOURCE", "notes": "Effect distorts the page-coupled WebGL composition." }],
+      "primaryTraceRoute": [{ "status": "passed", "evidenceId": "ev-003", "path": "evidence/source/hoisted.CUO_IjfL.js#L4186", "truth": "SOURCE", "notes": "Primary route is public source replay." }],
+      "alternativesExcluded": [{ "status": "passed", "evidenceId": "ev-001", "path": "evidence/dom/surface-inventory.json", "truth": "SOURCE", "notes": "Button and transition canvases are excluded by bounds and target-bound source." }]
+    },
+    "blockers": [],
+    "decidedAt": "2026-08-11T13:18:33+08:00"
+  },
+  "truthNotes": {
+    "source": ["Target surface, owner, Three.js version, shader source, resources, pass order, timing and pointer radius formula."],
+    "partial": ["Exact live WebGL1/WebGL2 context and which optional route-specific post effects draw on this frame."],
+    "guess": []
+  }
+}

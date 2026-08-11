@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 3,
+  "source": {
+    "url": "https://lusion.co/projects/of_the_oak",
+    "canonicalUrl": "https://lusion.co/projects/of_the_oak",
+    "route": "/projects/of_the_oak",
+    "permissionBoundary": "public",
+    "allowedPermissionBoundaries": ["public", "user-authorized", "external-blocked"],
+    "viewport": { "width": 1440, "height": 900, "dpr": 1 }
+  },
+  "targetSurfaces": ["surface-1:#canvas"],
+  "runtime": {
+    "backend": "WebGL through Three.js r158; exact live WebGL1/2 selection is PARTIAL",
+    "framework": "Three.js r158",
+    "platform": "Lusion custom main-thread renderer",
+    "owner": "App.initEngine / App.update / global requestAnimationFrame loop"
+  },
+  "renderGraph": {
+    "passes": [
+      { "order": 0, "name": "scene", "status": "SOURCE" },
+      { "order": 10, "name": "Bloom", "condition": "amount > 0", "status": "SOURCE" },
+      { "order": 30, "name": "Final", "condition": "isActive", "status": "SOURCE" },
+      { "order": 50, "name": "PreUfx", "status": "SOURCE" },
+      { "order": 75, "name": "ScreenPaintDistortion", "status": "SOURCE" },
+      { "order": 100, "name": "PostUfx", "status": "SOURCE" },
+      { "order": 500, "name": "SMAA", "condition": "properties.isSmaaEnabled", "status": "SOURCE" },
+      { "order": 2000, "name": "FSR", "condition": "settings.UP_SCALE > 1", "status": "SOURCE" }
+    ],
+    "framebuffers": [
+      { "name": "screenPaint curr/prev", "size": "render size / 4", "format": "RGBA", "status": "SOURCE" },
+      { "name": "screenPaint low/lowBlur", "size": "render size / 8", "format": "RGBA", "status": "SOURCE" },
+      { "name": "postprocessing from/to", "size": "render size", "status": "SOURCE" }
+    ],
+    "dependencies": [
+      "low blurred field -> next ScreenPaint advection/curl",
+      "current ScreenPaint field + current scene/post texture -> ScreenPaintDistortion",
+      "ScreenPaintDistortion -> PostUfx -> SMAA"
+    ]
+  },
+  "resources": [
+    { "name": "LDR_RGB1_0.png", "url": "https://lusion.dev/assets/textures/LDR_RGB1_0.png", "size": "128x128", "sampling": "nearest, repeat, no mipmaps", "truth": "SOURCE", "path": "evidence/assets/LDR_RGB1_0.png" },
+    { "name": "smaa-area.png", "url": "https://lusion.dev/assets/textures/smaa-area.png", "size": "160x560", "truth": "SOURCE", "path": "evidence/assets/smaa-area.png" },
+    { "name": "smaa-search.png", "url": "https://lusion.dev/assets/textures/smaa-search.png", "size": "66x33", "truth": "SOURCE", "path": "evidence/assets/smaa-search.png" }
+  ],
+  "state": {
+    "gl": {
+      "rendererOptions": { "antialias": false, "alpha": false, "premultipliedAlpha": false, "powerPreference": "high-performance" },
+      "outputColorSpace": "Three.js r158 default sRGB",
+      "toneMapping": "NoToneMapping default; route-specific material/post values may still alter color"
+    },
+    "webgpu": {},
+    "canvas2d": {}
+  },
+  "timeline": {
+    "timeOrigin": "performance.now() in one global RAF loop",
+    "unit": "seconds",
+    "deltaRule": "min((performance.now - previousTime) / 1000, 1/20)",
+    "random": "blueNoise u_blueNoiseCoordOffset = vec2(Math.random(), Math.random()) every active global frame"
+  },
+  "inputs": {
+    "pointer": "Current frame pixel displacement controls radius; normalized pointer delta times dt*0.8 is accumulated into velocity with 0.8 acceleration dissipation.",
+    "scroll": "ScreenPaint can receive scrollViewDelta through screenPaintOffsetRatio; the Of The Oak project page couples scene and scroll.",
+    "resize": "Main field renderSize/4, low field renderSize/8, maxRadius=max(40, viewportWidth/20).",
+    "route": "Shared renderer persists through Lusion route transitions; transition-overlay is a separate canvas."
+  },
+  "output": {
+    "colorSpace": "sRGB canvas output with raw post-effect shaders",
+    "toneMapping": "NoToneMapping renderer default; conditional Final/Bloom are separate post passes",
+    "premultipliedAlpha": false,
+    "domComposite": "Opaque fixed Three.js canvas cooperates with DOM/Ufx page layers"
+  },
+  "pageBindings": ["fixed #canvas", "pointer coordinates", "scrollManager", "DOM-synchronized Ufx media frames", "route transition overlay"],
+  "routes": ["/projects/of_the_oak"],
+  "evidence": [
+    "scout-card.json",
+    "evidence/source/hoisted.CUO_IjfL.js",
+    "evidence/network/page-assets.json",
+    "evidence/screenshots/pointer-sweep-1440x900.png",
+    "evidence/screenshots/pointer-decay-1200ms.png"
+  ],
+  "truth": {
+    "leafFacts": [
+      { "fact": "ScreenPaint constants and shaders", "truth": "SOURCE", "path": "evidence/source/hoisted.CUO_IjfL.js#L3589-L4170" },
+      { "fact": "Blue-noise and SMAA resource bodies", "truth": "SOURCE", "path": "evidence/assets/" }
+    ],
+    "wiringFacts": [
+      { "fact": "Global update order and renderOrder-sorted post chain", "truth": "SOURCE", "path": "evidence/source/hoisted.CUO_IjfL.js#L4084-L4186" },
+      { "fact": "Exact active optional pass subset on this captured frame", "truth": "PARTIAL", "path": "evidence/source/hoisted.CUO_IjfL.js#L4186" }
+    ],
+    "defaultLabel": "GUESS",
+    "allowedTruth": ["SOURCE", "PARTIAL", "GUESS"]
+  },
+  "unknowns": {
+    "blocking": [],
+    "important": ["Exact live WebGL1/WebGL2 context selection", "Exact active optional Bloom/Final/FSR subset for this project frame"],
+    "deferred": ["Full DOM/Ufx reconstruction is outside the requested XR effect scope"],
+    "external": []
+  },
+  "replay": {
+    "route": "SOURCE_REPLAY",
+    "allowedRoutes": ["SOURCE_REPLAY", "PIPELINE_REPLAY", "BEHAVIOR_REBUILD"],
+    "fidelityTier": "Source-matched ScreenPaint effect inside the portfolio XR scene",
+    "fallbacks": ["Keep idle RAF shutdown while matching active-frame dt semantics", "Use FXAA only as a temporary diagnostic; label it GUESS and replace with source SMAA for final fidelity"]
+  },
+  "gateDecision": {
+    "replayReady": true,
+    "requiredEvidence": {
+      "targetSurfaces": [{ "status": "passed", "evidenceId": "ev-001", "path": "scout-card.json", "truth": "SOURCE", "notes": "surface-1 locked." }],
+      "runtimeOwnerBackend": [{ "status": "passed", "evidenceId": "ev-003", "path": "evidence/source/hoisted.CUO_IjfL.js#L4186", "truth": "SOURCE", "notes": "Main-thread Three.js owner known; exact context version is non-blocking." }],
+      "renderGraphOrFallback": [{ "status": "passed", "evidenceId": "ev-004", "path": "evidence/source/hoisted.CUO_IjfL.js#L4084-L4186", "truth": "SOURCE", "notes": "Pass ordering and ScreenPaint dependencies recovered." }],
+      "criticalResources": [{ "status": "passed", "evidenceId": "ev-005", "path": "evidence/assets/", "truth": "SOURCE", "notes": "Blue-noise and SMAA lookup textures downloaded and hashed." }],
+      "timelineAndInputs": [{ "status": "passed", "evidenceId": "ev-006", "path": "evidence/source/hoisted.CUO_IjfL.js#L3696-L4186", "truth": "SOURCE", "notes": "dt, random offset, pointer radius and velocity rules recovered." }],
+      "outputComposite": [{ "status": "passed", "evidenceId": "ev-007", "path": "evidence/source/hoisted.CUO_IjfL.js#L4084-L4186", "truth": "SOURCE", "notes": "ScreenPaint -> PostUfx -> SMAA ordering recovered." }],
+      "truthLabels": [{ "status": "passed", "evidenceId": "ev-008", "path": "replay-manifest.json", "truth": "SOURCE", "notes": "Leaf and wiring facts are labeled separately." }],
+      "blockingUnknownsResolvedOrDowngraded": [{ "status": "passed", "evidenceId": "ev-009", "path": "known-gaps.md", "truth": "SOURCE", "notes": "No blocking unknown remains for the requested effect replay." }]
+    },
+    "blockers": [],
+    "decidedAt": "2026-08-11T13:18:33+08:00"
+  }
+}

@@ -9,12 +9,36 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const out = path.join(here, 'qa-xr-tear');
 const targetUrl = pathToFileURL(path.join(here, 'index.html')).href;
 await fs.mkdir(out, { recursive: true });
+const source = await fs.readFile(path.join(here, 'index.html'), 'utf8');
+const requiredScreenPaintSource = [
+  'getXrTrailRadiusCss = () =&gt; Math.max(24, window.innerWidth / 32)',
+  '* .1633', '* .1531', '* .12245', '* .0918', '* .051',
+  '2 / xrSmoke.smokeWidth', '2 / xrSmoke.smokeHeight',
+  'assets/xr-lusion-blue-noise.png', 'uBlueNoiseCoordOffset',
+  'assets/xr-lusion-smaa-area.png', 'assets/xr-lusion-smaa-search.png',
+  'Math.min((time - xrSmoke.feedbackLastTime) / 1000, .05)',
+  '(x1 - x0) * deltaTime * .8',
+  'gl.getUniformLocation(xrSmoke.updateProgram, &#x27;uMinDecay&#x27;), .004'
+];
+if (requiredScreenPaintSource.some(token => !source.includes(token))) throw new Error('XR ScreenPaint source fidelity constants or assets are missing');
+if (source.includes('segment?.travel') || source.includes('xrSmoke.travel')) throw new Error('XR ScreenPaint radius still depends on cumulative pointer travel');
+const smaaPassOrder = [
+  'bindXrSmokeProgram(xrSmoke.displayProgram, xrSmoke.distortionTarget',
+  'bindXrSmokeProgram(xrSmoke.smaaEdgesProgram, xrSmoke.smaaEdgesTarget',
+  'bindXrSmokeProgram(xrSmoke.smaaWeightsProgram, xrSmoke.smaaWeightsTarget',
+  'bindXrSmokeProgram(xrSmoke.smaaBlendProgram, null'
+].map(token => source.indexOf(token));
+if (smaaPassOrder.some(index => index < 0) || smaaPassOrder.some((index, position) => position > 0 && index <= smaaPassOrder[position - 1])) throw new Error('XR distortion and SMAA pass order does not match Lusion');
 
 async function setupPage(browser, viewport) {
   const page = await browser.newPage({ viewport, deviceScaleFactor: 1, hasTouch: viewport.width <= 480 });
   const errors = [];
   page.on('pageerror', error => errors.push(String(error)));
-  page.on('console', msg => { if (msg.type() === 'error') errors.push(msg.text()); });
+  page.on('console', msg => {
+    const text = msg.text();
+    const knownFontCspWarning = text.includes('violates the following Content Security Policy directive') && text.includes("font-src");
+    if (msg.type() === 'error' && !knownFontCspWarning) errors.push(text);
+  });
   await page.goto(targetUrl, { waitUntil: 'networkidle' });
   const frame = page.frames().find(candidate => candidate !== page.mainFrame());
   if (!frame) throw new Error('Portfolio iframe not found');
@@ -32,7 +56,9 @@ async function capture(state, name) {
     const root = document.querySelector('#ruyan-portfolio-wireframe');
     const smoke = document.querySelector('[data-rq-xr-smoke]');
     const cards = [...document.querySelectorAll('[data-rq-xr-cards] .rq-vr-item')];
-    const smokePixels = smoke?.getContext('2d', { alpha: true }).getImageData(0, 0, smoke.width, smoke.height).data || [];
+    const smokeGl = smoke?.getContext('webgl');
+    const smokePixels = smokeGl ? new Uint8Array(smoke.width * smoke.height * 4) : [];
+    if (smokeGl) smokeGl.readPixels(0, 0, smoke.width, smoke.height, smokeGl.RGBA, smokeGl.UNSIGNED_BYTE, smokePixels);
     let smokeAlphaCount = 0;
     for (let index = 3; index < smokePixels.length; index += 4) {
       if (smokePixels[index] > 2) smokeAlphaCount += 1;
@@ -44,6 +70,11 @@ async function capture(state, name) {
       paperFade: Number(getComputedStyle(stage).getPropertyValue('--rq-xr-paper-fade')),
       openingRatio: Number(stage.dataset.rqXrOpening || 0),
       gapError: Number(stage.dataset.rqXrGapError || 0),
+      verticalProgress: Number(stage.dataset.rqXrVerticalProgress || 0),
+      horizontalProgress: Number(stage.dataset.rqXrHorizontalProgress || 0),
+      axisSpeedRatio: Number(stage.dataset.rqXrAxisSpeedRatio || 0),
+      autoTearState: stage.dataset.rqXrAutoTear || '',
+      autoTearDelay: Number(stage.dataset.rqXrAutoTearDelay || 0),
       leftClip: getComputedStyle(stage).getPropertyValue('--rq-xr-clip-left'),
       paperOpacity: Number(getComputedStyle(paper).opacity),
       paperBackground: getComputedStyle(paper).backgroundColor,
@@ -57,6 +88,8 @@ async function capture(state, name) {
       smokeAlphaCount,
       smokeEnergy: Number(smoke?.dataset.energy || 0),
       smokeOpen: smoke?.dataset.open === 'true',
+      smokeRenderer: smoke?.dataset.renderer || '',
+      smokeSceneCards: Number(smoke?.dataset.sceneCards || 0),
       smokePointerEvents: smoke ? getComputedStyle(smoke).pointerEvents : '',
       horizontalOverflow: document.documentElement.scrollWidth > innerWidth + 1
     };
@@ -175,7 +208,9 @@ async function movePointerInStage(state, xRatio, yRatio, steps = 1) {
 const readSmokeState = state => state.frame.evaluate(() => {
   const smoke = document.querySelector('[data-rq-xr-smoke]');
   const cards = [...document.querySelectorAll('[data-rq-xr-cards] .rq-vr-item')];
-  const pixels = smoke.getContext('2d', { alpha: true }).getImageData(0, 0, smoke.width, smoke.height).data;
+  const gl = smoke.getContext('webgl');
+  const pixels = gl ? new Uint8Array(smoke.width * smoke.height * 4) : [];
+  if (gl) gl.readPixels(0, 0, smoke.width, smoke.height, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
   let alphaCount = 0;
   for (let index = 3; index < pixels.length; index += 4) {
     if (pixels[index] > 2) alphaCount += 1;
@@ -185,6 +220,32 @@ const readSmokeState = state => state.frame.evaluate(() => {
     energy: Number(smoke.dataset.energy || 0),
     running: smoke.dataset.running === 'true',
     open: smoke.dataset.open === 'true',
+    renderer: smoke.dataset.renderer || '',
+    sceneCards: Number(smoke.dataset.sceneCards || 0),
+    safeCardImages: Number(smoke.dataset.safeCardImages || 0),
+    sceneMode: smoke.dataset.sceneMode || '',
+    sceneBackground: smoke.dataset.sceneBackground || '',
+    sphereReady: document.querySelector('[data-rq-xr-stage]')?.classList.contains('rq-xr-webgl-ready') || false,
+    fieldWidth: Number(smoke.dataset.fieldWidth || 0),
+    fieldHeight: Number(smoke.dataset.fieldHeight || 0),
+    smokeWidth: Number(smoke.dataset.smokeWidth || 0),
+    smokeHeight: Number(smoke.dataset.smokeHeight || 0),
+    mistWidth: Number(smoke.dataset.mistWidth || 0),
+    mistHeight: Number(smoke.dataset.mistHeight || 0),
+    smokeLayers: Number(smoke.dataset.smokeLayers || 0),
+    material: smoke.dataset.material || '',
+    colorTransport: smoke.dataset.colorTransport || '',
+    sceneSync: smoke.dataset.sceneSync || '',
+    trailRadius: Number(smoke.dataset.trailRadius || 0),
+    pathSampler: smoke.dataset.pathSampler || '',
+    sampleSpacing: Number(smoke.dataset.sampleSpacing || 0),
+    solver: smoke.dataset.solver || '',
+    pressureIterations: Number(smoke.dataset.pressureIterations || 0),
+    postprocess: smoke.dataset.postprocess || '',
+    trailProfile: smoke.dataset.trailProfile || '',
+    blueNoise: smoke.dataset.blueNoise || '',
+    smaa: smoke.dataset.smaa || '',
+    viewportWidth: innerWidth,
     opacity: Number(getComputedStyle(smoke).opacity),
     pointerEvents: getComputedStyle(smoke).pointerEvents,
     cardInfluence: cards.map(card => Number(card.style.getPropertyValue('--rq-xr-smoke-influence') || 0))
@@ -206,9 +267,20 @@ const browser = await chromium.launch({
 });
 
 const desktop = await setupPage(browser, { width: 1440, height: 900 });
+await desktop.frame.waitForFunction(() =>
+  [...document.querySelectorAll('[data-rq-xr-cards] .rq-media img')].length === 5 &&
+  [...document.querySelectorAll('[data-rq-xr-cards] .rq-media img')].every(image => image.complete && image.naturalWidth > 0)
+);
+const xrCardMedia = await desktop.frame.evaluate(() =>
+  [...document.querySelectorAll('[data-rq-xr-cards] .rq-vr-item')].map(card => ({
+    project: card.dataset.rqDetailProject,
+    src: card.querySelector('.rq-media img')?.getAttribute('src') || '',
+    alt: card.querySelector('.rq-media img')?.alt || ''
+  }))
+);
 const desktopBefore = await capture(desktop, 'desktop-before');
 const desktopSequence = await runAutoSequence(desktop, 'desktop');
-const results = { desktopBefore, ...Object.fromEntries(Object.entries(desktopSequence).map(([key, value]) => [`desktop${key[0].toUpperCase()}${key.slice(1)}`, value])) };
+const results = { xrCardMedia, desktopBefore, ...Object.fromEntries(Object.entries(desktopSequence).map(([key, value]) => [`desktop${key[0].toUpperCase()}${key.slice(1)}`, value])) };
 results.desktopPinStart = await readPinState(desktop, 0);
 results.desktopPinMiddle = await readPinState(desktop, .55);
 await desktop.frame.evaluate(() => document.querySelector('[data-rq-xr-section]').scrollIntoView({ block: 'start' }));
@@ -226,6 +298,7 @@ results.cardGazeRight = await readCardTransforms(desktop);
 const pointerRight = await desktop.page.screenshot({ path: path.join(out, 'desktop-pointer-right.png') });
 results.pointerBackgroundChanged = !pointerLeft.equals(pointerRight);
 await desktop.page.mouse.move(2, 2);
+await desktop.frame.dispatchEvent('[data-rq-xr-stage]', 'pointerleave');
 await desktop.page.waitForTimeout(2200);
 results.smokeDissipated = await readSmokeState(desktop);
 results.cardGazeReturned = await readCardTransforms(desktop);
@@ -234,7 +307,9 @@ await desktop.frame.press('[data-rq-detail-project="abyss"]', 'Enter');
 await desktop.page.waitForTimeout(100);
 results.cardDetailOpened = await desktop.frame.evaluate(() => ({
   visible: !document.querySelector('[data-rq-panel="detail"]').hidden,
-  title: document.querySelector('[data-rq-detail-title]').textContent
+  title: document.querySelector('[data-rq-detail-title]').textContent,
+  imageSrc: document.querySelector('[data-rq-detail-visual] img')?.getAttribute('src') || '',
+  videoHref: document.querySelector('[data-rq-detail-video]').href
 }));
 await desktop.frame.click('[data-rq-detail-back]');
 await desktop.page.waitForTimeout(180);
@@ -273,8 +348,8 @@ results.polaroidWheelSettled = await desktop.frame.evaluate(() => {
     centerError: cardRect ? Math.abs(cardRect.left + cardRect.width / 2 - trackRect.left - trackRect.width / 2) : Infinity
   };
 });
-await desktop.frame.focus('.rq-polaroid[data-rq-detail-project="gesture-interaction"]:not([aria-hidden="true"])');
-await desktop.frame.press('.rq-polaroid[data-rq-detail-project="gesture-interaction"]:not([aria-hidden="true"])', 'Enter');
+await desktop.frame.focus('.rq-polaroid[data-rq-detail-project="cat-teaser"]:not([aria-hidden="true"])');
+await desktop.frame.press('.rq-polaroid[data-rq-detail-project="cat-teaser"]:not([aria-hidden="true"])', 'Enter');
 await desktop.page.waitForTimeout(100);
 results.polaroidDetailOpened = await desktop.frame.evaluate(() => ({
   visible: !document.querySelector('[data-rq-panel="detail"]').hidden,
@@ -308,20 +383,24 @@ if (results.desktopBefore.paperBackground !== results.desktopBefore.pageBackgrou
 if (results.desktopBefore.smokeAlphaCount || results.desktopTitle.smokeAlphaCount || results.desktopTearing.smokeAlphaCount) throw new Error('XR smoke appeared before the paper released');
 if (results.desktopTitle.release > .01 || results.desktopTitle.cardOpacity.some(value => value > .01)) throw new Error('XR paper or cards moved before the title animation completed');
 if (results.desktopWaiting.release > .01 || results.desktopWaiting.cardOpacity.some(value => value > .01)) throw new Error('Desktop XR tear started without a second scroll after the title');
+if (results.desktopWaiting.autoTearState !== 'waiting' || results.desktopWaiting.autoTearDelay !== 1400) throw new Error('Desktop XR idle auto-tear timer did not wait after the title');
 if (results.desktopTearing.cardOpacity.some(value => value > .01)) throw new Error('Cards appear before the tear completes');
 if (Math.abs(results.desktopScrollLock.end - results.desktopScrollLock.start) > 1) throw new Error('Desktop page scrolled downward before the XR paper fully opened');
 if (results.desktopScrollRelease.end <= results.desktopScrollRelease.start + 1) throw new Error('Desktop downward scroll remained locked after the XR paper opened');
 if (results.desktopSettled.openingRatio < .72 || results.desktopSettled.gapError > 1) throw new Error('Desktop tear did not fully open and settle before peeling');
-if (results.desktopSettled.paperFade > .01 || results.desktopSettled.paperOpacity < .99) throw new Error('Desktop paper faded before the horizontal tear fully opened');
+if (results.desktopSettled.verticalProgress < .999 || results.desktopSettled.horizontalProgress < .999 || results.desktopSettled.axisSpeedRatio <= 0) throw new Error('Desktop tear axes did not complete together using the stage aspect ratio');
+if ((results.desktopSettled.paperFade > .01 || results.desktopSettled.paperOpacity < .99) && results.desktopSettled.horizontalProgress < .999) throw new Error('Desktop paper faded before the horizontal tear fully opened');
 if (results.desktopTorn.paperOpacity > .02) throw new Error('Paper remains after tear completion');
 if (Math.max(...results.desktopCards.cardOpacity) < .9) throw new Error('Cards did not appear after tearing');
 if (results.mobileTearing.cardOpacity.some(value => value > .01)) throw new Error('Mobile cards appear before the tear completes');
 if (Math.abs(results.mobileScrollLock.end - results.mobileScrollLock.start) > 12) throw new Error('Mobile page scrolled downward before the XR paper fully opened');
 if (results.mobileScrollRelease.end <= results.mobileScrollRelease.start + 1) throw new Error('Mobile downward scroll remained locked after the XR paper opened');
 if (results.mobileSettled.openingRatio < .72 || results.mobileSettled.gapError > 1) throw new Error('Mobile tear did not fully open and settle before peeling');
-if (results.mobileSettled.paperFade > .01 || results.mobileSettled.paperOpacity < .99) throw new Error('Mobile paper faded before the horizontal tear fully opened');
+if (results.mobileSettled.verticalProgress < .999 || results.mobileSettled.horizontalProgress < .999 || results.mobileSettled.axisSpeedRatio <= 0) throw new Error('Mobile tear axes did not complete together using the stage aspect ratio');
+if ((results.mobileSettled.paperFade > .01 || results.mobileSettled.paperOpacity < .99) && results.mobileSettled.horizontalProgress < .999) throw new Error('Mobile paper faded before the horizontal tear fully opened');
 if (results.mobileTitle.release > .01 || results.mobileTitle.cardOpacity.some(value => value > .01)) throw new Error('Mobile XR paper or cards moved before the title animation completed');
 if (results.mobileWaiting.release > .01 || results.mobileWaiting.cardOpacity.some(value => value > .01)) throw new Error('Mobile XR tear started without a second scroll after the title');
+if (results.mobileWaiting.autoTearState !== 'waiting' || results.mobileWaiting.autoTearDelay !== 1400) throw new Error('Mobile XR idle auto-tear timer did not wait after the title');
 if (Math.max(...results.mobileCards.cardOpacity) < .9) throw new Error('Mobile cards did not appear');
 if (Math.abs(results.desktopPinStart.top) > 2 || Math.abs(results.desktopPinMiddle.top) > 2 || Math.abs(results.desktopPinStart.left) > 2 || Math.abs(results.desktopPinMiddle.left) > 2) throw new Error('Desktop XR stage did not remain pinned to the viewport');
 if (Math.abs(results.desktopPinMiddle.width - results.desktopPinMiddle.viewportWidth) > 2) throw new Error('Desktop XR stage is not full viewport width');
@@ -339,6 +418,22 @@ if (results.mobileClosedDown.release > .01 || results.mobileClosedDown.cardOpaci
 if (Object.values(results).some(value => value.horizontalOverflow)) throw new Error('Horizontal overflow detected');
 if (!results.pointerBackgroundChanged) throw new Error('XR background did not react to pointer movement');
 if (!results.smokeActive.open || results.smokeActive.alphaCount < 20 || results.smokeActive.energy <= .05 || results.smokeActive.opacity <= .02) throw new Error('XR smoke trail did not render after release');
+if (results.smokeActive.renderer !== 'webgl-screen-paint' || results.smokeActive.fieldWidth < 48 || results.smokeActive.fieldHeight < 48) throw new Error('XR trail did not use the bounded WebGL screen-paint field');
+if (results.smokeActive.solver !== 'rgba-feedback') throw new Error('XR trail did not use the RGBA velocity and dual-weight feedback solver');
+if (results.smokeActive.smokeLayers !== 2 || results.smokeActive.smokeWidth < 32 || results.smokeActive.smokeHeight < 32) throw new Error('XR trail did not create its primary and low-frequency feedback fields');
+if (results.smokeActive.material !== 'lusion-screen-paint-distortion') throw new Error('XR trail did not use the Lusion-style screen-paint composite');
+if (results.smokeActive.colorTransport !== 'late-full-scene-distortion') throw new Error('XR trail did not distort the complete scene framebuffer');
+if (results.smokeActive.pathSampler !== 'continuous-segment-sdf' || results.smokeActive.sampleSpacing !== 0) throw new Error('XR trail did not use continuous segment-distance drawing');
+if (results.smokeActive.sceneCards !== 5) throw new Error('XR fluid scene texture did not include all five cards');
+if (results.smokeActive.safeCardImages !== 5 || results.smokeActive.sceneMode !== 'full-framebuffer') throw new Error('XR refraction did not use five safe card images in the full scene framebuffer');
+if (results.smokeActive.sceneBackground !== 'interactive-sphere-canvas') throw new Error('XR fluid scene did not preserve the interactive sphere background');
+if (!results.smokeActive.sphereReady) throw new Error('XR interactive sphere shader was not available to the fluid scene');
+if (results.smokeActive.sceneSync !== 'same-frame-sphere') throw new Error('XR fluid scene did not synchronously refresh the interactive sphere');
+const expectedTrailRadius = Math.max(24, results.smokeActive.viewportWidth / 32);
+if (Math.abs(results.smokeActive.trailRadius - expectedTrailRadius) > 1) throw new Error('XR screen-paint radius did not reach the extracted responsive maximum');
+if (results.smokeActive.trailProfile !== 'choo-choo-fine-625') throw new Error('XR screen-paint did not use the Choo Choo fine trail profile');
+if (results.smokeActive.blueNoise !== 'lusion-128-nearest-repeat') throw new Error('XR distortion did not load the extracted animated blue-noise texture');
+if (results.smokeActive.smaa !== 'lusion-smaa-1x' || results.smokeActive.postprocess !== 'distortion-smaa-edges-weights-neighborhood') throw new Error('XR distortion did not complete the extracted SMAA pipeline');
 if (results.smokeActive.pointerEvents !== 'none') throw new Error('XR smoke canvas blocks pointer interaction');
 if (Math.max(...results.smokeActive.cardInfluence) <= Math.min(...results.smokeActive.cardInfluence) + .01) throw new Error('XR smoke did not affect nearby cards more than distant cards');
 if (results.smokeDissipated.alphaCount || results.smokeDissipated.energy > .006 || results.smokeDissipated.running) throw new Error('XR smoke did not dissipate and stop its animation frame');
@@ -347,12 +442,14 @@ if (readGazeAngles(results.cardGazeReturned).some(angle => !angle || Math.abs(an
 if (readGazeAngles([...results.cardGazeLeft, ...results.cardGazeRight]).some(angle => !angle || Math.abs(angle.x) > 5.55 || Math.abs(angle.y) > 7.05)) throw new Error('XR card gaze exceeded its angle limits');
 if (results.mobileGazeAfter.some((value, index) => value !== results.mobileGazeBefore[index])) throw new Error('Touch layout unexpectedly enabled card gaze');
 if (results.mobileCards.smokeAlphaCount || results.mobileCards.smokeEnergy || results.mobileCards.smokeOpen) throw new Error('Touch layout unexpectedly enabled XR smoke');
+if (results.xrCardMedia.length !== 5 || results.xrCardMedia.some(media => !media.src.startsWith('assets/xr-') || !media.alt)) throw new Error('XR cards did not load all five real project previews');
 if (!results.cardDetailOpened.visible || !results.cardDetailOpened.title.includes('Abyss')) throw new Error('XR card keyboard navigation did not open its project detail');
-if (!results.polaroidDetailOpened.visible || results.polaroidDetailOpened.title !== 'Gesture Interaction') throw new Error('Polaroid keyboard navigation did not open its project detail');
+if (!results.cardDetailOpened.imageSrc.endsWith('assets/xr-abyss.jpg') || results.cardDetailOpened.videoHref !== 'https://www.youtube.com/watch?v=Jfq4dHgv87M') throw new Error('XR detail did not expose the project preview and video link');
+if (!results.polaroidDetailOpened.visible || results.polaroidDetailOpened.title !== 'Cat Teaser 2D') throw new Error('Polaroid keyboard navigation did not open its project detail');
 if (results.polaroidWheelMiddle <= results.polaroidWheelBefore + 1 || results.polaroidWheelMiddle >= results.polaroidWheelSettled.left - 1) throw new Error('Polaroid wheel motion did not animate through an intermediate position');
 if (results.polaroidWheelSettled.moving || results.polaroidWheelSettled.centerError > 2) throw new Error('Polaroid wheel motion did not settle on the centered card');
 if (!results.polaroidBrowserBack.homeVisible || Math.abs(results.polaroidBrowserBack.scrollY - results.polaroidHomeScroll) > 2) throw new Error('Browser back did not restore the previous home scroll position');
-if (results.polaroidBrowserBack.focusedProject !== 'gesture-interaction') throw new Error('Browser back did not restore focus to the originating polaroid');
+if (results.polaroidBrowserBack.focusedProject !== 'cat-teaser') throw new Error('Browser back did not restore focus to the originating polaroid');
 
 console.log(JSON.stringify(results, null, 2));
 await browser.close();

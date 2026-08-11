@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 3,
+  "state": "BASELINE_VERIFIED",
+  "gateStatus": {
+    "targetAttributed": true,
+    "targetLocked": true,
+    "replayReady": true,
+    "baselineVerified": true,
+    "projectVerified": false
+  },
+  "strategy": {
+    "primaryTraceRoute": "public target-bound bundle and browser interaction evidence",
+    "replayRoute": "SOURCE_REPLAY",
+    "toolProfile": "Light Scout + Static Fallback + local visual comparison"
+  },
+  "attempts": [
+    { "strategy": "browser canvas inventory", "result": "three candidate surfaces found; #canvas bound to Three.js r158" },
+    { "strategy": "pointer multi-frame capture", "result": "target membrane and 1200ms decay captured" },
+    { "strategy": "target-bound public bundle slice", "result": "shader, noise, blur, timing, radius and post order recovered" }
+  ],
+  "targetSet": ["surface-1:#canvas"],
+  "unknowns": {
+    "blocking": [],
+    "important": ["Exact live WebGL1/WebGL2 context", "Exact active optional post-effect subset"],
+    "deferred": ["Full Lusion DOM/Ufx page reconstruction"],
+    "external": []
+  },
+  "evidenceIndex": [
+    "../evidence/dom/surface-inventory.json",
+    "../evidence/network/page-assets.json",
+    "../evidence/screenshots/source-loaded-1440x900.png",
+    "../evidence/screenshots/pointer-sweep-1440x900.png",
+    "../evidence/screenshots/pointer-decay-1200ms.png",
+    "../evidence/screenshots/choo-choo-pointer-sweep.png",
+    "../evidence/source/hoisted.CUO_IjfL.js",
+    "../evidence/assets/LDR_RGB1_0.png"
+  ],
+  "allowedGateArtifactStatuses": ["missing", "incomplete", "passed", "blocked"],
+  "artifacts": {
+    "scoutCard": "../scout-card.json",
+    "manifest": "../replay-manifest.json",
+    "qaReport": "../qa-report.md",
+    "knownGaps": "../known-gaps.md"
+  },
+  "gateArtifacts": {
+    "targetAttribution": { "artifact": "../scout-card.json", "status": "passed" },
+    "targetLock": { "artifact": "../scout-card.json", "status": "passed" },
+    "replayReady": { "artifact": "../replay-manifest.json", "status": "passed" },
+    "baselineVerify": { "artifact": "../qa-report.md", "status": "passed" },
+    "projectVerify": { "artifact": "../qa-report.md", "status": "incomplete" }
+  },
+  "budgets": {
+    "sameStrategyMax": 2,
+    "captureStrategyCategoriesMax": 3,
+    "repairRoundsMax": 6,
+    "plateauRoundsMax": 2
+  },
+  "plateau": {
+    "roundsWithoutProgress": 0,
+    "lastProgress": "Browser-compared Choo Choo World and verified the portfolio-specific 62.5% fine-radius profile without changing color transport."
+  },
+  "nextAction": {
+    "state": "PROJECT_VERIFY",
+    "unknown": "page-wide QA is red only on the unrelated Polaroid centering assertion",
+    "action": "Repair the Polaroid regression separately, then rerun the full page suite without weakening its assertion.",
+    "expectedEvidence": "A page-wide green QA run while ScreenPaint runtime readiness assertions remain passed."
+  },
+  "replayTier": "SOURCE_REPLAY",
+  "qa": {
+    "sourceToBaseline": ["Passed for ScreenPaint with only documented P3 scene/context gaps."],
+    "baselineToEditable": ["Pending a page-wide green run; current failure is the pre-existing Polaroid centering assertion after all XR checks pass."]
+  }
+}

@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src 'self' blob: data: file: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src 'self' blob: data: file: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Portfolio Wireframe</title>
 <style>:root{color-scheme:light;background:#f5f3ec}html,body{width:100%;height:100%;margin:0}body{overflow:hidden;background:inherit}iframe{display:block;width:100vw;height:100vh;margin:0;border:0}</style>
 </head>
 <body>
+<script src="assets/xr-webgl-data.js"></script>
 <iframe sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" allow="xr-spatial-tracking" referrerpolicy="no-referrer" title="Portfolio Wireframe" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -1215,19 +1216,23 @@ html&gt;body{padding:0}&lt;/style&gt;
     #ruyan-portfolio-wireframe .rq-polaroid-stage {
       position: relative;
       min-width: 0;
-      padding: 76px 0 36px;
+      padding: 92px 0 28px;
       overflow: hidden;
     }
     #ruyan-portfolio-wireframe .rq-polaroid-rope {
       position: absolute;
-      top: 50px;
+      top: 28px;
       left: -3%;
       width: 106%;
-      height: 28px;
-      border-top: 2px solid var(--rq-secondary-ink);
-      border-radius: 50%;
-      transform: rotate(.4deg);
+      height: 74px;
+      overflow: visible;
       pointer-events: none;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-rope path {
+      fill: none;
+      stroke: var(--rq-secondary-ink);
+      stroke-width: 2;
+      vector-effect: non-scaling-stroke;
     }
     #ruyan-portfolio-wireframe .rq-polaroid-track {
       display: flex;
@@ -1598,14 +1603,16 @@ html&gt;body{padding:0}&lt;/style&gt;
     #ruyan-portfolio-wireframe .rq-polaroid {
       position: relative;
       flex: 0 0 clamp(220px, 29vw, 288px);
-      min-height: 278px;
-      padding: 14px 14px 22px;
+      min-width: 0;
+      min-height: 0;
+      padding: 10px 10px 14px;
       background: var(--rq-surface);
       color: var(--rq-ink);
       border: 1px solid var(--rq-line);
-      box-shadow: 0 12px 24px light-dark(rgba(32,32,32,.12), rgba(0,0,0,.28));
+      box-shadow: 0 10px 22px light-dark(rgba(32,32,32,.12), rgba(0,0,0,.28));
       transform: rotate(var(--rq-tilt));
-      transition: transform 240ms cubic-bezier(.16,1,.3,1), box-shadow 240ms ease;
+      transform-origin: 50% -18px;
+      transition: transform 260ms cubic-bezier(.16,1,.3,1), box-shadow 240ms ease;
       scroll-snap-align: center;
       scroll-snap-stop: always;
       cursor: pointer;
@@ -1624,8 +1631,9 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
     #ruyan-portfolio-wireframe .rq-polaroid:hover,
     #ruyan-portfolio-wireframe .rq-polaroid:focus-within {
-      transform: rotate(0deg) translateY(-8px);
-      box-shadow: 0 18px 32px light-dark(rgba(32,32,32,.16), rgba(0,0,0,.36));
+      z-index: 3;
+      transform: rotate(0deg) translateY(-14px) scale(1.025);
+      box-shadow: 0 22px 38px light-dark(rgba(32,32,32,.2), rgba(0,0,0,.44));
     }
     #ruyan-portfolio-wireframe .rq-polaroid.is-centered {
       z-index: 2;
@@ -1634,7 +1642,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
     #ruyan-portfolio-wireframe .rq-polaroid.is-centered:hover,
     #ruyan-portfolio-wireframe .rq-polaroid.is-centered:focus-within {
-      transform: rotate(0deg) translateY(-8px) scale(1.045);
+      transform: rotate(0deg) translateY(-14px) scale(1.07);
     }
     #ruyan-portfolio-wireframe .rq-polaroid:focus-visible {
       outline: 3px solid currentColor;
@@ -1643,8 +1651,8 @@ html&gt;body{padding:0}&lt;/style&gt;
     #ruyan-portfolio-wireframe .rq-polaroid-image {
       display: grid;
       place-items: center;
-      aspect-ratio: 4 / 3;
-      margin-bottom: 16px;
+      aspect-ratio: 1 / 1;
+      margin-bottom: 11px;
       padding: 14px;
       background: var(--rq-block);
       color: var(--rq-secondary-ink);
@@ -1663,7 +1671,44 @@ html&gt;body{padding:0}&lt;/style&gt;
       object-fit: cover;
       object-position: center;
     }
-    #ruyan-portfolio-wireframe .rq-polaroid h3 { margin-bottom: 7px; }
+    #ruyan-portfolio-wireframe .rq-polaroid h3 {
+      margin-bottom: 5px;
+      font-size: 1.05rem;
+      line-height: 1.2;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid .rq-project-meta {
+      overflow: hidden;
+      color: var(--rq-secondary-ink);
+      font-family: ui-monospace, &quot;Cascadia Mono&quot;, &quot;SFMono-Regular&quot;, Consolas, monospace;
+      font-size: .65rem;
+      line-height: 1.3;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 9px;
+      padding-top: 7px;
+      border-top: 1px dashed var(--rq-line);
+      font-family: ui-monospace, &quot;Cascadia Mono&quot;, &quot;SFMono-Regular&quot;, Consolas, monospace;
+      font-size: .61rem;
+      line-height: 1.2;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-active {
+      margin: 0 clamp(26px, 5vw, 62px);
+      color: var(--rq-secondary-ink);
+      font-family: ui-monospace, &quot;Cascadia Mono&quot;, &quot;SFMono-Regular&quot;, Consolas, monospace;
+      font-size: .72rem;
+      line-height: 1.3;
+      text-align: center;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-active strong {
+      color: var(--rq-ink);
+      font-weight: 500;
+    }
     #ruyan-portfolio-wireframe .rq-xr-section {
       position: relative;
       width: 100vw;
@@ -1758,7 +1803,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       width: 100%;
       height: 100%;
       opacity: 0;
-      filter: blur(2.2px) saturate(1.12);
+      filter: saturate(1.08) contrast(1.03);
       pointer-events: none;
       transform: translateZ(0);
       will-change: opacity;
@@ -1893,6 +1938,19 @@ html&gt;body{padding:0}&lt;/style&gt;
       cursor: pointer;
       touch-action: manipulation;
     }
+    #ruyan-portfolio-wireframe .rq-xr-webgl-presenting .rq-vr-item {
+      background: transparent !important;
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+    #ruyan-portfolio-wireframe .rq-xr-webgl-presenting .rq-vr-item &gt; * {
+      opacity: 0 !important;
+    }
+    #ruyan-portfolio-wireframe .rq-xr-webgl-presenting .rq-vr-item:focus-visible {
+      z-index: 25 !important;
+      outline: 2px solid var(--rq-ink);
+      outline-offset: 4px;
+    }
     #ruyan-portfolio-wireframe .rq-vr-item:nth-child(1) { --rq-xr-x: clamp(-400px, -27vw, -240px); --rq-xr-y: -20vh; --rq-xr-r: -8deg; --rq-xr-s: 1.08; }
     #ruyan-portfolio-wireframe .rq-vr-item:nth-child(2) { --rq-xr-x: clamp(240px, 27vw, 400px); --rq-xr-y: -18vh; --rq-xr-r: 8deg; --rq-xr-s: 1.02; }
     #ruyan-portfolio-wireframe .rq-vr-item:nth-child(3) { --rq-xr-x: clamp(-370px, -25vw, -220px); --rq-xr-y: 19vh; --rq-xr-r: 6deg; --rq-xr-s: .98; }
@@ -1904,7 +1962,15 @@ html&gt;body{padding:0}&lt;/style&gt;
       margin-bottom: 12px;
       border: 0;
       border-radius: 3px;
-      padding: 14px;
+      padding: 0;
+      overflow: hidden;
+    }
+    #ruyan-portfolio-wireframe .rq-vr-item .rq-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
     #ruyan-portfolio-wireframe .rq-vr-item:nth-child(1) .rq-media { background: var(--rq-ink); color: var(--rq-surface); }
     #ruyan-portfolio-wireframe .rq-vr-item:nth-child(2) .rq-media { background: var(--rq-accent-cyan); color: var(--rq-ink); }
@@ -2367,8 +2433,8 @@ html&gt;body{padding:0}&lt;/style&gt;
       #ruyan-portfolio-wireframe .rq-system-map b { display: none; }
       #ruyan-portfolio-wireframe .rq-evidence { grid-template-columns: 1fr; }
       #ruyan-portfolio-wireframe .rq-footer { flex-direction: column; }
-      #ruyan-portfolio-wireframe .rq-polaroid-scene { min-height: 350px; }
-      #ruyan-portfolio-wireframe .rq-polaroid-stage { padding-top: 66px; }
+      #ruyan-portfolio-wireframe .rq-polaroid-scene { min-height: 420px; }
+      #ruyan-portfolio-wireframe .rq-polaroid-stage { padding-top: 82px; }
       #ruyan-portfolio-wireframe .rq-polaroid-rail { display: none; }
       #ruyan-portfolio-wireframe .rq-scroll-index,
       #ruyan-portfolio-wireframe .rq-scroll-flight { display: none; }
@@ -2432,14 +2498,15 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;div class=&quot;rq-section-head&quot;&gt;&lt;h2&gt;Body as Interface&lt;/h2&gt;&lt;p&gt;Exploring how the body can become an interface—turning muscle signals, motion, gestures, and sensor data into playful interactions.&lt;/p&gt;&lt;/div&gt;
         &lt;div class=&quot;rq-polaroid-scene&quot;&gt;
           &lt;div class=&quot;rq-polaroid-stage&quot; data-rq-polaroid-stage&gt;
-            &lt;div class=&quot;rq-polaroid-rope&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+            &lt;svg class=&quot;rq-polaroid-rope&quot; viewBox=&quot;0 0 1000 74&quot; preserveAspectRatio=&quot;none&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M -20 7 Q 500 69 1020 7&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
             &lt;div class=&quot;rq-polaroid-track&quot; data-rq-polaroid-track aria-label=&quot;Embodied interaction projects&quot;&gt;
-            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;four-way-kitchen&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Four-Way Kitchen project details&quot; style=&quot;--rq-tilt:-2.5deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;assets/four-way-kitchen-polaroid.webp&quot; alt=&quot;Four-sided kitchen gameplay with ingredient stations, chopping boards, stoves, and a central character&quot;&gt;&lt;/div&gt;&lt;h3&gt;Four-Way Kitchen&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Multi-input cooking · Chop · Cook · Throw · Deliver&lt;/p&gt;&lt;/article&gt;
-            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;mole-rhythm&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Mole Rhythm project details&quot; style=&quot;--rq-tilt:1.8deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;assets/mole-rhythm-polaroid.webp&quot; alt=&quot;Pixel-art rhythm game with five mole performers and a falling mallet&quot;&gt;&lt;/div&gt;&lt;h3&gt;Mole Rhythm&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Five-finger rhythm · Generated charts · DSP timing&lt;/p&gt;&lt;/article&gt;
-            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;cat-teaser&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Cat Teaser 2D project details&quot; style=&quot;--rq-tilt:-1.2deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;assets/cat-teaser-polaroid.webp&quot; alt=&quot;Illustrated Cat Teaser 2D scene with two cats, a fish, and playful motion marks&quot;&gt;&lt;/div&gt;&lt;h3&gt;Cat Teaser 2D&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Rope physics · Cat anticipation · Three playful scenarios&lt;/p&gt;&lt;/article&gt;
-            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;plant-bot&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Plant Bot project details&quot; style=&quot;--rq-tilt:2.2deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image&quot;&gt;Plant Bot physical prototype and AR view&lt;/div&gt;&lt;h3&gt;Plant Bot&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Environmental sensors · Arduino / ESP32 · Unity AR&lt;/p&gt;&lt;/article&gt;
-            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;hardware-toolkit&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Unity Hardware Input Toolkit project details&quot; style=&quot;--rq-tilt:-1.8deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image&quot;&gt;Reusable hardware input package demo&lt;/div&gt;&lt;h3&gt;Unity Hardware Input Toolkit&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Virtual devices · Multi-config · Reconnect · Input simulation&lt;/p&gt;&lt;/article&gt;
+            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;four-way-kitchen&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Four-Way Kitchen project details&quot; style=&quot;--rq-tilt:-2.5deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;assets/four-way-kitchen-polaroid.webp&quot; alt=&quot;Four-sided kitchen gameplay with ingredient stations, chopping boards, stoves, and a central character&quot;&gt;&lt;/div&gt;&lt;h3&gt;Four-Way Kitchen&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Unity · C# · Custom Input Controllers&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
+            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;mole-rhythm&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Mole Rhythm project details&quot; style=&quot;--rq-tilt:1.8deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;assets/mole-rhythm-polaroid.webp&quot; alt=&quot;Pixel-art rhythm game with five mole performers and a falling mallet&quot;&gt;&lt;/div&gt;&lt;h3&gt;Mole Rhythm&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Unity · C# · DSP Timing · Audio Analysis&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
+            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;cat-teaser&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Cat Teaser 2D project details&quot; style=&quot;--rq-tilt:-1.2deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;assets/cat-teaser-polaroid.webp&quot; alt=&quot;Illustrated Cat Teaser 2D scene with two cats, a fish, and playful motion marks&quot;&gt;&lt;/div&gt;&lt;h3&gt;Cat Teaser 2D&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Unity · C# · 2D Physics · Animation&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
+            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;plant-bot&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Plant Bot project details&quot; style=&quot;--rq-tilt:2.2deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image&quot;&gt;Plant Bot physical prototype and AR view&lt;/div&gt;&lt;h3&gt;Plant Bot&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Arduino · ESP32 · Unity AR · Sensors&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
+            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;hardware-toolkit&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Unity Hardware Input Toolkit project details&quot; style=&quot;--rq-tilt:-1.8deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image&quot;&gt;Reusable hardware input package demo&lt;/div&gt;&lt;h3&gt;Unity Hardware Input Toolkit&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Unity · C# · Input System · Editor Tooling&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
             &lt;/div&gt;
+            &lt;p class=&quot;rq-polaroid-active&quot; aria-live=&quot;polite&quot;&gt;ACTIVE_FILE: &lt;strong data-rq-polaroid-active&gt;Four-Way Kitchen&lt;/strong&gt;&lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/section&gt;
@@ -2463,11 +2530,11 @@ html&gt;body{padding:0}&lt;/style&gt;
               &lt;span class=&quot;rq-xr-progress&quot; data-rq-xr-progress aria-hidden=&quot;true&quot;&gt;ENTERING XR&lt;/span&gt;
             &lt;/div&gt;
             &lt;div class=&quot;rq-vr-grid&quot; data-rq-xr-cards&gt;
-              &lt;article class=&quot;rq-vr-item&quot; data-rq-detail-project=&quot;abyss&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Abyss project details&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;Abyss: embodied VR locomotion and spatial narrative&lt;/div&gt;&lt;h3&gt;Abyss&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Body-driven locomotion · Physics · Spatial horror narrative&lt;/p&gt;&lt;/article&gt;
-              &lt;article class=&quot;rq-vr-item&quot; data-rq-detail-project=&quot;emotional-mask&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Emotional Mask project details&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;Emotional Mask video preview&lt;/div&gt;&lt;h3&gt;Emotional Mask&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Hand tracking · Embodied metaphor · Game Jam&lt;/p&gt;&lt;/article&gt;
-              &lt;article class=&quot;rq-vr-item&quot; data-rq-detail-project=&quot;ar-escape-room&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View AR Escape Room project details&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;AR Escape Room&lt;/div&gt;&lt;h3&gt;AR Escape Room&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Spatial puzzles · Team project&lt;/p&gt;&lt;/article&gt;
-              &lt;article class=&quot;rq-vr-item&quot; data-rq-detail-project=&quot;speaking-world&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Speaking World project details&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;Speaking World&lt;/div&gt;&lt;h3&gt;Speaking World&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;AR · AI · Ambient interaction&lt;/p&gt;&lt;/article&gt;
-              &lt;article class=&quot;rq-vr-item&quot; data-rq-detail-project=&quot;ar-graffiti&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View AR Graffiti project details&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;AR Graffiti interaction study&lt;/div&gt;&lt;h3&gt;AR Graffiti&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Tangible input · Gesture techniques · Creative expression&lt;/p&gt;&lt;/article&gt;
+              &lt;article class=&quot;rq-vr-item&quot; data-rq-detail-project=&quot;abyss&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Abyss project details&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;&lt;img src=&quot;assets/xr-abyss.jpg&quot; alt=&quot;Abyss VR narrative horror experience&quot;&gt;&lt;/div&gt;&lt;h3&gt;Abyss&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Body-driven locomotion · Physics · Spatial horror narrative&lt;/p&gt;&lt;/article&gt;
+              &lt;article class=&quot;rq-vr-item&quot; data-rq-detail-project=&quot;emotional-mask&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Emotional Mask project details&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;&lt;img src=&quot;assets/xr-emotional-mask.jpg&quot; alt=&quot;Emotional Mask VR hand-tracking experience&quot;&gt;&lt;/div&gt;&lt;h3&gt;Emotional Mask&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Hand tracking · Embodied metaphor · Game Jam&lt;/p&gt;&lt;/article&gt;
+              &lt;article class=&quot;rq-vr-item&quot; data-rq-detail-project=&quot;ar-escape-room&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View AR Escape Room project details&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;&lt;img src=&quot;assets/xr-ar-escape-room.png&quot; alt=&quot;AR Escape Room spatial puzzle experience&quot;&gt;&lt;/div&gt;&lt;h3&gt;AR Escape Room&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Spatial puzzles · Team project&lt;/p&gt;&lt;/article&gt;
+              &lt;article class=&quot;rq-vr-item&quot; data-rq-detail-project=&quot;speaking-world&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Speaking World project details&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;&lt;img src=&quot;assets/xr-speaking-world.png&quot; alt=&quot;Speaking World AR and AI companion environment&quot;&gt;&lt;/div&gt;&lt;h3&gt;Speaking World&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;AR · AI · Ambient interaction&lt;/p&gt;&lt;/article&gt;
+              &lt;article class=&quot;rq-vr-item&quot; data-rq-detail-project=&quot;ar-graffiti&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View AR Graffiti project details&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;&lt;img src=&quot;assets/xr-ar-graffiti.png&quot; alt=&quot;AR Graffiti tangible and gesture interaction study&quot;&gt;&lt;/div&gt;&lt;h3&gt;AR Graffiti&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Tangible input · Gesture techniques · Creative expression&lt;/p&gt;&lt;/article&gt;
             &lt;/div&gt;
             &lt;canvas class=&quot;rq-xr-smoke&quot; data-rq-xr-smoke aria-hidden=&quot;true&quot;&gt;&lt;/canvas&gt;
             &lt;button class=&quot;rq-xr-enter&quot; data-rq-xr-enter type=&quot;button&quot; hidden&gt;ENTER XR&lt;/button&gt;
@@ -2691,6 +2758,8 @@ html&gt;body{padding:0}&lt;/style&gt;
           title: &#x27;Abyss - Physics Based VR Narrative Horror Experience&#x27;,
           summary: &#x27;A physics-based VR narrative horror prototype that explores vulnerability and human insignificance within a Lovecraftian cosmic setting.&#x27;,
           visual: &#x27;Abyss gameplay video / embodied VR interaction&#x27;,
+          image: &#x27;assets/xr-abyss.jpg&#x27;,
+          imageAlt: &#x27;Abyss VR narrative horror experience&#x27;,
           video: &#x27;https://www.youtube.com/watch?v=Jfq4dHgv87M&#x27;,
           overview: &#x27;Gesture-driven locomotion and interaction meaningfully integrate the player\&#x27;s body into the gameplay, while physics systems reinforce instability and tension. VR\&#x27;s spatial immersion and 3D audio amplify scale perception and fear of the unknown, transforming horror into an embodied experience.&#x27;,
           keyWork: [
@@ -2722,6 +2791,8 @@ html&gt;body{padding:0}&lt;/style&gt;
           title: &#x27;Emotional Mask - VR Hand-Tracking Experience&#x27;,
           summary: &#x27;A Global Game Jam 2026 VR experience exploring the psychological cost of social masking through embodied hand interaction.&#x27;,
           visual: &#x27;Emotional Mask video / hand-tracking social scenario&#x27;,
+          image: &#x27;assets/xr-emotional-mask.jpg&#x27;,
+          imageAlt: &#x27;Emotional Mask VR hand-tracking experience&#x27;,
           video: &#x27;https://www.youtube.com/watch?v=AvCc4186Ol4&#x27;,
           overview: &#x27;Players navigate social scenarios using hand gestures that represent emotional responses. Conforming to expectations expands a virtual mask that obscures vision and limits perception; honest self-expression clears the mask, widens the field of view, and brightens the environment.&#x27;,
           keyWork: [
@@ -2753,6 +2824,8 @@ html&gt;body{padding:0}&lt;/style&gt;
           title: &#x27;AR Escape Room&#x27;,
           summary: &#x27;An augmented reality escape room where players solve spatial puzzles embedded within their physical surroundings.&#x27;,
           visual: &#x27;AR Escape Room video / spatial puzzle walkthrough&#x27;,
+          image: &#x27;assets/xr-ar-escape-room.png&#x27;,
+          imageAlt: &#x27;AR Escape Room spatial puzzle experience&#x27;,
           video: &#x27;https://www.youtube.com/watch?v=Qz9FfWEAgcA&#x27;,
           overview: &#x27;Virtual objects are anchored to real-world space, requiring players to move, observe, and interact with both digital and physical elements. The experience combines passthrough, spatial alignment, object recognition, and room-scale puzzle solving.&#x27;,
           keyWork: [
@@ -2784,6 +2857,8 @@ html&gt;body{padding:0}&lt;/style&gt;
           title: &#x27;Speaking World - AR & AI Companion Environment&#x27;,
           summary: &#x27;An AI-augmented AR environment that explores loneliness by turning everyday objects into conversational companions.&#x27;,
           visual: &#x27;Speaking World video / ambient AR companion environment&#x27;,
+          image: &#x27;assets/xr-speaking-world.png&#x27;,
+          imageAlt: &#x27;Speaking World AR and AI companion environment&#x27;,
           video: &#x27;https://www.youtube.com/watch?v=j5jeKZbRmL8&#x27;,
           overview: &#x27;Instead of a single virtual assistant, the surrounding space responds to the user: fridges, sofas, and food are given voice and personality. The prototype reimagines the environment as ambient companionship and asks how spatial AI might reshape presence and connection.&#x27;,
           keyWork: [
@@ -2815,6 +2890,8 @@ html&gt;body{padding:0}&lt;/style&gt;
           title: &#x27;AR Graffiti&#x27;,
           summary: &#x27;An augmented reality prototype exploring tangible and gesture-based techniques for creating and modifying spatial content.&#x27;,
           visual: &#x27;AR Graffiti video / immersive creation techniques&#x27;,
+          image: &#x27;assets/xr-ar-graffiti.png&#x27;,
+          imageAlt: &#x27;AR Graffiti tangible and gesture interaction study&#x27;,
           video: &#x27;https://www.youtube.com/watch?v=IBjiM0_Ek-c&#x27;,
           overview: &#x27;The system compares multiple graffiti interaction methods to investigate how different input styles influence user preference, immersion, usability, and creative expression when working with AR content.&#x27;,
           keyWork: [
@@ -3122,6 +3199,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       const polaroidTrack = root.querySelector(&#x27;[data-rq-polaroid-track]&#x27;);
       const polaroidStage = root.querySelector(&#x27;[data-rq-polaroid-stage]&#x27;);
       const polaroidIndex = root.querySelector(&#x27;[data-rq-polaroid-index]&#x27;);
+      const polaroidActiveLabel = root.querySelector(&#x27;[data-rq-polaroid-active]&#x27;);
       let polaroidLoopWidth = 0;
       let polaroidCount = 0;
       let activeProjectId = &#x27;&#x27;;
@@ -3236,6 +3314,8 @@ html&gt;body{padding:0}&lt;/style&gt;
         activeUpdateFrame = 0;
         const closest = closestCardToStageCenter();
         polaroidTrack?.querySelectorAll(&#x27;.rq-polaroid&#x27;).forEach((card) =&gt; card.classList.toggle(&#x27;is-centered&#x27;, card === closest));
+        const closestTitle = closest?.querySelector(&#x27;h3&#x27;)?.textContent?.trim() || &#x27;&#x27;;
+        if (polaroidActiveLabel &amp;&amp; closestTitle) polaroidActiveLabel.textContent = closestTitle;
         const nextId = closest?.dataset.projectId || &#x27;&#x27;;
         if (!nextId) return;
         if (nextId === activeProjectId) {
@@ -3346,7 +3426,15 @@ html&gt;body{padding:0}&lt;/style&gt;
       const xrGridCanvas = root.querySelector(&#x27;[data-rq-xr-grid]&#x27;);
       const xrGridCtx = xrGridCanvas?.getContext(&#x27;2d&#x27;, { alpha: true });
       const xrSmokeCanvas = root.querySelector(&#x27;[data-rq-xr-smoke]&#x27;);
-      const xrSmokeCtx = xrSmokeCanvas?.getContext(&#x27;2d&#x27;, { alpha: true });
+      const xrSmokeGl = xrSmokeCanvas?.getContext(&#x27;webgl&#x27;, {
+        alpha: true,
+        premultipliedAlpha: false,
+        preserveDrawingBuffer: true,
+        antialias: false,
+        depth: false,
+        stencil: false,
+        powerPreference: &#x27;low-power&#x27;
+      });
       const xrEnterButton = root.querySelector(&#x27;[data-rq-xr-enter]&#x27;);
       const xrCardField = root.querySelector(&#x27;[data-rq-xr-cards]&#x27;);
       const xrCards = Array.from(root.querySelectorAll(&#x27;[data-rq-xr-cards] .rq-vr-item&#x27;));
@@ -3386,21 +3474,24 @@ html&gt;body{padding:0}&lt;/style&gt;
           }
         }
       };
-      const solveXrEdge = (points, side, amount, settle, width) =&gt; {
+      const solveXrEdge = (points, side, verticalAmount, horizontalAmount, settle, width) =&gt; {
         const centerIndex = (xrTearRows - 1) / 2;
-        const ruptureRadius = amount * (centerIndex + 3);
+        const ruptureRadius = verticalAmount * (centerIndex + 3);
         const maxGap = width * .38;
         points.forEach((point, index) =&gt; {
           const y = index / (xrTearRows - 1);
           const rupture = clampUnit(ruptureRadius - Math.abs(index - centerIndex));
           const shoulder = .36 + Math.sin(y * Math.PI) * .64;
           const irregular = point.seed * (4 + rupture * 8);
-          point.target = rupture * maxGap * shoulder + irregular * rupture;
-          const velocity = (point.gap - point.previousGap) * .8;
-          const acceleration = (point.target - point.gap) * (rupture &gt; .93 ? .12 : .075);
+          point.target = horizontalAmount * (maxGap * shoulder + irregular);
+          const velocity = (point.gap - point.previousGap) * .74;
+          const acceleration = (point.target - point.gap) * .14;
           point.previousGap = point.gap;
           point.gap = Math.max(0, point.gap + velocity + acceleration);
-          if (amount &gt;= .999 &amp;&amp; settle &gt; 0) {
+          point.gap = mix(point.gap, point.target, .08 + horizontalAmount * .11);
+          const finishTracking = easeOutQuart((horizontalAmount - .98) / .02);
+          point.gap = mix(point.gap, point.target, finishTracking);
+          if (verticalAmount &gt;= .999 &amp;&amp; horizontalAmount &gt;= .999 &amp;&amp; settle &gt; 0) {
             const settleBlend = easeOutQuart(settle);
             point.gap = mix(point.gap, point.target, settleBlend);
             if (settle &gt;= .999) {
@@ -3411,7 +3502,14 @@ html&gt;body{padding:0}&lt;/style&gt;
           point.rupture = rupture;
         });
         constrainXrEdge(points);
-        if (amount &gt;= .999 &amp;&amp; settle &gt;= .999) {
+        const axisFinish = easeOutQuart((Math.min(verticalAmount, horizontalAmount) - .995) / .005);
+        if (axisFinish &gt; 0) {
+          points.forEach((point) =&gt; {
+            point.gap = mix(point.gap, point.target, axisFinish);
+            point.previousGap = mix(point.previousGap, point.target, axisFinish);
+          });
+        }
+        if (verticalAmount &gt;= .999 &amp;&amp; horizontalAmount &gt;= .999 &amp;&amp; settle &gt;= .999) {
           points.forEach((point) =&gt; {
             point.gap = point.target;
             point.previousGap = point.target;
@@ -3479,10 +3577,10 @@ html&gt;body{padding:0}&lt;/style&gt;
           }
         });
       };
-      const renderXrTear = (amount, settle, sceneReveal, peel, paperFade, stageRect) =&gt; {
+      const renderXrTear = (verticalAmount, horizontalAmount, settle, sceneReveal, peel, paperFade, stageRect) =&gt; {
         if (!xrStage || !xrPaperLeft || !xrPaperRight) return false;
-        const leftPoints = solveXrEdge(xrLeftEdge, &#x27;left&#x27;, amount, settle, stageRect.width);
-        const rightPoints = solveXrEdge(xrRightEdge, &#x27;right&#x27;, amount, settle, stageRect.width);
+        const leftPoints = solveXrEdge(xrLeftEdge, &#x27;left&#x27;, verticalAmount, horizontalAmount, settle, stageRect.width);
+        const rightPoints = solveXrEdge(xrRightEdge, &#x27;right&#x27;, verticalAmount, horizontalAmount, settle, stageRect.width);
         xrStage.style.setProperty(&#x27;--rq-xr-clip-left&#x27;, `polygon(0 0, ${leftPoints.join(&#x27;, &#x27;)}, 0 100%)`);
         xrStage.style.setProperty(&#x27;--rq-xr-clip-right&#x27;, `polygon(${rightPoints.join(&#x27;, &#x27;)}, 100% 100%, 100% 0)`);
         xrStage.style.setProperty(&#x27;--rq-xr-release&#x27;, String(sceneReveal));
@@ -3496,6 +3594,9 @@ html&gt;body{padding:0}&lt;/style&gt;
           .reduce((maximum, point) =&gt; Math.max(maximum, Math.abs(point.target - point.gap)), 0);
         xrStage.dataset.rqXrOpening = openingRatio.toFixed(4);
         xrStage.dataset.rqXrGapError = gapError.toFixed(3);
+        xrStage.dataset.rqXrVerticalProgress = verticalAmount.toFixed(4);
+        xrStage.dataset.rqXrHorizontalProgress = horizontalAmount.toFixed(4);
+        xrStage.dataset.rqXrAxisSpeedRatio = ((stageRect.width * .76) / Math.max(1, stageRect.height)).toFixed(4);
         sizeXrFiberCanvas(stageRect.width, stageRect.height);
         drawXrFibers(stageRect.width, stageRect.height);
         return xrLeftEdge.some((point) =&gt; Math.abs(point.target - point.gap) &gt; .2 || Math.abs(point.gap - point.previousGap) &gt; .08);
@@ -3514,7 +3615,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       const xrCardGazeEnabled = !reduceMotion
         &amp;&amp; window.matchMedia(&#x27;(hover: hover) and (pointer: fine)&#x27;).matches;
       const xrCardGaze = { targetX: .5, targetY: .5, x: .5, y: .5, targetAmount: 0, amount: 0 };
-      const xrSmokeEnabled = xrCardGazeEnabled &amp;&amp; Boolean(xrSmokeCanvas &amp;&amp; xrSmokeCtx);
+      const xrSmokeEnabled = xrCardGazeEnabled &amp;&amp; Boolean(xrSmokeCanvas &amp;&amp; xrSmokeGl);
       const xrSmoke = {
         frame: 0,
         open: false,
@@ -3523,17 +3624,1427 @@ html&gt;body{padding:0}&lt;/style&gt;
         hasPointer: false,
         x: .5,
         y: .5,
+        drawX: .5,
+        drawY: .5,
         lastX: .5,
         lastY: .5,
         lastTime: 0,
         velocityX: 0,
         velocityY: 0,
         speed: 0,
+        inputSpeed: 0,
+        acceleration: 0,
+        paintVelocityX: 0,
+        paintVelocityY: 0,
+        feedbackLastTime: 0,
+        renderLastTime: 0,
+        pointerPoints: [],
         energy: 0,
-        scale: .3,
         width: 1,
         height: 1,
+        fieldWidth: 0,
+        fieldHeight: 0,
+        ready: false,
+        lost: false,
+        buffer: null,
+        sceneBuffer: null,
+        updateProgram: null,
+        splatProgram: null,
+        curlProgram: null,
+        vorticityProgram: null,
+        divergenceProgram: null,
+        pressureProgram: null,
+        gradientProgram: null,
+        smokeUpdateProgram: null,
+        smokeSplatProgram: null,
+        smokeBlurProgram: null,
+        displayProgram: null,
+        copyProgram: null,
+        smaaEdgesProgram: null,
+        smaaWeightsProgram: null,
+        smaaBlendProgram: null,
+        sceneProgram: null,
+        targets: [],
+        readIndex: 0,
+        curlTarget: null,
+        divergenceTarget: null,
+        pressureTargets: [],
+        pressureIndex: 0,
+        pressureIterations: 8,
+        smokeTargets: [],
+        smokeIndex: 0,
+        smokeWidth: 0,
+        smokeHeight: 0,
+        mistTargets: [],
+        mistIndex: 0,
+        mistWidth: 0,
+        mistHeight: 0,
+        sceneTexture: null,
+        sceneTarget: null,
+        distortionTarget: null,
+        smaaEdgesTarget: null,
+        smaaWeightsTarget: null,
+        sceneReady: false,
+        sceneWidth: 1,
+        sceneHeight: 1,
+        sceneSourceWidth: 1,
+        sceneSourceHeight: 1,
+        cardTextures: [],
+        cardSafeImages: new Map(),
+        cardTextureKey: &#x27;&#x27;,
+        blueNoiseTexture: null,
+        blueNoiseReady: false,
+        smaaAreaTexture: null,
+        smaaSearchTexture: null,
+        smaaAreaReady: false,
+        smaaSearchReady: false,
         pending: []
+      };
+      let xrEmbeddedCardSources = {};
+      let xrEmbeddedSkyboxSource = &#x27;&#x27;;
+      let xrEmbeddedEffectSources = {};
+      try {
+        xrEmbeddedCardSources = parent.__RQ_XR_WEBGL_IMAGES__ || {};
+        xrEmbeddedSkyboxSource = parent.__RQ_XR_WEBGL_SKYBOX__ || &#x27;&#x27;;
+        xrEmbeddedEffectSources = parent.__RQ_XR_WEBGL_EFFECT_TEXTURES__ || {};
+      } catch (error) {}
+      xrCards.forEach((card) =&gt; {
+        const projectKey = card.dataset.rqDetailProject;
+        const source = xrEmbeddedCardSources[projectKey];
+        if (!source) return;
+        const image = new Image();
+        image.decoding = &#x27;async&#x27;;
+        image.onload = () =&gt; {
+          xrSmoke.cardTextureKey = &#x27;&#x27;;
+          if (xrSmoke.open) scheduleXrSmoke();
+        };
+        image.src = source;
+        xrSmoke.cardSafeImages.set(projectKey, image);
+      });
+      const xrSmokeVertexSource = `
+        attribute vec2 aPosition;
+        varying vec2 vUv;
+        void main() {
+          vUv = aPosition * .5 + .5;
+          gl_Position = vec4(aPosition, 0.0, 1.0);
+        }
+      `;
+      const createXrSmokeProgram = (fragmentSource, vertexSource = xrSmokeVertexSource) =&gt; {
+        const gl = xrSmokeGl;
+        if (!gl) return null;
+        const compile = (type, source) =&gt; {
+          const shader = gl.createShader(type);
+          gl.shaderSource(shader, source);
+          gl.compileShader(shader);
+          if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(shader) || &#x27;XR fluid shader compilation failed&#x27;);
+          return shader;
+        };
+        const program = gl.createProgram();
+        gl.attachShader(program, compile(gl.VERTEX_SHADER, vertexSource));
+        gl.attachShader(program, compile(gl.FRAGMENT_SHADER, fragmentSource));
+        gl.linkProgram(program);
+        if (!gl.getProgramParameter(program, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(program) || &#x27;XR fluid shader link failed&#x27;);
+        return program;
+      };
+      const createXrSmokeTarget = (width, height) =&gt; {
+        const gl = xrSmokeGl;
+        const texture = gl.createTexture();
+        gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, width, height, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+        const framebuffer = gl.createFramebuffer();
+        gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+        gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, texture, 0);
+        return { texture, framebuffer };
+      };
+      const clearXrSmokeTargets = () =&gt; {
+        const gl = xrSmokeGl;
+        if (!gl) return;
+        gl.disable(gl.BLEND);
+        gl.clearColor(.5, .5, 0, 0);
+        xrSmoke.targets.forEach((target) =&gt; {
+          gl.bindFramebuffer(gl.FRAMEBUFFER, target.framebuffer);
+          gl.clear(gl.COLOR_BUFFER_BIT);
+        });
+        gl.clearColor(.5, .5, .5, 1);
+        gl.clearColor(.5, .5, 0, 0);
+        xrSmoke.smokeTargets.forEach((target) =&gt; {
+          gl.bindFramebuffer(gl.FRAMEBUFFER, target.framebuffer);
+          gl.clear(gl.COLOR_BUFFER_BIT);
+        });
+        xrSmoke.mistTargets.forEach((target) =&gt; {
+          gl.bindFramebuffer(gl.FRAMEBUFFER, target.framebuffer);
+          gl.clear(gl.COLOR_BUFFER_BIT);
+        });
+        gl.clearColor(.5, .5, .5, 1);
+        [...xrSmoke.pressureTargets, xrSmoke.curlTarget, xrSmoke.divergenceTarget]
+          .filter(Boolean)
+          .forEach((target) =&gt; {
+            gl.bindFramebuffer(gl.FRAMEBUFFER, target.framebuffer);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+          });
+        gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+        gl.clearColor(0, 0, 0, 0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+      };
+      const initXrSmoke = () =&gt; {
+        const gl = xrSmokeGl;
+        if (!xrSmokeEnabled || !gl || xrSmoke.ready || xrSmoke.lost) return xrSmoke.ready;
+        try {
+          xrSmoke.buffer = gl.createBuffer();
+          gl.bindBuffer(gl.ARRAY_BUFFER, xrSmoke.buffer);
+          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+          xrSmoke.updateProgram = createXrSmokeProgram(`
+            precision highp float;
+            uniform sampler2D uField;
+            uniform sampler2D uLowField;
+            uniform vec2 uTexel;
+            uniform vec2 uLowTexel;
+            uniform vec2 uDrawFrom;
+            uniform vec2 uDrawTo;
+            uniform vec2 uVelocity;
+            uniform vec3 uDissipations;
+            uniform float uRadius;
+            uniform float uPushStrength;
+            uniform float uCurlScale;
+            uniform float uCurlStrength;
+            uniform float uMinDecay;
+            uniform float uTime;
+            varying vec2 vUv;
+            vec2 segmentDistance(vec2 point, vec2 start, vec2 end) {
+              vec2 relative = point - start;
+              vec2 segment = end - start;
+              float amount = clamp(dot(relative, segment) / max(dot(segment, segment), .0001), 0.0, 1.0);
+              return vec2(length(relative - segment * amount), amount);
+            }
+            vec2 hash(vec2 point) {
+              vec3 p3 = fract(vec3(point.xyx) * vec3(.1031, .103, .0973));
+              p3 += dot(p3, p3.yzx + 33.33);
+              return fract((p3.xx + p3.yz) * p3.zy) * 2.0 - 1.0;
+            }
+            vec3 noised(vec2 point) {
+              vec2 cell = floor(point);
+              vec2 local = fract(point);
+              vec2 blend = local * local * local * (local * (local * 6.0 - 15.0) + 10.0);
+              vec2 derivative = 30.0 * local * local * (local * (local - 2.0) + 1.0);
+              vec2 a = hash(cell);
+              vec2 b = hash(cell + vec2(1.0, 0.0));
+              vec2 c = hash(cell + vec2(0.0, 1.0));
+              vec2 d = hash(cell + vec2(1.0, 1.0));
+              float va = dot(a, local);
+              float vb = dot(b, local - vec2(1.0, 0.0));
+              float vc = dot(c, local - vec2(0.0, 1.0));
+              float vd = dot(d, local - vec2(1.0));
+              return vec3(
+                va + blend.x * (vb - va) + blend.y * (vc - va) + blend.x * blend.y * (va - vb - vc + vd),
+                a + blend.x * (b - a) + blend.y * (c - a) + blend.x * blend.y * (a - b - c + d)
+                  + derivative * (blend.yx * (va - vb - vc + vd) + vec2(vb, vc) - va)
+              );
+            }
+            void main() {
+              vec2 segment = segmentDistance(gl_FragCoord.xy, uDrawFrom, uDrawTo);
+              float stroke = uRadius &gt; 0.0 ? 1.0 - smoothstep(max(0.0, uRadius - 1.0), uRadius, segment.x) : 0.0;
+              vec4 lowData = texture2D(uLowField, vUv);
+              vec2 inverseVelocity = (.5 - lowData.xy) * uPushStrength;
+              vec3 firstNoise = noised(gl_FragCoord.xy * uCurlScale * (1.0 - lowData.xy));
+              vec2 curlNoise = noised(gl_FragCoord.xy * uCurlScale * (2.0 - lowData.xy * (.5 + firstNoise.x) + firstNoise.yz * .1)).yz;
+              inverseVelocity += curlNoise * (lowData.z + lowData.w) * uCurlStrength;
+              vec2 tracedUv = clamp(vUv + inverseVelocity * uTexel, uTexel, vec2(1.0) - uTexel);
+              vec4 data = texture2D(uField, tracedUv);
+              data.xy -= .5;
+              vec4 delta = (uDissipations.xxyz - 1.0) * data;
+              delta += vec4(uVelocity * stroke, vec2(stroke));
+              delta.zw = sign(delta.zw) * max(vec2(uMinDecay), abs(delta.zw));
+              data += delta;
+              data.xy += .5;
+              gl_FragColor = clamp(data, 0.0, 1.0);
+            }
+          `);
+          xrSmoke.splatProgram = createXrSmokeProgram(`
+            precision mediump float;
+            uniform sampler2D uField;
+            uniform vec2 uFrom;
+            uniform vec2 uTo;
+            uniform vec2 uForce;
+            uniform float uRadius;
+            uniform float uAspect;
+            uniform float uDensity;
+            varying vec2 vUv;
+            float segmentDistance(vec2 point, vec2 start, vec2 end) {
+              vec2 segment = end - start;
+              vec2 relative = point - start;
+              segment.x *= uAspect;
+              relative.x *= uAspect;
+              float amount = clamp(dot(relative, segment) / max(dot(segment, segment), .00001), 0.0, 1.0);
+              return length(relative - segment * amount);
+            }
+            void main() {
+              vec4 field = texture2D(uField, vUv);
+              float distanceToStroke = segmentDistance(vUv, uFrom, uTo);
+              float influence = exp(-distanceToStroke * distanceToStroke / max(uRadius * uRadius, .00001) * 2.4);
+              vec2 velocity = (field.rg - .5) * 2.0;
+              velocity = clamp(velocity + uForce * influence * .72, vec2(-.98), vec2(.98));
+              float density = max(field.b, influence * uDensity);
+              float softDensity = max(field.a, influence * uDensity * .72);
+              gl_FragColor = vec4(velocity * .5 + .5, density, softDensity);
+            }
+          `);
+          xrSmoke.curlProgram = createXrSmokeProgram(`
+            precision mediump float;
+            uniform sampler2D uField;
+            uniform vec2 uTexel;
+            varying vec2 vUv;
+            vec2 velocityAt(vec2 uv) { return (texture2D(uField, uv).rg - .5) * 2.0; }
+            void main() {
+              vec2 leftVelocity = velocityAt(vUv - vec2(uTexel.x, 0.0));
+              vec2 rightVelocity = velocityAt(vUv + vec2(uTexel.x, 0.0));
+              vec2 bottomVelocity = velocityAt(vUv - vec2(0.0, uTexel.y));
+              vec2 topVelocity = velocityAt(vUv + vec2(0.0, uTexel.y));
+              float curl = clamp(((rightVelocity.y - leftVelocity.y) - (topVelocity.x - bottomVelocity.x)) * .25, -1.0, 1.0);
+              gl_FragColor = vec4(curl * .5 + .5, .5, .5, 1.0);
+            }
+          `);
+          xrSmoke.vorticityProgram = createXrSmokeProgram(`
+            precision mediump float;
+            uniform sampler2D uField;
+            uniform sampler2D uCurlTexture;
+            uniform vec2 uTexel;
+            uniform float uStrength;
+            uniform float uTime;
+            varying vec2 vUv;
+            float curlAt(vec2 uv) { return (texture2D(uCurlTexture, uv).r - .5) * 2.0; }
+            void main() {
+              vec4 field = texture2D(uField, vUv);
+              float leftCurl = abs(curlAt(vUv - vec2(uTexel.x, 0.0)));
+              float rightCurl = abs(curlAt(vUv + vec2(uTexel.x, 0.0)));
+              float bottomCurl = abs(curlAt(vUv - vec2(0.0, uTexel.y)));
+              float topCurl = abs(curlAt(vUv + vec2(0.0, uTexel.y)));
+              float centerCurl = curlAt(vUv);
+              vec2 gradient = vec2(topCurl - bottomCurl, rightCurl - leftCurl);
+              gradient /= max(length(gradient), .0001);
+              vec2 force = vec2(gradient.x, -gradient.y) * centerCurl * uStrength * .012;
+              float noise = sin(vUv.x * 73.0 + uTime * .0017) * cos(vUv.y * 61.0 - uTime * .0013);
+              force += vec2(-gradient.y, gradient.x) * noise * .0025;
+              vec2 velocity = clamp((field.rg - .5) * 2.0 + force, vec2(-.98), vec2(.98));
+              gl_FragColor = vec4(velocity * .5 + .5, field.ba);
+            }
+          `);
+          xrSmoke.divergenceProgram = createXrSmokeProgram(`
+            precision mediump float;
+            uniform sampler2D uField;
+            uniform vec2 uTexel;
+            varying vec2 vUv;
+            vec2 velocityAt(vec2 uv) { return (texture2D(uField, uv).rg - .5) * 2.0; }
+            void main() {
+              float leftVelocity = velocityAt(vUv - vec2(uTexel.x, 0.0)).x;
+              float rightVelocity = velocityAt(vUv + vec2(uTexel.x, 0.0)).x;
+              float bottomVelocity = velocityAt(vUv - vec2(0.0, uTexel.y)).y;
+              float topVelocity = velocityAt(vUv + vec2(0.0, uTexel.y)).y;
+              float divergence = clamp((rightVelocity - leftVelocity + topVelocity - bottomVelocity) * .25, -1.0, 1.0);
+              gl_FragColor = vec4(divergence * .5 + .5, .5, .5, 1.0);
+            }
+          `);
+          xrSmoke.pressureProgram = createXrSmokeProgram(`
+            precision mediump float;
+            uniform sampler2D uPressure;
+            uniform sampler2D uDivergence;
+            uniform vec2 uTexel;
+            varying vec2 vUv;
+            float signedAt(sampler2D source, vec2 uv) { return (texture2D(source, uv).r - .5) * 2.0; }
+            void main() {
+              float leftPressure = signedAt(uPressure, vUv - vec2(uTexel.x, 0.0));
+              float rightPressure = signedAt(uPressure, vUv + vec2(uTexel.x, 0.0));
+              float bottomPressure = signedAt(uPressure, vUv - vec2(0.0, uTexel.y));
+              float topPressure = signedAt(uPressure, vUv + vec2(0.0, uTexel.y));
+              float divergence = signedAt(uDivergence, vUv);
+              float pressure = clamp((leftPressure + rightPressure + bottomPressure + topPressure - divergence) * .25, -1.0, 1.0);
+              gl_FragColor = vec4(pressure * .5 + .5, .5, .5, 1.0);
+            }
+          `);
+          xrSmoke.gradientProgram = createXrSmokeProgram(`
+            precision mediump float;
+            uniform sampler2D uField;
+            uniform sampler2D uPressure;
+            uniform vec2 uTexel;
+            varying vec2 vUv;
+            float pressureAt(vec2 uv) { return (texture2D(uPressure, uv).r - .5) * 2.0; }
+            void main() {
+              vec4 field = texture2D(uField, vUv);
+              float leftPressure = pressureAt(vUv - vec2(uTexel.x, 0.0));
+              float rightPressure = pressureAt(vUv + vec2(uTexel.x, 0.0));
+              float bottomPressure = pressureAt(vUv - vec2(0.0, uTexel.y));
+              float topPressure = pressureAt(vUv + vec2(0.0, uTexel.y));
+              vec2 velocity = (field.rg - .5) * 2.0;
+              velocity -= vec2(rightPressure - leftPressure, topPressure - bottomPressure) * .42;
+              velocity = clamp(velocity, vec2(-.98), vec2(.98));
+              gl_FragColor = vec4(velocity * .5 + .5, field.ba);
+            }
+          `);
+          xrSmoke.smokeSplatProgram = createXrSmokeProgram(`
+            precision mediump float;
+            uniform sampler2D uSmoke;
+            uniform vec2 uFrom;
+            uniform vec2 uTo;
+            uniform float uRadius;
+            uniform float uAspect;
+            uniform float uDensity;
+            uniform float uCurve;
+            varying vec2 vUv;
+            vec2 curvedPoint(vec2 start, vec2 end, float amount, float side) {
+              vec2 direction = end - start;
+              vec2 normal = normalize(vec2(-direction.y, direction.x) + vec2(.00001));
+              return mix(start, end, amount) + normal * sin(amount * 3.14159265) * uCurve * side;
+            }
+            float curvedDistance(vec2 point, vec2 start, vec2 end, float side) {
+              float closest = 10.0;
+              for (int index = 0; index &lt; 7; index++) {
+                float amount = float(index) / 6.0;
+                vec2 samplePoint = curvedPoint(start, end, amount, side);
+                vec2 delta = point - samplePoint;
+                delta.x *= uAspect;
+                closest = min(closest, length(delta));
+              }
+              return closest;
+            }
+            void main() {
+              float previous = texture2D(uSmoke, vUv).r;
+              float centerDistance = curvedDistance(vUv, uFrom, uTo, .28);
+              float leftDistance = curvedDistance(vUv, uFrom, uTo, -1.0);
+              float rightDistance = curvedDistance(vUv, uFrom, uTo, 1.18);
+              float center = exp(-centerDistance * centerDistance / max(uRadius * uRadius, .00001) * 1.45);
+              float leftLobe = exp(-leftDistance * leftDistance / max(uRadius * uRadius * 2.7, .00001) * 1.25);
+              float rightLobe = exp(-rightDistance * rightDistance / max(uRadius * uRadius * 3.15, .00001) * 1.2);
+              float density = max(previous, max(center * .86, max(leftLobe * .54, rightLobe * .48)) * uDensity);
+              gl_FragColor = vec4(density, density, density, density);
+            }
+          `);
+          xrSmoke.smokeUpdateProgram = createXrSmokeProgram(`
+            precision mediump float;
+            uniform sampler2D uSmoke;
+            uniform sampler2D uField;
+            uniform vec2 uTexel;
+            uniform float uDelta;
+            uniform float uDissipation;
+            uniform float uTime;
+            uniform float uAspect;
+            varying vec2 vUv;
+            vec2 curlWave(vec2 point, vec2 frequency, float phase) {
+              vec2 angle = point * frequency + vec2(phase, -phase * .83);
+              return vec2(
+                sin(angle.x) * cos(angle.y) * frequency.y,
+                -cos(angle.x) * sin(angle.y) * frequency.x
+              );
+            }
+            void main() {
+              vec2 velocity = (texture2D(uField, vUv).rg - .5) * 2.0;
+              vec2 point = vec2(vUv.x * uAspect, vUv.y);
+              float phase = uTime * .00031;
+              vec2 turbulence = curlWave(point, vec2(11.0, 8.0), phase);
+              turbulence += curlWave(point + vec2(.17, -.11), vec2(23.0, 17.0), -phase * 1.37) * .34;
+              turbulence += curlWave(point - vec2(.09, .21), vec2(47.0, 31.0), phase * .73) * .1;
+              turbulence /= max(length(turbulence), .0001);
+              float localSmoke = texture2D(uSmoke, vUv).r;
+              vec2 drift = turbulence * mix(.00022, .00105, smoothstep(.02, .72, localSmoke));
+              vec2 tracedUv = clamp(vUv - velocity * uDelta + drift, uTexel, vec2(1.0) - uTexel);
+              float center = texture2D(uSmoke, tracedUv).r;
+              float left = texture2D(uSmoke, tracedUv - vec2(uTexel.x, 0.0)).r;
+              float right = texture2D(uSmoke, tracedUv + vec2(uTexel.x, 0.0)).r;
+              float bottom = texture2D(uSmoke, tracedUv - vec2(0.0, uTexel.y)).r;
+              float top = texture2D(uSmoke, tracedUv + vec2(0.0, uTexel.y)).r;
+              float diagonalA = texture2D(uSmoke, tracedUv + vec2(uTexel.x, uTexel.y)).r;
+              float diagonalB = texture2D(uSmoke, tracedUv - vec2(uTexel.x, uTexel.y)).r;
+              float bloom = (left + right + bottom + top) * .2 + (diagonalA + diagonalB) * .1;
+              float density = max(center * .998, mix(center, bloom, .065)) * uDissipation;
+              gl_FragColor = vec4(density, density, density, density);
+            }
+          `);
+          xrSmoke.smokeBlurProgram = createXrSmokeProgram(`
+            precision mediump float;
+            uniform sampler2D uSmoke;
+            uniform vec2 uDirection;
+            varying vec2 vUv;
+            void main() {
+              vec4 color = texture2D(uSmoke, vUv) * .1633;
+              vec2 delta = uDirection;
+              color += texture2D(uSmoke, vUv - delta) * .1531;
+              color += texture2D(uSmoke, vUv + delta) * .1531;
+              delta += uDirection;
+              color += texture2D(uSmoke, vUv - delta) * .12245;
+              color += texture2D(uSmoke, vUv + delta) * .12245;
+              delta += uDirection;
+              color += texture2D(uSmoke, vUv - delta) * .0918;
+              color += texture2D(uSmoke, vUv + delta) * .0918;
+              delta += uDirection;
+              color += texture2D(uSmoke, vUv - delta) * .051;
+              color += texture2D(uSmoke, vUv + delta) * .051;
+              gl_FragColor = color;
+            }
+          `);
+          xrSmoke.displayProgram = createXrSmokeProgram(`
+            precision highp float;
+            uniform sampler2D uField;
+            uniform sampler2D uScene;
+            uniform sampler2D uBlueNoiseTexture;
+            uniform vec2 uTexel;
+            uniform vec2 uResolution;
+            uniform vec2 uSceneSize;
+            uniform vec2 uBlueNoiseTexelSize;
+            uniform vec2 uBlueNoiseCoordOffset;
+            uniform float uSceneReady;
+            uniform float uBlueNoiseReady;
+            varying vec2 vUv;
+            vec2 coverUv(vec2 uv) {
+              float viewportAspect = uResolution.x / uResolution.y;
+              float sceneAspect = uSceneSize.x / uSceneSize.y;
+              if (viewportAspect &gt; sceneAspect) uv.y = (uv.y - .5) * sceneAspect / viewportAspect + .5;
+              else uv.x = (uv.x - .5) * viewportAspect / sceneAspect + .5;
+              return clamp(uv, vec2(.002), vec2(.998));
+            }
+            vec3 sceneColor(vec2 uv) {
+              return texture2D(uScene, coverUv(uv)).rgb;
+            }
+            vec2 proceduralBlueNoise(vec2 point) {
+              vec3 p3 = fract(vec3(point.xyx) * vec3(.1031, .103, .0973));
+              p3 += dot(p3, p3.yzx + 33.33);
+              return fract((p3.xx + p3.yz) * p3.zy);
+            }
+            vec2 blueNoise(vec2 point) {
+              vec2 sampled = texture2D(uBlueNoiseTexture, point * uBlueNoiseTexelSize + uBlueNoiseCoordOffset).xy;
+              return uBlueNoiseReady &gt; .5 ? sampled : proceduralBlueNoise(point);
+            }
+            void main() {
+              vec4 data = texture2D(uField, vUv);
+              float weight = (data.z + data.w) * .5;
+              vec2 velocityField = (.5 - data.xy - .001) * 2.0 * weight;
+              vec2 velocity = velocityField * 3.0 / 4.0 * uTexel * 5.0;
+              vec2 uv = vUv + blueNoise(gl_FragCoord.xy + vec2(17.0, 29.0)) * velocity;
+              vec3 color = vec3(0.0);
+              for (int index = 0; index &lt; 9; index++) {
+                color += uSceneReady &gt; .5 ? sceneColor(uv) : vec3(.035, .075, .078);
+                uv += velocity;
+              }
+              color /= 9.0;
+              color += sin(vec3(velocityField.x + velocityField.y) * 40.0 + vec3(0.0, 2.0, 4.0) * .5)
+                * smoothstep(.4, -.9, weight)
+                * 1.25
+                * max(abs(velocityField.x), abs(velocityField.y))
+                * 10.0;
+              gl_FragColor = vec4(color, 1.0);
+            }
+          `);
+          xrSmoke.copyProgram = createXrSmokeProgram(`
+            precision mediump float;
+            uniform sampler2D uTexture;
+            varying vec2 vUv;
+            void main() { gl_FragColor = texture2D(uTexture, vUv); }
+          `);
+          xrSmoke.smaaEdgesProgram = createXrSmokeProgram(`
+            precision mediump float;
+            uniform sampler2D uTexture;
+            varying vec2 vUv;
+            varying vec4 vOffsets[3];
+            void main() {
+              vec2 threshold = vec2(.1);
+              vec4 delta;
+              vec3 color = texture2D(uTexture, vUv).rgb;
+              vec3 adjacent = texture2D(uTexture, vOffsets[0].xy).rgb;
+              vec3 difference = abs(color - adjacent);
+              delta.x = max(max(difference.r, difference.g), difference.b);
+              adjacent = texture2D(uTexture, vOffsets[0].zw).rgb;
+              difference = abs(color - adjacent);
+              delta.y = max(max(difference.r, difference.g), difference.b);
+              vec2 edges = step(threshold, delta.xy);
+              if (dot(edges, vec2(1.0)) == 0.0) discard;
+              adjacent = texture2D(uTexture, vOffsets[1].xy).rgb;
+              difference = abs(color - adjacent);
+              delta.z = max(max(difference.r, difference.g), difference.b);
+              adjacent = texture2D(uTexture, vOffsets[1].zw).rgb;
+              difference = abs(color - adjacent);
+              delta.w = max(max(difference.r, difference.g), difference.b);
+              float maxDelta = max(max(max(delta.x, delta.y), delta.z), delta.w);
+              adjacent = texture2D(uTexture, vOffsets[2].xy).rgb;
+              difference = abs(color - adjacent);
+              delta.z = max(max(difference.r, difference.g), difference.b);
+              adjacent = texture2D(uTexture, vOffsets[2].zw).rgb;
+              difference = abs(color - adjacent);
+              delta.w = max(max(difference.r, difference.g), difference.b);
+              maxDelta = max(max(maxDelta, delta.z), delta.w);
+              edges *= step(.5 * maxDelta, delta.xy);
+              gl_FragColor = vec4(edges, 0.0, 0.0);
+            }
+          `, `
+            attribute vec2 aPosition;
+            uniform vec2 uTexel;
+            varying vec2 vUv;
+            varying vec4 vOffsets[3];
+            void main() {
+              vUv = aPosition * .5 + .5;
+              vOffsets[0] = vUv.xyxy + uTexel.xyxy * vec4(-1.0, 0.0, 0.0, 1.0);
+              vOffsets[1] = vUv.xyxy + uTexel.xyxy * vec4(1.0, 0.0, 0.0, -1.0);
+              vOffsets[2] = vUv.xyxy + uTexel.xyxy * vec4(-2.0, 0.0, 0.0, 2.0);
+              gl_Position = vec4(aPosition, 0.0, 1.0);
+            }
+          `);
+          xrSmoke.smaaWeightsProgram = createXrSmokeProgram(`
+            precision highp float;
+            uniform sampler2D uEdgesTexture;
+            uniform sampler2D uAreaTexture;
+            uniform sampler2D uSearchTexture;
+            uniform vec2 uTexel;
+            varying vec2 vUv;
+            varying vec4 vOffsets[3];
+            varying vec2 vPixcoord;
+            vec2 round2(vec2 value) { return sign(value) * floor(abs(value) + .5); }
+            float searchLength(vec2 edge, float bias, float scale) {
+              edge.r = bias + edge.r * scale;
+              return 255.0 * texture2D(uSearchTexture, edge, 0.0).r;
+            }
+            float searchXLeft(vec2 texcoord, float end) {
+              vec2 edge = vec2(0.0, 1.0);
+              for (int index = 0; index &lt; 8; index++) {
+                edge = texture2D(uEdgesTexture, texcoord, 0.0).rg;
+                texcoord -= vec2(2.0, 0.0) * uTexel;
+                if (!(texcoord.x &gt; end &amp;&amp; edge.g &gt; .8281 &amp;&amp; edge.r == 0.0)) break;
+              }
+              texcoord.x += 3.25 * uTexel.x;
+              texcoord.x -= uTexel.x * searchLength(edge, 0.0, .5);
+              return texcoord.x;
+            }
+            float searchXRight(vec2 texcoord, float end) {
+              vec2 edge = vec2(0.0, 1.0);
+              for (int index = 0; index &lt; 8; index++) {
+                edge = texture2D(uEdgesTexture, texcoord, 0.0).rg;
+                texcoord += vec2(2.0, 0.0) * uTexel;
+                if (!(texcoord.x &lt; end &amp;&amp; edge.g &gt; .8281 &amp;&amp; edge.r == 0.0)) break;
+              }
+              texcoord.x -= 3.25 * uTexel.x;
+              texcoord.x += uTexel.x * searchLength(edge, .5, .5);
+              return texcoord.x;
+            }
+            float searchYUp(vec2 texcoord, float end) {
+              vec2 edge = vec2(1.0, 0.0);
+              for (int index = 0; index &lt; 8; index++) {
+                edge = texture2D(uEdgesTexture, texcoord, 0.0).rg;
+                texcoord += vec2(0.0, 2.0) * uTexel;
+                if (!(texcoord.y &gt; end &amp;&amp; edge.r &gt; .8281 &amp;&amp; edge.g == 0.0)) break;
+              }
+              texcoord.y -= 3.25 * uTexel.y;
+              texcoord.y += uTexel.y * searchLength(edge.gr, 0.0, .5);
+              return texcoord.y;
+            }
+            float searchYDown(vec2 texcoord, float end) {
+              vec2 edge = vec2(1.0, 0.0);
+              for (int index = 0; index &lt; 8; index++) {
+                edge = texture2D(uEdgesTexture, texcoord, 0.0).rg;
+                texcoord -= vec2(0.0, 2.0) * uTexel;
+                if (!(texcoord.y &lt; end &amp;&amp; edge.r &gt; .8281 &amp;&amp; edge.g == 0.0)) break;
+              }
+              texcoord.y += 3.25 * uTexel.y;
+              texcoord.y -= uTexel.y * searchLength(edge.gr, .5, .5);
+              return texcoord.y;
+            }
+            vec2 area(vec2 distance, float edge1, float edge2, float offset) {
+              vec2 texcoord = 16.0 * round2(4.0 * vec2(edge1, edge2)) + distance;
+              texcoord = texcoord / vec2(160.0, 560.0) + .5 / vec2(160.0, 560.0);
+              texcoord.y += offset / 7.0;
+              return texture2D(uAreaTexture, texcoord, 0.0).rg;
+            }
+            void main() {
+              vec4 weights = vec4(0.0);
+              vec2 edge = texture2D(uEdgesTexture, vUv).rg;
+              if (edge.g &gt; 0.0) {
+                vec2 coords = vec2(searchXLeft(vOffsets[0].xy, vOffsets[2].x), vOffsets[1].y);
+                vec2 distance = vec2(coords.x, searchXRight(vOffsets[0].zw, vOffsets[2].y));
+                float edge1 = texture2D(uEdgesTexture, coords, 0.0).r;
+                distance = distance / uTexel.x - vPixcoord.x;
+                coords.x = vUv.x + distance.y * uTexel.x;
+                coords.y -= uTexel.y;
+                float edge2 = texture2D(uEdgesTexture, coords + vec2(uTexel.x, 0.0), 0.0).r;
+                weights.rg = area(sqrt(abs(distance)), edge1, edge2, 0.0);
+              }
+              if (edge.r &gt; 0.0) {
+                vec2 coords = vec2(vOffsets[0].x, searchYUp(vOffsets[1].xy, vOffsets[2].z));
+                vec2 distance = vec2(coords.y, searchYDown(vOffsets[1].zw, vOffsets[2].w));
+                float edge1 = texture2D(uEdgesTexture, coords, 0.0).g;
+                distance = distance / uTexel.y - vPixcoord.y;
+                coords.x = vOffsets[0].x;
+                coords.y = vUv.y + distance.y * uTexel.y - uTexel.y;
+                float edge2 = texture2D(uEdgesTexture, coords + vec2(0.0, uTexel.y), 0.0).g;
+                weights.ba = area(sqrt(abs(distance)), edge1, edge2, 0.0);
+              }
+              gl_FragColor = weights;
+            }
+          `, `
+            attribute vec2 aPosition;
+            uniform vec2 uTexel;
+            varying vec2 vUv;
+            varying vec4 vOffsets[3];
+            varying vec2 vPixcoord;
+            void main() {
+              vUv = aPosition * .5 + .5;
+              vPixcoord = vUv / uTexel;
+              vOffsets[0] = vUv.xyxy + uTexel.xyxy * vec4(-.25, .125, 1.25, .125);
+              vOffsets[1] = vUv.xyxy + uTexel.xyxy * vec4(-.125, .25, -.125, -1.25);
+              vOffsets[2] = vec4(vOffsets[0].xz, vOffsets[1].yw) + vec4(-2.0, 2.0, -2.0, 2.0) * uTexel.xxyy * 8.0;
+              gl_Position = vec4(aPosition, 0.0, 1.0);
+            }
+          `);
+          xrSmoke.smaaBlendProgram = createXrSmokeProgram(`
+            precision highp float;
+            uniform sampler2D uTexture;
+            uniform sampler2D uWeightsTexture;
+            uniform vec2 uTexel;
+            varying vec2 vUv;
+            varying vec4 vOffsets[2];
+            void main() {
+              vec4 blend;
+              blend.xz = texture2D(uWeightsTexture, vUv).xz;
+              blend.y = texture2D(uWeightsTexture, vOffsets[1].zw).g;
+              blend.w = texture2D(uWeightsTexture, vOffsets[1].xy).a;
+              if (dot(blend, vec4(1.0)) &lt; 1e-5) {
+                gl_FragColor = texture2D(uTexture, vUv, 0.0);
+                return;
+              }
+              vec2 offset;
+              offset.x = blend.a &gt; blend.b ? blend.a : -blend.b;
+              offset.y = blend.g &gt; blend.r ? -blend.g : blend.r;
+              if (abs(offset.x) &gt; abs(offset.y)) offset.y = 0.0;
+              else offset.x = 0.0;
+              vec4 color = texture2D(uTexture, vUv, 0.0);
+              vec4 opposite = texture2D(uTexture, vUv + sign(offset) * uTexel, 0.0);
+              float amount = abs(offset.x) &gt; abs(offset.y) ? abs(offset.x) : abs(offset.y);
+              color.rgb = pow(abs(color.rgb), vec3(2.2));
+              opposite.rgb = pow(abs(opposite.rgb), vec3(2.2));
+              vec4 mixed = mix(color, opposite, amount);
+              mixed.rgb = pow(abs(mixed.rgb), vec3(1.0 / 2.2));
+              gl_FragColor = mixed;
+            }
+          `, `
+            attribute vec2 aPosition;
+            uniform vec2 uTexel;
+            varying vec2 vUv;
+            varying vec4 vOffsets[2];
+            void main() {
+              vUv = aPosition * .5 + .5;
+              vOffsets[0] = vUv.xyxy + uTexel.xyxy * vec4(-1.0, 0.0, 0.0, 1.0);
+              vOffsets[1] = vUv.xyxy + uTexel.xyxy * vec4(1.0, 0.0, 0.0, -1.0);
+              gl_Position = vec4(aPosition, 0.0, 1.0);
+            }
+          `);
+          const createXrSmokeImageTexture = (source, { minFilter, magFilter, wrap }, onReady) =&gt; {
+            const texture = gl.createTexture();
+            gl.bindTexture(gl.TEXTURE_2D, texture);
+            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, minFilter);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, magFilter);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, wrap);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, wrap);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([127, 127, 127, 255]));
+            const image = new Image();
+            image.decoding = &#x27;async&#x27;;
+            image.onload = () =&gt; {
+              if (xrSmoke.lost) return;
+              gl.bindTexture(gl.TEXTURE_2D, texture);
+              gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+              gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+              onReady(true);
+              if (xrSmoke.open) scheduleXrSmoke();
+            };
+            image.onerror = () =&gt; onReady(false);
+            image.src = source;
+            return texture;
+          };
+          xrSmoke.blueNoiseTexture = createXrSmokeImageTexture(
+            xrEmbeddedEffectSources.blueNoise || &#x27;assets/xr-lusion-blue-noise.png&#x27;,
+            { minFilter: gl.NEAREST, magFilter: gl.NEAREST, wrap: gl.REPEAT },
+            (ready) =&gt; {
+              xrSmoke.blueNoiseReady = ready;
+              xrSmokeCanvas.dataset.blueNoise = ready ? &#x27;lusion-128-nearest-repeat&#x27; : &#x27;procedural-fallback&#x27;;
+            }
+          );
+          xrSmoke.smaaAreaTexture = createXrSmokeImageTexture(
+            xrEmbeddedEffectSources.smaaArea || &#x27;assets/xr-lusion-smaa-area.png&#x27;,
+            { minFilter: gl.LINEAR, magFilter: gl.LINEAR, wrap: gl.CLAMP_TO_EDGE },
+            (ready) =&gt; { xrSmoke.smaaAreaReady = ready; }
+          );
+          xrSmoke.smaaSearchTexture = createXrSmokeImageTexture(
+            xrEmbeddedEffectSources.smaaSearch || &#x27;assets/xr-lusion-smaa-search.png&#x27;,
+            { minFilter: gl.NEAREST, magFilter: gl.NEAREST, wrap: gl.CLAMP_TO_EDGE },
+            (ready) =&gt; { xrSmoke.smaaSearchReady = ready; }
+          );
+          xrSmoke.sceneProgram = createXrSmokeProgram(`
+            precision mediump float;
+            uniform sampler2D uTexture;
+            uniform float uOpacity;
+            varying vec2 vUv;
+            void main() {
+              vec4 color = texture2D(uTexture, vUv);
+              gl_FragColor = vec4(color.rgb, color.a * uOpacity);
+            }
+          `, `
+            attribute vec2 aPosition;
+            attribute vec2 aUv;
+            varying vec2 vUv;
+            void main() {
+              vUv = aUv;
+              gl_Position = vec4(aPosition, 0.0, 1.0);
+            }
+          `);
+          xrSmoke.sceneBuffer = gl.createBuffer();
+          const uploadXrSmokeSceneSource = (source, width, height, sourceName) =&gt; {
+            xrSmoke.sceneTexture = gl.createTexture();
+            gl.bindTexture(gl.TEXTURE_2D, xrSmoke.sceneTexture);
+            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, source);
+            xrSmoke.sceneSourceWidth = width;
+            xrSmoke.sceneSourceHeight = height;
+            xrSmoke.sceneReady = true;
+            xrSmokeCanvas.dataset.sceneSource = sourceName;
+          };
+          const createXrSmokeFallbackSource = () =&gt; {
+            const canvas = document.createElement(&#x27;canvas&#x27;);
+            canvas.width = 1024;
+            canvas.height = 512;
+            const context = canvas.getContext(&#x27;2d&#x27;);
+            const sky = context.createLinearGradient(0, 0, 0, canvas.height);
+            sky.addColorStop(0, &#x27;#8f94a4&#x27;);
+            sky.addColorStop(.42, &#x27;#a7a6b2&#x27;);
+            sky.addColorStop(.72, &#x27;#c6a8ad&#x27;);
+            sky.addColorStop(1, &#x27;#b597aa&#x27;);
+            context.fillStyle = sky;
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            const glow = context.createRadialGradient(canvas.width * .33, canvas.height * .62, 0, canvas.width * .33, canvas.height * .62, canvas.width * .48);
+            glow.addColorStop(0, &#x27;rgba(231, 168, 142, .62)&#x27;);
+            glow.addColorStop(.5, &#x27;rgba(177, 148, 172, .24)&#x27;);
+            glow.addColorStop(1, &#x27;rgba(112, 127, 155, 0)&#x27;);
+            context.fillStyle = glow;
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            return canvas;
+          };
+          const sceneImage = new Image();
+          sceneImage.onload = () =&gt; {
+            if (xrSmoke.lost) return;
+            try {
+              uploadXrSmokeSceneSource(sceneImage, sceneImage.naturalWidth, sceneImage.naturalHeight, &#x27;skybox&#x27;);
+            } catch (error) {
+              const fallbackSource = createXrSmokeFallbackSource();
+              uploadXrSmokeSceneSource(fallbackSource, fallbackSource.width, fallbackSource.height, &#x27;procedural-file-fallback&#x27;);
+            }
+          };
+          sceneImage.onerror = () =&gt; {
+            const fallbackSource = createXrSmokeFallbackSource();
+            uploadXrSmokeSceneSource(fallbackSource, fallbackSource.width, fallbackSource.height, &#x27;procedural-file-fallback&#x27;);
+          };
+          sceneImage.src = xrEmbeddedSkyboxSource || &#x27;assets/xr-skybox-360.png&#x27;;
+          xrSmoke.ready = true;
+          xrSmokeCanvas.dataset.renderer = &#x27;webgl-screen-paint&#x27;;
+          return true;
+        } catch (error) {
+          xrSmoke.lost = true;
+          xrSmokeCanvas.dataset.renderer = &#x27;fallback&#x27;;
+          console.warn(&#x27;XR fluid refraction fallback is active.&#x27;, error);
+          return false;
+        }
+      };
+      const destroyXrSmokeTargets = () =&gt; {
+        const gl = xrSmokeGl;
+        if (!gl) return;
+        [...xrSmoke.targets, ...xrSmoke.pressureTargets, ...xrSmoke.smokeTargets, ...xrSmoke.mistTargets, xrSmoke.curlTarget, xrSmoke.divergenceTarget]
+          .filter(Boolean)
+          .forEach((target) =&gt; {
+          gl.deleteFramebuffer(target.framebuffer);
+          gl.deleteTexture(target.texture);
+        });
+        xrSmoke.targets.length = 0;
+        xrSmoke.pressureTargets.length = 0;
+        xrSmoke.smokeTargets.length = 0;
+        xrSmoke.mistTargets.length = 0;
+        xrSmoke.curlTarget = null;
+        xrSmoke.divergenceTarget = null;
+      };
+      const drawXrCardRoundRect = (context, x, y, width, height, radius) =&gt; {
+        const limitedRadius = Math.min(radius, width / 2, height / 2);
+        context.beginPath();
+        context.moveTo(x + limitedRadius, y);
+        context.arcTo(x + width, y, x + width, y + height, limitedRadius);
+        context.arcTo(x + width, y + height, x, y + height, limitedRadius);
+        context.arcTo(x, y + height, x, y, limitedRadius);
+        context.arcTo(x, y, x + width, y, limitedRadius);
+        context.closePath();
+      };
+      const drawXrCardWrappedText = (context, text, x, y, maxWidth, lineHeight, maxLines = 3) =&gt; {
+        const words = text.trim().split(/\s+/);
+        const lines = [];
+        let line = &#x27;&#x27;;
+        words.forEach((word) =&gt; {
+          const candidate = line ? `${line} ${word}` : word;
+          if (line &amp;&amp; context.measureText(candidate).width &gt; maxWidth) {
+            lines.push(line);
+            line = word;
+          } else line = candidate;
+        });
+        if (line) lines.push(line);
+        lines.slice(0, maxLines).forEach((value, index) =&gt; context.fillText(value, x, y + index * lineHeight));
+        return Math.min(lines.length, maxLines);
+      };
+      const createXrCardTexture = (card) =&gt; {
+        const gl = xrSmokeGl;
+        const width = Math.max(1, card.offsetWidth);
+        const height = Math.max(1, card.offsetHeight);
+        const ratio = 2;
+        const canvas = document.createElement(&#x27;canvas&#x27;);
+        canvas.width = width * ratio;
+        canvas.height = height * ratio;
+        const context = canvas.getContext(&#x27;2d&#x27;);
+        context.scale(ratio, ratio);
+        const cardStyle = getComputedStyle(card);
+        drawXrCardRoundRect(context, 0, 0, width, height, 6);
+        context.fillStyle = cardStyle.backgroundColor;
+        context.fill();
+        context.strokeStyle = cardStyle.borderColor;
+        context.lineWidth = 1;
+        context.stroke();
+        const media = card.querySelector(&#x27;.rq-media&#x27;);
+        const mediaStyle = getComputedStyle(media);
+        drawXrCardRoundRect(context, media.offsetLeft, media.offsetTop, media.offsetWidth, media.offsetHeight, 3);
+        context.fillStyle = mediaStyle.backgroundColor;
+        context.fill();
+        const mediaImage = media.querySelector(&#x27;img&#x27;);
+        const safeImage = xrSmoke.cardSafeImages.get(card.dataset.rqDetailProject);
+        const textureImage = safeImage?.complete &amp;&amp; safeImage.naturalWidth &gt; 0 ? safeImage : mediaImage;
+        const mediaUrl = textureImage ? new URL(textureImage.currentSrc || textureImage.src, location.href) : null;
+        const imageIsCanvasSafe = mediaUrl &amp;&amp; (
+          mediaUrl.protocol === &#x27;data:&#x27;
+          || mediaUrl.protocol === &#x27;blob:&#x27;
+          || (location.protocol !== &#x27;file:&#x27; &amp;&amp; mediaUrl.origin === location.origin)
+        );
+        if (imageIsCanvasSafe &amp;&amp; textureImage.complete &amp;&amp; textureImage.naturalWidth &gt; 0) {
+          const sourceRatio = textureImage.naturalWidth / textureImage.naturalHeight;
+          const targetRatio = media.offsetWidth / media.offsetHeight;
+          let sourceX = 0;
+          let sourceY = 0;
+          let sourceWidth = textureImage.naturalWidth;
+          let sourceHeight = textureImage.naturalHeight;
+          if (sourceRatio &gt; targetRatio) {
+            sourceWidth = textureImage.naturalHeight * targetRatio;
+            sourceX = (textureImage.naturalWidth - sourceWidth) / 2;
+          } else {
+            sourceHeight = textureImage.naturalWidth / targetRatio;
+            sourceY = (textureImage.naturalHeight - sourceHeight) / 2;
+          }
+          context.save();
+          drawXrCardRoundRect(context, media.offsetLeft, media.offsetTop, media.offsetWidth, media.offsetHeight, 3);
+          context.clip();
+          context.drawImage(textureImage, sourceX, sourceY, sourceWidth, sourceHeight, media.offsetLeft, media.offsetTop, media.offsetWidth, media.offsetHeight);
+          context.restore();
+        } else {
+          context.save();
+          context.fillStyle = mediaStyle.color;
+          context.textAlign = &#x27;center&#x27;;
+          context.textBaseline = &#x27;middle&#x27;;
+          context.font = `${mediaStyle.fontWeight} ${mediaStyle.fontSize} ${mediaStyle.fontFamily}`;
+          context.fillText(mediaImage?.alt || media.textContent.trim(), media.offsetLeft + media.offsetWidth / 2, media.offsetTop + media.offsetHeight / 2, media.offsetWidth - 28);
+          context.restore();
+        }
+        const title = card.querySelector(&#x27;h3&#x27;);
+        const titleStyle = getComputedStyle(title);
+        context.fillStyle = titleStyle.color;
+        context.textAlign = &#x27;left&#x27;;
+        context.textBaseline = &#x27;top&#x27;;
+        context.font = `${titleStyle.fontWeight} ${titleStyle.fontSize} ${titleStyle.fontFamily}`;
+        drawXrCardWrappedText(context, title.textContent, title.offsetLeft, title.offsetTop, title.offsetWidth, parseFloat(titleStyle.lineHeight) || 20, 2);
+        const meta = card.querySelector(&#x27;.rq-project-meta&#x27;);
+        const metaStyle = getComputedStyle(meta);
+        context.fillStyle = metaStyle.color;
+        context.font = `${metaStyle.fontWeight} ${metaStyle.fontSize} ${metaStyle.fontFamily}`;
+        drawXrCardWrappedText(context, meta.textContent, meta.offsetLeft, meta.offsetTop, meta.offsetWidth, parseFloat(metaStyle.lineHeight) || 16, 3);
+        const texture = gl.createTexture();
+        gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas);
+        return texture;
+      };
+      const ensureXrCardTextures = () =&gt; {
+        const gl = xrSmokeGl;
+        xrSmokeCanvas.dataset.safeCardImages = String(
+          [...xrSmoke.cardSafeImages.values()].filter((image) =&gt; image.complete &amp;&amp; image.naturalWidth &gt; 0).length
+        );
+        const textureKey = xrCards.map((card) =&gt; {
+          const image = card.querySelector(&#x27;.rq-media img&#x27;);
+          const safeImage = xrSmoke.cardSafeImages.get(card.dataset.rqDetailProject);
+          const textureImage = safeImage?.complete &amp;&amp; safeImage.naturalWidth &gt; 0 ? safeImage : image;
+          const mediaKey = textureImage ? `${textureImage.currentSrc || textureImage.src}:${textureImage.complete ? textureImage.naturalWidth : 0}x${textureImage.complete ? textureImage.naturalHeight : 0}` : card.textContent.length;
+          return `${card.offsetWidth}x${card.offsetHeight}:${mediaKey}`;
+        }).join(&#x27;|&#x27;);
+        if (xrSmoke.cardTextureKey === textureKey &amp;&amp; xrSmoke.cardTextures.length === xrCards.length) return;
+        xrSmoke.cardTextures.forEach((texture) =&gt; gl.deleteTexture(texture));
+        xrSmoke.cardTextures = xrCards.map(createXrCardTexture);
+        xrSmoke.cardTextureKey = textureKey;
+      };
+      const projectXrCardQuad = (card) =&gt; {
+        const style = getComputedStyle(card);
+        if (style.transform === &#x27;none&#x27;) return null;
+        const matrix = new DOMMatrix(style.transform);
+        const origin = style.transformOrigin.split(&#x27; &#x27;).map(Number.parseFloat);
+        const fieldStyle = getComputedStyle(xrCardField);
+        const perspective = Number.parseFloat(fieldStyle.perspective) || 1050;
+        const perspectiveOrigin = fieldStyle.perspectiveOrigin.split(&#x27; &#x27;).map(Number.parseFloat);
+        const fieldMatrix = fieldStyle.transform === &#x27;none&#x27; ? new DOMMatrix() : new DOMMatrix(fieldStyle.transform);
+        const fieldTransformOrigin = fieldStyle.transformOrigin.split(&#x27; &#x27;).map(Number.parseFloat);
+        const corners = [
+          [0, 0],
+          [card.offsetWidth, 0],
+          [0, card.offsetHeight],
+          [card.offsetWidth, card.offsetHeight]
+        ];
+        return corners.map(([x, y]) =&gt; {
+          const transformed = matrix.transformPoint(new DOMPoint(x - origin[0], y - origin[1], 0, 1));
+          const absoluteX = card.offsetLeft + origin[0] + transformed.x;
+          const absoluteY = card.offsetTop + origin[1] + transformed.y;
+          const perspectiveScale = perspective / Math.max(1, perspective - transformed.z);
+          const projectedX = perspectiveOrigin[0] + (absoluteX - perspectiveOrigin[0]) * perspectiveScale;
+          const projectedY = perspectiveOrigin[1] + (absoluteY - perspectiveOrigin[1]) * perspectiveScale;
+          const fieldPoint = fieldMatrix.transformPoint(new DOMPoint(
+            projectedX - fieldTransformOrigin[0],
+            projectedY - fieldTransformOrigin[1],
+            0,
+            1
+          ));
+          return {
+            x: fieldTransformOrigin[0] + fieldPoint.x,
+            y: fieldTransformOrigin[1] + fieldPoint.y
+          };
+        });
+      };
+      const drawXrSceneQuad = (texture, points, uvs, opacity = 1) =&gt; {
+        const gl = xrSmokeGl;
+        const data = new Float32Array(16);
+        points.forEach((point, index) =&gt; {
+          data[index * 4] = point.x / xrSmoke.width * 2 - 1;
+          data[index * 4 + 1] = 1 - point.y / xrSmoke.height * 2;
+          data[index * 4 + 2] = uvs[index][0];
+          data[index * 4 + 3] = uvs[index][1];
+        });
+        gl.useProgram(xrSmoke.sceneProgram);
+        gl.bindBuffer(gl.ARRAY_BUFFER, xrSmoke.sceneBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, data, gl.DYNAMIC_DRAW);
+        const position = gl.getAttribLocation(xrSmoke.sceneProgram, &#x27;aPosition&#x27;);
+        const uv = gl.getAttribLocation(xrSmoke.sceneProgram, &#x27;aUv&#x27;);
+        gl.enableVertexAttribArray(position);
+        gl.enableVertexAttribArray(uv);
+        gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 16, 0);
+        gl.vertexAttribPointer(uv, 2, gl.FLOAT, false, 16, 8);
+        bindXrSmokeTexture(xrSmoke.sceneProgram, &#x27;uTexture&#x27;, texture, 0);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.sceneProgram, &#x27;uOpacity&#x27;), opacity);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      };
+      const syncXrSmokeInteractiveBackground = () =&gt; {
+        const gl = xrSmokeGl;
+        if (!gl || !xrSmoke.sceneTexture || !xrDistortion.ready || !xrDistortionCanvas?.width || !xrDistortionCanvas.height) return false;
+        try {
+          gl.bindTexture(gl.TEXTURE_2D, xrSmoke.sceneTexture);
+          gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, xrDistortionCanvas);
+          xrSmoke.sceneSourceWidth = xrDistortionCanvas.width;
+          xrSmoke.sceneSourceHeight = xrDistortionCanvas.height;
+          xrSmokeCanvas.dataset.sceneBackground = &#x27;interactive-sphere-canvas&#x27;;
+          return true;
+        } catch (error) {
+          xrSmokeCanvas.dataset.sceneBackground = xrSmokeCanvas.dataset.sceneSource || &#x27;static-skybox&#x27;;
+          return false;
+        }
+      };
+      const renderXrSmokeScene = () =&gt; {
+        const gl = xrSmokeGl;
+        if (!gl || !xrSmoke.sceneTarget || !xrSmoke.sceneReady || !xrSmoke.sceneTexture) return false;
+        syncXrSmokeInteractiveBackground();
+        ensureXrCardTextures();
+        gl.bindFramebuffer(gl.FRAMEBUFFER, xrSmoke.sceneTarget.framebuffer);
+        gl.viewport(0, 0, xrSmoke.sceneWidth, xrSmoke.sceneHeight);
+        gl.disable(gl.BLEND);
+        gl.clearColor(0, 0, 0, 1);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        const stageAspect = xrSmoke.width / xrSmoke.height;
+        const sourceAspect = xrSmoke.sceneSourceWidth / xrSmoke.sceneSourceHeight;
+        let left = 0;
+        let right = 1;
+        let bottom = 0;
+        let top = 1;
+        if (stageAspect &gt; sourceAspect) {
+          const visible = sourceAspect / stageAspect;
+          bottom = .5 - visible / 2;
+          top = .5 + visible / 2;
+        } else {
+          const visible = stageAspect / sourceAspect;
+          left = .5 - visible / 2;
+          right = .5 + visible / 2;
+        }
+        drawXrSceneQuad(
+          xrSmoke.sceneTexture,
+          [{ x: 0, y: 0 }, { x: xrSmoke.width, y: 0 }, { x: 0, y: xrSmoke.height }, { x: xrSmoke.width, y: xrSmoke.height }],
+          [[left, top], [right, top], [left, bottom], [right, bottom]]
+        );
+        gl.enable(gl.BLEND);
+        gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+        xrCards
+          .map((card, index) =&gt; ({ card, index, zIndex: Number.parseInt(card.style.zIndex || &#x27;0&#x27;, 10) }))
+          .sort((leftCard, rightCard) =&gt; leftCard.zIndex - rightCard.zIndex)
+          .forEach(({ card, index }) =&gt; {
+            const opacity = Number.parseFloat(getComputedStyle(card).opacity);
+            const points = opacity &gt; .01 ? projectXrCardQuad(card) : null;
+            if (points) drawXrSceneQuad(xrSmoke.cardTextures[index], points, [[0, 1], [1, 1], [0, 0], [1, 0]], opacity);
+          });
+        gl.disable(gl.BLEND);
+        xrSmokeCanvas.dataset.sceneCards = String(xrSmoke.cardTextures.length);
+        return true;
+      };
+      const sizeXrSmoke = (stageRect) =&gt; {
+        const gl = xrSmokeGl;
+        if (!gl || !xrSmokeCanvas || !initXrSmoke()) return false;
+        const displayRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+        const displayWidth = Math.max(1, Math.round(stageRect.width * displayRatio));
+        const displayHeight = Math.max(1, Math.round(stageRect.height * displayRatio));
+        if (xrSmokeCanvas.width !== displayWidth || xrSmokeCanvas.height !== displayHeight || !xrSmoke.sceneTarget || !xrSmoke.distortionTarget || !xrSmoke.smaaEdgesTarget || !xrSmoke.smaaWeightsTarget) {
+          xrSmokeCanvas.width = displayWidth;
+          xrSmokeCanvas.height = displayHeight;
+          [xrSmoke.sceneTarget, xrSmoke.distortionTarget, xrSmoke.smaaEdgesTarget, xrSmoke.smaaWeightsTarget]
+            .filter(Boolean)
+            .forEach((target) =&gt; {
+              gl.deleteFramebuffer(target.framebuffer);
+              gl.deleteTexture(target.texture);
+            });
+          xrSmoke.sceneTarget = createXrSmokeTarget(displayWidth, displayHeight);
+          xrSmoke.distortionTarget = createXrSmokeTarget(displayWidth, displayHeight);
+          xrSmoke.smaaEdgesTarget = createXrSmokeTarget(displayWidth, displayHeight);
+          xrSmoke.smaaWeightsTarget = createXrSmokeTarget(displayWidth, displayHeight);
+          xrSmoke.sceneWidth = displayWidth;
+          xrSmoke.sceneHeight = displayHeight;
+        }
+        const fieldWidth = Math.max(48, Math.min(640, Math.round(displayWidth * .25)));
+        const fieldHeight = Math.max(48, Math.min(384, Math.round(displayHeight * .25)));
+        const smokeWidth = Math.max(32, Math.min(320, Math.round(displayWidth * .125)));
+        const smokeHeight = Math.max(32, Math.min(192, Math.round(displayHeight * .125)));
+        const mistScale = Math.min(.0625, 96 / Math.max(1, stageRect.width), 64 / Math.max(1, stageRect.height));
+        const mistWidth = Math.max(24, Math.round(stageRect.width * mistScale));
+        const mistHeight = Math.max(24, Math.round(stageRect.height * mistScale));
+        if (xrSmoke.fieldWidth !== fieldWidth || xrSmoke.fieldHeight !== fieldHeight || xrSmoke.smokeWidth !== smokeWidth || xrSmoke.smokeHeight !== smokeHeight || xrSmoke.mistWidth !== mistWidth || xrSmoke.mistHeight !== mistHeight || xrSmoke.targets.length !== 2 || xrSmoke.pressureTargets.length !== 2 || xrSmoke.smokeTargets.length !== 2 || xrSmoke.mistTargets.length !== 2) {
+          destroyXrSmokeTargets();
+          xrSmoke.fieldWidth = fieldWidth;
+          xrSmoke.fieldHeight = fieldHeight;
+          xrSmoke.smokeWidth = smokeWidth;
+          xrSmoke.smokeHeight = smokeHeight;
+          xrSmoke.mistWidth = mistWidth;
+          xrSmoke.mistHeight = mistHeight;
+          xrSmoke.targets = [createXrSmokeTarget(fieldWidth, fieldHeight), createXrSmokeTarget(fieldWidth, fieldHeight)];
+          xrSmoke.pressureTargets = [createXrSmokeTarget(fieldWidth, fieldHeight), createXrSmokeTarget(fieldWidth, fieldHeight)];
+          xrSmoke.smokeTargets = [createXrSmokeTarget(smokeWidth, smokeHeight), createXrSmokeTarget(smokeWidth, smokeHeight)];
+          xrSmoke.mistTargets = [createXrSmokeTarget(mistWidth, mistHeight), createXrSmokeTarget(mistWidth, mistHeight)];
+          xrSmoke.curlTarget = createXrSmokeTarget(fieldWidth, fieldHeight);
+          xrSmoke.divergenceTarget = createXrSmokeTarget(fieldWidth, fieldHeight);
+          xrSmoke.readIndex = 0;
+          xrSmoke.pressureIndex = 0;
+          xrSmoke.smokeIndex = 0;
+          xrSmoke.mistIndex = 0;
+          clearXrSmokeTargets();
+        }
+        xrSmoke.width = stageRect.width;
+        xrSmoke.height = stageRect.height;
+        xrSmokeCanvas.dataset.fieldWidth = String(fieldWidth);
+        xrSmokeCanvas.dataset.fieldHeight = String(fieldHeight);
+        xrSmokeCanvas.dataset.smokeWidth = String(smokeWidth);
+        xrSmokeCanvas.dataset.smokeHeight = String(smokeHeight);
+        xrSmokeCanvas.dataset.mistWidth = String(mistWidth);
+        xrSmokeCanvas.dataset.mistHeight = String(mistHeight);
+        xrSmokeCanvas.dataset.smokeLayers = &#x27;2&#x27;;
+        xrSmokeCanvas.dataset.pathSampler = &#x27;continuous-segment-sdf&#x27;;
+        xrSmokeCanvas.dataset.sampleSpacing = &#x27;0&#x27;;
+        xrSmokeCanvas.dataset.material = &#x27;lusion-screen-paint-distortion&#x27;;
+        xrSmokeCanvas.dataset.colorTransport = &#x27;late-full-scene-distortion&#x27;;
+        xrSmokeCanvas.dataset.solver = &#x27;rgba-feedback&#x27;;
+        xrSmokeCanvas.dataset.sceneMode = &#x27;full-framebuffer&#x27;;
+        xrSmokeCanvas.dataset.pressureIterations = String(xrSmoke.pressureIterations);
+        xrSmokeCanvas.dataset.postprocess = &#x27;distortion-smaa-edges-weights-neighborhood&#x27;;
+        xrSmokeCanvas.dataset.trailProfile = &#x27;choo-choo-fine-625&#x27;;
+        return true;
+      };
+      const bindXrSmokeProgram = (program, target, width, height) =&gt; {
+        const gl = xrSmokeGl;
+        gl.bindFramebuffer(gl.FRAMEBUFFER, target?.framebuffer || null);
+        gl.viewport(0, 0, width, height);
+        gl.useProgram(program);
+        gl.bindBuffer(gl.ARRAY_BUFFER, xrSmoke.buffer);
+        const position = gl.getAttribLocation(program, &#x27;aPosition&#x27;);
+        gl.enableVertexAttribArray(position);
+        gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+      };
+      const bindXrSmokeTexture = (program, name, texture, unit) =&gt; {
+        const gl = xrSmokeGl;
+        gl.activeTexture(gl.TEXTURE0 + unit);
+        gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.uniform1i(gl.getUniformLocation(program, name), unit);
+      };
+      const swapXrSmokeTargets = () =&gt; { xrSmoke.readIndex = 1 - xrSmoke.readIndex; };
+      const getXrTrailRadiusCss = () =&gt; Math.max(24, window.innerWidth / 32);
+      const updateXrSmokeField = (segment, time) =&gt; {
+        const gl = xrSmokeGl;
+        const read = xrSmoke.targets[xrSmoke.readIndex];
+        const write = xrSmoke.targets[1 - xrSmoke.readIndex];
+        bindXrSmokeProgram(xrSmoke.updateProgram, write, xrSmoke.fieldWidth, xrSmoke.fieldHeight);
+        bindXrSmokeTexture(xrSmoke.updateProgram, &#x27;uField&#x27;, read.texture, 0);
+        bindXrSmokeTexture(xrSmoke.updateProgram, &#x27;uLowField&#x27;, xrSmoke.smokeTargets[xrSmoke.smokeIndex].texture, 1);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.updateProgram, &#x27;uTexel&#x27;), 1 / xrSmoke.fieldWidth, 1 / xrSmoke.fieldHeight);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.updateProgram, &#x27;uLowTexel&#x27;), 1 / xrSmoke.smokeWidth, 1 / xrSmoke.smokeHeight);
+        const x0 = (segment?.x0 ?? xrSmoke.drawX) * xrSmoke.fieldWidth;
+        const y0 = (1 - (segment?.y0 ?? xrSmoke.drawY)) * xrSmoke.fieldHeight;
+        const x1 = (segment?.x1 ?? xrSmoke.drawX) * xrSmoke.fieldWidth;
+        const y1 = (1 - (segment?.y1 ?? xrSmoke.drawY)) * xrSmoke.fieldHeight;
+        const distance = segment?.distance ?? 0;
+        const maxRadius = getXrTrailRadiusCss();
+        const radiusCss = Math.min(maxRadius, maxRadius * distance / 100);
+        if (segment) xrSmokeCanvas.dataset.trailRadius = radiusCss.toFixed(2);
+        const radius = radiusCss * xrSmoke.fieldHeight / Math.max(1, xrSmoke.height);
+        const deltaTime = xrSmoke.feedbackLastTime ? Math.max(0, Math.min((time - xrSmoke.feedbackLastTime) / 1000, .05)) : 1 / 60;
+        xrSmoke.feedbackLastTime = time;
+        if (segment) {
+          xrSmoke.paintVelocityX = xrSmoke.paintVelocityX * .8 + (x1 - x0) * deltaTime * .8;
+          xrSmoke.paintVelocityY = xrSmoke.paintVelocityY * .8 + (y1 - y0) * deltaTime * .8;
+          xrSmoke.drawX = segment.x1;
+          xrSmoke.drawY = segment.y1;
+        } else {
+          xrSmoke.paintVelocityX *= .8;
+          xrSmoke.paintVelocityY *= .8;
+        }
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.updateProgram, &#x27;uDrawFrom&#x27;), x0, y0);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.updateProgram, &#x27;uDrawTo&#x27;), x1, y1);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.updateProgram, &#x27;uVelocity&#x27;), xrSmoke.paintVelocityX, xrSmoke.paintVelocityY);
+        gl.uniform3f(
+          gl.getUniformLocation(xrSmoke.updateProgram, &#x27;uDissipations&#x27;),
+          .975,
+          .95,
+          .8
+        );
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.updateProgram, &#x27;uRadius&#x27;), segment ? radius : 0);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.updateProgram, &#x27;uPushStrength&#x27;), 25);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.updateProgram, &#x27;uCurlScale&#x27;), .02);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.updateProgram, &#x27;uCurlStrength&#x27;), 3);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.updateProgram, &#x27;uMinDecay&#x27;), .004);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.updateProgram, &#x27;uTime&#x27;), time / 1000);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        swapXrSmokeTargets();
+      };
+      const splatXrSmokeSegment = (segment) =&gt; {
+        const gl = xrSmokeGl;
+        const read = xrSmoke.targets[xrSmoke.readIndex];
+        const write = xrSmoke.targets[1 - xrSmoke.readIndex];
+        bindXrSmokeProgram(xrSmoke.splatProgram, write, xrSmoke.fieldWidth, xrSmoke.fieldHeight);
+        bindXrSmokeTexture(xrSmoke.splatProgram, &#x27;uField&#x27;, read.texture, 0);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.splatProgram, &#x27;uFrom&#x27;), segment.x0, 1 - segment.y0);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.splatProgram, &#x27;uTo&#x27;), segment.x1, 1 - segment.y1);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.splatProgram, &#x27;uForce&#x27;), Math.max(-.34, Math.min(.34, segment.velocityX * .04)), Math.max(-.34, Math.min(.34, -segment.velocityY * .04)));
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.splatProgram, &#x27;uRadius&#x27;), (15 + Math.min(29, segment.speed * 9) + Math.min(8, segment.acceleration * 3)) / Math.max(1, xrSmoke.height));
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.splatProgram, &#x27;uAspect&#x27;), xrSmoke.width / Math.max(1, xrSmoke.height));
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.splatProgram, &#x27;uDensity&#x27;), Math.min(.92, .5 + segment.speed * .1));
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        swapXrSmokeTargets();
+        const smokeRead = xrSmoke.smokeTargets[xrSmoke.smokeIndex];
+        const smokeWrite = xrSmoke.smokeTargets[1 - xrSmoke.smokeIndex];
+        bindXrSmokeProgram(xrSmoke.smokeSplatProgram, smokeWrite, xrSmoke.smokeWidth, xrSmoke.smokeHeight);
+        bindXrSmokeTexture(xrSmoke.smokeSplatProgram, &#x27;uSmoke&#x27;, smokeRead.texture, 0);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.smokeSplatProgram, &#x27;uFrom&#x27;), segment.x0, 1 - segment.y0);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.smokeSplatProgram, &#x27;uTo&#x27;), segment.x1, 1 - segment.y1);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeSplatProgram, &#x27;uRadius&#x27;), (38 + Math.min(58, segment.speed * 18) + Math.min(22, segment.acceleration * 9)) / Math.max(1, xrSmoke.height));
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeSplatProgram, &#x27;uAspect&#x27;), xrSmoke.width / Math.max(1, xrSmoke.height));
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeSplatProgram, &#x27;uDensity&#x27;), Math.min(1, .68 + segment.speed * .1));
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeSplatProgram, &#x27;uCurve&#x27;), (22 + Math.min(34, segment.speed * 11) + Math.min(34, segment.acceleration * 14)) / Math.max(1, xrSmoke.height));
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        xrSmoke.smokeIndex = 1 - xrSmoke.smokeIndex;
+        const mistRead = xrSmoke.mistTargets[xrSmoke.mistIndex];
+        const mistWrite = xrSmoke.mistTargets[1 - xrSmoke.mistIndex];
+        bindXrSmokeProgram(xrSmoke.smokeSplatProgram, mistWrite, xrSmoke.mistWidth, xrSmoke.mistHeight);
+        bindXrSmokeTexture(xrSmoke.smokeSplatProgram, &#x27;uSmoke&#x27;, mistRead.texture, 0);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.smokeSplatProgram, &#x27;uFrom&#x27;), segment.x0, 1 - segment.y0);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.smokeSplatProgram, &#x27;uTo&#x27;), segment.x1, 1 - segment.y1);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeSplatProgram, &#x27;uRadius&#x27;), (72 + Math.min(88, segment.speed * 27) + Math.min(38, segment.acceleration * 16)) / Math.max(1, xrSmoke.height));
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeSplatProgram, &#x27;uAspect&#x27;), xrSmoke.width / Math.max(1, xrSmoke.height));
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeSplatProgram, &#x27;uDensity&#x27;), Math.min(.78, .38 + segment.speed * .085));
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeSplatProgram, &#x27;uCurve&#x27;), (48 + Math.min(66, segment.speed * 18) + Math.min(52, segment.acceleration * 22)) / Math.max(1, xrSmoke.height));
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        xrSmoke.mistIndex = 1 - xrSmoke.mistIndex;
+      };
+      const updateLegacyXrSmokeBody = (time) =&gt; {
+        const gl = xrSmokeGl;
+        let read = xrSmoke.smokeTargets[xrSmoke.smokeIndex];
+        let write = xrSmoke.smokeTargets[1 - xrSmoke.smokeIndex];
+        bindXrSmokeProgram(xrSmoke.smokeUpdateProgram, write, xrSmoke.smokeWidth, xrSmoke.smokeHeight);
+        bindXrSmokeTexture(xrSmoke.smokeUpdateProgram, &#x27;uSmoke&#x27;, read.texture, 0);
+        bindXrSmokeTexture(xrSmoke.smokeUpdateProgram, &#x27;uField&#x27;, xrSmoke.targets[xrSmoke.readIndex].texture, 1);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.smokeUpdateProgram, &#x27;uTexel&#x27;), 1 / xrSmoke.smokeWidth, 1 / xrSmoke.smokeHeight);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeUpdateProgram, &#x27;uDelta&#x27;), .0105);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeUpdateProgram, &#x27;uDissipation&#x27;), xrSmoke.open &amp;&amp; xrSmoke.pointerInside ? .952 : .73);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeUpdateProgram, &#x27;uTime&#x27;), time);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeUpdateProgram, &#x27;uAspect&#x27;), xrSmoke.width / Math.max(1, xrSmoke.height));
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        xrSmoke.smokeIndex = 1 - xrSmoke.smokeIndex;
+        const directions = [[1 / xrSmoke.smokeWidth, 0], [0, 1 / xrSmoke.smokeHeight]];
+        directions.forEach(([x, y]) =&gt; {
+          read = xrSmoke.smokeTargets[xrSmoke.smokeIndex];
+          write = xrSmoke.smokeTargets[1 - xrSmoke.smokeIndex];
+          bindXrSmokeProgram(xrSmoke.smokeBlurProgram, write, xrSmoke.smokeWidth, xrSmoke.smokeHeight);
+          bindXrSmokeTexture(xrSmoke.smokeBlurProgram, &#x27;uSmoke&#x27;, read.texture, 0);
+          gl.uniform2f(gl.getUniformLocation(xrSmoke.smokeBlurProgram, &#x27;uDirection&#x27;), x, y);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          xrSmoke.smokeIndex = 1 - xrSmoke.smokeIndex;
+        });
+        read = xrSmoke.mistTargets[xrSmoke.mistIndex];
+        write = xrSmoke.mistTargets[1 - xrSmoke.mistIndex];
+        bindXrSmokeProgram(xrSmoke.smokeUpdateProgram, write, xrSmoke.mistWidth, xrSmoke.mistHeight);
+        bindXrSmokeTexture(xrSmoke.smokeUpdateProgram, &#x27;uSmoke&#x27;, read.texture, 0);
+        bindXrSmokeTexture(xrSmoke.smokeUpdateProgram, &#x27;uField&#x27;, xrSmoke.targets[xrSmoke.readIndex].texture, 1);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.smokeUpdateProgram, &#x27;uTexel&#x27;), 1 / xrSmoke.mistWidth, 1 / xrSmoke.mistHeight);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeUpdateProgram, &#x27;uDelta&#x27;), .014);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeUpdateProgram, &#x27;uDissipation&#x27;), xrSmoke.open &amp;&amp; xrSmoke.pointerInside ? .91 : .69);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeUpdateProgram, &#x27;uTime&#x27;), time * .78);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.smokeUpdateProgram, &#x27;uAspect&#x27;), xrSmoke.width / Math.max(1, xrSmoke.height));
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        xrSmoke.mistIndex = 1 - xrSmoke.mistIndex;
+        [[1.35 / xrSmoke.mistWidth, 0], [0, 1.35 / xrSmoke.mistHeight]].forEach(([x, y]) =&gt; {
+          read = xrSmoke.mistTargets[xrSmoke.mistIndex];
+          write = xrSmoke.mistTargets[1 - xrSmoke.mistIndex];
+          bindXrSmokeProgram(xrSmoke.smokeBlurProgram, write, xrSmoke.mistWidth, xrSmoke.mistHeight);
+          bindXrSmokeTexture(xrSmoke.smokeBlurProgram, &#x27;uSmoke&#x27;, read.texture, 0);
+          gl.uniform2f(gl.getUniformLocation(xrSmoke.smokeBlurProgram, &#x27;uDirection&#x27;), x, y);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          xrSmoke.mistIndex = 1 - xrSmoke.mistIndex;
+        });
+      };
+      const updateXrSmokeBody = () =&gt; {
+        const gl = xrSmokeGl;
+        let read = xrSmoke.targets[xrSmoke.readIndex];
+        let write = xrSmoke.smokeTargets[1 - xrSmoke.smokeIndex];
+        bindXrSmokeProgram(xrSmoke.smokeBlurProgram, write, xrSmoke.smokeWidth, xrSmoke.smokeHeight);
+        bindXrSmokeTexture(xrSmoke.smokeBlurProgram, &#x27;uSmoke&#x27;, read.texture, 0);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.smokeBlurProgram, &#x27;uDirection&#x27;), 0, 0);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        xrSmoke.smokeIndex = 1 - xrSmoke.smokeIndex;
+        [[2 / xrSmoke.smokeWidth, 0], [0, 2 / xrSmoke.smokeHeight]].forEach(([x, y]) =&gt; {
+          read = xrSmoke.smokeTargets[xrSmoke.smokeIndex];
+          write = xrSmoke.smokeTargets[1 - xrSmoke.smokeIndex];
+          bindXrSmokeProgram(xrSmoke.smokeBlurProgram, write, xrSmoke.smokeWidth, xrSmoke.smokeHeight);
+          bindXrSmokeTexture(xrSmoke.smokeBlurProgram, &#x27;uSmoke&#x27;, read.texture, 0);
+          gl.uniform2f(gl.getUniformLocation(xrSmoke.smokeBlurProgram, &#x27;uDirection&#x27;), x, y);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          xrSmoke.smokeIndex = 1 - xrSmoke.smokeIndex;
+        });
+      };
+      const solveXrSmokeFluid = (time) =&gt; {
+        const gl = xrSmokeGl;
+        const texelX = 1 / xrSmoke.fieldWidth;
+        const texelY = 1 / xrSmoke.fieldHeight;
+        let read = xrSmoke.targets[xrSmoke.readIndex];
+        let write = xrSmoke.targets[1 - xrSmoke.readIndex];
+        bindXrSmokeProgram(xrSmoke.curlProgram, xrSmoke.curlTarget, xrSmoke.fieldWidth, xrSmoke.fieldHeight);
+        bindXrSmokeTexture(xrSmoke.curlProgram, &#x27;uField&#x27;, read.texture, 0);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.curlProgram, &#x27;uTexel&#x27;), texelX, texelY);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        bindXrSmokeProgram(xrSmoke.vorticityProgram, write, xrSmoke.fieldWidth, xrSmoke.fieldHeight);
+        bindXrSmokeTexture(xrSmoke.vorticityProgram, &#x27;uField&#x27;, read.texture, 0);
+        bindXrSmokeTexture(xrSmoke.vorticityProgram, &#x27;uCurlTexture&#x27;, xrSmoke.curlTarget.texture, 1);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.vorticityProgram, &#x27;uTexel&#x27;), texelX, texelY);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.vorticityProgram, &#x27;uStrength&#x27;), xrSmoke.pointerInside ? 4.2 : 1.4);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.vorticityProgram, &#x27;uTime&#x27;), time);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        swapXrSmokeTargets();
+        read = xrSmoke.targets[xrSmoke.readIndex];
+        bindXrSmokeProgram(xrSmoke.divergenceProgram, xrSmoke.divergenceTarget, xrSmoke.fieldWidth, xrSmoke.fieldHeight);
+        bindXrSmokeTexture(xrSmoke.divergenceProgram, &#x27;uField&#x27;, read.texture, 0);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.divergenceProgram, &#x27;uTexel&#x27;), texelX, texelY);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        gl.clearColor(.5, .5, .5, 1);
+        xrSmoke.pressureTargets.forEach((target) =&gt; {
+          gl.bindFramebuffer(gl.FRAMEBUFFER, target.framebuffer);
+          gl.clear(gl.COLOR_BUFFER_BIT);
+        });
+        xrSmoke.pressureIndex = 0;
+        for (let iteration = 0; iteration &lt; xrSmoke.pressureIterations; iteration += 1) {
+          const pressureRead = xrSmoke.pressureTargets[xrSmoke.pressureIndex];
+          const pressureWrite = xrSmoke.pressureTargets[1 - xrSmoke.pressureIndex];
+          bindXrSmokeProgram(xrSmoke.pressureProgram, pressureWrite, xrSmoke.fieldWidth, xrSmoke.fieldHeight);
+          bindXrSmokeTexture(xrSmoke.pressureProgram, &#x27;uPressure&#x27;, pressureRead.texture, 0);
+          bindXrSmokeTexture(xrSmoke.pressureProgram, &#x27;uDivergence&#x27;, xrSmoke.divergenceTarget.texture, 1);
+          gl.uniform2f(gl.getUniformLocation(xrSmoke.pressureProgram, &#x27;uTexel&#x27;), texelX, texelY);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          xrSmoke.pressureIndex = 1 - xrSmoke.pressureIndex;
+        }
+        write = xrSmoke.targets[1 - xrSmoke.readIndex];
+        bindXrSmokeProgram(xrSmoke.gradientProgram, write, xrSmoke.fieldWidth, xrSmoke.fieldHeight);
+        bindXrSmokeTexture(xrSmoke.gradientProgram, &#x27;uField&#x27;, read.texture, 0);
+        bindXrSmokeTexture(xrSmoke.gradientProgram, &#x27;uPressure&#x27;, xrSmoke.pressureTargets[xrSmoke.pressureIndex].texture, 1);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.gradientProgram, &#x27;uTexel&#x27;), texelX, texelY);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        swapXrSmokeTargets();
+      };
+      const displayXrSmoke = (visualEnergy) =&gt; {
+        const gl = xrSmokeGl;
+        const read = xrSmoke.targets[xrSmoke.readIndex];
+        const width = xrSmokeCanvas.width;
+        const height = xrSmokeCanvas.height;
+        const texelX = 1 / width;
+        const texelY = 1 / height;
+        bindXrSmokeProgram(xrSmoke.displayProgram, xrSmoke.distortionTarget, width, height);
+        bindXrSmokeTexture(xrSmoke.displayProgram, &#x27;uField&#x27;, read.texture, 0);
+        if (xrSmoke.sceneTarget) bindXrSmokeTexture(xrSmoke.displayProgram, &#x27;uScene&#x27;, xrSmoke.sceneTarget.texture, 1);
+        if (xrSmoke.blueNoiseTexture) bindXrSmokeTexture(xrSmoke.displayProgram, &#x27;uBlueNoiseTexture&#x27;, xrSmoke.blueNoiseTexture, 2);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.displayProgram, &#x27;uTexel&#x27;), 1 / xrSmoke.fieldWidth, 1 / xrSmoke.fieldHeight);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.displayProgram, &#x27;uResolution&#x27;), width, height);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.displayProgram, &#x27;uSceneSize&#x27;), xrSmoke.sceneWidth, xrSmoke.sceneHeight);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.displayProgram, &#x27;uBlueNoiseTexelSize&#x27;), 1 / 128, 1 / 128);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.displayProgram, &#x27;uBlueNoiseCoordOffset&#x27;), Math.random(), Math.random());
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.displayProgram, &#x27;uSceneReady&#x27;), xrSmoke.sceneReady &amp;&amp; xrSmoke.sceneTarget ? 1 : 0);
+        gl.uniform1f(gl.getUniformLocation(xrSmoke.displayProgram, &#x27;uBlueNoiseReady&#x27;), xrSmoke.blueNoiseReady ? 1 : 0);
+        gl.disable(gl.BLEND);
+        gl.clearColor(0, 0, 0, 0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        const smaaReady = xrSmoke.smaaAreaReady &amp;&amp; xrSmoke.smaaSearchReady
+          &amp;&amp; xrSmoke.smaaEdgesTarget &amp;&amp; xrSmoke.smaaWeightsTarget &amp;&amp; xrSmoke.distortionTarget;
+        if (!smaaReady) {
+          bindXrSmokeProgram(xrSmoke.copyProgram, null, width, height);
+          bindXrSmokeTexture(xrSmoke.copyProgram, &#x27;uTexture&#x27;, xrSmoke.distortionTarget.texture, 0);
+          gl.clear(gl.COLOR_BUFFER_BIT);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+          xrSmokeCanvas.dataset.smaa = &#x27;loading-fallback&#x27;;
+          return;
+        }
+        bindXrSmokeProgram(xrSmoke.smaaEdgesProgram, xrSmoke.smaaEdgesTarget, width, height);
+        bindXrSmokeTexture(xrSmoke.smaaEdgesProgram, &#x27;uTexture&#x27;, xrSmoke.distortionTarget.texture, 0);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.smaaEdgesProgram, &#x27;uTexel&#x27;), texelX, texelY);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        bindXrSmokeProgram(xrSmoke.smaaWeightsProgram, xrSmoke.smaaWeightsTarget, width, height);
+        bindXrSmokeTexture(xrSmoke.smaaWeightsProgram, &#x27;uEdgesTexture&#x27;, xrSmoke.smaaEdgesTarget.texture, 0);
+        bindXrSmokeTexture(xrSmoke.smaaWeightsProgram, &#x27;uAreaTexture&#x27;, xrSmoke.smaaAreaTexture, 1);
+        bindXrSmokeTexture(xrSmoke.smaaWeightsProgram, &#x27;uSearchTexture&#x27;, xrSmoke.smaaSearchTexture, 2);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.smaaWeightsProgram, &#x27;uTexel&#x27;), texelX, texelY);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        bindXrSmokeProgram(xrSmoke.smaaBlendProgram, null, width, height);
+        bindXrSmokeTexture(xrSmoke.smaaBlendProgram, &#x27;uTexture&#x27;, xrSmoke.distortionTarget.texture, 0);
+        bindXrSmokeTexture(xrSmoke.smaaBlendProgram, &#x27;uWeightsTexture&#x27;, xrSmoke.smaaWeightsTarget.texture, 1);
+        gl.uniform2f(gl.getUniformLocation(xrSmoke.smaaBlendProgram, &#x27;uTexel&#x27;), texelX, texelY);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        xrSmokeCanvas.dataset.smaa = &#x27;lusion-smaa-1x&#x27;;
       };
       const clearXrSmoke = () =&gt; {
         if (xrSmoke.frame) window.cancelAnimationFrame(xrSmoke.frame);
@@ -3542,94 +5053,111 @@ html&gt;body{padding:0}&lt;/style&gt;
         xrSmoke.speed = 0;
         xrSmoke.velocityX = 0;
         xrSmoke.velocityY = 0;
+        xrSmoke.inputSpeed = 0;
+        xrSmoke.acceleration = 0;
+        xrSmoke.paintVelocityX = 0;
+        xrSmoke.paintVelocityY = 0;
+        xrSmoke.feedbackLastTime = 0;
+        xrSmoke.renderLastTime = 0;
+        xrSmoke.pointerPoints.length = 0;
         xrSmoke.pending.length = 0;
         xrSmoke.hasPointer = false;
-        if (xrSmokeCtx &amp;&amp; xrSmokeCanvas) xrSmokeCtx.clearRect(0, 0, xrSmokeCanvas.width, xrSmokeCanvas.height);
+        if (xrSmokeGl &amp;&amp; xrSmoke.ready &amp;&amp; !xrSmoke.lost) clearXrSmokeTargets();
         if (xrSmokeCanvas) {
           xrSmokeCanvas.style.opacity = &#x27;0&#x27;;
           xrSmokeCanvas.dataset.energy = &#x27;0&#x27;;
           xrSmokeCanvas.dataset.running = &#x27;false&#x27;;
+          xrSmokeCanvas.dataset.trailRadius = &#x27;0&#x27;;
         }
-      };
-      const sizeXrSmoke = (stageRect) =&gt; {
-        if (!xrSmokeCanvas || !xrSmokeCtx) return;
-        const scale = Math.min(.34, 680 / Math.max(1, stageRect.width), 440 / Math.max(1, stageRect.height));
-        const width = Math.max(1, Math.round(stageRect.width * scale));
-        const height = Math.max(1, Math.round(stageRect.height * scale));
-        if (xrSmokeCanvas.width !== width || xrSmokeCanvas.height !== height) {
-          xrSmokeCanvas.width = width;
-          xrSmokeCanvas.height = height;
-          xrSmokeCtx.lineCap = &#x27;butt&#x27;;
-          xrSmokeCtx.lineJoin = &#x27;round&#x27;;
-        }
-        xrSmoke.scale = scale;
-        xrSmoke.width = stageRect.width;
-        xrSmoke.height = stageRect.height;
-      };
-      const strokeXrSmokeSegment = (segment) =&gt; {
-        if (!xrSmokeCtx) return;
-        const scale = xrSmoke.scale;
-        const x0 = segment.x0 * xrSmoke.width * scale;
-        const y0 = segment.y0 * xrSmoke.height * scale;
-        const x1 = segment.x1 * xrSmoke.width * scale;
-        const y1 = segment.y1 * xrSmoke.height * scale;
-        const dx = x1 - x0;
-        const dy = y1 - y0;
-        const length = Math.max(1, Math.hypot(dx, dy));
-        const normalX = -dy / length;
-        const normalY = dx / length;
-        const curl = Math.sin((segment.time || 0) * .008 + x1 * .025) * Math.min(13, length * .2);
-        const middleX = (x0 + x1) * .5 + normalX * curl;
-        const middleY = (y0 + y1) * .5 + normalY * curl;
-        const radius = (22 + Math.min(38, segment.speed * 12)) * scale;
-        const drawPass = (offset, width, color, blur, cap = &#x27;butt&#x27;) =&gt; {
-          xrSmokeCtx.beginPath();
-          xrSmokeCtx.moveTo(x0 + normalX * offset, y0 + normalY * offset);
-          xrSmokeCtx.quadraticCurveTo(middleX + normalX * offset, middleY + normalY * offset, x1 + normalX * offset, y1 + normalY * offset);
-          xrSmokeCtx.lineCap = cap;
-          xrSmokeCtx.lineWidth = width;
-          xrSmokeCtx.strokeStyle = color;
-          xrSmokeCtx.shadowColor = color;
-          xrSmokeCtx.shadowBlur = blur;
-          xrSmokeCtx.stroke();
-        };
-        xrSmokeCtx.globalCompositeOperation = &#x27;source-over&#x27;;
-        drawPass(-1.8 * scale, radius * 1.2, &#x27;rgba(217, 139, 72, .08)&#x27;, radius * .38);
-        drawPass(1.9 * scale, radius * 1.16, &#x27;rgba(69, 174, 176, .12)&#x27;, radius * .36);
-        drawPass(0, radius * 1.02, &#x27;rgba(36, 106, 106, .1)&#x27;, radius * .28);
-        drawPass(0, radius * .72, &#x27;rgba(3, 11, 12, .36)&#x27;, radius * .14);
-        xrSmokeCtx.shadowBlur = 0;
+        xrStage?.classList.remove(&#x27;rq-xr-webgl-presenting&#x27;);
       };
       const renderXrSmoke = () =&gt; {
         xrSmoke.frame = 0;
-        if (!xrSmokeEnabled || !xrSmokeCanvas || !xrSmokeCtx) return;
+        if (!xrSmokeEnabled || !xrSmokeCanvas || !xrSmokeGl || xrSmoke.lost) return;
         const stageRect = xrStage?.getBoundingClientRect();
-        if (!stageRect?.width || !stageRect.height) return clearXrSmoke();
-        sizeXrSmoke(stageRect);
-        xrSmokeCtx.save();
-        xrSmokeCtx.globalCompositeOperation = &#x27;destination-in&#x27;;
-        xrSmokeCtx.fillStyle = xrSmoke.open ? &#x27;rgba(255,255,255,.952)&#x27; : &#x27;rgba(255,255,255,.7)&#x27;;
-        xrSmokeCtx.fillRect(0, 0, xrSmokeCanvas.width, xrSmokeCanvas.height);
-        xrSmokeCtx.restore();
-        xrSmoke.pending.splice(0).forEach(strokeXrSmokeSegment);
-        xrSmoke.energy *= xrSmoke.open ? .956 : .72;
-        xrSmoke.speed *= .88;
-        xrSmoke.velocityX *= .86;
-        xrSmoke.velocityY *= .86;
-        const visualEnergy = (xrSmoke.open ? Math.min(1, Math.sqrt(xrSmoke.energy) * 1.12) : xrSmoke.energy * .36) * xrSmoke.release;
-        xrSmokeCanvas.style.opacity = String(visualEnergy);
+        if (!stageRect?.width || !stageRect.height || !sizeXrSmoke(stageRect)) return clearXrSmoke();
+        const frameTime = performance.now();
+        const energyFrameScale = xrSmoke.renderLastTime ? Math.max(.5, Math.min(4, (frameTime - xrSmoke.renderLastTime) / (1000 / 60))) : 1;
+        xrSmoke.renderLastTime = frameTime;
+        const segment = xrSmoke.pending[xrSmoke.pending.length - 1] || null;
+        xrSmoke.pending.length = 0;
+        updateXrSmokeField(segment, frameTime);
+        updateXrSmokeBody();
+        if (xrDistortion.visible) {
+          if (xrDistortion.frame) window.cancelAnimationFrame(xrDistortion.frame);
+          xrDistortion.frame = 0;
+          renderXrDistortion();
+          xrSmokeCanvas.dataset.sceneSync = &#x27;same-frame-sphere&#x27;;
+        }
+        renderXrSmokeScene();
+        xrSmoke.energy *= Math.pow(xrSmoke.open &amp;&amp; xrSmoke.pointerInside ? .94 : .72, energyFrameScale);
+        xrSmoke.speed *= .9;
+        xrSmoke.velocityX *= .87;
+        xrSmoke.velocityY *= .87;
+        const visualEnergy = (xrSmoke.open ? Math.min(1, Math.sqrt(xrSmoke.energy) * 1.16) : xrSmoke.energy * .32) * xrSmoke.release;
+        displayXrSmoke(visualEnergy);
+        const sceneIsPresenting = Boolean(xrSmoke.sceneReady &amp;&amp; xrSmoke.sceneTarget &amp;&amp; xrSmoke.open);
+        xrSmokeCanvas.style.opacity = String(sceneIsPresenting ? clampUnit(xrSmoke.release) : 0);
+        xrStage?.classList.toggle(&#x27;rq-xr-webgl-presenting&#x27;, sceneIsPresenting);
         xrSmokeCanvas.dataset.energy = xrSmoke.energy.toFixed(4);
         xrSmokeCanvas.dataset.running = &#x27;true&#x27;;
+        xrSmokeCanvas.dataset.pointerInside = String(xrSmoke.pointerInside);
         scheduleXrMotion();
-        if (xrSmoke.energy &gt; .006) {
-          xrSmoke.frame = window.requestAnimationFrame(renderXrSmoke);
-        } else {
-          clearXrSmoke();
-        }
+        if (xrSmoke.energy &gt; .006 || xrSmoke.pending.length) xrSmoke.frame = window.requestAnimationFrame(renderXrSmoke);
+        else clearXrSmoke();
       };
       const scheduleXrSmoke = () =&gt; {
-        if (!xrSmokeEnabled || xrSmoke.frame) return;
+        if (!xrSmokeEnabled || xrSmoke.lost || xrSmoke.frame) return;
         xrSmoke.frame = window.requestAnimationFrame(renderXrSmoke);
+      };
+      const sampleXrSmokeCatmullPoint = (p0, p1, p2, p3, amount) =&gt; {
+        const amount2 = amount * amount;
+        const amount3 = amount2 * amount;
+        const sampleAxis = (axis) =&gt; .5 * (
+          2 * p1[axis]
+          + (-p0[axis] + p2[axis]) * amount
+          + (2 * p0[axis] - 5 * p1[axis] + 4 * p2[axis] - p3[axis]) * amount2
+          + (-p0[axis] + 3 * p1[axis] - 3 * p2[axis] + p3[axis]) * amount3
+        );
+        return { x: sampleAxis(&#x27;x&#x27;), y: sampleAxis(&#x27;y&#x27;) };
+      };
+      const queueXrSmokeCurve = (stageRect) =&gt; {
+        if (xrSmoke.pointerPoints.length &lt; 2) return;
+        const pointCount = xrSmoke.pointerPoints.length;
+        const p1 = xrSmoke.pointerPoints[pointCount - 2];
+        const p2 = xrSmoke.pointerPoints[pointCount - 1];
+        const p0 = xrSmoke.pointerPoints[pointCount - 3] || p1;
+        const p3 = {
+          x: p2.x + (p2.x - p1.x),
+          y: p2.y + (p2.y - p1.y),
+          time: p2.time + Math.max(1, p2.time - p1.time),
+          acceleration: p2.acceleration
+        };
+        const pixelDistance = Math.hypot((p2.x - p1.x) * stageRect.width, (p2.y - p1.y) * stageRect.height);
+        const sampleCount = Math.max(1, Math.min(6, Math.ceil(pixelDistance / 18)));
+        const sampleElapsed = Math.max(1, Math.min(80, p2.time - p1.time) / sampleCount);
+        let previous = sampleXrSmokeCatmullPoint(p0, p1, p2, p3, 0);
+        for (let index = 1; index &lt;= sampleCount; index += 1) {
+          const amount = index / sampleCount;
+          const next = sampleXrSmokeCatmullPoint(p0, p1, p2, p3, amount);
+          const pixelX = (next.x - previous.x) * stageRect.width;
+          const pixelY = (next.y - previous.y) * stageRect.height;
+          xrSmoke.pending.push({
+            x0: clampUnit(previous.x),
+            y0: clampUnit(previous.y),
+            x1: clampUnit(next.x),
+            y1: clampUnit(next.y),
+            velocityX: pixelX / sampleElapsed,
+            velocityY: pixelY / sampleElapsed,
+            speed: Math.min(3.2, Math.hypot(pixelX, pixelY) / sampleElapsed),
+            acceleration: mix(p1.acceleration, p2.acceleration, amount),
+            distance: Math.hypot(pixelX, pixelY),
+            time: mix(p1.time, p2.time, amount)
+          });
+          previous = next;
+        }
+        while (xrSmoke.pointerPoints.length &gt; 3) xrSmoke.pointerPoints.shift();
+        if (xrSmoke.pending.length &gt; 8) xrSmoke.pending.splice(0, xrSmoke.pending.length - 8);
       };
       const seedXrSmoke = (event, stageRect) =&gt; {
         if (!xrSmokeEnabled || !xrSmoke.open || event.pointerType === &#x27;touch&#x27;) return;
@@ -3641,7 +5169,13 @@ html&gt;body{padding:0}&lt;/style&gt;
           xrSmoke.y = y;
           xrSmoke.lastX = x;
           xrSmoke.lastY = y;
+          xrSmoke.drawX = x;
+          xrSmoke.drawY = y;
           xrSmoke.lastTime = time;
+          xrSmoke.inputSpeed = 0;
+          xrSmoke.acceleration = 0;
+          xrSmoke.pointerPoints.length = 0;
+          xrSmoke.pointerPoints.push({ x, y, time, speed: 0, acceleration: 0 });
           xrSmoke.hasPointer = true;
           return;
         }
@@ -3651,22 +5185,52 @@ html&gt;body{padding:0}&lt;/style&gt;
         const distance = Math.hypot(pixelX, pixelY);
         if (distance &lt; .75) return;
         const speed = Math.min(3.2, distance / elapsed);
-        xrSmoke.velocityX = pixelX / elapsed;
-        xrSmoke.velocityY = pixelY / elapsed;
+        const nextVelocityX = pixelX / elapsed;
+        const nextVelocityY = pixelY / elapsed;
+        const previousVelocityLength = Math.hypot(xrSmoke.velocityX, xrSmoke.velocityY);
+        const nextVelocityLength = Math.hypot(nextVelocityX, nextVelocityY);
+        const directionDot = previousVelocityLength &gt; .001 &amp;&amp; nextVelocityLength &gt; .001
+          ? Math.max(-1, Math.min(1, (xrSmoke.velocityX * nextVelocityX + xrSmoke.velocityY * nextVelocityY) / (previousVelocityLength * nextVelocityLength)))
+          : 1;
+        const turnAmount = 1 - directionDot;
+        const acceleration = Math.min(2.4, Math.abs(speed - xrSmoke.inputSpeed) * 1.8 + turnAmount * .75);
+        xrSmoke.velocityX = nextVelocityX;
+        xrSmoke.velocityY = nextVelocityY;
         xrSmoke.speed = Math.max(xrSmoke.speed, speed);
+        xrSmoke.inputSpeed = speed;
+        xrSmoke.acceleration = acceleration;
         xrSmoke.lastX = xrSmoke.x;
         xrSmoke.lastY = xrSmoke.y;
         xrSmoke.x = x;
         xrSmoke.y = y;
         xrSmoke.lastTime = time;
-        xrSmoke.energy = Math.min(1, Math.max(xrSmoke.energy, .3 + speed * .22));
-        xrSmoke.pending.push({ x0: xrSmoke.lastX, y0: xrSmoke.lastY, x1: x, y1: y, speed, time });
-        if (xrSmoke.pending.length &gt; 24) xrSmoke.pending.splice(0, xrSmoke.pending.length - 24);
+        xrSmoke.energy = Math.min(1, xrSmoke.energy + .14 + speed * .09 + acceleration * .025);
+        const turnSmoothing = Math.max(0, Math.min(.42, turnAmount * .52));
+        const pathX = mix(x, xrSmoke.lastX, turnSmoothing);
+        const pathY = mix(y, xrSmoke.lastY, turnSmoothing);
+        const drawPixelDistance = Math.hypot((pathX - xrSmoke.drawX) * stageRect.width, (pathY - xrSmoke.drawY) * stageRect.height);
+        xrSmoke.pending[0] = {
+          x0: xrSmoke.drawX,
+          y0: xrSmoke.drawY,
+          x1: pathX,
+          y1: pathY,
+          distance: drawPixelDistance,
+          speed,
+          acceleration
+        };
         scheduleXrSmoke();
       };
+      if (xrSmokeCanvas &amp;&amp; xrSmokeGl) {
+        xrSmokeCanvas.addEventListener(&#x27;webglcontextlost&#x27;, (event) =&gt; {
+          event.preventDefault();
+          xrSmoke.lost = true;
+          clearXrSmoke();
+          xrSmokeCanvas.dataset.renderer = &#x27;context-lost&#x27;;
+        });
+      }
       const xrTitleDuration = 1050;
-      const xrTearExpandDuration = 900;
-      const xrTearSettleDuration = 260;
+      const xrTearExpandDuration = 1040;
+      const xrTearSettleDuration = 70;
       const xrTearPeelDuration = 340;
       const xrTearDuration = xrTearExpandDuration + xrTearSettleDuration + xrTearPeelDuration;
       const xrSceneRevealStart = 540;
@@ -3678,6 +5242,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       const clampUnit = (value) =&gt; Math.max(0, Math.min(1, value));
       const mix = (from, to, amount) =&gt; from + (to - from) * amount;
       const easeOutQuart = (value) =&gt; 1 - Math.pow(1 - clampUnit(value), 4);
+      const easeOutTear = (value) =&gt; 1 - Math.pow(1 - clampUnit(value), 2);
       const xrLottieMotionFrames = [
         { time: 0, distance: 0, scale: 0, rotation: 90 },
         { time: 7 / 32, distance: .999, scale: 1, rotation: 0 },
@@ -3871,36 +5436,40 @@ html&gt;body{padding:0}&lt;/style&gt;
             gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
             const image = new Image();
             image.onload = () =&gt; {
-              const texture = gl.createTexture();
-              gl.activeTexture(gl.TEXTURE0);
-              gl.bindTexture(gl.TEXTURE_2D, texture);
-              gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
-              gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-              gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-              gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-              gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-              gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
-              xrDistortion.gl = gl;
-              xrDistortion.program = program;
-              xrDistortion.texture = texture;
-              xrDistortion.textureWidth = image.naturalWidth;
-              xrDistortion.textureHeight = image.naturalHeight;
-              xrDistortion.uniforms = {
-                texture: gl.getUniformLocation(program, &#x27;uTexture&#x27;),
-                pointer: gl.getUniformLocation(program, &#x27;uPointer&#x27;),
-                resolution: gl.getUniformLocation(program, &#x27;uResolution&#x27;),
-                textureSize: gl.getUniformLocation(program, &#x27;uTextureSize&#x27;),
-                unwrapProgress: gl.getUniformLocation(program, &#x27;uUnwrapProgress&#x27;),
-                rotation: gl.getUniformLocation(program, &#x27;uRotation&#x27;),
-                zoom: gl.getUniformLocation(program, &#x27;uZoom&#x27;)
-              };
-              xrDistortion.ready = true;
-              xrStage?.classList.add(&#x27;rq-xr-webgl-ready&#x27;);
-              requestXrDistortion();
-              resolve(xrDistortion);
+              try {
+                const texture = gl.createTexture();
+                gl.activeTexture(gl.TEXTURE0);
+                gl.bindTexture(gl.TEXTURE_2D, texture);
+                gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+                gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+                xrDistortion.gl = gl;
+                xrDistortion.program = program;
+                xrDistortion.texture = texture;
+                xrDistortion.textureWidth = image.naturalWidth;
+                xrDistortion.textureHeight = image.naturalHeight;
+                xrDistortion.uniforms = {
+                  texture: gl.getUniformLocation(program, &#x27;uTexture&#x27;),
+                  pointer: gl.getUniformLocation(program, &#x27;uPointer&#x27;),
+                  resolution: gl.getUniformLocation(program, &#x27;uResolution&#x27;),
+                  textureSize: gl.getUniformLocation(program, &#x27;uTextureSize&#x27;),
+                  unwrapProgress: gl.getUniformLocation(program, &#x27;uUnwrapProgress&#x27;),
+                  rotation: gl.getUniformLocation(program, &#x27;uRotation&#x27;),
+                  zoom: gl.getUniformLocation(program, &#x27;uZoom&#x27;)
+                };
+                xrDistortion.ready = true;
+                xrStage?.classList.add(&#x27;rq-xr-webgl-ready&#x27;);
+                requestXrDistortion();
+                resolve(xrDistortion);
+              } catch (error) {
+                resolve(null);
+              }
             };
             image.onerror = () =&gt; resolve(null);
-            image.src = &#x27;assets/xr-skybox-360.png&#x27;;
+            image.src = xrEmbeddedSkyboxSource || &#x27;assets/xr-skybox-360.png&#x27;;
           } catch (error) {
             console.warn(&#x27;XR distortion fallback is active.&#x27;, error);
             resolve(null);
@@ -4290,23 +5859,30 @@ html&gt;body{padding:0}&lt;/style&gt;
         const titleProgress = clampUnit(elapsed / xrTitleDuration);
         const tearElapsed = elapsed - xrTitleDuration;
         const progress = clampUnit(tearElapsed / xrTearExpandDuration);
-        const tear = easeOutQuart(progress);
+        const verticalTear = easeOutTear(progress);
+        const horizontalTear = easeOutTear(progress);
         const settle = clampUnit((tearElapsed - xrTearExpandDuration) / xrTearSettleDuration);
         const release = easeOutQuart((tearElapsed - xrSceneRevealStart) / xrSceneRevealDuration);
         const peel = easeOutQuart((tearElapsed - xrTearExpandDuration - xrTearSettleDuration) / xrTearPeelDuration);
         const paperFade = easeOutQuart((peel - .88) / .12);
         const copyDiminish = easeOutQuart(tearElapsed / 520);
-        const tearIsMoving = renderXrTear(tear, settle, release, peel, paperFade, stageRect);
+        const tearIsMoving = renderXrTear(verticalTear, horizontalTear, settle, release, peel, paperFade, stageRect);
         const burst = clampUnit((tearElapsed - xrTearDuration) / xrCardBurstDuration);
         const sequenceIsMoving = Math.abs(xrSequenceTarget - xrSequenceProgress) &gt; .0001;
         const burstIsMoving = sequenceIsMoving &amp;&amp; burst &gt; 0;
+        xrStage.dataset.rqXrSequenceProgress = xrSequenceProgress.toFixed(5);
+        xrStage.dataset.rqXrSequenceTarget = xrSequenceTarget.toFixed(5);
         xrSmoke.release = release;
         const smokeShouldOpen = xrSmokeEnabled &amp;&amp; sectionIsNear &amp;&amp; release &gt; .92 &amp;&amp; burst &gt; .01;
         if (xrSmoke.open !== smokeShouldOpen) {
           xrSmoke.open = smokeShouldOpen;
           xrSmoke.hasPointer = false;
+          xrSmoke.pointerPoints.length = 0;
           xrSmoke.pending.length = 0;
-          if (smokeShouldOpen) clearXrSmoke();
+          if (smokeShouldOpen) {
+            clearXrSmoke();
+            if (sizeXrSmoke(stageRect)) renderXrSmokeScene();
+          }
           else if (xrSmoke.energy &gt; .006) scheduleXrSmoke();
           if (xrSmokeCanvas) xrSmokeCanvas.dataset.open = String(smokeShouldOpen);
         }
@@ -4408,6 +5984,10 @@ html&gt;body{padding:0}&lt;/style&gt;
           if (title) title.style.willChange = sectionIsNear &amp;&amp; burstIsMoving ? &#x27;transform, opacity&#x27; : &#x27;auto&#x27;;
           if (meta) meta.style.willChange = sectionIsNear &amp;&amp; burstIsMoving ? &#x27;transform, opacity&#x27; : &#x27;auto&#x27;;
         });
+        const titleIsWaitingForInput = xrSequenceTarget === xrTitleStageProgress
+          &amp;&amp; xrSequenceProgress &gt;= xrTitleStageProgress - .0001;
+        if (titleIsWaitingForInput) scheduleXrAutoTear();
+        else if (xrSequenceTarget !== xrTitleStageProgress) cancelXrAutoTear();
         if ((sequenceIsMoving || tearIsMoving || burstIsMoving || gazeIsMoving) &amp;&amp; !xrMotionFrame) {
           xrMotionFrame = window.requestAnimationFrame(renderXrMotion);
         } else if (!sequenceIsMoving) {
@@ -4433,12 +6013,21 @@ html&gt;body{padding:0}&lt;/style&gt;
           xrCardGaze.targetAmount = 0;
           xrSmoke.pointerInside = false;
           xrSmoke.hasPointer = false;
+          xrSmoke.pointerPoints.length = 0;
           scheduleXrMotion();
         });
       }
+      const xrAutoTearDelay = 1400;
+      let xrAutoTearTimer = 0;
+      const cancelXrAutoTear = () =&gt; {
+        if (xrAutoTearTimer) window.clearTimeout(xrAutoTearTimer);
+        xrAutoTearTimer = 0;
+        if (xrStage?.dataset.rqXrAutoTear === &#x27;waiting&#x27;) xrStage.dataset.rqXrAutoTear = &#x27;idle&#x27;;
+      };
       const setXrSequenceTarget = (target) =&gt; {
         const nextTarget = clampUnit(target);
         if (nextTarget === xrSequenceTarget) return;
+        if (nextTarget !== xrTitleStageProgress) cancelXrAutoTear();
         xrSequenceTarget = nextTarget;
         xrSequenceLastFrame = performance.now();
         scheduleXrMotion();
@@ -4451,6 +6040,26 @@ html&gt;body{padding:0}&lt;/style&gt;
         const rect = xrSticky.getBoundingClientRect();
         return Math.abs(rect.top) &lt;= 2 &amp;&amp; rect.bottom &gt;= window.innerHeight - 2;
       };
+      const scheduleXrAutoTear = () =&gt; {
+        const titleIsWaiting = xrSequenceTarget === xrTitleStageProgress
+          &amp;&amp; xrSequenceProgress &gt;= xrTitleStageProgress - .0001;
+        if (reduceMotion || xrAutoTearTimer || !titleIsWaiting || !xrStageIsPinned() || document.hidden) return;
+        xrStage.dataset.rqXrAutoTear = &#x27;waiting&#x27;;
+        xrStage.dataset.rqXrAutoTearDelay = String(xrAutoTearDelay);
+        xrAutoTearTimer = window.setTimeout(() =&gt; {
+          xrAutoTearTimer = 0;
+          const canAutoTear = xrSequenceTarget === xrTitleStageProgress
+            &amp;&amp; xrSequenceProgress &gt;= xrTitleStageProgress - .0001
+            &amp;&amp; xrStageIsPinned()
+            &amp;&amp; !document.hidden;
+          xrStage.dataset.rqXrAutoTear = canAutoTear ? &#x27;triggered&#x27; : &#x27;idle&#x27;;
+          if (canAutoTear) setXrSequenceTarget(1);
+        }, xrAutoTearDelay);
+      };
+      document.addEventListener(&#x27;visibilitychange&#x27;, () =&gt; {
+        if (document.hidden) cancelXrAutoTear();
+        else scheduleXrAutoTear();
+      });
       const holdXrDownwardScroll = () =&gt; {
         const paperIsFullyOpen = Number(xrStage?.style.getPropertyValue(&#x27;--rq-xr-paper-fade&#x27;) || 0) &gt;= .999;
         if (reduceMotion || !xrStageIsPinned() || paperIsFullyOpen) return false;
@@ -4481,7 +6090,6 @@ html&gt;body{padding:0}&lt;/style&gt;
         updateXrSequenceVisibility(ratio);
         const titleIsWaiting = xrSequenceTarget === xrTitleStageProgress
           &amp;&amp; xrSequenceProgress &gt;= xrTitleStageProgress - .0001;
-        if (ratio &gt;= .82 &amp;&amp; titleIsWaiting &amp;&amp; scrollDelta &gt; .5) setXrSequenceTarget(1);
       };
       const xrSequenceObserver = xrSticky &amp;&amp; !reduceMotion &amp;&amp; &#x27;IntersectionObserver&#x27; in window
         ? new IntersectionObserver((entries) =&gt; {
