@@ -32,6 +32,10 @@
   display: block;
 }
 
+.technical-detail-lead {
+  margin-top: 32px;
+}
+
 .technical-detail-back {
   min-height: 44px;
   margin: 24px 0 20px;
@@ -111,7 +115,7 @@
 }
 
 .technical-detail-overview,
-.technical-detail-status p {
+.technical-detail-design-focus {
   max-width: 65ch;
   margin: 0;
   font-size: 17px;
@@ -166,11 +170,6 @@
   font-size: 12px;
   line-height: 1.35;
   overflow-wrap: anywhere;
-}
-
-.technical-detail-status {
-  padding-top: 24px;
-  border-top: 1px solid var(--detail-ink);
 }
 
 .technical-detail-meta {
@@ -315,6 +314,10 @@
   .technical-detail-header > p {
     margin-top: 14px;
     font-size: 16px;
+  }
+
+  .technical-detail-lead {
+    margin-top: 24px;
   }
 
   .technical-detail-grid {

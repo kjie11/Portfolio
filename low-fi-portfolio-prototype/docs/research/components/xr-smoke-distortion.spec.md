@@ -73,6 +73,8 @@
 - Each card receives a local influence from distance to the active smoke head, pointer velocity, and current smoke energy.
 - Add restrained local translation and `rotateX/rotateY` response on top of existing burst, reverse, `rotateZ`, and gaze transforms.
 - The overlay must visibly cross cards while their transforms react, but clicks, keyboard focus, and detail navigation remain unchanged.
+- On fine-pointer hover or keyboard focus, ease the active card to `1.025x` over roughly `420ms` with `cubic-bezier(.16, 1, .3, 1)` character; leaving reverses without a jump.
+- Detect strong scene gradients in the final ScreenPaint pass and increase RGB separation only where an active brush stroke intersects them. This lets the oil-film field pull color from card edges without tinting the whole card.
 
 ### Pointer Leave / Section Exit / Reverse
 - Pointer leave stops injection and switches to aggressive dissipation so the field clears without a background animation loop.
@@ -83,6 +85,7 @@
 - Enable only for `(hover: hover) and (pointer: fine)` and when reduced motion is not requested.
 - Touch devices and `prefers-reduced-motion` show the existing static XR scene with no smoke simulation or card impact.
 - Canvas is `aria-hidden="true"`.
+- Reduced-motion and touch layouts keep the existing focus outline and do not add spatial hover scaling.
 
 ## QA
 - Move the pointer rapidly across desktop XR after the paper opens: a connected trail must appear and persist across several frames.

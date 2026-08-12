@@ -35,7 +35,7 @@ def verify(viewport, distances, filename):
 
         card = page.locator('.polaroid[data-index="3"]')
         image = card.locator("img")
-        assert image.get_attribute("src") == "/media/mole-rhythm-polaroid-cover.png"
+        assert image.get_attribute("src") == "/media/mole-rhythm-polaroid.webp"
         assert image.get_attribute("alt") in {
             "五只地鼠、下落木槌与节奏爆点构成的像素封面",
             "Pixel-art cover with five moles, a falling mallet, and a rhythmic impact burst",

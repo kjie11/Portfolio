@@ -36,10 +36,10 @@ def verify(viewport, distance, filename):
         image = card.locator("img")
         current = page.locator(".gallery-title b").inner_text()
         assert current == "02 / 05", current
-        assert image.get_attribute("src") == "/media/four-way-kitchen-polaroid-cover.png"
+        assert image.get_attribute("src") == "/media/four-way-kitchen-polaroid.webp"
         assert image.get_attribute("alt") in {
-            "由食材柜、砧板、炉灶和黄色角色重组的四面厨房封面",
-            "Four-way Kitchen cover recomposed from ingredient, chopping, stove, and character elements",
+            "四面厨房游戏画面，包含食材柜、砧板、炉灶与中央角色",
+            "Four-sided kitchen gameplay with ingredient stations, chopping boards, stoves, and a central character",
         }
         assert image.evaluate("element => element.complete && element.naturalWidth === 1024")
         assert card.bounding_box()["width"] > 250

@@ -174,7 +174,7 @@ export const projects: Project[] = [
     capabilities: [{ zh: '多设备输入整合', en: 'Multi-device integration' }, { zh: '完整玩法循环', en: 'Complete gameplay loop' }, { zh: '超时与断线处理', en: 'Timeout and disconnect handling' }, { zh: '体感动作映射', en: 'Embodied action mapping' }],
     workflow: { zh: ['玩法循环', '键鼠灰盒', '扩展系统', '模拟设备链路', '接入真实输入', '诊断失败', '修订映射'], en: ['Core loop', 'Keyboard graybox', 'Expand systems', 'Simulate device paths', 'Integrate input', 'Diagnose failures', 'Revise mappings'] },
     status: { zh: '多输入原型。核心系统已经接入；完整 Play Mode、真实双手手感、摄像头性能与 Windows 构建仍待验收。', en: 'Multi-input prototype. Core systems are integrated; full Play Mode, dual-glove feel, camera performance, and the Windows build still require validation.' },
-    media: { kind: 'image', src: '/media/four-way-kitchen-polaroid-cover.png', alt: { zh: '由食材柜、砧板、炉灶和黄色角色重组的四面厨房封面', en: 'Four-way Kitchen cover recomposed from ingredient, chopping, stove, and character elements' } },
+    media: { kind: 'image', src: '/media/four-way-kitchen-polaroid.webp', alt: { zh: '四面厨房游戏画面，包含食材柜、砧板、炉灶与中央角色', en: 'Four-sided kitchen gameplay with ingredient stations, chopping boards, stoves, and a central character' } },
     tags: [{ zh: 'XR 输入', en: 'XR input' }, { zh: 'EMG', en: 'EMG' }, { zh: '玩法原型', en: 'Gameplay prototype' }]
   },
   {
@@ -195,7 +195,7 @@ export const projects: Project[] = [
     capabilities: [{ zh: '自定义绳索物理', en: 'Custom rope physics' }, { zh: '行为状态设计', en: 'Behavior state design' }, { zh: '腕带输入', en: 'Wristband input' }, { zh: 'Edit/Play Mode 测试', en: 'Edit/Play Mode tests' }],
     workflow: { zh: ['追逐概念', '拆物理规则', '绳索与行为原型', '观察机械感', '加入预判与锁点', '比较硬件路径', '主动简化'], en: ['Chase premise', 'Define physics', 'Rope and behavior prototype', 'Observe timing', 'Add anticipation', 'Compare hardware paths', 'Simplify'] },
     status: { zh: '可玩交互原型，具有三关、两只猫与多种目标。真实腕带手感和端到端延迟仍待实机确认。', en: 'Playable interaction prototype with three scenarios, two cats, and multiple targets. Wristband feel and end-to-end latency still need device validation.' },
-    media: { kind: 'image', src: '/media/cat-teaser-cover.png', alt: { zh: '逗猫绳 2D 游戏画面', en: 'Cat Teaser 2D gameplay' } },
+    media: { kind: 'image', src: '/media/cat-teaser-polaroid.webp', alt: { zh: '两只猫、鱼与动态符号组成的逗猫绳 2D 插画场景', en: 'Illustrated Cat Teaser 2D scene with two cats, a fish, and playful motion marks' } },
     tags: [{ zh: '物理玩具', en: 'Physics toy' }, { zh: '动物行为', en: 'Animal behavior' }, { zh: '交互收缩', en: 'Interaction simplification' }]
   },
   {
@@ -216,7 +216,7 @@ export const projects: Project[] = [
     capabilities: [{ zh: '音频分析', en: 'Audio analysis' }, { zh: '规则化谱面生成', en: 'Rule-based chart generation' }, { zh: 'DSP 判定', en: 'DSP timing' }, { zh: '人体工学约束', en: 'Ergonomic constraints' }],
     workflow: { zh: ['五指演奏概念', '展开音频方案', '检查真实素材', '删除多余依赖', '离线生成谱面', '导入与判定测试', '制作简单难度'], en: ['Five-finger premise', 'Explore audio paths', 'Inspect real material', 'Remove dependencies', 'Generate charts offline', 'Test timing', 'Create easier variants'] },
     status: { zh: 'Normal、Easy 与 Very Easy 谱面及视觉反馈已实现；完整 Play Mode 验收、手套误触和音频偏移仍在调校。', en: 'Normal, Easy, and Very Easy charts and feedback are implemented; full Play Mode acceptance, glove false triggers, and audio offset still need tuning.' },
-    media: { kind: 'image', src: '/media/mole-rhythm-polaroid-cover.png', alt: { zh: '五只地鼠、下落木槌与节奏爆点构成的像素封面', en: 'Pixel-art cover with five moles, a falling mallet, and a rhythmic impact burst' } },
+    media: { kind: 'image', src: '/media/mole-rhythm-polaroid.webp', alt: { zh: '五只地鼠乐手与下落木槌组成的像素节奏游戏画面', en: 'Pixel-art rhythm game with five mole performers and a falling mallet' } },
     extraMedia: [{ src: '/media/mole-chart.png', alt: { zh: '地底五重奏谱面数据', en: 'Mole Rhythm chart data' } }],
     tags: [{ zh: '音乐交互', en: 'Musical interaction' }, { zh: '自动谱面', en: 'Generated charts' }, { zh: '五指输入', en: 'Five-finger input' }]
   },

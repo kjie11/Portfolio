@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "name": "Pizza Delivery",
+    "summary": "A Unity WebGL delivery game iterated through three Poki player-test rounds.",
+    "status": "prototype",
+    "timeframe": "2026-05 to 2026-07",
+    "confidentiality": "public-summary"
+  },
+  "target": {
+    "audience": "Game design and Unity hiring managers",
+    "format": ["evidence", "markdown", "html"],
+    "language": "en"
+  },
+  "sources": [
+    {
+      "id": "DOC-001",
+      "type": "file",
+      "locator": "portfolio-process/职业方向与项目描述Skill输入.md#PROJECT-02",
+      "title": "Career direction and project evidence summary",
+      "date": "2026-08",
+      "access": "private",
+      "notes": "Primary source for role, systems, test rounds, player counts, playtime result, and publishing targets."
+    },
+    {
+      "id": "DOC-002",
+      "type": "file",
+      "locator": "ai-job-search/cv/main_example.tex",
+      "title": "Resume project bullets",
+      "date": "2026-08",
+      "access": "private",
+      "notes": "Corroborates order types, progression, feedback work, Git workflow, and WebGL delivery."
+    },
+    {
+      "id": "DOC-003",
+      "type": "file",
+      "locator": "portfolio-process/portfolio/low-fi-portfolio-prototype/index.html",
+      "title": "Portfolio wireframe content",
+      "date": "2026-08",
+      "access": "private",
+      "notes": "Corroborates intended portfolio framing and metric summary; not runtime evidence."
+    },
+    {
+      "id": "DOC-004",
+      "type": "image",
+      "locator": "Portfolio/portfolio-evidence/pizza-delivery/assets/poki-iteration-dashboard.png",
+      "title": "Poki version-comparison dashboard",
+      "date": "2026-07-30",
+      "access": "private",
+      "sha256": "E87FC59E076240565AA7F6DBB6AED0F129FDB57CDA320472EABB39EBEAD36485",
+      "notes": "Directly shows three completed tests of 500 gameplays with average playtimes of 1:14, 1:46, and 1:53, plus a stopped 435-gameplay test with no average."
+    },
+    {
+      "id": "IMAGE-001",
+      "type": "image",
+      "locator": "Portfolio/portfolio-evidence/pizza-delivery/assets/gameplay.png",
+      "title": "Pizza Delivery runtime screenshot",
+      "date": "2026-08",
+      "access": "private",
+      "sha256": "05AE6D0B7BEC091BDDD95318AB0D2912492EDA4A21D8A052545C1686D307D67B",
+      "notes": "User-supplied runtime image showing the third-person delivery car, city road, coins, timer, order card, pause control, and cash UI."
+    }
+  ],
+  "contributions": [
+    {
+      "id": "CONTRIB-001",
+      "actor": "user",
+      "role": "Unity Game Development and Design Intern",
+      "actions": [
+        "Designed the tutorial and first level",
+        "Defined the delivery, reward, upgrade, and unlock loop",
+        "Iterated onboarding and feedback from player behaviour",
+        "Prepared repeatable WebGL test releases"
+      ],
+      "boundaries": "Team context and third-party asset ownership are not fully documented; sole ownership is not claimed.",
+      "source_ids": ["DOC-001", "DOC-002"]
+    }
+  ],
+  "claims": [
+    {
+      "id": "CLAIM-001",
+      "statement": "The prototype completed three Poki tests with 500 gameplays in each test.",
+      "status": "supported",
+      "evidence_level": "E2",
+      "source_ids": ["DOC-001", "DOC-003", "DOC-004"],
+      "contribution_ids": ["CONTRIB-001"],
+      "confidence": "high",
+      "public_safe": true
+    },
+    {
+      "id": "CLAIM-002",
+      "statement": "The retained summary records an earlier 44-second baseline, while the Poki dashboard directly confirms the final 1 minute 53 second result.",
+      "status": "supported",
+      "evidence_level": "E1",
+      "source_ids": ["DOC-001", "DOC-003", "DOC-004"],
+      "contribution_ids": ["CONTRIB-001"],
+      "confidence": "medium",
+      "public_safe": true
+    },
+    {
+      "id": "CLAIM-003",
+      "statement": "The project included order, reward, countdown, vehicle-upgrade, area-unlock, onboarding, and multimodal feedback work.",
+      "status": "supported",
+      "evidence_level": "E1",
+      "source_ids": ["DOC-001", "DOC-002"],
+      "contribution_ids": ["CONTRIB-001"],
+      "confidence": "medium",
+      "public_safe": true
+    },
+    {
+      "id": "CLAIM-004",
+      "statement": "The three visible completed versions averaged 1 minute 14 seconds, 1 minute 46 seconds, and 1 minute 53 seconds across 500 gameplays each.",
+      "status": "supported",
+      "evidence_level": "E2",
+      "source_ids": ["DOC-004"],
+      "contribution_ids": ["CONTRIB-001"],
+      "confidence": "high",
+      "public_safe": true
+    },
+    {
+      "id": "CLAIM-005",
+      "statement": "The supplied runtime image shows a third-person driving view with delivery, timer, currency, pickup, and pause UI.",
+      "status": "supported",
+      "evidence_level": "E2",
+      "source_ids": ["IMAGE-001"],
+      "contribution_ids": ["CONTRIB-001"],
+      "confidence": "high",
+      "public_safe": true
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Frame the case study around behaviour-led iteration rather than feature count.",
+      "rationale": "The strongest available evidence is the three-round playtime change.",
+      "source_ids": ["DOC-001"]
+    }
+  ],
+  "timeline": [
+    {
+      "period": "2026-05 to 2026-07",
+      "event": "Developed and iterated the tutorial and first level during the internship.",
+      "source_ids": ["DOC-001", "DOC-002"]
+    }
+  ],
+  "gaps": [
+    "Original dashboard evidence for the earlier 44-second baseline",
+    "Round-by-round retention and completion rates",
+    "Metric change attributed to each individual design change",
+    "Current public playable link",
+    "Clear ownership boundary for art assets and team contributions"
+  ],
+  "assumptions": [
+    "The audience is an English-speaking game design or Unity hiring manager."
+  ]
+}

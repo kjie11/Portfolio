@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Teaser 2D - RuyanQin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; }
+        .project-content img { width: 100%; margin-bottom: 20px; }
+        .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
+        .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="sidebar">
+        <div class="top-section">
+            <h1 class="logo">Ruyan Qin</h1>
+            <div class="bio-section">
+                <p>Hi, I'm Ruyan, a Unity/XR Developer and Interaction Designer creating intuitive, testable experiences across VR, AR, and WebGL.</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">All Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="Assets/CV-RuyanQin_UX3.pdf" target="_blank">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-content">
+            <a href="index.html" class="back-btn">&larr; Back to Index</a>
+            <h2>Cat Teaser 2D</h2>
+            <div class="project-text">
+                <p>Cat Teaser 2D is a Unity interaction prototype built around a custom rope simulation. Players control the handle rather than the feather directly, creating the delay and inertia needed for anticipation, deception, and well-timed misses.</p>
+                <p>The prototype combines rope physics, velocity-and-acceleration flick detection, cat behaviour, multiple targets, and shared mouse and wearable-input paths.</p>
+            </div>
+
+            <img src="images/cat-teaser-polaroid.webp" alt="Illustrated Cat Teaser 2D scene with two cats, a fish, and playful motion marks">
+
+            <div class="project-details">
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Designed the core interaction around controlling the handle while force travels through the rope</li>
+                    <li>Tuned rope inertia, feather drift, and velocity-and-acceleration flick detection</li>
+                    <li>Designed cat observation, wind-up, target locking, pouncing, and missed catches</li>
+                    <li>Expanded the prototype with two cats, multiple targets, and three progressive scenarios</li>
+                    <li>Unified mouse and wearable inputs behind the same interaction path</li>
+                </ul>
+
+                <h3>Design Focus</h3>
+                <ul>
+                    <li>Preserve delay and inertia instead of giving the player direct control of the feather</li>
+                    <li>Let the cat commit early and genuinely miss to create anticipation and playful deception</li>
+                    <li>Keep mouse and wearable inputs consistent without changing the interaction rules</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

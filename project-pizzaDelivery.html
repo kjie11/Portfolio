@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Delivery - RuyanQin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; }
+        .project-content img { width: 100%; margin-bottom: 8px; }
+        .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
+        .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
+        .image-note, .evidence-note { color: #777; font-size: 12px; margin-bottom: 28px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="sidebar">
+        <div class="top-section">
+            <h1 class="logo">Ruyan Qin</h1>
+            <div class="bio-section">
+                <p>Hi, I'm Ruyan, an XR Designer and UX Researcher focused on immersive interaction and user-centered prototyping in VR/AR.</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">All Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="Assets/CV-RuyanQin_UX3.pdf" target="_blank">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-content">
+            <a href="index.html" class="back-btn">&larr; Back to Index</a>
+            <h2>Pizza Delivery</h2>
+            <div class="project-text">
+                <p>Pizza Delivery is a casual Unity WebGL driving game developed during my internship at Dream Reality Interactive. I designed and built the tutorial and first level around a clear pickup, delivery, reward, upgrade, and area-unlock loop.</p>
+                <p>Across three Poki test rounds of approximately 500 players each, I used player behaviour to identify friction in onboarding, progression, and feedback. Average playtime increased from 44 seconds to 1 minute 53 seconds after the three rounds—an increase of approximately 157%.</p>
+            </div>
+
+            <img src="images/pizza-delivery-01-gameplay-01.png" alt="Pizza Delivery gameplay showing a delivery car, active order, timer, and coin rewards">
+            <p class="image-note">Gameplay screenshot · Driving, active order, countdown, and reward feedback</p>
+
+            <div class="project-details">
+                <h3>The Problem</h3>
+                <p>Early players were leaving before they could understand the full delivery loop. The experience needed to communicate the next action quickly, make short- and mid-term goals visible, and give driving events enough feedback to remain readable in a browser game.</p>
+
+                <h3>Process</h3>
+                <p>I reviewed player behaviour after each Poki test round, translated the observed friction into design priorities, and iterated the tutorial, task guidance, progression, and moment-to-moment feedback. Git-based versioning and automated WebGL builds kept each test release repeatable.</p>
+
+                <h3>Key Work</h3>
+                <ul>
+                    <li>Defined the pickup, delivery, reward, and upgrade loop</li>
+                    <li>Designed order, countdown, garage, and area-unlock progression</li>
+                    <li>Reworked onboarding prompts and task guidance from player behaviour</li>
+                    <li>Layered audio, particles, camera, and UI feedback into driving events</li>
+                    <li>Set up repeatable WebGL builds for Poki and itch.io testing</li>
+                </ul>
+
+                <h3>Solution</h3>
+                <ul>
+                    <li>A tutorial and first level that introduce driving through immediate delivery goals</li>
+                    <li>Standard, timed, and VIP orders with distinct rewards and urgency</li>
+                    <li>Vehicle upgrades and area unlocks that connect individual deliveries to longer-term progress</li>
+                    <li>Clearer prompts, target guidance, and multimodal feedback for important actions</li>
+                </ul>
+
+                <h3>Results</h3>
+                <ul>
+                    <li><strong>3</strong> Poki test rounds</li>
+                    <li><strong>Approximately 500 players</strong> per round</li>
+                    <li><strong>44 seconds to 1 minute 53 seconds</strong> average playtime</li>
+                    <li><strong>Approximately 157% increase</strong> in average playtime</li>
+                </ul>
+
+                <h3>My Role</h3>
+                <ul>
+                    <li><strong>Game Designer:</strong> Defined the core loop, order types, progression, and onboarding</li>
+                    <li><strong>Unity Prototyper:</strong> Extended vehicle control and implemented gameplay, UI, and feedback systems</li>
+                    <li><strong>Experience Designer:</strong> Turned player behaviour into priorities across three test rounds</li>
+                </ul>
+
+                <h3>Learnings</h3>
+                <p>The project reinforced that early-session clarity is part of the core game system, not a layer added after it. Behavioural data helped prioritize concrete changes, while repeatable browser builds made each iteration easier to test and compare.</p>
+
+                <p class="evidence-note">Evidence record: DOC-001–003. Round-by-round retention, completion rate, and change-level attribution remain unavailable.</p>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

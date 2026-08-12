@@ -29,10 +29,9 @@ export function TechnicalProjectDetail({ project, language, onBack }: { project:
   const copy = language === 'zh' ? {
     back: '返回项目',
     overview: '项目概览',
-    keyWork: '关键工作',
+    keyWork: '核心功能',
+    designFocus: '设计重点',
     workflow: '工作流程',
-    status: '当前状态',
-    roles: '角色',
     technologies: '技术',
     scale: '项目规模',
     scaleValue: '独立原型',
@@ -47,10 +46,9 @@ export function TechnicalProjectDetail({ project, language, onBack }: { project:
   } : {
     back: 'Back to projects',
     overview: 'Project Overview',
-    keyWork: 'Key Work',
+    keyWork: 'Key Features',
+    designFocus: 'Design Focus',
     workflow: 'Workflow',
-    status: 'Current Status',
-    roles: 'Roles',
     technologies: 'Technologies',
     scale: 'Project Scale',
     scaleValue: 'Independent prototype',
@@ -68,10 +66,6 @@ export function TechnicalProjectDetail({ project, language, onBack }: { project:
 
   return <article className="technical-project-detail">
     <div className="technical-detail-shell">
-      <section className="technical-detail-lead" aria-label={project.media.alt[language]}>
-        <Media project={project} language={language} compact hero />
-      </section>
-
       <button className="technical-detail-back" type="button" onClick={onBack}>
         <ArrowLeft aria-hidden="true" />
         <span>{copy.back}</span>
@@ -81,6 +75,10 @@ export function TechnicalProjectDetail({ project, language, onBack }: { project:
         <h1>{project.title[language]}</h1>
         <p>{project.premise[language]}</p>
       </header>
+
+      <section className="technical-detail-lead" aria-label={project.media.alt[language]}>
+        <Media project={project} language={language} compact hero />
+      </section>
 
       <div className="technical-detail-grid">
         <div className="technical-detail-narrative">
@@ -96,6 +94,11 @@ export function TechnicalProjectDetail({ project, language, onBack }: { project:
             </ul>
           </section>
 
+          <section>
+            <h2>{copy.designFocus}</h2>
+            <p className="technical-detail-design-focus">{project.creativeAngle[language]}</p>
+          </section>
+
           {project.workflow ? <section>
             <h2>{copy.workflow}</h2>
             <ol className="technical-detail-workflow">
@@ -103,15 +106,10 @@ export function TechnicalProjectDetail({ project, language, onBack }: { project:
             </ol>
           </section> : null}
 
-          {project.status ? <section className="technical-detail-status">
-            <h2>{copy.status}</h2>
-            <p>{project.status[language]}</p>
-          </section> : null}
         </div>
 
         <aside className="technical-detail-meta" aria-label={language === 'zh' ? '项目元数据' : 'Project metadata'}>
           <dl>
-            <div><dt>{copy.roles}</dt><dd>{project.role[language]}</dd></div>
             <div><dt>{copy.technologies}</dt><dd className="technical-detail-tags">{technologies.map((technology, index) => <span key={`${technology}-${index}`}>{technology}</span>)}</dd></div>
             <div><dt>{copy.scale}</dt><dd>{project.scale?.[language] ?? copy.scaleValue}</dd></div>
             <div><dt>{copy.year}</dt><dd>{project.year}</dd></div>

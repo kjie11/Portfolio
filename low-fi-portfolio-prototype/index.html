@@ -1737,6 +1737,18 @@ html&gt;body{padding:0}&lt;/style&gt;
       --rq-xr-peel: 0;
       --rq-xr-paper-fade: 0;
       --rq-xr-fiber-fade: 0;
+      --rq-xr-camera-scale: .94;
+      --rq-xr-camera-blur: 10px;
+    }
+    #ruyan-portfolio-wireframe .rq-xr-world-depth {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      transform: scale(var(--rq-xr-camera-scale));
+      transform-origin: center center;
+      filter: blur(var(--rq-xr-camera-blur));
+      pointer-events: none;
     }
     #ruyan-portfolio-wireframe .rq-xr-skybox {
       position: absolute;
@@ -1835,17 +1847,36 @@ html&gt;body{padding:0}&lt;/style&gt;
       overflow: hidden;
       background: var(--rq-page);
       opacity: calc(1 - var(--rq-xr-paper-fade));
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
       will-change: clip-path, transform, opacity;
+    }
+    #ruyan-portfolio-wireframe .rq-xr-paper::before {
+      content: &#x27;XR Interaction &amp;\A Spatial Experiences&#x27;;
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--rq-ink);
+      font-family: &quot;RQ Montagu Slab&quot;, Georgia, &quot;Times New Roman&quot;, serif;
+      font-size: clamp(2.5rem, 4.8vw, 4.5rem);
+      font-weight: 400;
+      line-height: .94;
+      letter-spacing: 0;
+      text-align: center;
+      white-space: pre;
     }
     #ruyan-portfolio-wireframe .rq-xr-paper-left {
       clip-path: var(--rq-xr-clip-left, polygon(0 0, 50.2% 0, 50.2% 100%, 0 100%));
-      transform: translateX(calc(var(--rq-xr-peel) * -52vw)) rotate(calc(var(--rq-xr-peel) * -1.2deg));
-      transform-origin: left center;
+      transform: perspective(1200px) translate3d(calc(var(--rq-xr-peel) * -52vw), 0, calc(var(--rq-xr-peel) * 72px)) rotateY(calc(var(--rq-xr-peel) * -16deg)) rotateZ(calc(var(--rq-xr-peel) * -2deg));
+      transform-origin: 50% 50%;
+      filter: drop-shadow(18px 2px 28px rgb(15 14 11 / calc(var(--rq-xr-peel) * .58)));
     }
     #ruyan-portfolio-wireframe .rq-xr-paper-right {
       clip-path: var(--rq-xr-clip-right, polygon(49.8% 0, 100% 0, 100% 100%, 49.8% 100%));
-      transform: translateX(calc(var(--rq-xr-peel) * 52vw)) rotate(calc(var(--rq-xr-peel) * 1.2deg));
-      transform-origin: right center;
+      transform: perspective(1200px) translate3d(calc(var(--rq-xr-peel) * 52vw), 0, calc(var(--rq-xr-peel) * 72px)) rotateY(calc(var(--rq-xr-peel) * 16deg)) rotateZ(calc(var(--rq-xr-peel) * 2deg));
+      transform-origin: 50% 50%;
+      filter: drop-shadow(-18px 2px 28px rgb(15 14 11 / calc(var(--rq-xr-peel) * .58)));
     }
     #ruyan-portfolio-wireframe .rq-xr-fibers {
       position: absolute;
@@ -1858,10 +1889,11 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
     #ruyan-portfolio-wireframe .rq-xr-copy {
       position: absolute;
-      z-index: 6;
+      z-index: 3;
       top: 50%;
       left: 50%;
       width: min(56%, 600px);
+      color: #f9f9f0;
       transform: translate(-50%, -50%);
       text-align: center;
       pointer-events: none;
@@ -1891,7 +1923,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     #ruyan-portfolio-wireframe .rq-xr-copy p {
       max-width: 40ch;
       margin: 18px auto 0;
-      color: var(--rq-secondary-ink);
+      color: rgba(249,249,240,.72);
       font-size: .9rem;
       line-height: 1.55;
     }
@@ -1900,7 +1932,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       align-items: center;
       gap: 9px;
       margin-top: 18px;
-      color: var(--rq-secondary-ink);
+      color: rgba(249,249,240,.72);
       font-size: .76rem;
       font-variant-numeric: tabular-nums;
     }
@@ -2020,20 +2052,36 @@ html&gt;body{padding:0}&lt;/style&gt;
       outline: 2px solid var(--rq-ink);
       outline-offset: 8px;
     }
-    #ruyan-portfolio-wireframe .rq-pizza-media-column { grid-column: 2; grid-row: 1; }
-    #ruyan-portfolio-wireframe .rq-pizza-project .rq-media {
+    #ruyan-portfolio-wireframe .rq-case-project[role=&quot;link&quot;] { cursor: pointer; }
+    #ruyan-portfolio-wireframe .rq-case-project[role=&quot;link&quot;]:focus-visible {
+      outline: 2px solid var(--rq-ink);
+      outline-offset: 8px;
+    }
+    #ruyan-portfolio-wireframe .rq-pizza-media-column { grid-column: 2; grid-row: 2; }
+    #ruyan-portfolio-wireframe .rq-case-feature .rq-media {
       aspect-ratio: 16 / 9;
       min-height: 0;
+      padding: 0;
       border-radius: 8px;
+    }
+    #ruyan-portfolio-wireframe .rq-case-feature .rq-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     #ruyan-portfolio-wireframe .rq-pizza-copy {
       display: flex;
       flex-direction: column;
+      grid-column: 1;
+      grid-row: 2;
       max-width: none;
       min-width: 0;
     }
     #ruyan-portfolio-wireframe .rq-pizza-header {
       display: flex;
+      grid-column: 1 / -1;
+      grid-row: 1;
       justify-content: space-between;
       gap: 20px;
       padding-bottom: 16px;
@@ -2117,7 +2165,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
     #ruyan-portfolio-wireframe .rq-pizza-title {
       max-width: 22ch;
-      margin: clamp(30px, 3vw, 44px) 0 0;
+      margin: 0;
       font-family: &quot;RQ Montagu Slab&quot;, Georgia, &quot;Times New Roman&quot;, serif;
       font-size: clamp(2.25rem, 2.9vw, 3.35rem);
       font-weight: 400;
@@ -2156,32 +2204,6 @@ html&gt;body{padding:0}&lt;/style&gt;
       line-height: 1.5;
     }
     #ruyan-portfolio-wireframe .rq-pizza-role strong { font-weight: 650; }
-    #ruyan-portfolio-wireframe .rq-pizza-footer {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-top: 34px;
-      padding-top: 16px;
-      border-top: 1px solid var(--rq-line);
-    }
-    #ruyan-portfolio-wireframe .rq-pizza-skills {
-      max-width: 52ch;
-      color: var(--rq-secondary-ink);
-      font-size: .76rem;
-      font-weight: 600;
-      line-height: 1.55;
-      letter-spacing: .03em;
-      text-transform: uppercase;
-    }
-    #ruyan-portfolio-wireframe .rq-pizza-result {
-      flex: none;
-      font-size: .82rem;
-      font-weight: 650;
-      line-height: 1.35;
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-    }
     #ruyan-portfolio-wireframe .rq-research-project {
       grid-template-columns: minmax(360px, .82fr) minmax(480px, 1.18fr);
       align-items: stretch;
@@ -2190,14 +2212,9 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
     #ruyan-portfolio-wireframe .rq-research-media-column {
       grid-column: 2;
-      grid-row: 1;
+      grid-row: 2;
     }
-    #ruyan-portfolio-wireframe .rq-research-project .rq-media {
-      aspect-ratio: 16 / 9;
-      min-height: 0;
-      border-radius: 8px;
-    }
-    #ruyan-portfolio-wireframe .rq-research-copy { grid-column: 1; grid-row: 1; }
+    #ruyan-portfolio-wireframe .rq-research-copy { grid-column: 1; grid-row: 2; }
     #ruyan-portfolio-wireframe .rq-project-proof {
       display: flex;
       flex-wrap: wrap;
@@ -2236,26 +2253,40 @@ html&gt;body{padding:0}&lt;/style&gt;
       border-top: 1px solid var(--rq-line);
       color: var(--rq-secondary-ink);
     }
-    #ruyan-portfolio-wireframe .rq-detail-hero { padding-block: clamp(50px, 8vw, 92px) 34px; }
+    #ruyan-portfolio-wireframe .rq-detail-hero { padding-block: clamp(28px, 4vw, 48px) 34px; }
+    #ruyan-portfolio-wireframe .rq-detail-intro,
+    #ruyan-portfolio-wireframe .rq-detail-grid,
+    #ruyan-portfolio-wireframe .rq-next {
+      width: min(100%, 1024px);
+      margin-inline: auto;
+    }
     #ruyan-portfolio-wireframe .rq-back {
       position: relative;
       display: inline-grid;
       place-items: center;
       width: 196px;
-      min-height: 46px;
+      min-height: 45px;
       margin-bottom: 34px;
       padding: 0 18px;
       overflow: hidden;
-      border: 1px solid var(--rq-line);
+      border: 0;
       border-radius: 999px;
-      background: var(--rq-surface);
-      color: var(--rq-ink);
+      background: #0f0e0b;
+      color: #0f0e0b;
       font: inherit;
       font-size: .86rem;
       font-weight: 650;
       line-height: 1;
       cursor: pointer;
       isolation: isolate;
+    }
+    #ruyan-portfolio-wireframe .rq-back::before {
+      content: &#x27;&#x27;;
+      position: absolute;
+      z-index: 0;
+      inset: 2px;
+      border-radius: inherit;
+      background: #f9f9f0;
     }
     #ruyan-portfolio-wireframe .rq-back-label,
     #ruyan-portfolio-wireframe .rq-back-hover {
@@ -2269,7 +2300,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: var(--rq-surface);
+      color: #0f0e0b;
       opacity: 0;
       transform: translateX(42px);
     }
@@ -2286,14 +2317,21 @@ html&gt;body{padding:0}&lt;/style&gt;
     #ruyan-portfolio-wireframe .rq-back-fill {
       position: absolute;
       z-index: 1;
-      top: 50%;
-      left: 22px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--rq-ink);
-      transform: translate(-50%, -50%) scale(1);
-      transition: transform 420ms cubic-bezier(.16,1,.3,1);
+      inset: 2px;
+      overflow: hidden;
+      border-radius: inherit;
+      background: linear-gradient(100deg, rgba(255,255,255,.12), rgba(92,92,88,.16) 42%, rgba(255,255,255,.58) 54%, rgba(92,92,88,.1));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.72), inset 0 -1px 0 rgba(23,23,21,.14);
+      backdrop-filter: blur(7px) saturate(1.2);
+      transform: scaleX(0);
+      transform-origin: right center;
+    }
+    #ruyan-portfolio-wireframe .rq-back-fill::after {
+      content: &#x27;&#x27;;
+      position: absolute;
+      inset: -70% -22%;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,.72) 0 12%, rgba(132,132,126,.2) 38%, transparent 68%);
+      transform: translateX(58%) rotate(-8deg);
     }
     #ruyan-portfolio-wireframe .rq-back:hover .rq-back-label,
     #ruyan-portfolio-wireframe .rq-back:focus-visible .rq-back-label {
@@ -2305,20 +2343,40 @@ html&gt;body{padding:0}&lt;/style&gt;
       opacity: 1;
       transform: translateX(0);
     }
-    #ruyan-portfolio-wireframe .rq-back:hover .rq-back-fill,
-    #ruyan-portfolio-wireframe .rq-back:focus-visible .rq-back-fill {
-      transform: translate(-50%, -50%) scale(34);
+    @keyframes rq-back-water-sweep {
+      0% { transform: scaleX(0); transform-origin: right center; }
+      54% { transform: scaleX(1); transform-origin: right center; }
+      54.01% { transform: scaleX(1); transform-origin: left center; }
+      100% { transform: scaleX(0); transform-origin: left center; }
+    }
+    @keyframes rq-back-water-glint {
+      from { transform: translateX(58%) rotate(-8deg); }
+      to { transform: translateX(-42%) rotate(-8deg); }
+    }
+    #ruyan-portfolio-wireframe .rq-back.is-water-sweeping .rq-back-fill {
+      animation: rq-back-water-sweep 820ms cubic-bezier(.16,1,.3,1) both;
+    }
+    #ruyan-portfolio-wireframe .rq-back.is-water-sweeping .rq-back-fill::after {
+      animation: rq-back-water-glint 820ms cubic-bezier(.16,1,.3,1) both;
     }
     #ruyan-portfolio-wireframe .rq-back:active { transform: scale(.98); }
     #ruyan-portfolio-wireframe .rq-back:focus-visible { outline: 2px solid var(--rq-ink); outline-offset: 4px; }
     #ruyan-portfolio-wireframe .rq-detail-title { max-width: 18ch; }
     #ruyan-portfolio-wireframe .rq-detail-summary { max-width: 62ch; margin-top: 22px; color: var(--rq-secondary-ink); line-height: 1.6; }
-    #ruyan-portfolio-wireframe .rq-detail-visual { min-height: 380px; margin-top: 40px; overflow: hidden; padding: 0; }
+    #ruyan-portfolio-wireframe .rq-detail-visual {
+      width: min(100%, 1024px);
+      aspect-ratio: 2.06 / 1;
+      min-height: 0;
+      margin: 0 auto clamp(48px, 6vw, 72px);
+      overflow: hidden;
+      padding: 0;
+      border-radius: 16px;
+    }
     #ruyan-portfolio-wireframe .rq-detail-visual img {
       display: block;
       width: 100%;
       height: 100%;
-      min-height: 380px;
+      min-height: 0;
       object-fit: cover;
       object-position: center;
     }
@@ -2368,6 +2426,18 @@ html&gt;body{padding:0}&lt;/style&gt;
     #ruyan-portfolio-wireframe .rq-gallery .rq-media { min-height: 230px; }
     #ruyan-portfolio-wireframe .rq-next { padding-block: 54px; border-top: 1px solid var(--rq-line); }
     #ruyan-portfolio-wireframe .rq-next h2 { margin-top: 10px; }
+    @media (min-width: 721px) and (prefers-reduced-motion: no-preference) {
+      #ruyan-portfolio-wireframe .rq-fold-stack { position: relative; }
+      #ruyan-portfolio-wireframe .rq-fold-stack &gt; .rq-case-feature {
+        position: sticky;
+        top: 0;
+        overflow: clip;
+        background: var(--rq-page);
+      }
+      #ruyan-portfolio-wireframe .rq-fold-stack &gt; .rq-case-feature:nth-child(1) { z-index: 1; }
+      #ruyan-portfolio-wireframe .rq-fold-stack &gt; .rq-case-feature:nth-child(2) { z-index: 2; }
+      #ruyan-portfolio-wireframe .rq-fold-stack &gt; .rq-case-feature:nth-child(3) { z-index: 3; }
+    }
     @media (max-width: 900px) {
       #ruyan-portfolio-wireframe .rq-scroll-index,
       #ruyan-portfolio-wireframe .rq-scroll-flight { display: none; }
@@ -2412,20 +2482,19 @@ html&gt;body{padding:0}&lt;/style&gt;
       #ruyan-portfolio-wireframe .rq-pizza-project .rq-media { min-height: 0; }
       #ruyan-portfolio-wireframe .rq-pizza-title { max-width: 21ch; font-size: clamp(2.15rem, 9vw, 3.25rem); }
       #ruyan-portfolio-wireframe .rq-pizza-role { margin-top: 0; padding-top: 34px; }
-      #ruyan-portfolio-wireframe .rq-pizza-footer { align-items: start; flex-direction: column; }
-      #ruyan-portfolio-wireframe .rq-pizza-result { text-align: left; }
       #ruyan-portfolio-wireframe .rq-research-project { gap: 34px; min-height: 0; padding-right: 0; }
+      #ruyan-portfolio-wireframe .rq-pizza-header { grid-column: 1; grid-row: 1; }
       #ruyan-portfolio-wireframe .rq-pizza-copy,
-      #ruyan-portfolio-wireframe .rq-research-copy { grid-column: 1; grid-row: 1; }
+      #ruyan-portfolio-wireframe .rq-research-copy { grid-column: 1; grid-row: 2; }
       #ruyan-portfolio-wireframe .rq-pizza-media-column,
-      #ruyan-portfolio-wireframe .rq-ar-research-section .rq-research-media-column { grid-column: 1; grid-row: 2; }
+      #ruyan-portfolio-wireframe .rq-ar-research-section .rq-research-media-column { grid-column: 1; grid-row: 3; }
       #ruyan-portfolio-wireframe .rq-ar-research-section .rq-research-project .rq-media { min-height: 0; }
       #ruyan-portfolio-wireframe .rq-case-copy { max-width: none; }
       #ruyan-portfolio-wireframe .rq-wide-project { grid-column: auto; }
       #ruyan-portfolio-wireframe .rq-feature-grid .rq-project:last-child { grid-column: auto; }
-      #ruyan-portfolio-wireframe .rq-wide-project .rq-media,
-      #ruyan-portfolio-wireframe .rq-detail-visual { min-height: 240px; }
-      #ruyan-portfolio-wireframe .rq-detail-visual img { min-height: 240px; }
+      #ruyan-portfolio-wireframe .rq-wide-project .rq-media { min-height: 240px; }
+      #ruyan-portfolio-wireframe .rq-detail-visual { width: 100%; aspect-ratio: 16 / 10; min-height: 0; margin-bottom: 34px; border-radius: 12px; }
+      #ruyan-portfolio-wireframe .rq-detail-visual img { min-height: 0; }
       #ruyan-portfolio-wireframe .rq-vr-grid { position: absolute; display: block; }
       #ruyan-portfolio-wireframe .rq-vr-item:nth-child(5) { width: clamp(126px, 36vw, 164px); }
       #ruyan-portfolio-wireframe .rq-capability { border-bottom: 1px solid var(--rq-line); padding-bottom: 22px; }
@@ -2465,7 +2534,12 @@ html&gt;body{padding:0}&lt;/style&gt;
       #ruyan-portfolio-wireframe .rq-feature-media-column .rq-media { transition: none; }
       #ruyan-portfolio-wireframe .rq-back-label,
       #ruyan-portfolio-wireframe .rq-back-hover,
-      #ruyan-portfolio-wireframe .rq-back-fill { transition: none; }
+      #ruyan-portfolio-wireframe .rq-back-fill,
+      #ruyan-portfolio-wireframe .rq-back-fill::after { transition: none; }
+      #ruyan-portfolio-wireframe .rq-back:hover .rq-back-fill,
+      #ruyan-portfolio-wireframe .rq-back:focus-visible .rq-back-fill { transform: scaleX(1); }
+      #ruyan-portfolio-wireframe .rq-back:hover .rq-back-fill::after,
+      #ruyan-portfolio-wireframe .rq-back:focus-visible .rq-back-fill::after { transform: translateX(-42%) rotate(-8deg); }
       #ruyan-portfolio-wireframe .rq-xr-section { height: auto; min-height: 0; }
       #ruyan-portfolio-wireframe .rq-xr-sticky { position: relative; height: auto; min-height: 820px; }
       #ruyan-portfolio-wireframe .rq-xr-stage { min-height: 820px; }
@@ -2514,10 +2588,12 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;section class=&quot;rq-section rq-xr-section&quot; data-rq-xr-section&gt;
         &lt;div class=&quot;rq-xr-sticky&quot;&gt;
           &lt;div class=&quot;rq-xr-stage&quot; data-rq-xr-stage&gt;
+            &lt;div class=&quot;rq-xr-world-depth&quot; data-rq-xr-world-depth aria-hidden=&quot;true&quot;&gt;
             &lt;canvas class=&quot;rq-xr-skybox&quot; data-rq-xr-skybox aria-hidden=&quot;true&quot;&gt;&lt;/canvas&gt;
             &lt;canvas class=&quot;rq-xr-distortion&quot; data-rq-xr-distortion aria-hidden=&quot;true&quot;&gt;&lt;/canvas&gt;
             &lt;div class=&quot;rq-xr-distortion-lens&quot; data-rq-xr-distortion-lens aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
             &lt;canvas class=&quot;rq-xr-perspective-grid&quot; data-rq-xr-grid aria-hidden=&quot;true&quot;&gt;&lt;/canvas&gt;
+            &lt;/div&gt;
             &lt;div class=&quot;rq-xr-paper rq-xr-paper-left&quot; data-rq-xr-paper-left aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
             &lt;div class=&quot;rq-xr-paper rq-xr-paper-right&quot; data-rq-xr-paper-right aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
             &lt;canvas class=&quot;rq-xr-fibers&quot; data-rq-xr-fibers aria-hidden=&quot;true&quot;&gt;&lt;/canvas&gt;
@@ -2542,36 +2618,29 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;/div&gt;
       &lt;/section&gt;
 
+      &lt;div class=&quot;rq-fold-stack&quot;&gt;
       &lt;section class=&quot;rq-section rq-case-feature&quot; data-rq-pizza-section&gt;
-        &lt;article class=&quot;rq-project rq-case-project rq-pizza-project&quot;&gt;
+        &lt;article class=&quot;rq-project rq-case-project rq-pizza-project&quot; data-rq-detail-project=&quot;pizza-delivery&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Pizza Delivery project details&quot;&gt;
+          &lt;div class=&quot;rq-pizza-header&quot;&gt;&lt;span&gt;Dream Reality Interactive · Unity Game Development &amp; Design Intern&lt;/span&gt;&lt;time datetime=&quot;2026-05/2026-07&quot;&gt;May 2026 - Jul 2026&lt;/time&gt;&lt;/div&gt;
           &lt;div class=&quot;rq-case-copy rq-pizza-copy&quot;&gt;
-            &lt;div class=&quot;rq-pizza-header&quot;&gt;&lt;span&gt;Dream Reality Interactive · Unity Game Development &amp; Design Intern&lt;/span&gt;&lt;time datetime=&quot;2026-05/2026-07&quot;&gt;May 2026 - Jul 2026&lt;/time&gt;&lt;/div&gt;
             &lt;h2 class=&quot;rq-pizza-title&quot;&gt;A delivery game rapidly prototyped with AI, then &lt;em&gt;refined through three rounds of player testing&lt;/em&gt;&lt;/h2&gt;
             &lt;p class=&quot;rq-pizza-summary&quot;&gt;I independently built the Unity WebGL prototype, then used three Poki test rounds of about 500 players each to refine onboarding, task clarity, and the delivery progression loop. Average playtime rose from 44 seconds to 1 minute 53 seconds, an increase of about 157%.&lt;/p&gt;
             &lt;p class=&quot;rq-pizza-role&quot;&gt;&lt;strong&gt;My role:&lt;/strong&gt; Unity Game Developer &amp; Designer&lt;/p&gt;
-            &lt;div class=&quot;rq-pizza-footer&quot;&gt;
-              &lt;p class=&quot;rq-pizza-skills&quot;&gt;Unity / C# / Game Design / Player Behaviour / UI &amp; Feedback / WebGL&lt;/p&gt;
-              &lt;p class=&quot;rq-pizza-result&quot;&gt;44 sec → 1 min 53 sec&lt;/p&gt;
-            &lt;/div&gt;
           &lt;/div&gt;
           &lt;div class=&quot;rq-feature-media-column rq-pizza-media-column&quot;&gt;
             &lt;p class=&quot;rq-pizza-name&quot;&gt;&lt;span class=&quot;rq-case-arrow&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;span&gt;Pizza Delivery&lt;/span&gt;&lt;/p&gt;
-            &lt;div class=&quot;rq-media&quot;&gt;Pizza Delivery gameplay and iteration comparison&lt;/div&gt;
+            &lt;div class=&quot;rq-media&quot;&gt;&lt;img src=&quot;assets/pizza-delivery-cover.png&quot; alt=&quot;Pizza Delivery gameplay showing the delivery car driving through a city intersection&quot;&gt;&lt;/div&gt;
           &lt;/div&gt;
         &lt;/article&gt;
       &lt;/section&gt;
 
       &lt;section class=&quot;rq-section rq-case-feature rq-ar-research-section&quot; data-rq-ar-research-section&gt;
-        &lt;article class=&quot;rq-project rq-case-project rq-research-project&quot;&gt;
+        &lt;article class=&quot;rq-project rq-case-project rq-research-project&quot; data-rq-detail-project=&quot;augsoc&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View AugSoc research project details&quot;&gt;
+          &lt;div class=&quot;rq-pizza-header&quot;&gt;&lt;span&gt;UX Research · AR Interaction&lt;/span&gt;&lt;time datetime=&quot;2025-06/2025-09&quot;&gt;Jun 2025 - Sep 2025&lt;/time&gt;&lt;/div&gt;
           &lt;div class=&quot;rq-case-copy rq-pizza-copy rq-research-copy&quot;&gt;
-            &lt;div class=&quot;rq-pizza-header&quot;&gt;&lt;span&gt;UX Research · AR Interaction&lt;/span&gt;&lt;time datetime=&quot;2025-06/2025-09&quot;&gt;Jun 2025 - Sep 2025&lt;/time&gt;&lt;/div&gt;
             &lt;h2 class=&quot;rq-pizza-title&quot;&gt;Researching Different &lt;em&gt;AR Graffiti Interaction Techniques&lt;/em&gt;&lt;/h2&gt;
             &lt;p class=&quot;rq-pizza-summary&quot;&gt;I developed a Meta Quest 3 prototype with 2D and 3D creation modes, then ran an 18-participant study using questionnaires and interviews to compare behaviour and preferences. The findings became interaction and feedback recommendations for the next iteration.&lt;/p&gt;
             &lt;p class=&quot;rq-pizza-role&quot;&gt;&lt;strong&gt;My role:&lt;/strong&gt; VR Developer &amp; UX Researcher&lt;/p&gt;
-            &lt;div class=&quot;rq-pizza-footer&quot;&gt;
-              &lt;p class=&quot;rq-pizza-skills&quot;&gt;Unity / Meta Quest 3 / AR Interaction / User Research / Questionnaire / Interviews&lt;/p&gt;
-              &lt;p class=&quot;rq-pizza-result&quot;&gt;18 participants · 2D vs 3D&lt;/p&gt;
-            &lt;/div&gt;
           &lt;/div&gt;
           &lt;div class=&quot;rq-feature-media-column rq-research-media-column&quot;&gt;
             &lt;p class=&quot;rq-pizza-name&quot;&gt;&lt;span class=&quot;rq-case-arrow&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;span&gt;AR Graffiti / AugSoc&lt;/span&gt;&lt;/p&gt;
@@ -2581,23 +2650,21 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;/section&gt;
 
       &lt;section class=&quot;rq-section rq-case-feature rq-plant-bot-section&quot; data-rq-plant-bot-section&gt;
-        &lt;article class=&quot;rq-project rq-case-project rq-pizza-project&quot;&gt;
+        &lt;article class=&quot;rq-project rq-case-project rq-pizza-project&quot; data-rq-detail-project=&quot;plant-bot&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Plant Bot project details&quot;&gt;
+          &lt;div class=&quot;rq-pizza-header&quot;&gt;&lt;span&gt;Physical Computing · AR Interaction&lt;/span&gt;&lt;span&gt;Sensor-to-AR Prototype&lt;/span&gt;&lt;/div&gt;
           &lt;div class=&quot;rq-case-copy rq-pizza-copy&quot;&gt;
-            &lt;div class=&quot;rq-pizza-header&quot;&gt;&lt;span&gt;Physical Computing · AR Interaction&lt;/span&gt;&lt;span&gt;Sensor-to-AR Prototype&lt;/span&gt;&lt;/div&gt;
             &lt;h2 class=&quot;rq-pizza-title&quot;&gt;Turning environmental sensor data into &lt;em&gt;a responsive AR plant companion&lt;/em&gt;&lt;/h2&gt;
             &lt;p class=&quot;rq-pizza-summary&quot;&gt;I built a physical-to-digital feedback loop that reads environmental conditions through sensors, routes them through Arduino or ESP32, and translates the resulting states into a Unity AR experience. Rather than showing raw values alone, Plant Bot gives the physical plant a visible digital presence, making changes in its surroundings easier to notice and understand.&lt;/p&gt;
             &lt;p class=&quot;rq-pizza-role&quot;&gt;&lt;strong&gt;My role:&lt;/strong&gt; Interaction Designer &amp; XR Developer&lt;/p&gt;
-            &lt;div class=&quot;rq-pizza-footer&quot;&gt;
-              &lt;p class=&quot;rq-pizza-skills&quot;&gt;Unity / AR / Arduino / ESP32 / Environmental Sensors / Physical Computing&lt;/p&gt;
-              &lt;p class=&quot;rq-pizza-result&quot;&gt;Environment → Unity AR response&lt;/p&gt;
-            &lt;/div&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;rq-feature-media-column rq-pizza-media-column&quot; data-rq-detail-project=&quot;plant-bot&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Plant Bot project details&quot;&gt;
+          &lt;div class=&quot;rq-feature-media-column rq-pizza-media-column&quot;&gt;
             &lt;p class=&quot;rq-pizza-name&quot;&gt;&lt;span class=&quot;rq-case-arrow&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;span&gt;Plant Bot&lt;/span&gt;&lt;/p&gt;
             &lt;div class=&quot;rq-media&quot;&gt;Plant Bot physical prototype and Unity AR state view&lt;/div&gt;
           &lt;/div&gt;
         &lt;/article&gt;
       &lt;/section&gt;
+
+      &lt;/div&gt;
 
       &lt;section class=&quot;rq-section&quot;&gt;
         &lt;p class=&quot;rq-section-label&quot;&gt;// Experiments · Ongoing&lt;/p&gt;
@@ -2640,18 +2707,20 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;nav class=&quot;rq-nav&quot; aria-label=&quot;Portfolio navigation&quot;&gt;&lt;div class=&quot;rq-name&quot;&gt;&lt;span class=&quot;rq-nav-avatar&quot; aria-hidden=&quot;true&quot;&gt;&lt;img src=&quot;assets/profile-avatar-ascii-2049.webp&quot; alt=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;RUYAN QIN&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;rq-nav-links&quot;&gt;&lt;span&gt;Work&lt;/span&gt;&lt;span&gt;VR / XR&lt;/span&gt;&lt;span&gt;About&lt;/span&gt;&lt;span&gt;CV&lt;/span&gt;&lt;span&gt;EN / 中文&lt;/span&gt;&lt;/div&gt;&lt;/nav&gt;
 
       &lt;header class=&quot;rq-detail-hero&quot;&gt;
-        &lt;button class=&quot;rq-back&quot; data-rq-detail-back type=&quot;button&quot;&gt;
-          &lt;span class=&quot;rq-back-label&quot;&gt;Back to XR projects&lt;/span&gt;
-          &lt;span class=&quot;rq-back-hover&quot; aria-hidden=&quot;true&quot;&gt;
-            &lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m12 19-7-7 7-7&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M19 12H5&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
-            &lt;span&gt;Back to XR projects&lt;/span&gt;
-          &lt;/span&gt;
-          &lt;span class=&quot;rq-back-fill&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;h1 class=&quot;rq-detail-title&quot; data-rq-detail-title&gt;Abyss&lt;/h1&gt;
-        &lt;p class=&quot;rq-detail-summary&quot; data-rq-detail-summary&gt;&lt;/p&gt;
-        &lt;div class=&quot;rq-actions&quot;&gt;&lt;a class=&quot;rq-action rq-action-primary&quot; data-rq-detail-video href=&quot;#&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;Watch project video&lt;/a&gt;&lt;/div&gt;
         &lt;div class=&quot;rq-media rq-detail-visual&quot; data-rq-detail-visual&gt;&lt;/div&gt;
+        &lt;div class=&quot;rq-detail-intro&quot;&gt;
+          &lt;button class=&quot;rq-back&quot; data-rq-detail-back type=&quot;button&quot;&gt;
+            &lt;span class=&quot;rq-back-label&quot;&gt;Back to projects&lt;/span&gt;
+            &lt;span class=&quot;rq-back-hover&quot; aria-hidden=&quot;true&quot;&gt;
+              &lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m12 19-7-7 7-7&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M19 12H5&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+              &lt;span&gt;Back to projects&lt;/span&gt;
+            &lt;/span&gt;
+            &lt;span class=&quot;rq-back-fill&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;h1 class=&quot;rq-detail-title&quot; data-rq-detail-title&gt;Abyss&lt;/h1&gt;
+          &lt;p class=&quot;rq-detail-summary&quot; data-rq-detail-summary&gt;&lt;/p&gt;
+          &lt;div class=&quot;rq-actions&quot;&gt;&lt;a class=&quot;rq-action rq-action-primary&quot; data-rq-detail-video href=&quot;#&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;Watch project video&lt;/a&gt;&lt;/div&gt;
+        &lt;/div&gt;
       &lt;/header&gt;
 
       &lt;div class=&quot;rq-detail-grid&quot;&gt;
@@ -2676,7 +2745,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     (() =&gt; {
       const root = document.getElementById(&#x27;ruyan-portfolio-wireframe&#x27;);
       const panels = root.querySelectorAll(&#x27;[data-rq-panel]&#x27;);
-      const xrProjectOrder = [&#x27;four-way-kitchen&#x27;, &#x27;mole-rhythm&#x27;, &#x27;cat-teaser&#x27;, &#x27;plant-bot&#x27;, &#x27;hardware-toolkit&#x27;, &#x27;abyss&#x27;, &#x27;emotional-mask&#x27;, &#x27;ar-escape-room&#x27;, &#x27;speaking-world&#x27;, &#x27;ar-graffiti&#x27;];
+      const xrProjectOrder = [&#x27;four-way-kitchen&#x27;, &#x27;mole-rhythm&#x27;, &#x27;cat-teaser&#x27;, &#x27;pizza-delivery&#x27;, &#x27;augsoc&#x27;, &#x27;plant-bot&#x27;, &#x27;hardware-toolkit&#x27;, &#x27;abyss&#x27;, &#x27;emotional-mask&#x27;, &#x27;ar-escape-room&#x27;, &#x27;speaking-world&#x27;, &#x27;ar-graffiti&#x27;];
       const xrProjectDetails = {
         &#x27;four-way-kitchen&#x27;: {
           title: &#x27;Four-Way Kitchen&#x27;,
@@ -2725,6 +2794,38 @@ html&gt;body{padding:0}&lt;/style&gt;
           contribution: &#x27;Solo interaction, physics, and behavior prototyping. I defined the handle-first interaction, tuned the rope and flick detection, shaped the cat\u2019s anticipation and commitment, expanded the scenarios, and shortened the hardware mapping path to improve reliability.&#x27;,
           gallery: [&#x27;Rope-driven feather motion and cat pounce timing&#x27;, &#x27;Two cats, multiple targets, and three scenarios&#x27;],
           facts: [[&#x27;Role&#x27;, &#x27;Solo interaction, physics, and behavior prototyping&#x27;], [&#x27;Engine&#x27;, &#x27;Unity&#x27;], [&#x27;Project type&#x27;, &#x27;Playable physics and behavior prototype&#x27;], [&#x27;Status&#x27;, &#x27;Focused tests pass; known unrelated suite failures remain, and wristband latency needs device validation&#x27;]]
+        },
+        &#x27;pizza-delivery&#x27;: {
+          title: &#x27;Pizza Delivery&#x27;,
+          summary: &#x27;A casual Unity WebGL driving game refined through three completed Poki test rounds.&#x27;,
+          visual: &#x27;Pizza Delivery gameplay&#x27;,
+          image: &#x27;assets/pizza-delivery-cover.png&#x27;,
+          imageAlt: &#x27;Pizza Delivery gameplay showing the delivery car driving through a city intersection&#x27;,
+          video: &#x27;&#x27;,
+          overview: &#x27;I designed and built the tutorial and first level around a pickup, delivery, reward, upgrade, and area-unlock loop. Player behaviour from each Poki test round was used to identify friction in onboarding, progression, and moment-to-moment feedback.&#x27;,
+          keyWork: [&#x27;Defined the pickup, delivery, reward, and upgrade loop.&#x27;, &#x27;Designed order, countdown, garage, and area-unlock progression.&#x27;, &#x27;Reworked onboarding prompts and task guidance from player behaviour.&#x27;, &#x27;Layered audio, particles, camera, and UI feedback into driving events.&#x27;],
+          map: [&#x27;Pick up order&#x27;, &#x27;Drive and deliver&#x27;, &#x27;Receive reward&#x27;, &#x27;Upgrade and unlock&#x27;],
+          decisions: [&#x27;Teach driving through immediate delivery goals&#x27;, &#x27;Use standard, timed, and VIP orders to vary urgency&#x27;, &#x27;Connect each delivery to longer-term vehicle and area progression&#x27;],
+          evidence: [{ value: &#x27;3 rounds&#x27;, label: &#x27;Completed Poki tests&#x27; }, { value: &#x27;500 plays&#x27;, label: &#x27;Recorded in each completed round&#x27; }, { value: &#x27;1 min 53 sec&#x27;, label: &#x27;Final visible average playtime&#x27; }],
+          contribution: &#x27;I independently designed and built the Unity WebGL prototype, then used player behaviour to prioritise iterations to onboarding, progression, task guidance, and feedback.&#x27;,
+          gallery: [&#x27;Driving, active order, countdown, and reward feedback&#x27;, &#x27;Delivery progression and iteration checkpoints&#x27;],
+          facts: [[&#x27;Role&#x27;, &#x27;Unity Game Developer and Designer&#x27;], [&#x27;Engine&#x27;, &#x27;Unity WebGL&#x27;], [&#x27;Period&#x27;, &#x27;May 2026 - July 2026&#x27;], [&#x27;Context&#x27;, &#x27;Dream Reality Interactive internship&#x27;]]
+        },
+        &#x27;augsoc&#x27;: {
+          title: &#x27;AugSoc - AR Creation Research&#x27;,
+          summary: &#x27;A Unity and Meta Quest 3 study comparing 2D and 3D AR creation modes with 18 participants.&#x27;,
+          visual: &#x27;AugSoc AR creation study&#x27;,
+          image: &#x27;assets/xr-ar-graffiti.png&#x27;,
+          imageAlt: &#x27;AR Graffiti tangible and gesture interaction study&#x27;,
+          video: &#x27;&#x27;,
+          overview: &#x27;I developed two AR creation modes and used questionnaires and interviews to compare behaviour and preference. The study connected prototype variables, participant feedback, and subsequent interaction decisions.&#x27;,
+          keyWork: [&#x27;Built 2D and 3D AR creation modes in Unity for Meta Quest 3.&#x27;, &#x27;Implemented spraying, path drawing, dragging, and scaling interactions.&#x27;, &#x27;Ran a comparative study with 18 participants.&#x27;, &#x27;Used questionnaires and interviews to inform interaction iteration.&#x27;],
+          map: [&#x27;2D or 3D mode&#x27;, &#x27;Creation task&#x27;, &#x27;Observed behaviour&#x27;, &#x27;Questionnaire and interview&#x27;, &#x27;Interaction decision&#x27;],
+          decisions: [&#x27;Keep the interaction variables comparable across both modes&#x27;, &#x27;Combine observed behaviour with stated preference&#x27;, &#x27;Use study findings to prioritise prototype changes&#x27;],
+          evidence: [{ value: &#x27;18&#x27;, label: &#x27;Study participants&#x27; }, { value: &#x27;2 modes&#x27;, label: &#x27;2D and 3D AR creation&#x27; }],
+          contribution: &#x27;My role combined VR development and user research: building the comparative prototype, conducting the study, and translating the results into interaction priorities.&#x27;,
+          gallery: [&#x27;2D and 3D AR creation comparison&#x27;, &#x27;Questionnaire, interview, and interaction findings&#x27;],
+          facts: [[&#x27;Role&#x27;, &#x27;VR Developer and User Researcher&#x27;], [&#x27;Platform&#x27;, &#x27;Meta Quest 3&#x27;], [&#x27;Engine&#x27;, &#x27;Unity&#x27;], [&#x27;Period&#x27;, &#x27;June 2025 - September 2025&#x27;]]
         },
         &#x27;plant-bot&#x27;: {
           title: &#x27;Plant Bot&#x27;,
@@ -3082,7 +3183,17 @@ html&gt;body{padding:0}&lt;/style&gt;
         event.preventDefault();
         showXrProjectDetail(card.dataset.rqDetailProject, card);
       });
-      root.querySelector(&#x27;[data-rq-detail-back]&#x27;)?.addEventListener(&#x27;click&#x27;, () =&gt; {
+      const detailBack = root.querySelector(&#x27;[data-rq-detail-back]&#x27;);
+      const playDetailBackSweep = () =&gt; {
+        if (!detailBack || detailBack.classList.contains(&#x27;is-water-sweeping&#x27;) || window.matchMedia(&#x27;(prefers-reduced-motion: reduce)&#x27;).matches) return;
+        detailBack.classList.add(&#x27;is-water-sweeping&#x27;);
+      };
+      detailBack?.addEventListener(&#x27;pointerenter&#x27;, playDetailBackSweep);
+      detailBack?.addEventListener(&#x27;focus&#x27;, playDetailBackSweep);
+      detailBack?.addEventListener(&#x27;animationend&#x27;, (event) =&gt; {
+        if (event.animationName === &#x27;rq-back-water-sweep&#x27;) detailBack.classList.remove(&#x27;is-water-sweeping&#x27;);
+      });
+      detailBack?.addEventListener(&#x27;click&#x27;, () =&gt; {
         if (readNavigationState().rqPortfolio?.view === &#x27;detail&#x27;) navigationHistory.back();
         else showHome();
       });
@@ -3436,6 +3547,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         powerPreference: &#x27;low-power&#x27;
       });
       const xrEnterButton = root.querySelector(&#x27;[data-rq-xr-enter]&#x27;);
+      const xrWorldDepth = root.querySelector(&#x27;[data-rq-xr-world-depth]&#x27;);
       const xrCardField = root.querySelector(&#x27;[data-rq-xr-cards]&#x27;);
       const xrCards = Array.from(root.querySelectorAll(&#x27;[data-rq-xr-cards] .rq-vr-item&#x27;));
       const xrCopy = root.querySelector(&#x27;[data-rq-xr-stage] .rq-xr-copy&#x27;);
@@ -3464,7 +3576,7 @@ html&gt;body{padding:0}&lt;/style&gt;
           for (let index = 1; index &lt; points.length; index += 1) {
             const previous = points[index - 1];
             const current = points[index];
-            const maxDifference = 30 + Math.abs(previous.seed - current.seed) * 4;
+            const maxDifference = 44 + Math.abs(previous.seed - current.seed) * 8;
             const difference = current.gap - previous.gap;
             if (Math.abs(difference) &gt; maxDifference) {
               const correction = (Math.abs(difference) - maxDifference) * Math.sign(difference) * .46;
@@ -3482,7 +3594,7 @@ html&gt;body{padding:0}&lt;/style&gt;
           const y = index / (xrTearRows - 1);
           const rupture = clampUnit(ruptureRadius - Math.abs(index - centerIndex));
           const shoulder = .36 + Math.sin(y * Math.PI) * .64;
-          const irregular = point.seed * (4 + rupture * 8);
+          const irregular = point.seed * (12 + rupture * 20);
           point.target = horizontalAmount * (maxGap * shoulder + irregular);
           const velocity = (point.gap - point.previousGap) * .74;
           const acceleration = (point.target - point.gap) * .14;
@@ -3614,6 +3726,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       let xrSequenceLastFrame = 0;
       const xrCardGazeEnabled = !reduceMotion
         &amp;&amp; window.matchMedia(&#x27;(hover: hover) and (pointer: fine)&#x27;).matches;
+      const xrCardHoverStates = xrCards.map(() =&gt; ({ target: 0, amount: 0 }));
       const xrCardGaze = { targetX: .5, targetY: .5, x: .5, y: .5, targetAmount: 0, amount: 0 };
       const xrSmokeEnabled = xrCardGazeEnabled &amp;&amp; Boolean(xrSmokeCanvas &amp;&amp; xrSmokeGl);
       const xrSmoke = {
@@ -4120,7 +4233,8 @@ html&gt;body{padding:0}&lt;/style&gt;
               float weight = (data.z + data.w) * .5;
               vec2 velocityField = (.5 - data.xy - .001) * 2.0 * weight;
               vec2 velocity = velocityField * 3.0 / 4.0 * uTexel * 5.0;
-              vec2 uv = vUv + blueNoise(gl_FragCoord.xy + vec2(17.0, 29.0)) * velocity;
+              vec2 refractedUv = vUv + blueNoise(gl_FragCoord.xy + vec2(17.0, 29.0)) * velocity;
+              vec2 uv = refractedUv;
               vec3 color = vec3(0.0);
               for (int index = 0; index &lt; 9; index++) {
                 color += uSceneReady &gt; .5 ? sceneColor(uv) : vec3(.035, .075, .078);
@@ -4132,6 +4246,22 @@ html&gt;body{padding:0}&lt;/style&gt;
                 * 1.25
                 * max(abs(velocityField.x), abs(velocityField.y))
                 * 10.0;
+              vec2 edgeTexel = uTexel * 1.6;
+              float sceneEdge = max(
+                length(sceneColor(refractedUv + vec2(edgeTexel.x, 0.0)) - sceneColor(refractedUv - vec2(edgeTexel.x, 0.0))),
+                length(sceneColor(refractedUv + vec2(0.0, edgeTexel.y)) - sceneColor(refractedUv - vec2(0.0, edgeTexel.y)))
+              );
+              float edgePull = smoothstep(.1, .58, sceneEdge)
+                * smoothstep(.045, .32, weight)
+                * clamp(length(velocityField) * 8.0, 0.0, 1.0);
+              vec2 pullDirection = normalize(velocityField + vec2(.00001));
+              vec2 spectralPull = pullDirection * edgeTexel * mix(1.0, 3.8, edgePull);
+              vec3 edgeColor = vec3(
+                sceneColor(refractedUv + spectralPull).r,
+                sceneColor(refractedUv).g,
+                sceneColor(refractedUv - spectralPull).b
+              );
+              color = mix(color, edgeColor, edgePull * .68);
               gl_FragColor = vec4(color, 1.0);
             }
           `);
@@ -5231,11 +5361,14 @@ html&gt;body{padding:0}&lt;/style&gt;
       const xrTitleDuration = 1050;
       const xrTearExpandDuration = 1040;
       const xrTearSettleDuration = 70;
-      const xrTearPeelDuration = 340;
+      const xrTearPeelDuration = 520;
       const xrTearDuration = xrTearExpandDuration + xrTearSettleDuration + xrTearPeelDuration;
       const xrSceneRevealStart = 540;
       const xrSceneRevealDuration = 420;
+      const xrCameraRushStart = xrTearExpandDuration * .7;
+      const xrCameraRushDuration = 700;
       const xrCardBurstDuration = 1320;
+      const xrCardRevealStart = xrTearExpandDuration + xrTearSettleDuration + xrTearPeelDuration * .62;
       const xrSequenceDuration = xrTitleDuration + xrTearDuration + xrCardBurstDuration;
       const xrTitleStageProgress = xrTitleDuration / xrSequenceDuration;
       const xrSequenceReverseDuration = 2180;
@@ -5798,6 +5931,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         xrCards.forEach((card) =&gt; {
           card.style.removeProperty(&#x27;opacity&#x27;);
           card.style.removeProperty(&#x27;transform&#x27;);
+          card.style.removeProperty(&#x27;filter&#x27;);
           card.style.removeProperty(&#x27;z-index&#x27;);
           card.style.removeProperty(&#x27;will-change&#x27;);
           card.style.removeProperty(&#x27;--rq-xr-smoke-influence&#x27;);
@@ -5832,6 +5966,9 @@ html&gt;body{padding:0}&lt;/style&gt;
         xrStage?.style.setProperty(&#x27;--rq-xr-peel&#x27;, &#x27;1&#x27;);
         xrStage?.style.setProperty(&#x27;--rq-xr-paper-fade&#x27;, &#x27;1&#x27;);
         xrStage?.style.setProperty(&#x27;--rq-xr-fiber-fade&#x27;, &#x27;1&#x27;);
+        xrStage?.style.setProperty(&#x27;--rq-xr-camera-scale&#x27;, &#x27;1&#x27;);
+        xrStage?.style.setProperty(&#x27;--rq-xr-camera-blur&#x27;, &#x27;0px&#x27;);
+        xrWorldDepth?.style.removeProperty(&#x27;will-change&#x27;);
         xrDistortion.targetX = .5;
         xrDistortion.targetY = .5;
         updateXrDistortion(true);
@@ -5865,13 +6002,23 @@ html&gt;body{padding:0}&lt;/style&gt;
         const release = easeOutQuart((tearElapsed - xrSceneRevealStart) / xrSceneRevealDuration);
         const peel = easeOutQuart((tearElapsed - xrTearExpandDuration - xrTearSettleDuration) / xrTearPeelDuration);
         const paperFade = easeOutQuart((peel - .88) / .12);
-        const copyDiminish = easeOutQuart(tearElapsed / 520);
+        const copyReveal = easeOutQuart((release - .08) / .92);
+        const cameraProgress = clampUnit((tearElapsed - xrCameraRushStart) / xrCameraRushDuration);
+        const cameraScale = cameraProgress &lt; .72
+          ? mix(.94, 1.13, easeOutQuart(cameraProgress / .72))
+          : mix(1.13, 1, easeOutQuart((cameraProgress - .72) / .28));
+        const cameraBlur = mix(10, 0, easeOutQuart(cameraProgress / .64));
+        xrStage.style.setProperty(&#x27;--rq-xr-camera-scale&#x27;, cameraScale.toFixed(4));
+        xrStage.style.setProperty(&#x27;--rq-xr-camera-blur&#x27;, `${cameraBlur.toFixed(2)}px`);
         const tearIsMoving = renderXrTear(verticalTear, horizontalTear, settle, release, peel, paperFade, stageRect);
-        const burst = clampUnit((tearElapsed - xrTearDuration) / xrCardBurstDuration);
+        const burst = clampUnit((tearElapsed - xrCardRevealStart) / (xrCardBurstDuration * 1.15));
         const sequenceIsMoving = Math.abs(xrSequenceTarget - xrSequenceProgress) &gt; .0001;
         const burstIsMoving = sequenceIsMoving &amp;&amp; burst &gt; 0;
+        const cameraIsMoving = sequenceIsMoving &amp;&amp; cameraProgress &gt; 0 &amp;&amp; cameraProgress &lt; 1;
+        if (xrWorldDepth) xrWorldDepth.style.willChange = sectionIsNear &amp;&amp; cameraIsMoving ? &#x27;transform, filter&#x27; : &#x27;auto&#x27;;
         xrStage.dataset.rqXrSequenceProgress = xrSequenceProgress.toFixed(5);
         xrStage.dataset.rqXrSequenceTarget = xrSequenceTarget.toFixed(5);
+        xrStage.dataset.rqXrCameraProgress = cameraProgress.toFixed(5);
         xrSmoke.release = release;
         const smokeShouldOpen = xrSmokeEnabled &amp;&amp; sectionIsNear &amp;&amp; release &gt; .92 &amp;&amp; burst &gt; .01;
         if (xrSmoke.open !== smokeShouldOpen) {
@@ -5894,18 +6041,24 @@ html&gt;body{padding:0}&lt;/style&gt;
         if (Math.abs(xrCardGaze.targetX - xrCardGaze.x) &lt; .0005) xrCardGaze.x = xrCardGaze.targetX;
         if (Math.abs(xrCardGaze.targetY - xrCardGaze.y) &lt; .0005) xrCardGaze.y = xrCardGaze.targetY;
         if (Math.abs(xrCardGaze.targetAmount - xrCardGaze.amount) &lt; .0005) xrCardGaze.amount = xrCardGaze.targetAmount;
+        let hoverIsMoving = false;
+        xrCardHoverStates.forEach((state) =&gt; {
+          state.amount += (state.target - state.amount) * .16;
+          if (Math.abs(state.target - state.amount) &lt; .001) state.amount = state.target;
+          else hoverIsMoving = true;
+        });
         const gazeIsMoving = Math.abs(xrCardGaze.targetX - xrCardGaze.x) &gt; .0005
           || Math.abs(xrCardGaze.targetY - xrCardGaze.y) &gt; .0005
           || Math.abs(xrCardGaze.targetAmount - xrCardGaze.amount) &gt; .0005;
         updateXrDistortion(sectionIsNear &amp;&amp; release &gt; .08);
         xrProgress?.style.setProperty(&#x27;--rq-xr-progress&#x27;, String(progress));
         if (xrCopy) {
-          xrCopy.style.opacity = String(1 - copyDiminish);
+          xrCopy.style.opacity = String(copyReveal);
           xrCopy.style.willChange = sectionIsNear ? &#x27;opacity&#x27; : &#x27;auto&#x27;;
         }
         if (xrCopyTitle) {
           xrCopyTitle.style.opacity = &#x27;1&#x27;;
-          xrCopyTitle.style.transform = `scale(${mix(1, .92, copyDiminish)})`;
+          xrCopyTitle.style.transform = `scale(${mix(.94, 1, copyReveal)})`;
           xrCopyTitle.style.willChange = sectionIsNear ? &#x27;transform, opacity&#x27; : &#x27;auto&#x27;;
         }
         xrCopyTitleLines.forEach((line, index) =&gt; {
@@ -5930,33 +6083,33 @@ html&gt;body{padding:0}&lt;/style&gt;
             : &#x27;auto&#x27;;
         });
         if (xrCardField) {
-          const fieldMotion = sampleXrLottieMotion(burst);
-          const recoil = Math.max(0, fieldMotion.distance - 1);
-          xrCardField.style.transform = `translate3d(0, 0, ${recoil * -36}px) scale(${1 - recoil * .025})`;
+          const fieldReveal = easeOutQuart(burst);
+          xrCardField.style.transform = `translate3d(0, 0, ${mix(-40, 0, fieldReveal)}px) scale(${mix(.985, 1, fieldReveal)})`;
           xrCardField.style.willChange = sectionIsNear &amp;&amp; burstIsMoving ? &#x27;transform&#x27; : &#x27;auto&#x27;;
         }
         xrCards.forEach((card, index) =&gt; {
           const flightState = xrFlightStates[index] || xrFlightStates[xrFlightStates.length - 1];
           const local = clampUnit((burst - flightState.delay) / (1 - flightState.delay));
-          const reveal = easeOutQuart(local / .12);
-          const lottieMotion = sampleXrLottieMotion(local);
-          const spread = lottieMotion.distance;
+          const reveal = easeOutQuart(local / .42);
+          const focus = easeOutQuart(local / .46);
+          const spread = easeOutQuart(local);
           const targetX = Math.sign(flightState.x) * Math.min(Math.abs(flightState.x) * stageRect.width, flightState.maxX);
           const targetY = flightState.y * stageRect.height;
           const x = targetX * spread;
           const y = targetY * spread;
-          const z = mix(-980 - index * 70, 30 + index * 18, spread);
+          const z = mix(-180 - index * 16, 0, spread);
           const entryDirection = index % 2 ? -1 : 1;
-          const rotation = flightState.rotation * spread + lottieMotion.rotation * entryDirection;
-          const scale = Math.max(.02, lottieMotion.scale);
+          const rotation = flightState.rotation * spread;
+          const hoverScale = mix(1, 1.025, easeOutQuart(xrCardHoverStates[index]?.amount || 0));
+          const scale = mix(.78, 1, spread) * hoverScale;
           const title = card.querySelector(&#x27;h3&#x27;);
           const meta = card.querySelector(&#x27;.rq-project-meta&#x27;);
           const titleLocal = clampUnit((local - .075) / .925);
           const metaLocal = clampUnit((local - .14) / .86);
           const titleReveal = easeOutQuart(titleLocal / .14);
           const metaReveal = easeOutQuart(metaLocal / .16);
-          const titleMotion = sampleXrLottieMotion(titleLocal);
-          const metaMotion = sampleXrLottieMotion(metaLocal);
+          const titleMotion = { distance: titleReveal, scale: titleReveal, rotation: 0 };
+          const metaMotion = { distance: metaReveal, scale: metaReveal, rotation: 0 };
           const gazeRamp = easeOutQuart((local - .28) / .72) * xrCardGaze.amount;
           const cardCenterX = stageRect.width / 2 + x;
           const cardCenterY = stageRect.height / 2 + y;
@@ -5976,9 +6129,10 @@ html&gt;body{padding:0}&lt;/style&gt;
           const smokeRotateY = Math.max(-3.8, Math.min(3.8, xrSmoke.velocityX * 2.5)) * smokeInfluence;
           card.style.opacity = String(release * reveal);
           card.style.transform = `translate3d(calc(-50% + ${x}px), calc(-50% + ${y}px), ${z}px) translate3d(${smokeShiftX}px, ${smokeShiftY}px, 0) rotateZ(${rotation}deg) rotateX(${gazeRotateX}deg) rotateY(${gazeRotateY}deg) rotateX(${smokeRotateX}deg) rotateY(${smokeRotateY}deg) scale(${scale})`;
+          card.style.filter = `blur(${mix(8, 0, focus)}px)`;
           card.style.zIndex = String(10 - index);
           card.style.setProperty(&#x27;--rq-xr-smoke-influence&#x27;, smokeInfluence.toFixed(4));
-          card.style.willChange = sectionIsNear &amp;&amp; (burstIsMoving || gazeIsMoving || smokeIsMoving) ? &#x27;transform, opacity&#x27; : &#x27;auto&#x27;;
+          card.style.willChange = sectionIsNear &amp;&amp; (burstIsMoving || gazeIsMoving || smokeIsMoving || hoverIsMoving) ? &#x27;transform, opacity, filter&#x27; : &#x27;auto&#x27;;
           applyXrTextMotion(title, titleMotion, release * titleReveal, entryDirection * .16, 22, .72);
           applyXrTextMotion(meta, metaMotion, release * metaReveal, entryDirection * -.1, 16, .82);
           if (title) title.style.willChange = sectionIsNear &amp;&amp; burstIsMoving ? &#x27;transform, opacity&#x27; : &#x27;auto&#x27;;
@@ -5988,7 +6142,7 @@ html&gt;body{padding:0}&lt;/style&gt;
           &amp;&amp; xrSequenceProgress &gt;= xrTitleStageProgress - .0001;
         if (titleIsWaitingForInput) scheduleXrAutoTear();
         else if (xrSequenceTarget !== xrTitleStageProgress) cancelXrAutoTear();
-        if ((sequenceIsMoving || tearIsMoving || burstIsMoving || gazeIsMoving) &amp;&amp; !xrMotionFrame) {
+        if ((sequenceIsMoving || tearIsMoving || burstIsMoving || gazeIsMoving || hoverIsMoving) &amp;&amp; !xrMotionFrame) {
           xrMotionFrame = window.requestAnimationFrame(renderXrMotion);
         } else if (!sequenceIsMoving) {
           xrSequenceLastFrame = 0;
@@ -5999,6 +6153,16 @@ html&gt;body{padding:0}&lt;/style&gt;
         xrMotionFrame = window.requestAnimationFrame(renderXrMotion);
       };
       if (xrCardGazeEnabled &amp;&amp; xrStage) {
+        xrCards.forEach((card, index) =&gt; {
+          const setHoverTarget = (target) =&gt; {
+            xrCardHoverStates[index].target = target;
+            scheduleXrMotion();
+          };
+          card.addEventListener(&#x27;pointerenter&#x27;, () =&gt; setHoverTarget(1));
+          card.addEventListener(&#x27;pointerleave&#x27;, () =&gt; setHoverTarget(document.activeElement === card ? 1 : 0));
+          card.addEventListener(&#x27;focusin&#x27;, () =&gt; setHoverTarget(1));
+          card.addEventListener(&#x27;focusout&#x27;, () =&gt; setHoverTarget(card.matches(&#x27;:hover&#x27;) ? 1 : 0));
+        });
         xrStage.addEventListener(&#x27;pointermove&#x27;, (event) =&gt; {
           if (event.pointerType === &#x27;touch&#x27;) return;
           const rect = xrStage.getBoundingClientRect();
