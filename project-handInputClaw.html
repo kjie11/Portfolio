@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .project-content { max-width: 800px; margin: 0 auto; }
-        .project-content img { width: 100%; margin-bottom: 20px; }
+        .project-content video { display: block; width: 100%; margin-bottom: 20px; }
         .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
         .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
     </style>
@@ -40,7 +40,10 @@
                 <p>The project separates input from gameplay so the full cycle can be tested with keyboard and mouse before hardware tuning. It also explores animated claw motion, stable object following, release-specific recovery, radial force feedback, and local visual deformation.</p>
             </div>
 
-            <img src="images/claw-machine-cover.png" alt="Illustrated cover for the hand-input claw machine prototype">
+            <video controls playsinline preload="metadata" poster="images/claw-machine-poster.jpg" aria-label="Hand-input claw machine prototype gameplay">
+                <source src="videos/claw-machine-full.mp4" type="video/mp4">
+                Your browser does not support the claw machine gameplay video.
+            </video>
 
             <div class="project-details">
                 <h3>Key Features</h3>

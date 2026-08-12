@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .project-content { max-width: 800px; margin: 0 auto; }
-        .project-content img { width: 100%; margin-bottom: 20px; }
+        .project-content video { display: block; width: 100%; margin-bottom: 20px; }
         .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
         .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
     </style>
@@ -40,7 +40,10 @@
                 <p>The chart pipeline analyzes a fixed music track offline, then applies deterministic density, repetition, weaker-finger, and two-finger constraints. This keeps output reproducible and allows Normal, Easy, and Very Easy variants without modifying the source chart.</p>
             </div>
 
-            <img src="images/mole-rhythm-polaroid.webp" alt="Pixel-art rhythm game with five mole performers and a falling mallet">
+            <video controls playsinline preload="metadata" poster="images/mole-rhythm-poster.jpg" aria-label="Full Mole Rhythm gameplay video">
+                <source src="videos/mole-rhythm-full.mp4" type="video/mp4">
+                Your browser does not support the Mole Rhythm gameplay video.
+            </video>
 
             <div class="project-details">
                 <h3>Key Features</h3>

@@ -109,7 +109,7 @@
             <!-- Gothic Hunter -->
             <a href="project-gothicHunter.html" class="project-item">
                 <div class="img-wrapper">
-                    <img src="images/gothic-hunter.jpg" alt="Gothic Hunter gameplay">
+                    <img src="images/gothic-hunter.jpg" alt="Gothic Hunter runtime graybox gameplay">
                     <span class="project-shade" aria-hidden="true"></span>
                     <span class="project-overlay">
                         <strong class="project-title">Gothic Hunter</strong>
@@ -118,10 +118,35 @@
                 </div>
             </a>
 
-            <!-- Hand-Input Claw Machine -->
-            <a href="project-handInputClaw.html" class="project-item">
+            <!-- AR Escape Room -->
+            <a href="project-AREscapeRoom.html" class="project-item">
                 <div class="img-wrapper">
-                    <img src="images/claw-machine-cover.png" alt="Hand-Input Claw Machine">
+                    <img src="images/AREscapeRoom.png" alt="AR Escape Room">
+                    <span class="project-shade" aria-hidden="true"></span>
+                    <span class="project-overlay">
+                        <strong class="project-title">AR Escape Room</strong>
+                        <span class="project-role">AR interaction, module integration, and project management</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Emotional Mask -->
+            <a href="project-emotionalMask.html" class="project-item">
+                <div class="img-wrapper">
+                    <img src="images/emotionalMask.jpg" alt="Emotional Mask">
+                    <span class="project-shade" aria-hidden="true"></span>
+                    <span class="project-overlay">
+                        <strong class="project-title">Emotional Mask</strong>
+                        <span class="project-role">Gesture triggers, level logic, and Game Jam collaboration</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Hand-Input Claw Machine -->
+            <a href="project-handInputClaw.html" class="project-item preview-card">
+                <div class="img-wrapper">
+                    <img src="images/claw-machine-poster.jpg" alt="Hand-input claw machine gameplay preview">
+                    <video class="hover-preview" muted loop playsinline preload="none" data-src="videos/claw-machine-hover.mp4" aria-hidden="true"></video>
                     <span class="project-shade" aria-hidden="true"></span>
                     <span class="project-overlay">
                         <strong class="project-title">Hand-Input Claw Machine</strong>
@@ -155,37 +180,14 @@
             </a>
 
             <!-- Mole Rhythm -->
-            <a href="project-moleRhythm.html" class="project-item">
+            <a href="project-moleRhythm.html" class="project-item preview-card">
                 <div class="img-wrapper">
-                    <img src="images/mole-rhythm-polaroid.webp" alt="Pixel-art rhythm game with five mole performers and a falling mallet">
+                    <img src="images/mole-rhythm-poster.jpg" alt="Mole Rhythm gameplay preview">
+                    <video class="hover-preview" muted loop playsinline preload="none" data-src="videos/mole-rhythm-preview.mp4" aria-hidden="true"></video>
                     <span class="project-shade" aria-hidden="true"></span>
                     <span class="project-overlay">
                         <strong class="project-title">Mole Rhythm</strong>
                         <span class="project-role">Gameplay, chart systems, and five-finger interaction</span>
-                    </span>
-                </div>
-            </a>
-
-            <!-- AR Escape Room -->
-            <a href="project-AREscapeRoom.html" class="project-item">
-                <div class="img-wrapper">
-                    <img src="images/AREscapeRoom.png" alt="AR Escape Room">
-                    <span class="project-shade" aria-hidden="true"></span>
-                    <span class="project-overlay">
-                        <strong class="project-title">AR Escape Room</strong>
-                        <span class="project-role">AR interaction, module integration, and project management</span>
-                    </span>
-                </div>
-            </a>
-
-            <!-- Emotional Mask -->
-            <a href="project-emotionalMask.html" class="project-item">
-                <div class="img-wrapper">
-                    <img src="images/emotionalMask.jpg" alt="Emotional Mask">
-                    <span class="project-shade" aria-hidden="true"></span>
-                    <span class="project-overlay">
-                        <strong class="project-title">Emotional Mask</strong>
-                        <span class="project-role">Gesture triggers, level logic, and Game Jam collaboration</span>
                     </span>
                 </div>
             </a>
@@ -248,7 +250,8 @@
 
             <!-- Plant Bot -->
             <a href="project-plantBot.html" class="project-item" aria-label="Plant Bot — interaction design, physical computing, and AR prototyping">
-                <div class="img-wrapper project-placeholder">
+                <div class="img-wrapper">
+                    <img src="images/plant-bot-cover.png" alt="Red Plant Bot physical prototype placed beside a potted plant">
                     <span class="project-shade" aria-hidden="true"></span>
                     <span class="project-overlay">
                         <strong class="project-title">Plant Bot</strong>
@@ -272,6 +275,11 @@
         </div>
     </main>
 </div>
-
+<script>
+const previewCards=[...document.querySelectorAll('.preview-card')],reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+function stopPreview(card){const video=card.querySelector('.hover-preview');if(!video)return;video.pause();video.currentTime=0;card.classList.remove('is-previewing')}
+async function playPreview(card){const video=card.querySelector('.hover-preview');if(!video||reducedMotion.matches||!matchMedia('(hover: hover)').matches)return;if(!video.src){video.src=video.dataset.src;video.load()}try{await video.play();card.classList.add('is-previewing')}catch{stopPreview(card)}}
+previewCards.forEach(card=>{card.addEventListener('pointerenter',()=>playPreview(card));card.addEventListener('pointerleave',()=>stopPreview(card));card.addEventListener('focusin',()=>playPreview(card));card.addEventListener('focusout',()=>stopPreview(card))});document.addEventListener('visibilitychange',()=>{if(document.hidden)previewCards.forEach(stopPreview)});
+</script>
 </body>
 </html>

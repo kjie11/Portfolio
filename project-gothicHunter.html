@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .project-content { max-width: 800px; margin: 0 auto; }
-        .project-content img { width: 100%; margin-bottom: 20px; }
+        .project-content video { display: block; width: 100%; margin-bottom: 20px; }
         .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
         .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
     </style>
@@ -40,7 +40,10 @@
                 <p>The project focuses on making weapon growth and combat pressure readable under dense enemy and projectile loads. Runtime telemetry, repeatable debug jumps, capture reviews, and performance tests were used to tune the full experience rather than treating a compiling build as finished.</p>
             </div>
 
-            <img src="images/gothic-hunter.jpg" alt="Gothic Hunter runtime combat showing the Blood Moon ultimate during Act 3">
+            <video controls playsinline preload="metadata" poster="images/gothic-hunter.jpg" aria-label="Gothic Hunter runtime graybox gameplay">
+                <source src="videos/gothic-hunter.mp4" type="video/mp4">
+                Your browser does not support the Gothic Hunter gameplay video.
+            </video>
 
             <div class="project-details">
                 <h3>Key Features</h3>
