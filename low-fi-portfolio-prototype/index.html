@@ -1750,19 +1750,6 @@ html&gt;body{padding:0}&lt;/style&gt;
       filter: blur(var(--rq-xr-camera-blur));
       pointer-events: none;
     }
-    #ruyan-portfolio-wireframe .rq-xr-skybox {
-      position: absolute;
-      inset: -2%;
-      z-index: 0;
-      display: block;
-      width: 104%;
-      height: 104%;
-      opacity: 0;
-      background: url(&quot;assets/xr-skybox-360.png&quot;) center center / cover no-repeat;
-      filter: saturate(.92) brightness(.78) contrast(1.04);
-      pointer-events: none;
-      will-change: opacity, transform;
-    }
     #ruyan-portfolio-wireframe .rq-xr-distortion {
       position: absolute;
       inset: 0;
@@ -2577,8 +2564,9 @@ html&gt;body{padding:0}&lt;/style&gt;
             &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;four-way-kitchen&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Four-Way Kitchen project details&quot; style=&quot;--rq-tilt:-2.5deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;assets/four-way-kitchen-polaroid.webp&quot; alt=&quot;Four-sided kitchen gameplay with ingredient stations, chopping boards, stoves, and a central character&quot;&gt;&lt;/div&gt;&lt;h3&gt;Four-Way Kitchen&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Unity · C# · Custom Input Controllers&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
             &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;mole-rhythm&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Mole Rhythm project details&quot; style=&quot;--rq-tilt:1.8deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;assets/mole-rhythm-polaroid.webp&quot; alt=&quot;Pixel-art rhythm game with five mole performers and a falling mallet&quot;&gt;&lt;/div&gt;&lt;h3&gt;Mole Rhythm&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Unity · C# · DSP Timing · Audio Analysis&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
             &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;cat-teaser&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Cat Teaser 2D project details&quot; style=&quot;--rq-tilt:-1.2deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;assets/cat-teaser-polaroid.webp&quot; alt=&quot;Illustrated Cat Teaser 2D scene with two cats, a fish, and playful motion marks&quot;&gt;&lt;/div&gt;&lt;h3&gt;Cat Teaser 2D&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Unity · C# · 2D Physics · Animation&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
-            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;plant-bot&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Plant Bot project details&quot; style=&quot;--rq-tilt:2.2deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image&quot;&gt;Plant Bot physical prototype and AR view&lt;/div&gt;&lt;h3&gt;Plant Bot&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Arduino · ESP32 · Unity AR · Sensors&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
-            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;hardware-toolkit&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Unity Hardware Input Toolkit project details&quot; style=&quot;--rq-tilt:-1.8deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image&quot;&gt;Reusable hardware input package demo&lt;/div&gt;&lt;h3&gt;Unity Hardware Input Toolkit&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Unity · C# · Input System · Editor Tooling&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
+            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;claw-machine&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Hand-Input Claw Machine project details&quot; style=&quot;--rq-tilt:2.2deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;assets/claw-machine-polaroid.png&quot; alt=&quot;Hand-input claw machine prototype with three-claw mechanism and toy prize&quot;&gt;&lt;/div&gt;&lt;h3&gt;Hand-Input Claw Machine&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Unity · C# · Force Input · State Machine&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
+            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;gothic-hunter&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Gothic Hunter project details&quot; style=&quot;--rq-tilt:-1.8deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;../images/gothic-hunter.jpg&quot; alt=&quot;Gothic Hunter runtime combat during a dense survival encounter&quot;&gt;&lt;/div&gt;&lt;h3&gt;Gothic Hunter&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Godot · C# · Gameplay Systems · Runtime Validation&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
+            &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;neon-beatrunner&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Neon BeatRunner project details&quot; style=&quot;--rq-tilt:1.3deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image&quot;&gt;Rhythm platformer runtime prototype&lt;/div&gt;&lt;h3&gt;Neon BeatRunner&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Godot · C# · Librosa · Deterministic Timing&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
             &lt;/div&gt;
             &lt;p class=&quot;rq-polaroid-active&quot; aria-live=&quot;polite&quot;&gt;ACTIVE_FILE: &lt;strong data-rq-polaroid-active&gt;Four-Way Kitchen&lt;/strong&gt;&lt;/p&gt;
           &lt;/div&gt;
@@ -2589,7 +2577,6 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;div class=&quot;rq-xr-sticky&quot;&gt;
           &lt;div class=&quot;rq-xr-stage&quot; data-rq-xr-stage&gt;
             &lt;div class=&quot;rq-xr-world-depth&quot; data-rq-xr-world-depth aria-hidden=&quot;true&quot;&gt;
-            &lt;canvas class=&quot;rq-xr-skybox&quot; data-rq-xr-skybox aria-hidden=&quot;true&quot;&gt;&lt;/canvas&gt;
             &lt;canvas class=&quot;rq-xr-distortion&quot; data-rq-xr-distortion aria-hidden=&quot;true&quot;&gt;&lt;/canvas&gt;
             &lt;div class=&quot;rq-xr-distortion-lens&quot; data-rq-xr-distortion-lens aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
             &lt;canvas class=&quot;rq-xr-perspective-grid&quot; data-rq-xr-grid aria-hidden=&quot;true&quot;&gt;&lt;/canvas&gt;
@@ -2621,7 +2608,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;div class=&quot;rq-fold-stack&quot;&gt;
       &lt;section class=&quot;rq-section rq-case-feature&quot; data-rq-pizza-section&gt;
         &lt;article class=&quot;rq-project rq-case-project rq-pizza-project&quot; data-rq-detail-project=&quot;pizza-delivery&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Pizza Delivery project details&quot;&gt;
-          &lt;div class=&quot;rq-pizza-header&quot;&gt;&lt;span&gt;Dream Reality Interactive · Unity Game Development &amp; Design Intern&lt;/span&gt;&lt;time datetime=&quot;2026-05/2026-07&quot;&gt;May 2026 - Jul 2026&lt;/time&gt;&lt;/div&gt;
+          &lt;div class=&quot;rq-pizza-header&quot;&gt;&lt;span&gt;Unity Game Development &amp; Design Intern&lt;/span&gt;&lt;time datetime=&quot;2026-05/2026-07&quot;&gt;May 2026 - Jul 2026&lt;/time&gt;&lt;/div&gt;
           &lt;div class=&quot;rq-case-copy rq-pizza-copy&quot;&gt;
             &lt;h2 class=&quot;rq-pizza-title&quot;&gt;A delivery game rapidly prototyped with AI, then &lt;em&gt;refined through three rounds of player testing&lt;/em&gt;&lt;/h2&gt;
             &lt;p class=&quot;rq-pizza-summary&quot;&gt;I independently built the Unity WebGL prototype, then used three Poki test rounds of about 500 players each to refine onboarding, task clarity, and the delivery progression loop. Average playtime rose from 44 seconds to 1 minute 53 seconds, an increase of about 157%.&lt;/p&gt;
@@ -2745,7 +2732,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     (() =&gt; {
       const root = document.getElementById(&#x27;ruyan-portfolio-wireframe&#x27;);
       const panels = root.querySelectorAll(&#x27;[data-rq-panel]&#x27;);
-      const xrProjectOrder = [&#x27;four-way-kitchen&#x27;, &#x27;mole-rhythm&#x27;, &#x27;cat-teaser&#x27;, &#x27;pizza-delivery&#x27;, &#x27;augsoc&#x27;, &#x27;plant-bot&#x27;, &#x27;hardware-toolkit&#x27;, &#x27;abyss&#x27;, &#x27;emotional-mask&#x27;, &#x27;ar-escape-room&#x27;, &#x27;speaking-world&#x27;, &#x27;ar-graffiti&#x27;];
+      const xrProjectOrder = [&#x27;four-way-kitchen&#x27;, &#x27;mole-rhythm&#x27;, &#x27;cat-teaser&#x27;, &#x27;claw-machine&#x27;, &#x27;gothic-hunter&#x27;, &#x27;neon-beatrunner&#x27;, &#x27;pizza-delivery&#x27;, &#x27;augsoc&#x27;, &#x27;plant-bot&#x27;, &#x27;abyss&#x27;, &#x27;emotional-mask&#x27;, &#x27;ar-escape-room&#x27;, &#x27;speaking-world&#x27;, &#x27;ar-graffiti&#x27;];
       const xrProjectDetails = {
         &#x27;four-way-kitchen&#x27;: {
           title: &#x27;Four-Way Kitchen&#x27;,
@@ -2759,9 +2746,9 @@ html&gt;body{padding:0}&lt;/style&gt;
           map: [&#x27;Player intent&#x27;, &#x27;Input adapter&#x27;, &#x27;Shared action state&#x27;, &#x27;Kitchen response&#x27;],
           decisions: [&#x27;Split continuous movement from discrete pickup, preparation, and throwing actions&#x27;, &#x27;Preserve the same action meanings when switching between four input paths&#x27;, &#x27;Release held state safely when signals become stale or a device disconnects&#x27;],
           evidence: [{ value: &#x27;6 stages&#x27;, label: &#x27;Source through delivery&#x27; }, { value: &#x27;4 inputs&#x27;, label: &#x27;Keyboard, EMG, camera, and gloves&#x27; }],
-          contribution: &#x27;Solo game design and multi-input prototype development. I designed the kitchen loop and deterministic throwing, separated continuous and discrete input responsibilities, tuned grid interaction, and built recovery behavior for real hardware failure modes.&#x27;,
+          contribution: &#x27;I defined the kitchen loop, input semantics, grid feel, and validation boundaries. AI-assisted development supported cross-repository analysis, implementation, diagnostics, and tests; team and company-resource boundaries remain undocumented.&#x27;,
           gallery: [&#x27;Four-sided kitchen and complete cooking loop&#x27;, &#x27;Shared input semantics and diagnostic states&#x27;],
-          facts: [[&#x27;Role&#x27;, &#x27;Solo game design and multi-input prototype development&#x27;], [&#x27;Engine&#x27;, &#x27;Unity&#x27;], [&#x27;Project type&#x27;, &#x27;Multi-input gameplay prototype&#x27;], [&#x27;Status&#x27;, &#x27;Core systems integrated; full Play Mode and real dual-glove validation pending&#x27;]]
+          facts: [[&#x27;Role&#x27;, &#x27;Unity Real-Time Interaction Development Intern&#x27;], [&#x27;Engine&#x27;, &#x27;Unity&#x27;], [&#x27;Project type&#x27;, &#x27;Multi-input gameplay prototype&#x27;], [&#x27;Status&#x27;, &#x27;Core systems integrated; full Play Mode and real dual-glove validation pending&#x27;]]
         },
         &#x27;mole-rhythm&#x27;: {
           title: &#x27;Mole Rhythm&#x27;,
@@ -2775,9 +2762,9 @@ html&gt;body{padding:0}&lt;/style&gt;
           map: [&#x27;Audio track&#x27;, &#x27;Beat and onset analysis&#x27;, &#x27;Ergonomic chart rules&#x27;, &#x27;DSP-timed play&#x27;],
           decisions: [&#x27;Treat each finger as a musical part instead of mapping random targets&#x27;, &#x27;Generate charts offline so the same song always produces a testable result&#x27;, &#x27;Remove stem separation, MIDI, and extra playback dependencies when they stopped serving reliability&#x27;],
           evidence: [{ value: &#x27;5 lanes&#x27;, label: &#x27;One lane per finger&#x27; }, { value: &#x27;~1.98 NPS&#x27;, label: &#x27;Test chart below the 2.0 novice target&#x27; }],
-          contribution: &#x27;Solo gameplay, chart, and interaction prototyping. I defined the musical mapping and first-time-player ergonomics, built the deterministic chart pipeline, implemented timing and feedback, and simplified the audio architecture when its complexity no longer improved play.&#x27;,
+          contribution: &#x27;I defined the musical experience, five-finger ergonomics, scope cuts, and chart acceptance rules. AI-assisted development supported option research, implementation, and verification; Librosa is a deterministic analysis tool, not generative AI.&#x27;,
           gallery: [&#x27;Five-finger performance and visual feedback&#x27;, &#x27;Generated chart data and difficulty variants&#x27;],
-          facts: [[&#x27;Role&#x27;, &#x27;Solo gameplay, chart, and interaction prototyping&#x27;], [&#x27;Engine&#x27;, &#x27;Unity&#x27;], [&#x27;Project type&#x27;, &#x27;Wearable rhythm-game prototype&#x27;], [&#x27;Status&#x27;, &#x27;Three difficulty modes implemented; glove false triggers and audio offset still need tuning&#x27;]]
+          facts: [[&#x27;Role&#x27;, &#x27;Unity Real-Time Interaction Development Intern&#x27;], [&#x27;Engine&#x27;, &#x27;Unity&#x27;], [&#x27;Project type&#x27;, &#x27;Wearable rhythm-game prototype&#x27;], [&#x27;Status&#x27;, &#x27;Three difficulty modes implemented; glove false triggers and audio offset still need tuning&#x27;]]
         },
         &#x27;cat-teaser&#x27;: {
           title: &#x27;Cat Teaser 2D&#x27;,
@@ -2791,9 +2778,55 @@ html&gt;body{padding:0}&lt;/style&gt;
           map: [&#x27;Handle movement&#x27;, &#x27;Rope lag and inertia&#x27;, &#x27;Feather position&#x27;, &#x27;Cat anticipation&#x27;],
           decisions: [&#x27;Control the handle so the rope creates meaningful delay instead of moving the lure directly&#x27;, &#x27;Lock the cat\u2019s target before takeoff so deception and misses can actually happen&#x27;, &#x27;Use the same absolute-coordinate path for mouse and wristband input&#x27;],
           evidence: [{ value: &#x27;29 / 29&#x27;, label: &#x27;Focused EditMode checks passed&#x27; }, { value: &#x27;4 / 4&#x27;, label: &#x27;Input PlayMode checks passed&#x27; }],
-          contribution: &#x27;Solo interaction, physics, and behavior prototyping. I defined the handle-first interaction, tuned the rope and flick detection, shaped the cat\u2019s anticipation and commitment, expanded the scenarios, and shortened the hardware mapping path to improve reliability.&#x27;,
+          contribution: &#x27;I defined the handle-first interaction, behavior goals, expansion order, and feel criteria. AI-assisted development supported physics and geometry analysis, implementation, and focused tests; team and company-resource boundaries remain undocumented.&#x27;,
           gallery: [&#x27;Rope-driven feather motion and cat pounce timing&#x27;, &#x27;Two cats, multiple targets, and three scenarios&#x27;],
-          facts: [[&#x27;Role&#x27;, &#x27;Solo interaction, physics, and behavior prototyping&#x27;], [&#x27;Engine&#x27;, &#x27;Unity&#x27;], [&#x27;Project type&#x27;, &#x27;Playable physics and behavior prototype&#x27;], [&#x27;Status&#x27;, &#x27;Focused tests pass; known unrelated suite failures remain, and wristband latency needs device validation&#x27;]]
+          facts: [[&#x27;Role&#x27;, &#x27;Unity Real-Time Interaction Development Intern&#x27;], [&#x27;Engine&#x27;, &#x27;Unity&#x27;], [&#x27;Project type&#x27;, &#x27;Playable physics and behavior prototype&#x27;], [&#x27;Status&#x27;, &#x27;Focused tests pass; known unrelated suite failures remain, and wristband latency needs device validation&#x27;]]
+        },
+        &#x27;claw-machine&#x27;: {
+          title: &#x27;Hand-Input Claw Machine&#x27;,
+          summary: &#x27;A two-hand claw-machine prototype that turns continuous grip force into a learnable challenge with configurable target windows and explicit failure recovery.&#x27;,
+          visual: &#x27;Hand-input claw machine prototype&#x27;,
+          image: &#x27;assets/claw-machine-polaroid.png&#x27;,
+          imageAlt: &#x27;Hand-input claw machine prototype with three-claw mechanism and toy prize&#x27;,
+          video: &#x27;&#x27;,
+          overview: &#x27;The left hand positions the claw while the right hand starts and sustains grip force. Each toy can use its own target-force profile, and the state machine distinguishes active release, excessive-force failure, automatic drop, and safe return. Keyboard and mouse simulation make the loop testable before final real-device tuning.&#x27;,
+          keyWork: [&#x27;Defined the full move, grip, lift, release, and return state flow.&#x27;, &#x27;Designed configurable force windows and continuous out-of-range timing.&#x27;, &#x27;Created a circular ripple HUD for otherwise invisible grip force.&#x27;, &#x27;Separated release reasons so failures drop naturally and recover safely.&#x27;],
+          map: [&#x27;Left-hand position&#x27;, &#x27;Right-hand grip&#x27;, &#x27;Force window and timer&#x27;, &#x27;Lift, drop, or recover&#x27;],
+          decisions: [&#x27;Split positioning and grip across two hands instead of reproducing joystick and button controls&#x27;, &#x27;Configure target force per toy rather than using one global threshold&#x27;, &#x27;Validate the full loop with simulated input before claiming hardware feel&#x27;],
+          evidence: [{ value: &#x27;4 profiles&#x27;, label: &#x27;Default target-force configurations&#x27; }, { value: &#x27;Tested&#x27;, label: &#x27;Force, release, and recovery logic&#x27; }],
+          contribution: &#x27;I defined the two-hand roles, force challenge, failure feel, HUD hierarchy, performance boundary, and acceptance criteria. AI-assisted development supported implementation, tests, editor tooling, and recovery of the hardware-input scene.&#x27;,
+          gallery: [&#x27;Three-claw grip and configurable toy profiles&#x27;, &#x27;Force HUD, failure drop, and safe return states&#x27;],
+          facts: [[&#x27;Role&#x27;, &#x27;Unity Real-Time Interaction Development Intern&#x27;], [&#x27;Engine&#x27;, &#x27;Unity&#x27;], [&#x27;Project type&#x27;, &#x27;Embodied-input 3D game prototype&#x27;], [&#x27;Status&#x27;, &#x27;Implemented and focused logic tested; real two-hand tuning pending&#x27;]]
+        },
+        &#x27;gothic-hunter&#x27;: {
+          title: &#x27;Gothic Hunter&#x27;,
+          summary: &#x27;A runtime-verified Godot survival graybox built around three-act pressure, evolving weapons, directional slash input, and dense enemy encounters.&#x27;,
+          visual: &#x27;Gothic Hunter runtime combat&#x27;,
+          image: &#x27;../images/gothic-hunter.jpg&#x27;,
+          imageAlt: &#x27;Gothic Hunter runtime combat during a dense survival encounter&#x27;,
+          video: &#x27;&#x27;,
+          overview: &#x27;The prototype turns a gameplay brief into a complete short-run survival loop. A director controls three acts, elites, a boss, weapon growth, and two ultimates; input abstraction and object pooling support dense encounters. Iteration through recordings narrowed a four-direction effect to clearer up-and-down slashes and rebuilt zombie motion with 2D bones.&#x27;,
+          keyWork: [&#x27;Defined the three-act run, elites, boss, four-stage weapons, and two ultimates.&#x27;, &#x27;Built input abstraction, object pooling, encounter direction, and scene generation.&#x27;, &#x27;Tuned density, damage, projectiles, drops, and directional slash behaviour.&#x27;, &#x27;Rebuilt zombie locomotion with layered 2D bones and verified dense runtime scenes.&#x27;],
+          map: [&#x27;Three-act director&#x27;, &#x27;Enemy pool and pressure&#x27;, &#x27;Weapon growth and input&#x27;, &#x27;Boss and run result&#x27;],
+          decisions: [&#x27;Use procedural visuals and temporary audio to validate the complete loop before final assets&#x27;, &#x27;Put input abstraction and enemy pooling in place before increasing encounter density&#x27;, &#x27;Reduce four-direction expansion to fixed-size vertical slashes for a clearer gesture-to-effect mapping&#x27;],
+          evidence: [{ value: &#x27;3 acts&#x27;, label: &#x27;Deterministic run structure&#x27; }, { value: &#x27;180 enemies&#x27;, label: &#x27;Recorded stress-test scene&#x27; }, { value: &#x27;238.3 FPS&#x27;, label: &#x27;Recorded stress-test result&#x27; }],
+          contribution: &#x27;I supplied the gameplay brief, locked scope and values, set runtime-proof requirements, and made the final feel and asset-scope decisions. AI-assisted development supported Godot implementation, debugging, recordings, frame review, and stress tests; formal authorship boundaries remain pending evidence.&#x27;,
+          gallery: [&#x27;Three-act survival run and weapon progression&#x27;, &#x27;Vertical slash trail and 2D-bone zombie movement&#x27;],
+          facts: [[&#x27;Role&#x27;, &#x27;Gameplay Direction and AI-Assisted Godot Prototyping&#x27;], [&#x27;Engine&#x27;, &#x27;Godot 4 Mono&#x27;], [&#x27;Project type&#x27;, &#x27;Top-down survival graybox&#x27;], [&#x27;Status&#x27;, &#x27;Runtime verified; balance, final assets, and real glove input pending&#x27;]]
+        },
+        &#x27;neon-beatrunner&#x27;: {
+          title: &#x27;Neon BeatRunner&#x27;,
+          summary: &#x27;A Godot rhythm-platformer prototype that converts deterministic audio analysis into reachable jumps, timed enemies, and graded combat feedback.&#x27;,
+          visual: &#x27;Neon BeatRunner runtime prototype&#x27;,
+          video: &#x27;&#x27;,
+          overview: &#x27;The character runs automatically while enemies and obstacles are scheduled to reach fixed judgment points at target song times. Audio analysis supplies a rhythmic skeleton; a separate arrangement layer limits consecutive jumps, action conflicts, and event density. Absolute song time drives movement and judgment so results do not drift with frame rate.&#x27;,
+          keyWork: [&#x27;Defined the auto-run, platform-jump, and rhythm-combat loop.&#x27;, &#x27;Separated audio analysis, gameplay arrangement, and runtime presentation.&#x27;, &#x27;Moved enemies by absolute target time instead of frame-dependent travel.&#x27;, &#x27;Balanced jump and combat events with offset controls and graded feedback.&#x27;],
+          map: [&#x27;WAV analysis&#x27;, &#x27;Deterministic JSON&#x27;, &#x27;Gameplay arrangement&#x27;, &#x27;Time-driven movement and judgment&#x27;],
+          decisions: [&#x27;Use Librosa and JSON as the chart skeleton instead of making MIDI the only timeline&#x27;, &#x27;Use timestamps for rhythm judgment and collisions only for spatial presentation&#x27;, &#x27;Keep the first prototype self-contained with procedural visuals rather than waiting for final art&#x27;],
+          evidence: [{ value: &#x27;44 events&#x27;, label: &#x27;Deterministic demo chart&#x27; }, { value: &#x27;33 + 11&#x27;, label: &#x27;Combat and jump events&#x27; }, { value: &#x27;117.45 BPM&#x27;, label: &#x27;Detected demo tempo&#x27; }],
+          contribution: &#x27;I defined the gameplay direction, references, visual target, and key technical choices. AI-assisted development supported research, Godot and Python implementation, demo assets, tests, and runtime capture; Librosa and deterministic chart generation are not generative-AI product features.&#x27;,
+          gallery: [&#x27;Auto-run platform and timed enemy approach&#x27;, &#x27;Perfect, Good, and Miss feedback with combo and offset controls&#x27;],
+          facts: [[&#x27;Role&#x27;, &#x27;Gameplay Direction and AI-Assisted Godot Prototyping&#x27;], [&#x27;Engine&#x27;, &#x27;Godot 4&#x27;], [&#x27;Project type&#x27;, &#x27;Rhythm platformer prototype&#x27;], [&#x27;Status&#x27;, &#x27;Runtime verified with demo audio; final WAV, art, and playtesting pending&#x27;]]
         },
         &#x27;pizza-delivery&#x27;: {
           title: &#x27;Pizza Delivery&#x27;,
@@ -2809,7 +2842,7 @@ html&gt;body{padding:0}&lt;/style&gt;
           evidence: [{ value: &#x27;3 rounds&#x27;, label: &#x27;Completed Poki tests&#x27; }, { value: &#x27;500 plays&#x27;, label: &#x27;Recorded in each completed round&#x27; }, { value: &#x27;1 min 53 sec&#x27;, label: &#x27;Final visible average playtime&#x27; }],
           contribution: &#x27;I independently designed and built the Unity WebGL prototype, then used player behaviour to prioritise iterations to onboarding, progression, task guidance, and feedback.&#x27;,
           gallery: [&#x27;Driving, active order, countdown, and reward feedback&#x27;, &#x27;Delivery progression and iteration checkpoints&#x27;],
-          facts: [[&#x27;Role&#x27;, &#x27;Unity Game Developer and Designer&#x27;], [&#x27;Engine&#x27;, &#x27;Unity WebGL&#x27;], [&#x27;Period&#x27;, &#x27;May 2026 - July 2026&#x27;], [&#x27;Context&#x27;, &#x27;Dream Reality Interactive internship&#x27;]]
+          facts: [[&#x27;Role&#x27;, &#x27;Unity Game Development and Design Intern&#x27;], [&#x27;Engine&#x27;, &#x27;Unity WebGL&#x27;], [&#x27;Period&#x27;, &#x27;May 2026 - July 2026&#x27;], [&#x27;Status&#x27;, &#x27;Implemented, runtime verified, and released&#x27;]]
         },
         &#x27;augsoc&#x27;: {
           title: &#x27;AugSoc - AR Creation Research&#x27;,
@@ -2823,23 +2856,23 @@ html&gt;body{padding:0}&lt;/style&gt;
           map: [&#x27;2D or 3D mode&#x27;, &#x27;Creation task&#x27;, &#x27;Observed behaviour&#x27;, &#x27;Questionnaire and interview&#x27;, &#x27;Interaction decision&#x27;],
           decisions: [&#x27;Keep the interaction variables comparable across both modes&#x27;, &#x27;Combine observed behaviour with stated preference&#x27;, &#x27;Use study findings to prioritise prototype changes&#x27;],
           evidence: [{ value: &#x27;18&#x27;, label: &#x27;Study participants&#x27; }, { value: &#x27;2 modes&#x27;, label: &#x27;2D and 3D AR creation&#x27; }],
-          contribution: &#x27;My role combined VR development and user research: building the comparative prototype, conducting the study, and translating the results into interaction priorities.&#x27;,
+          contribution: &#x27;My recorded role combined VR development and user research across the comparative prototype and 18-participant study. Team size, ownership by artifact, detailed findings, and project-level AI use remain undocumented.&#x27;,
           gallery: [&#x27;2D and 3D AR creation comparison&#x27;, &#x27;Questionnaire, interview, and interaction findings&#x27;],
           facts: [[&#x27;Role&#x27;, &#x27;VR Developer and User Researcher&#x27;], [&#x27;Platform&#x27;, &#x27;Meta Quest 3&#x27;], [&#x27;Engine&#x27;, &#x27;Unity&#x27;], [&#x27;Period&#x27;, &#x27;June 2025 - September 2025&#x27;]]
         },
         &#x27;plant-bot&#x27;: {
           title: &#x27;Plant Bot&#x27;,
-          summary: &#x27;A physical and AR prototype connecting environmental sensor data to a responsive plant companion.&#x27;,
+          summary: &#x27;A physical plant-care prototype that translates four kinds of environmental data into emotional states, care prompts, and an AR response.&#x27;,
           visual: &#x27;Plant Bot physical prototype and Unity AR view&#x27;,
-          video: &#x27;&#x27;,
-          overview: &#x27;Plant Bot combines Arduino or ESP32 sensor input with a Unity AR layer. Environmental readings become visible system states, connecting the physical plant and its digital representation.&#x27;,
-          keyWork: [&#x27;Collected environmental data through physical sensors.&#x27;, &#x27;Connected Arduino or ESP32 input to Unity.&#x27;, &#x27;Represented physical state through an AR view.&#x27;],
-          map: [&#x27;Environment&#x27;, &#x27;Physical sensors&#x27;, &#x27;Arduino or ESP32&#x27;, &#x27;Unity AR response&#x27;],
-          decisions: [&#x27;Keeping physical and digital states connected&#x27;, &#x27;Making environmental readings understandable in AR&#x27;],
-          evidence: [{ value: &#x27;Sensors&#x27;, label: &#x27;Environmental input&#x27; }, { value: &#x27;AR&#x27;, label: &#x27;Unity-based spatial view&#x27; }],
-          contribution: &#x27;The prototype links embedded hardware and AR into one feedback loop around the state of a physical plant.&#x27;,
-          gallery: [&#x27;Physical Plant Bot prototype&#x27;, &#x27;Unity AR state view&#x27;],
-          facts: [[&#x27;Project type&#x27;, &#x27;Physical and AR prototype&#x27;], [&#x27;Hardware&#x27;, &#x27;Arduino or ESP32&#x27;], [&#x27;Software&#x27;, &#x27;Unity AR&#x27;]]
+          video: &#x27;https://www.youtube.com/watch?v=joI6rHameEc&#x27;,
+          overview: &#x27;Plant Bot turns otherwise invisible plant-care conditions into six understandable states. The work spans user research, function definition, sensor and circuit integration, communication, fabrication, and a Unity AR layer. The physical prototype exists; user comprehension and AR runtime validation are still pending.&#x27;,
+          keyWork: [&#x27;Researched the plant-care context and defined the product functions.&#x27;, &#x27;Mapped four environmental inputs into six emotional and care states.&#x27;, &#x27;Integrated sensors, circuits, communication, PCB work, and soldering.&#x27;, &#x27;Built the enclosure and connected the prototype to a Unity AR layer.&#x27;],
+          map: [&#x27;Plant environment&#x27;, &#x27;Four sensor inputs&#x27;, &#x27;Six interpreted states&#x27;, &#x27;Care prompt and AR response&#x27;],
+          decisions: [&#x27;Translate raw readings into emotional states and actionable care prompts&#x27;, &#x27;Connect physical sensing and spatial feedback as one experience&#x27;],
+          evidence: [{ value: &#x27;4 inputs&#x27;, label: &#x27;Environmental data categories&#x27; }, { value: &#x27;6 states&#x27;, label: &#x27;Interpreted plant conditions&#x27; }],
+          contribution: &#x27;My recorded role covered interaction design and Arduino development. Team size, individual ownership of each artifact, and project-level AI use remain undocumented.&#x27;,
+          gallery: [&#x27;Physical sensing and fabricated enclosure&#x27;, &#x27;Emotional states, care prompts, and AR response&#x27;],
+          facts: [[&#x27;Role&#x27;, &#x27;Interaction Design and Arduino Development Intern&#x27;], [&#x27;Project type&#x27;, &#x27;Physical computing and AR prototype&#x27;], [&#x27;Period&#x27;, &#x27;May 2026&#x27;], [&#x27;Status&#x27;, &#x27;Implemented; user and AR runtime validation pending&#x27;]]
         },
         &#x27;hardware-toolkit&#x27;: {
           title: &#x27;Unity Hardware Input Toolkit&#x27;,
@@ -2856,117 +2889,117 @@ html&gt;body{padding:0}&lt;/style&gt;
           facts: [[&#x27;Project type&#x27;, &#x27;Reusable Unity package&#x27;], [&#x27;Features&#x27;, &#x27;Multi-config and reconnect&#x27;], [&#x27;Testing&#x27;, &#x27;Virtual devices and input simulation&#x27;]]
         },
         &#x27;abyss&#x27;: {
-          title: &#x27;Abyss - Physics Based VR Narrative Horror Experience&#x27;,
-          summary: &#x27;A physics-based VR narrative horror prototype that explores vulnerability and human insignificance within a Lovecraftian cosmic setting.&#x27;,
+          title: &#x27;Abyss - Embodied VR Horror Prototype&#x27;,
+          summary: &#x27;An experimental VR experience using dynamic hand movement, monumental scale, spatial audio, and triggered environmental storytelling.&#x27;,
           visual: &#x27;Abyss gameplay video / embodied VR interaction&#x27;,
           image: &#x27;assets/xr-abyss.jpg&#x27;,
           imageAlt: &#x27;Abyss VR narrative horror experience&#x27;,
           video: &#x27;https://www.youtube.com/watch?v=Jfq4dHgv87M&#x27;,
-          overview: &#x27;Gesture-driven locomotion and interaction meaningfully integrate the player\&#x27;s body into the gameplay, while physics systems reinforce instability and tension. VR\&#x27;s spatial immersion and 3D audio amplify scale perception and fear of the unknown, transforming horror into an embodied experience.&#x27;,
+          overview: &#x27;The project maps dynamic hand movement to locomotion so the player\&#x27;s body participates in the emotional experience. Monumental environments, spatial audio, and triggered environmental storytelling work together to create an embodied horror study. Device details, recognition methods, runtime verification, and user-test results remain undocumented.&#x27;,
           keyWork: [
-            &#x27;Physics-based interaction emphasising instability and loss of control.&#x27;,
-            &#x27;Gesture-driven locomotion using hand and finger tracking.&#x27;,
-            &#x27;Exaggerated spatial scale and 3D audio to evoke megalophobia.&#x27;,
-            &#x27;Environmental storytelling within an immersive VR space.&#x27;
+            &#x27;Designed dynamic hand movement as an embodied locomotion input.&#x27;,
+            &#x27;Built monumental environments around a fear-of-scale theme.&#x27;,
+            &#x27;Combined spatial audio with triggered environmental storytelling.&#x27;,
+            &#x27;Developed the experimental VR experience as a personal project.&#x27;
           ],
-          map: [&#x27;Hand and finger gestures&#x27;, &#x27;Embodied locomotion&#x27;, &#x27;Physics instability&#x27;, &#x27;Spatial scale and 3D audio&#x27;, &#x27;Embodied horror&#x27;],
-          decisions: [&#x27;Transforming horror from observed to embodied&#x27;, &#x27;Exploring cosmic insignificance and fragile human agency&#x27;],
+          map: [&#x27;Dynamic hand movement&#x27;, &#x27;Embodied locomotion&#x27;, &#x27;Monumental environment&#x27;, &#x27;Spatial audio and story triggers&#x27;, &#x27;Emotional experience&#x27;],
+          decisions: [&#x27;Use body movement to serve the emotional goal rather than as a detached control scheme&#x27;, &#x27;Combine scale, audio, and environmental triggers instead of relying on exposition&#x27;],
           evidence: [
-            { value: &#x27;Body&#x27;, label: &#x27;Gesture-driven locomotion&#x27; },
-            { value: &#x27;Physics&#x27;, label: &#x27;Instability and loss of control&#x27; },
-            { value: &#x27;Scale&#x27;, label: &#x27;Megalophobia and insignificance&#x27; },
+            { value: &#x27;Body&#x27;, label: &#x27;Dynamic hand-driven locomotion&#x27; },
+            { value: &#x27;Scale&#x27;, label: &#x27;Monumental environment design&#x27; },
+            { value: &#x27;Story&#x27;, label: &#x27;Triggered environmental narrative&#x27; },
             { value: &#x27;3D audio&#x27;, label: &#x27;Spatial tension and immersion&#x27; }
           ],
-          contribution: &#x27;The documented design work centres on embodied locomotion, physics-driven vulnerability, environmental storytelling, spatial scale, and audio as a combined horror system.&#x27;,
-          gallery: [&#x27;Project environment and scale study&#x27;, &#x27;Physics interaction and narrative scene&#x27;],
+          contribution: &#x27;This is recorded as a personal design-and-development project. The evidence supports the intended interaction and emotional design, but implementation scope, assets, runtime status, and project-level AI use remain undocumented.&#x27;,
+          gallery: [&#x27;Project environment and scale study&#x27;, &#x27;Hand-driven locomotion and narrative scene&#x27;],
           facts: [
-            [&#x27;Project type&#x27;, &#x27;VR narrative horror prototype&#x27;],
+            [&#x27;Project type&#x27;, &#x27;Experimental VR game prototype&#x27;],
             [&#x27;Platform&#x27;, &#x27;Virtual reality&#x27;],
-            [&#x27;Interaction&#x27;, &#x27;Hand and finger tracking&#x27;],
-            [&#x27;System&#x27;, &#x27;Physics-based interaction&#x27;],
-            [&#x27;Sensory layer&#x27;, &#x27;Spatial immersion and 3D audio&#x27;],
-            [&#x27;Focus&#x27;, &#x27;Embodiment and cosmic horror&#x27;]
+            [&#x27;Interaction&#x27;, &#x27;Dynamic hand-movement locomotion&#x27;],
+            [&#x27;Sensory layer&#x27;, &#x27;Spatial audio and environmental storytelling&#x27;],
+            [&#x27;Period&#x27;, &#x27;February 2026&#x27;],
+            [&#x27;Status&#x27;, &#x27;Designed; runtime validation pending&#x27;]
           ]
         },
         &#x27;emotional-mask&#x27;: {
           title: &#x27;Emotional Mask - VR Hand-Tracking Experience&#x27;,
-          summary: &#x27;A Global Game Jam 2026 VR experience exploring the psychological cost of social masking through embodied hand interaction.&#x27;,
+          summary: &#x27;A time-boxed VR Game Jam prototype connecting gesture triggers, level flow, and narrative interaction.&#x27;,
           visual: &#x27;Emotional Mask video / hand-tracking social scenario&#x27;,
           image: &#x27;assets/xr-emotional-mask.jpg&#x27;,
           imageAlt: &#x27;Emotional Mask VR hand-tracking experience&#x27;,
           video: &#x27;https://www.youtube.com/watch?v=AvCc4186Ol4&#x27;,
-          overview: &#x27;Players navigate social scenarios using hand gestures that represent emotional responses. Conforming to expectations expands a virtual mask that obscures vision and limits perception; honest self-expression clears the mask, widens the field of view, and brightens the environment.&#x27;,
+          overview: &#x27;The team prototype links hand gestures to level logic and narrative content. My recorded contribution covers gesture triggers, level logic, and narrative interaction; the exact Jam duration, team size, final completion level, and playtest evidence remain undocumented.&#x27;,
           keyWork: [
-            &#x27;Designed gesture-based responses for different social scenarios.&#x27;,
-            &#x27;Mapped conformity to a mask that expands and limits perception.&#x27;,
-            &#x27;Mapped honest self-expression to a clearer view and brighter environment.&#x27;,
-            &#x27;Used embodied interaction to externalise an internal emotional conflict.&#x27;
+            &#x27;Implemented gesture-triggered interactions.&#x27;,
+            &#x27;Connected gesture events to the level flow.&#x27;,
+            &#x27;Built level logic for the playable prototype.&#x27;,
+            &#x27;Created narrative interaction content within the Jam scope.&#x27;
           ],
-          map: [&#x27;Social scenario&#x27;, &#x27;Hand gesture response&#x27;, &#x27;Conform or self-express&#x27;, &#x27;Mask expands or clears&#x27;, &#x27;Perception changes&#x27;],
-          decisions: [&#x27;Using embodiment to externalise internal conflict&#x27;, &#x27;Encouraging self-acceptance through perceptual change&#x27;],
+          map: [&#x27;Level event&#x27;, &#x27;Gesture trigger&#x27;, &#x27;Level logic&#x27;, &#x27;Narrative response&#x27;],
+          decisions: [&#x27;Keep gesture interaction tied to the level flow&#x27;, &#x27;Control scope around a playable Jam build&#x27;],
           evidence: [
-            { value: &#x27;Gesture&#x27;, label: &#x27;Emotional responses become physical actions&#x27; },
-            { value: &#x27;Mask&#x27;, label: &#x27;Social pressure becomes visible&#x27; },
-            { value: &#x27;Vision&#x27;, label: &#x27;Conformity narrows perception&#x27; },
-            { value: &#x27;Light&#x27;, label: &#x27;Honesty brightens the environment&#x27; }
+            { value: &#x27;Gesture&#x27;, label: &#x27;Trigger mechanism&#x27; },
+            { value: &#x27;Flow&#x27;, label: &#x27;Linked level logic&#x27; },
+            { value: &#x27;Story&#x27;, label: &#x27;Interactive narrative content&#x27; },
+            { value: &#x27;Jam&#x27;, label: &#x27;Time-boxed team prototype&#x27; }
           ],
-          contribution: &#x27;The project\&#x27;s documented design focus is the translation of social masking into an embodied, perceptual system that makes internal conflict physically legible.&#x27;,
+          contribution: &#x27;I contributed as a Game Jam team member. The record supports gesture triggers, level logic, and narrative interaction work, but personal code ownership and broader team contributions remain undocumented.&#x27;,
           gallery: [&#x27;Hand-tracking response scenario&#x27;, &#x27;Mask growth and perception change&#x27;],
           facts: [
             [&#x27;Project type&#x27;, &#x27;VR hand-tracking experience&#x27;],
-            [&#x27;Event&#x27;, &#x27;Global Game Jam 2026&#x27;],
+            [&#x27;Context&#x27;, &#x27;Game Jam team project&#x27;],
             [&#x27;Platform&#x27;, &#x27;Virtual reality&#x27;],
             [&#x27;Interaction&#x27;, &#x27;Gesture-based responses&#x27;],
-            [&#x27;Core metaphor&#x27;, &#x27;The expanding emotional mask&#x27;],
-            [&#x27;Focus&#x27;, &#x27;Embodiment and self-acceptance&#x27;]
+            [&#x27;Period&#x27;, &#x27;February 2026&#x27;],
+            [&#x27;Status&#x27;, &#x27;Implemented; playtest and completion evidence pending&#x27;]
           ]
         },
         &#x27;ar-escape-room&#x27;: {
           title: &#x27;AR Escape Room&#x27;,
-          summary: &#x27;An augmented reality escape room where players solve spatial puzzles embedded within their physical surroundings.&#x27;,
+          summary: &#x27;A team-built AR escape room connecting physical-space clues with virtual-window wiping, handwriting input, and QR triggers.&#x27;,
           visual: &#x27;AR Escape Room video / spatial puzzle walkthrough&#x27;,
           image: &#x27;assets/xr-ar-escape-room.png&#x27;,
           imageAlt: &#x27;AR Escape Room spatial puzzle experience&#x27;,
           video: &#x27;https://www.youtube.com/watch?v=Qz9FfWEAgcA&#x27;,
-          overview: &#x27;Virtual objects are anchored to real-world space, requiring players to move, observe, and interact with both digital and physical elements. The experience combines passthrough, spatial alignment, object recognition, and room-scale puzzle solving.&#x27;,
+          overview: &#x27;The project organises several heterogeneous AR interactions into one puzzle flow. My recorded responsibilities span concept and mechanic design, requirement breakdown, schedule management, development of virtual-window wiping, handwriting input, and QR triggers, plus integration and debugging across modules.&#x27;,
           keyWork: [
-            &#x27;Created spatially anchored virtual objects that interact with real-world surfaces.&#x27;,
-            &#x27;Designed passthrough puzzles combining physical movement and digital manipulation.&#x27;,
-            &#x27;Integrated machine-learning-based handwritten digit recognition.&#x27;,
-            &#x27;Used QR code detection as interactive puzzle triggers.&#x27;
+            &#x27;Designed physical and virtual clues as one puzzle flow.&#x27;,
+            &#x27;Broke down requirements and managed delivery progress.&#x27;,
+            &#x27;Developed virtual-window wiping, handwriting input, and QR triggers.&#x27;,
+            &#x27;Integrated and debugged the project modules.&#x27;
           ],
-          map: [&#x27;Observe physical room&#x27;, &#x27;Find spatial clue&#x27;, &#x27;Move or manipulate&#x27;, &#x27;Recognition or QR trigger&#x27;, &#x27;Puzzle state changes&#x27;],
-          decisions: [&#x27;Integrating spatial alignment, passthrough, and object recognition&#x27;, &#x27;Creating seamless transitions between physical and virtual puzzle elements&#x27;],
+          map: [&#x27;Physical-space clue&#x27;, &#x27;AR interaction module&#x27;, &#x27;Integrated puzzle logic&#x27;, &#x27;Puzzle state change&#x27;],
+          decisions: [&#x27;Organise heterogeneous AR interactions around one puzzle flow&#x27;, &#x27;Treat module integration and debugging as part of experience delivery&#x27;],
           evidence: [
-            { value: &#x27;Space&#x27;, label: &#x27;Virtual objects anchored to real surfaces&#x27; },
-            { value: &#x27;Movement&#x27;, label: &#x27;Room-scale observation and interaction&#x27; },
-            { value: &#x27;ML&#x27;, label: &#x27;Handwritten digit recognition&#x27; },
+            { value: &#x27;Wipe&#x27;, label: &#x27;Virtual-window interaction&#x27; },
+            { value: &#x27;Input&#x27;, label: &#x27;Handwriting mechanic&#x27; },
+            { value: &#x27;Modules&#x27;, label: &#x27;Integrated and debugged delivery&#x27; },
             { value: &#x27;QR&#x27;, label: &#x27;Physical triggers for digital puzzles&#x27; }
           ],
-          contribution: &#x27;Ruyan served as Team Lead, Level Designer, and Gameplay Programmer: facilitating coordination, mapping spatial AR puzzle layouts, and implementing digit-recognition and QR-trigger systems.&#x27;,
-          gallery: [&#x27;Passthrough spatial puzzle&#x27;, &#x27;Digit recognition and QR trigger flow&#x27;],
+          contribution: &#x27;My recorded role covered design, development, and project management. This was a team project: integrating all modules does not imply that I authored every module, and the individual code ratio remains undocumented.&#x27;,
+          gallery: [&#x27;Physical and virtual puzzle flow&#x27;, &#x27;Handwriting input and QR trigger flow&#x27;],
           facts: [
-            [&#x27;Role&#x27;, &#x27;Team Lead · Level Designer · Gameplay Programmer&#x27;],
+            [&#x27;Role&#x27;, &#x27;Design, Development, and Project Management&#x27;],
             [&#x27;Project type&#x27;, &#x27;Team AR escape room&#x27;],
             [&#x27;Platform&#x27;, &#x27;Augmented reality / passthrough&#x27;],
             [&#x27;Interaction&#x27;, &#x27;Spatial movement and manipulation&#x27;],
-            [&#x27;Recognition&#x27;, &#x27;Handwriting ML and QR detection&#x27;],
-            [&#x27;Focus&#x27;, &#x27;Physical-digital puzzle continuity&#x27;]
+            [&#x27;Core mechanics&#x27;, &#x27;Window wiping, handwriting input, and QR triggers&#x27;],
+            [&#x27;Status&#x27;, &#x27;Designed and implemented; device and user validation pending&#x27;]
           ]
         },
         &#x27;speaking-world&#x27;: {
           title: &#x27;Speaking World - AR & AI Companion Environment&#x27;,
-          summary: &#x27;An AI-augmented AR environment that explores loneliness by turning everyday objects into conversational companions.&#x27;,
+          summary: &#x27;A personal AR prototype connecting object recognition, AI conversation, voice feedback, and surface drawing into one object-character experience.&#x27;,
           visual: &#x27;Speaking World video / ambient AR companion environment&#x27;,
           image: &#x27;assets/xr-speaking-world.png&#x27;,
           imageAlt: &#x27;Speaking World AR and AI companion environment&#x27;,
           video: &#x27;https://www.youtube.com/watch?v=j5jeKZbRmL8&#x27;,
-          overview: &#x27;Instead of a single virtual assistant, the surrounding space responds to the user: fridges, sofas, and food are given voice and personality. The prototype reimagines the environment as ambient companionship and asks how spatial AI might reshape presence and connection.&#x27;,
+          overview: &#x27;The experience treats recognised physical objects as characters rather than routing the user to a separate chat interface. Recognition, AI dialogue, voice response, and AR drawing on object surfaces form one interaction chain. Model choice, prompting, latency, safety, failure handling, and runtime evidence remain undocumented.&#x27;,
           keyWork: [
-            &#x27;Created AI-powered conversational everyday objects.&#x27;,
-            &#x27;Designed AR interaction around items already present in the environment.&#x27;,
-            &#x27;Added AR graffiti as a channel for personal expression.&#x27;,
-            &#x27;Distributed companionship across the surrounding space rather than one assistant.&#x27;
+            &#x27;Designed object recognition as the entry point to the experience.&#x27;,
+            &#x27;Connected AI dialogue to spoken feedback.&#x27;,
+            &#x27;Added AR drawing directly on recognised object surfaces.&#x27;,
+            &#x27;Organised the capabilities as one continuous interaction rather than separate tools.&#x27;
           ],
           map: [&#x27;Everyday object&#x27;, &#x27;AR presence&#x27;, &#x27;AI conversation&#x27;, &#x27;Ambient response&#x27;, &#x27;Connection to place&#x27;],
           decisions: [&#x27;Treating the environment itself as a companion&#x27;, &#x27;Turning familiar spaces into responsive social environments&#x27;],
@@ -2976,48 +3009,48 @@ html&gt;body{padding:0}&lt;/style&gt;
             { value: &#x27;AR&#x27;, label: &#x27;Responses stay connected to physical place&#x27; },
             { value: &#x27;Graffiti&#x27;, label: &#x27;Personal marks reinforce presence&#x27; }
           ],
-          contribution: &#x27;The documented design focus is environment-as-companion: making spatial AI feel ambient and place-based while giving the user an expressive way to leave a personal presence in the room.&#x27;,
+          contribution: &#x27;This is recorded as a personal design-and-development project. AI dialogue is a product feature; development-assistant use, model engineering, training, and fine-tuning are not evidenced and are not claimed.&#x27;,
           gallery: [&#x27;Conversational everyday object&#x27;, &#x27;AR graffiti and personal expression&#x27;],
           facts: [
             [&#x27;Project type&#x27;, &#x27;AR and AI companion prototype&#x27;],
             [&#x27;Platform&#x27;, &#x27;Augmented reality&#x27;],
             [&#x27;Interaction&#x27;, &#x27;Conversational everyday objects&#x27;],
-            [&#x27;AI layer&#x27;, &#x27;Distributed ambient companionship&#x27;],
-            [&#x27;Expression&#x27;, &#x27;AR graffiti&#x27;],
-            [&#x27;Focus&#x27;, &#x27;Loneliness, presence, and connection&#x27;]
+            [&#x27;AI layer&#x27;, &#x27;Conversational product feature&#x27;],
+            [&#x27;Expression&#x27;, &#x27;Object-surface AR drawing&#x27;],
+            [&#x27;Status&#x27;, &#x27;Designed; runtime and interaction-quality validation pending&#x27;]
           ]
         },
         &#x27;ar-graffiti&#x27;: {
-          title: &#x27;AR Graffiti&#x27;,
-          summary: &#x27;An augmented reality prototype exploring tangible and gesture-based techniques for creating and modifying spatial content.&#x27;,
+          title: &#x27;AugSoc - AR Creation Research&#x27;,
+          summary: &#x27;A Unity and Meta Quest 3 study comparing 2D and 3D AR creation modes with 18 participants.&#x27;,
           visual: &#x27;AR Graffiti video / immersive creation techniques&#x27;,
           image: &#x27;assets/xr-ar-graffiti.png&#x27;,
           imageAlt: &#x27;AR Graffiti tangible and gesture interaction study&#x27;,
           video: &#x27;https://www.youtube.com/watch?v=IBjiM0_Ek-c&#x27;,
-          overview: &#x27;The system compares multiple graffiti interaction methods to investigate how different input styles influence user preference, immersion, usability, and creative expression when working with AR content.&#x27;,
+          overview: &#x27;The project treats 2D and 3D creation modes as research variables. A comparative prototype supports spraying, path drawing, dragging, and scaling; questionnaires and interviews connect observed behaviour and stated preference to later interaction priorities. Detailed findings and final changes remain pending evidence.&#x27;,
           keyWork: [
-            &#x27;Implemented direct placement and path-based drawing.&#x27;,
-            &#x27;Implemented spray painting and colouring interactions.&#x27;,
-            &#x27;Added drag-and-drop manipulation for created content.&#x27;,
-            &#x27;Aligned content to physical surfaces and provided real-time interaction feedback.&#x27;
+            &#x27;Built comparable 2D and 3D AR creation modes.&#x27;,
+            &#x27;Implemented spraying, path drawing, dragging, and scaling.&#x27;,
+            &#x27;Designed and conducted questionnaires and interviews.&#x27;,
+            &#x27;Used the comparative study to inform interaction priorities.&#x27;
           ],
-          map: [&#x27;Choose input technique&#x27;, &#x27;Target a surface&#x27;, &#x27;Create or manipulate&#x27;, &#x27;Receive real-time feedback&#x27;, &#x27;Compare the experience&#x27;],
-          decisions: [&#x27;Comparing usability across AR input techniques&#x27;, &#x27;Designing intuitive creation tools for immersive environments&#x27;],
+          map: [&#x27;2D or 3D mode&#x27;, &#x27;Creation task&#x27;, &#x27;Observed behaviour&#x27;, &#x27;Questionnaire and interview&#x27;, &#x27;Interaction priority&#x27;],
+          decisions: [&#x27;Keep interaction variables comparable across both creation modes&#x27;, &#x27;Use participant evidence to guide iteration without overstating unrecorded findings&#x27;],
           evidence: [
-            { value: &#x27;5 modes&#x27;, label: &#x27;Placement, path, spray, colour, and drag&#x27; },
-            { value: &#x27;Surface&#x27;, label: &#x27;Spatially aligned content placement&#x27; },
-            { value: &#x27;Realtime&#x27;, label: &#x27;Immediate interaction feedback&#x27; },
-            { value: &#x27;Compare&#x27;, label: &#x27;Preference, immersion, and usability&#x27; }
+            { value: &#x27;18&#x27;, label: &#x27;Study participants&#x27; },
+            { value: &#x27;2 modes&#x27;, label: &#x27;2D and 3D AR creation&#x27; },
+            { value: &#x27;4 actions&#x27;, label: &#x27;Spray, path, drag, and scale&#x27; },
+            { value: &#x27;2 methods&#x27;, label: &#x27;Questionnaires and interviews&#x27; }
           ],
-          contribution: &#x27;The prototype documents a comparative interaction-design focus: building several creation methods, keeping their spatial feedback consistent, and examining which approaches feel most usable and expressive in AR.&#x27;,
-          gallery: [&#x27;Spray, colouring, and path-based creation&#x27;, &#x27;Direct placement and drag manipulation&#x27;],
+          contribution: &#x27;My recorded role combined VR development and user research across the 2D/3D creation prototype and comparative study. Team size, ownership by artifact, detailed findings, and project-level AI use remain undocumented.&#x27;,
+          gallery: [&#x27;2D and 3D AR creation comparison&#x27;, &#x27;Questionnaire, interview, and interaction findings&#x27;],
           facts: [
-            [&#x27;Project type&#x27;, &#x27;AR interaction prototype&#x27;],
-            [&#x27;Platform&#x27;, &#x27;Augmented reality&#x27;],
-            [&#x27;Input modes&#x27;, &#x27;Five creation and manipulation techniques&#x27;],
-            [&#x27;Placement&#x27;, &#x27;Surface-based spatial alignment&#x27;],
-            [&#x27;Feedback&#x27;, &#x27;Real-time interaction response&#x27;],
-            [&#x27;Focus&#x27;, &#x27;Usability and creative expression&#x27;]
+            [&#x27;Role&#x27;, &#x27;VR Developer and User Researcher&#x27;],
+            [&#x27;Platform&#x27;, &#x27;Meta Quest 3&#x27;],
+            [&#x27;Engine&#x27;, &#x27;Unity&#x27;],
+            [&#x27;Study&#x27;, &#x27;18 participants&#x27;],
+            [&#x27;Period&#x27;, &#x27;June 2025 - September 2025&#x27;],
+            [&#x27;Status&#x27;, &#x27;Implemented and playtested; detailed findings pending evidence&#x27;]
           ]
         }
       };
@@ -3531,7 +3564,6 @@ html&gt;body{padding:0}&lt;/style&gt;
       const xrSection = root.querySelector(&#x27;[data-rq-xr-section]&#x27;);
       const xrSticky = xrSection?.querySelector(&#x27;.rq-xr-sticky&#x27;);
       const xrStage = root.querySelector(&#x27;[data-rq-xr-stage]&#x27;);
-      const xrSkyboxCanvas = root.querySelector(&#x27;[data-rq-xr-skybox]&#x27;);
       const xrDistortionCanvas = root.querySelector(&#x27;[data-rq-xr-distortion]&#x27;);
       const xrDistortionLens = root.querySelector(&#x27;[data-rq-xr-distortion-lens]&#x27;);
       const xrGridCanvas = root.querySelector(&#x27;[data-rq-xr-grid]&#x27;);
@@ -5782,151 +5814,6 @@ html&gt;body{padding:0}&lt;/style&gt;
         xrGridMotion.targetY = 0;
         requestXrGrid();
       });
-      let xrSkyboxRuntime = null;
-      let xrSkyboxLoading = null;
-      const bindXrSkyboxPointer = (runtime) =&gt; {
-        xrStage.addEventListener(&#x27;pointermove&#x27;, (event) =&gt; {
-          if (!runtime.visible || runtime.presenting) return;
-          const rect = xrStage.getBoundingClientRect();
-          const nx = clampUnit((event.clientX - rect.left) / rect.width) * 2 - 1;
-          const ny = clampUnit((event.clientY - rect.top) / rect.height) * 2 - 1;
-          runtime.targetYaw = nx * .05;
-          runtime.targetPitch = ny * -.035;
-          runtime.requestRender();
-        }, { passive: true });
-        xrStage.addEventListener(&#x27;pointerleave&#x27;, () =&gt; {
-          runtime.targetYaw = 0;
-          runtime.targetPitch = 0;
-          runtime.requestRender();
-        });
-      };
-      const initXrSkybox = () =&gt; {
-        if (!xrSkyboxCanvas || xrSkyboxRuntime || xrSkyboxLoading || reduceMotion) return xrSkyboxLoading;
-        const filePreview = document.baseURI.startsWith(&#x27;file:&#x27;) || (() =&gt; {
-          try { return window.parent.location.protocol === &#x27;file:&#x27;; } catch (error) { return false; }
-        })();
-        if (filePreview) {
-          const runtime = {
-            targetYaw: 0,
-            targetPitch: 0,
-            yaw: 0,
-            pitch: 0,
-            frame: 0,
-            visible: false,
-            presenting: false,
-            resize: () =&gt; {}
-          };
-          const renderFallbackFrame = () =&gt; {
-            runtime.frame = 0;
-            if (!runtime.visible) return;
-            runtime.yaw += (runtime.targetYaw - runtime.yaw) * .085;
-            runtime.pitch += (runtime.targetPitch - runtime.pitch) * .085;
-            const x = runtime.yaw / .05 * -1.35;
-            const y = runtime.pitch / .035 * 1.05;
-            xrSkyboxCanvas.style.transform = `translate3d(${x}%, ${y}%, 0) scale(1.055)`;
-            const moving = Math.abs(runtime.targetYaw - runtime.yaw) &gt; .00015 || Math.abs(runtime.targetPitch - runtime.pitch) &gt; .00015;
-            if (moving) runtime.frame = window.requestAnimationFrame(renderFallbackFrame);
-          };
-          runtime.requestRender = () =&gt; {
-            if (!runtime.frame &amp;&amp; runtime.visible) runtime.frame = window.requestAnimationFrame(renderFallbackFrame);
-          };
-          xrSkyboxRuntime = runtime;
-          bindXrSkyboxPointer(runtime);
-          xrSkyboxLoading = Promise.resolve(runtime);
-          return xrSkyboxLoading;
-        }
-        xrSkyboxLoading = import(&#x27;https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.min.js&#x27;).then(async (THREE) =&gt; {
-          const renderer = new THREE.WebGLRenderer({ canvas: xrSkyboxCanvas, alpha: true, antialias: false, powerPreference: &#x27;low-power&#x27; });
-          const scene = new THREE.Scene();
-          const camera = new THREE.PerspectiveCamera(72, 1, .1, 10);
-          camera.rotation.order = &#x27;YXZ&#x27;;
-          renderer.setClearColor(0x000000, 0);
-          renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
-          renderer.xr.enabled = true;
-          renderer.xr.setReferenceSpaceType(&#x27;local-floor&#x27;);
-          const texture = await new THREE.TextureLoader().loadAsync(&#x27;assets/xr-skybox-360.png&#x27;);
-          texture.mapping = THREE.EquirectangularReflectionMapping;
-          texture.colorSpace = THREE.SRGBColorSpace;
-          scene.background = texture;
-          const runtime = {
-            renderer,
-            scene,
-            camera,
-            texture,
-            targetYaw: 0,
-            targetPitch: 0,
-            yaw: 0,
-            pitch: 0,
-            frame: 0,
-            visible: false,
-            presenting: false
-          };
-          const resize = () =&gt; {
-            const rect = xrSkyboxCanvas.getBoundingClientRect();
-            const width = Math.max(1, Math.round(rect.width));
-            const height = Math.max(1, Math.round(rect.height));
-            renderer.setSize(width, height, false);
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
-          };
-          const renderFrame = () =&gt; {
-            runtime.frame = 0;
-            if (!runtime.visible || runtime.presenting) return;
-            runtime.yaw += (runtime.targetYaw - runtime.yaw) * .085;
-            runtime.pitch += (runtime.targetPitch - runtime.pitch) * .085;
-            camera.rotation.set(runtime.pitch, runtime.yaw, 0);
-            renderer.render(scene, camera);
-            const moving = Math.abs(runtime.targetYaw - runtime.yaw) &gt; .00015 || Math.abs(runtime.targetPitch - runtime.pitch) &gt; .00015;
-            if (moving) runtime.frame = window.requestAnimationFrame(renderFrame);
-          };
-          runtime.requestRender = () =&gt; {
-            if (!runtime.frame &amp;&amp; runtime.visible &amp;&amp; !runtime.presenting) runtime.frame = window.requestAnimationFrame(renderFrame);
-          };
-          runtime.resize = resize;
-          xrSkyboxRuntime = runtime;
-          resize();
-          runtime.requestRender();
-          bindXrSkyboxPointer(runtime);
-          if (navigator.xr &amp;&amp; xrEnterButton) {
-            navigator.xr.isSessionSupported(&#x27;immersive-vr&#x27;).then((supported) =&gt; {
-              if (supported) xrEnterButton.hidden = false;
-            }).catch(() =&gt; {});
-            xrEnterButton.addEventListener(&#x27;click&#x27;, async () =&gt; {
-              if (runtime.presenting) return;
-              try {
-                const session = await navigator.xr.requestSession(&#x27;immersive-vr&#x27;, { optionalFeatures: [&#x27;local-floor&#x27;] });
-                runtime.presenting = true;
-                await renderer.xr.setSession(session);
-                renderer.setAnimationLoop(() =&gt; renderer.render(scene, camera));
-                session.addEventListener(&#x27;end&#x27;, () =&gt; {
-                  runtime.presenting = false;
-                  renderer.setAnimationLoop(null);
-                  runtime.requestRender();
-                }, { once: true });
-              } catch (error) {
-                console.warn(&#x27;XR session could not start.&#x27;, error);
-              }
-            });
-          }
-          return runtime;
-        }).catch((error) =&gt; {
-          console.warn(&#x27;WebXR skybox fallback is active.&#x27;, error);
-          return null;
-        });
-        return xrSkyboxLoading;
-      };
-      const updateXrSkybox = (visible) =&gt; {
-        if (!visible) {
-          if (xrSkyboxRuntime) xrSkyboxRuntime.visible = false;
-          return;
-        }
-        initXrSkybox()?.then((runtime) =&gt; {
-          if (!runtime) return;
-          runtime.visible = true;
-          runtime.resize();
-          runtime.requestRender();
-        });
-      };
       const clearXrMotionStyles = () =&gt; {
         xrCards.forEach((card) =&gt; {
           card.style.removeProperty(&#x27;opacity&#x27;);
@@ -6297,9 +6184,6 @@ html&gt;body{padding:0}&lt;/style&gt;
       window.addEventListener(&#x27;resize&#x27;, scheduleXrMotion);
       window.addEventListener(&#x27;resize&#x27;, () =&gt; {
         requestXrDistortion();
-        if (!xrSkyboxRuntime) return;
-        xrSkyboxRuntime.resize();
-        xrSkyboxRuntime.requestRender();
       });
       scheduleXrMotion();
       const scrollIndex = root.querySelector(&#x27;[data-rq-scroll-index]&#x27;);
@@ -6330,8 +6214,9 @@ html&gt;body{padding:0}&lt;/style&gt;
         { id: &#x27;four-way-kitchen&#x27;, title: &#x27;Four-Way Kitchen&#x27;, target: embodiedSection },
         { id: &#x27;mole-rhythm&#x27;, title: &#x27;Mole Rhythm&#x27;, target: embodiedSection },
         { id: &#x27;cat-teaser&#x27;, title: &#x27;Cat Teaser 2D&#x27;, target: embodiedSection },
-        { id: &#x27;plant-bot&#x27;, title: &#x27;Plant Bot&#x27;, target: embodiedSection },
-        { id: &#x27;hardware-toolkit&#x27;, title: &#x27;Input Toolkit&#x27;, target: embodiedSection }
+        { id: &#x27;claw-machine&#x27;, title: &#x27;Hand-Input Claw Machine&#x27;, target: embodiedSection },
+        { id: &#x27;gothic-hunter&#x27;, title: &#x27;Gothic Hunter&#x27;, target: embodiedSection },
+        { id: &#x27;neon-beatrunner&#x27;, title: &#x27;Neon BeatRunner&#x27;, target: embodiedSection }
       ];
       const laterNavigationProjects = Array.from(root.querySelectorAll(&#x27;.rq-vr-item, .rq-evidence-projects .rq-project, .rq-playground .rq-project&#x27;)).map((element, index) =&gt; {
         const title = element.querySelector(&#x27;h3&#x27;)?.textContent?.trim() || `Project ${index + 6}`;

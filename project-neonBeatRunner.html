@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon BeatRunner - RuyanQin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; }
+        .project-media-empty { width: 100%; aspect-ratio: 16 / 9; margin-bottom: 20px; }
+        .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
+        .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="sidebar">
+        <div class="top-section">
+            <h1 class="logo">Ruyan Qin</h1>
+            <div class="bio-section"><p>Hi, I'm Ruyan, a Unity/XR Developer and Interaction Designer creating intuitive, testable real-time experiences.</p></div>
+            <nav class="nav-menu"><ul><li><a href="index.html">All Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="Assets/CV-RuyanQin_UX3.pdf" target="_blank">CV</a></li></ul></nav>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="project-content">
+            <a href="index.html" class="back-btn">&larr; Back to Index</a>
+            <h2>Neon BeatRunner</h2>
+            <div class="project-text">
+                <p>Neon BeatRunner is a Godot rhythm-platformer prototype that converts offline audio analysis into reachable jumps, timed enemies, and graded combat feedback. The character runs automatically while obstacles and enemies are scheduled to reach fixed judgement points at target song times.</p>
+                <p>Audio analysis, gameplay arrangement, and runtime presentation are separated so every onset does not become an action. Absolute song time drives movement and judgement, while an arrangement layer limits consecutive jumps, action conflicts, and event density.</p>
+            </div>
+            <div class="project-media-empty" aria-hidden="true"></div>
+            <div class="project-details">
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Auto-run platforming combined with rhythm-timed combat</li>
+                    <li>Librosa analysis exported as deterministic JSON chart data</li>
+                    <li>Absolute-time enemy movement and Perfect, Good, and Miss judgement</li>
+                    <li>Arrangement constraints for jump reachability, action conflicts, and event density</li>
+                    <li>Offset control, combo, life, rank, pause, and restart systems</li>
+                </ul>
+                <h3>Design Focus</h3>
+                <ul>
+                    <li>Use timestamps for rhythm judgement and collisions only for spatial presentation</li>
+                    <li>Keep the first prototype self-contained with procedural visuals and demo audio</li>
+                    <li>Separate deterministic analysis tools from AI-assisted development</li>
+                </ul>
+                <h3>Validation</h3>
+                <ul>
+                    <li>Demo analysis detected approximately 117.45 BPM and generated 44 repeatable events</li>
+                    <li>Final demo distribution contains 33 combat and 11 jump events</li>
+                    <li>Godot import, headless runtime, and 1280 × 720 capture were verified</li>
+                    <li>Final WAV, formal art, long-form pacing, latency tuning, and player testing remain pending</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>
