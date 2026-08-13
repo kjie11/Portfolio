@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gothic Hunter - RuyanQin</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/detail-preview.js" defer></script>
     <style>
         .project-content { max-width: 800px; margin: 0 auto; }
         .project-content video { display: block; width: 100%; margin-bottom: 20px; }
@@ -33,17 +34,17 @@
 
     <main class="main-content">
         <div class="project-content">
+            <video class="detail-preview" autoplay muted loop playsinline controls preload="metadata" poster="images/gothic-hunter.jpg" aria-label="Gothic Hunter gameplay preview" tabindex="0">
+                <source src="videos/gothic-hunter-preview-with-audio.mp4" type="video/mp4">
+                Your browser does not support the Gothic Hunter gameplay preview.
+            </video>
+
             <a href="index.html" class="back-btn">&larr; Back to Index</a>
             <h2>Gothic Hunter</h2>
             <div class="project-text">
                 <p><strong>Your palm is the joystick.</strong> Built in Godot, Gothic Hunter turns wrist tilt into 2D movement, while thumb swipes trigger directional skills and a long-press gesture releases the ultimate. The result is a top-down survival game controlled through the hand itself, with keyboard input retained as a reliable fallback.</p>
                 <p>The second highlight is the <strong>Godot AI workflow</strong>: a one-sentence game brief became a playable game, not just a design document. The workflow built and iterated the Godot gameplay systems alongside character art, graveyard assets, effects, animation, and adaptive music; hands-on play, automated checks, and recorded captures kept the final experience human-directed.</p>
             </div>
-
-            <video controls playsinline preload="metadata" poster="images/gothic-hunter.jpg" aria-label="Gothic Hunter runtime graybox gameplay with audio">
-                <source src="videos/gothic-hunter-preview-with-audio.mp4" type="video/mp4">
-                Your browser does not support the Gothic Hunter gameplay video.
-            </video>
 
             <div class="project-details">
                 <h3>Project Highlights</h3>

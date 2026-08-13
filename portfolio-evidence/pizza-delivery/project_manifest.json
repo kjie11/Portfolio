@@ -51,6 +51,33 @@
       "notes": "Directly shows three completed tests of 500 gameplays with average playtimes of 1:14, 1:46, and 1:53, plus a stopped 435-gameplay test with no average."
     },
     {
+      "id": "DOC-005",
+      "type": "document",
+      "locator": "User-selected private Google Doc: Weekly Progress",
+      "title": "Weekly Progress",
+      "date": "2026-07-21",
+      "access": "private",
+      "notes": "Chronological design and playtest record through Week 10; supports the iteration sequence, implemented changes, open questions, and remaining control-discoverability issues."
+    },
+    {
+      "id": "DOC-006",
+      "type": "document",
+      "locator": "User-selected Google Doc: DRI Web - Zombie Pizza Delivery Feedback",
+      "title": "DRI Web - Zombie Pizza Delivery Feedback",
+      "date": null,
+      "access": "private",
+      "notes": "Mentor review of UI density, FTUE sequencing, steering jitter, and build size. Stage mapping is inferred because the file has no reliable date in the supplied view."
+    },
+    {
+      "id": "DOC-007",
+      "type": "document",
+      "locator": "User-selected Google Doc: Pizza Delivery Driver - Improvement List",
+      "title": "Pizza Delivery Driver - Improvement List",
+      "date": null,
+      "access": "private",
+      "notes": "MoSCoW improvement backlog with status notes for navigation, obstacles, colliders, tutorial flow, orders, damage, traffic, terrain, and feedback."
+    },
+    {
       "id": "IMAGE-001",
       "type": "image",
       "locator": "Portfolio/portfolio-evidence/pizza-delivery/assets/gameplay.png",
@@ -73,7 +100,7 @@
         "Prepared repeatable WebGL test releases"
       ],
       "boundaries": "Team context and third-party asset ownership are not fully documented; sole ownership is not claimed.",
-      "source_ids": ["DOC-001", "DOC-002"]
+      "source_ids": ["DOC-001", "DOC-002", "DOC-005", "DOC-006", "DOC-007"]
     }
   ],
   "claims": [
@@ -126,6 +153,46 @@
       "contribution_ids": ["CONTRIB-001"],
       "confidence": "high",
       "public_safe": true
+    },
+    {
+      "id": "CLAIM-006",
+      "statement": "Retained Week 8 playtests identified difficult handling, excessive obstacles, shop friction, and missed keyboard and Shift controls.",
+      "status": "supported",
+      "evidence_level": "E1",
+      "source_ids": ["DOC-005"],
+      "contribution_ids": ["CONTRIB-001"],
+      "confidence": "medium",
+      "public_safe": true
+    },
+    {
+      "id": "CLAIM-007",
+      "statement": "Mentor feedback identified UI overload, steering jitter, and a 50 to 60 MB WebGL build as iteration concerns.",
+      "status": "supported",
+      "evidence_level": "E1",
+      "source_ids": ["DOC-006"],
+      "contribution_ids": ["CONTRIB-001"],
+      "confidence": "medium",
+      "public_safe": true
+    },
+    {
+      "id": "CLAIM-008",
+      "statement": "The UI and handling feedback document most likely corresponds to the transition from the Week 9 build to the Week 10 simplification pass.",
+      "status": "inferred",
+      "evidence_level": "E0",
+      "source_ids": ["DOC-005", "DOC-006"],
+      "contribution_ids": ["CONTRIB-001"],
+      "confidence": "low",
+      "public_safe": false
+    },
+    {
+      "id": "CLAIM-009",
+      "statement": "The Week 10 record removes the landing and Start screens, character and pop-up tutorials, the first-delivery pop-up, and the damage pop-up.",
+      "status": "supported",
+      "evidence_level": "E1",
+      "source_ids": ["DOC-005"],
+      "contribution_ids": ["CONTRIB-001"],
+      "confidence": "medium",
+      "public_safe": true
     }
   ],
   "decisions": [
@@ -133,6 +200,16 @@
       "decision": "Frame the case study around behaviour-led iteration rather than feature count.",
       "rationale": "The strongest available evidence is the three-round playtime change.",
       "source_ids": ["DOC-001"]
+    },
+    {
+      "decision": "Introduce Normal, Rush, and VIP orders gradually rather than exposing all variants at the start.",
+      "rationale": "Early orders could teach the base loop before adding urgency and higher rewards.",
+      "source_ids": ["DOC-005", "DOC-007"]
+    },
+    {
+      "decision": "Replace repeated tutorial screens and pop-ups with prompts positioned closer to the car and current objective.",
+      "rationale": "Mentor feedback and playtests showed that additional explanation was competing with the task itself.",
+      "source_ids": ["DOC-005", "DOC-006"]
     }
   ],
   "timeline": [
@@ -140,12 +217,35 @@
       "period": "2026-05 to 2026-07",
       "event": "Developed and iterated the tutorial and first level during the internship.",
       "source_ids": ["DOC-001", "DOC-002"]
+    },
+    {
+      "period": "2026-06-22",
+      "event": "Integrated Poki and documented the delivery economy, damage, repairs, vehicles, and zone unlocks.",
+      "source_ids": ["DOC-005"]
+    },
+    {
+      "period": "2026-06-29",
+      "event": "Playtesting surfaced handling, obstacle, shop, keyboard, Shift, and zombie-spawn friction.",
+      "source_ids": ["DOC-005", "DOC-007"]
+    },
+    {
+      "period": "2026-07-14",
+      "event": "Expanded staged order types, zone-specific deliveries, damage feedback, garage onboarding, and terrain progression.",
+      "source_ids": ["DOC-005", "DOC-007"]
+    },
+    {
+      "period": "2026-07-21",
+      "event": "Simplified the opening and tutorials, removed several pop-ups, and moved essential prompts into the play space.",
+      "source_ids": ["DOC-005", "DOC-006"]
     }
   ],
   "gaps": [
     "Original dashboard evidence for the earlier 44-second baseline",
     "Round-by-round retention and completion rates",
-    "Metric change attributed to each individual design change",
+    "Causal attribution between individual changes and playtime",
+    "Explicit dates and build identifiers for the two mentor feedback documents",
+    "Final build size and steering-jitter verification",
+    "Player sample and observation method for qualitative playtest notes",
     "Current public playable link",
     "Clear ownership boundary for art assets and team contributions"
   ],

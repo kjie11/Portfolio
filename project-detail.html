@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abyss - RuyanQin</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/youtube-local-preview.js" defer></script>
+    <script src="js/detail-preview.js" defer></script>
     <style>
         /* 详情页专属样式，简单的单栏排版 */
         .project-content {
@@ -56,6 +58,11 @@
     <!-- 右侧内容区域：详情展示 -->
     <main class="main-content">
         <div class="project-content">
+            <video class="detail-preview" autoplay muted loop playsinline controls preload="metadata" poster="images/aybss.jpg" aria-label="Abyss gameplay preview" tabindex="0">
+                <source src="videos/abyss-preview.mp4" type="video/mp4">
+                Your browser does not support the Abyss gameplay preview.
+            </video>
+
             <a href="index.html" class="back-btn">← Back to Index</a>
 
             <h2>Abyss - Embodied VR Horror Prototype</h2>

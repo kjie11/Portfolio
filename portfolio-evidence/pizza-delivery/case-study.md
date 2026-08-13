@@ -1,35 +1,58 @@
 # Pizza Delivery
 
-For browser-game players, I shaped a clearer delivery and progression loop through three rounds of behaviour-led iteration, supported by an increase in average playtime from 44 seconds to 1 minute 53 seconds. [DOC-001, DOC-003]
+For browser-game players, I reshaped a delivery prototype through documented playtest and mentor feedback, while three completed Poki versions recorded average playtimes of 1:14, 1:46, and 1:53. [DOC-004, DOC-005, DOC-006, DOC-007]
 
 ## Overview
 
-Pizza Delivery is a casual Unity WebGL driving game developed during my internship at Dream Reality Interactive. I designed and built the tutorial and first level around pickup, delivery, reward, upgrade, and area-unlock progression. [DOC-001, DOC-002]
+Pizza Delivery is a casual Unity WebGL driving game developed during my internship at Dream Reality Interactive. I designed and built the tutorial and first level around pickup, delivery, reward, repair, vehicle, and area-unlock progression. [DOC-001, DOC-002, DOC-005]
 
 ## Problem
 
-Early players were leaving before experiencing the full delivery loop. The opening needed clearer next actions, more visible goals, and stronger feedback for important driving events. [DOC-001, DOC-003]
+Early playtests showed players leaving before they experienced the complete delivery loop. The records identify several recurring sources of friction: difficult steering, too many road obstacles, cars becoming stuck on buildings or missing colliders, players overlooking WASD and Shift controls, and a growing stack of HUD elements and tutorial pop-ups. The challenge was to make the next action obvious without interrupting a short web-game session. [DOC-005, DOC-006, DOC-007]
 
 ## Process
 
-Across three completed Poki rounds of 500 gameplays each, I reviewed player behaviour, translated friction into design priorities, and iterated onboarding, progression, and feedback. The visible completed versions recorded average playtimes of 1 minute 14 seconds, 1 minute 46 seconds, and 1 minute 53 seconds. An earlier test stopped at 435 gameplays and has no average-playtime result. Repeatable WebGL builds supported each new test release. [DOC-001, DOC-002, DOC-004]
+### System foundation and Poki release
+
+The early design work established timed delivery rewards, collision and zombie damage, repair costs, vehicle durability and capacity, garage progression, and paid zone unlocks. The prototype was integrated with the Poki SDK and prepared for repeatable WebGL testing. [DOC-002, DOC-005]
+
+### First playtest response
+
+Week 8 notes recorded difficult handling, excessive obstacles, a shop UI that could not be closed, zombies spawning too close to the start, and players missing both keyboard movement and the Shift boost. The associated improvement list prioritized arrow visibility, obstacle removal, collider and pause-menu fixes, a short untimed first delivery, and visual-first tutorial cues. [DOC-005, DOC-007]
+
+### Progression and feedback pass
+
+The next documented build introduced Normal, Rush, and VIP orders in stages, zone-specific delivery pools, elevation changes, damage states, goal and countdown feedback, and onboarding for the garage and area progression. Orders 1–3 remained simple before timed and higher-value variants entered the pool. [DOC-005, DOC-007]
+
+### Simplification after mentor review
+
+A later mentor review found the initial screen crowded: health information repeated, objective and timer UI were separated, and Garage and Zone controls appeared before they were relevant. The same review flagged steering jitter and a 50–60 MB build. The Week 10 record then shows a simplification pass: the landing and Start screens were removed, character and pop-up tutorials were cut, duplicate damage and delivery pop-ups were removed, and arrows and key prompts were placed beside the car. The stage mapping is reconstructed from the documented feature states rather than an explicit date on the feedback file. [DOC-005, DOC-006]
+
+### Remaining problem
+
+The latest retained playtest notes still show players reaching for arrow keys and occasionally missing the Shift prompt. Control discoverability therefore remained an open issue rather than a solved claim. [DOC-005]
 
 ## Key Work
 
-- Defined the pickup, delivery, reward, and upgrade loop
-- Designed order, countdown, garage, and area-unlock progression
-- Reworked onboarding prompts and task guidance from player behaviour
-- Layered audio, particles, camera, and UI feedback into driving events
-- Set up repeatable WebGL builds for Poki and itch.io testing
+- Converted recurring playtest friction into release priorities
+- Designed staged Normal, Rush, and VIP order progression
+- Connected deliveries to repairs, vehicles, and zone unlocks
+- Simplified onboarding after UI overload surfaced in testing
+- Prepared repeatable Poki and itch.io WebGL releases
 
 ## Solution
 
-The resulting prototype used immediate delivery goals to teach driving, standard/timed/VIP orders to vary urgency, and vehicle upgrades and area unlocks to connect each delivery to longer-term progress. [DOC-001, DOC-002]
+The resulting prototype taught driving through a short first delivery, introduced order complexity gradually, and connected each completed job to cash, repair, vehicle, and zone progression. In-world arrows, nearby key prompts, audio, particles, and camera feedback carried essential information after redundant screens and pop-ups were removed. [DOC-002, DOC-005, DOC-006, DOC-007]
 
 ## Results
 
-The retained project summary records an earlier 44-second baseline and a final average playtime of 1 minute 53 seconds, approximately 157% higher. The Poki dashboard directly confirms the final 1 minute 53 second result and the visible completed-version sequence of 1:14, 1:46, and 1:53; it does not show the earlier 44-second baseline. Round-by-round retention, completion rate, and design-change attribution are not available. [DOC-001, DOC-003, DOC-004]
+Three completed Poki rounds recorded 500 gameplays each. The dashboard directly confirms average playtimes of 1:14, 1:46, and 1:53 for the completed versions. A retained project summary records an earlier 44-second baseline, making the final result approximately 157% higher, but that baseline is not visible in the supplied dashboard. The evidence does not attribute the metric change to any single design decision. [DOC-001, DOC-003, DOC-004]
 
 ## Learnings
 
-The project reinforced that early-session clarity belongs inside the core loop. Behavioural data provided a concrete way to prioritize changes, while repeatable browser builds made iteration easier to test and compare.
+The most useful reversal was learning that more explanation did not necessarily produce more clarity. One pass added tutorials and pop-ups; the following pass removed most of them and brought essential cues into the play space. The written feedback trail also made unresolved issues visible, preventing a rising aggregate metric from being presented as proof that every usability problem had been solved. [DOC-005, DOC-006]
+
+## Visual Evidence
+
+- `assets/gameplay.png`: runtime driving and delivery UI. [IMAGE-001]
+- `assets/poki-iteration-dashboard.png`: version-level gameplay count and average-playtime comparison. [DOC-004]

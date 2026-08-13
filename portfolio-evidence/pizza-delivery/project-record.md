@@ -1,0 +1,30 @@
+### PROJECT-02 Pizza Delivery
+
+- priority: 1
+- period: 2026-05 to 2026-07
+- role: Unity Game Development and Design Intern
+- team: internship project; mentor review documented; full team structure unknown
+- project_type: casual Unity WebGL driving prototype
+- audience_or_player: short-session browser-game players
+- one_sentence: Designed and iterated a delivery-game tutorial and first level through documented player and mentor feedback across repeated Poki releases.
+- project_context: Developed at Dream Reality Interactive around a pickup, delivery, reward, repair, vehicle, and zone-progression loop.
+- challenge: Early players did not reliably reach or understand the complete loop; steering and obstacles created friction, WASD and Shift were missed, and accumulated HUD and tutorial elements competed for attention.
+- constraints: browser-session pacing; WebGL delivery; build-size pressure; third-party assets; incomplete player-level analytics; no reliable change-level attribution.
+- goals: teach driving through play; make the next objective visible; introduce complexity gradually; connect short deliveries to longer-term progression; keep releases repeatable.
+- key_work: converted playtest friction into release priorities; designed staged Normal, Rush, and VIP orders; connected delivery rewards to repair, vehicles, and zones; simplified onboarding after UI-overload feedback; prepared repeatable Poki and itch.io releases.
+- key_decisions: use arcade rather than physical vehicle handling; pause pressure during the first delivery; stage order types instead of exposing all variants immediately; delay Garage and Zone information; remove redundant screens and pop-ups; keep essential prompts close to the car.
+- alternatives_considered: text-heavy pop-up tutorials versus visual-first arrows/icons; physical versus arcade handling; simultaneous versus staged order types; random road obstacles versus designed terrain and traffic; multi-order delivery and racing were explored but not evidenced as final released features.
+- tradeoffs: simplifying UI reduced explicit explanation but improved focus; arcade handling reduced simulation realism for accessibility; gradual feature disclosure delayed visibility of the full progression system; removing random obstacles reduced chaos but made route and terrain design more important.
+- implementation: timed delivery economy; collision and zombie damage; repair costs; vehicle durability/capacity; garage and zone unlocks; Normal/Rush/VIP orders; target arrows; key prompts; audio, particle, camera, and UI feedback; Poki SDK and WebGL release workflow.
+- iteration_process: Week 8 playtests surfaced handling, obstacles, shop, keyboard, and Shift issues; a mentor backlog prioritized fixes and progression; Week 9 expanded order, zone, damage, and tutorial feedback; a later mentor review identified UI overload and steering/build concerns; Week 10 removed several screens and pop-ups and moved cues into play; final notes retained keyboard and Shift discoverability as open issues.
+- ai_role: development_collaborator
+- user_inputs_and_decisions: defined the design goals and mechanics; documented playtests; selected iteration priorities; accepted and rejected mentor suggestions; set scope and reviewed results.
+- ai_assisted_actions: the process record describes AI-assisted research, planning, implementation, testing, documentation, and handoff practices; feature-level attribution is incomplete.
+- verification: runtime gameplay image; three completed Poki dashboard rounds; written playtest notes; mentor feedback documents; Git and automated WebGL workflow reported in retained sources.
+- results: three completed versions recorded 500 gameplays each and average playtimes of 1:14, 1:46, and 1:53; a retained summary records an earlier 44-second baseline and approximately 157% increase to the final result.
+- current_status: designed; implemented; runtime_verified; playtested; released; pending_validation
+- contribution_boundary: the user led game-design and iteration decisions and implemented the prototype; mentor feedback is attributed separately; team, art-asset, and per-feature AI boundaries remain partially undocumented.
+- limitations: no causal attribution between individual changes and playtime; no round-level retention or completion data; unresolved keyboard/Shift discoverability; final build size and steering-jitter resolution unverified; no current public playable link.
+- missing_evidence: original 44-second dashboard; dated feedback-version labels; player sample/method notes; final build size; final steering verification; source repository; public build; art and team ownership map.
+- narrative_angle: player problem -> system design -> feedback-led iteration -> simplification -> measured version trend with unresolved boundaries.
+- source_ids: DOC-001; DOC-002; DOC-003; DOC-004; DOC-005; DOC-006; DOC-007; IMAGE-001

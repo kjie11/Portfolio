@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hand-Input Claw Machine - RuyanQin</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/detail-preview.js" defer></script>
     <style>
         .project-content { max-width: 800px; margin: 0 auto; }
         .project-content video { display: block; width: 100%; margin-bottom: 20px; }
@@ -33,11 +34,16 @@
 
     <main class="main-content">
         <div class="project-content">
+            <video class="detail-preview" autoplay muted loop playsinline controls preload="metadata" poster="images/claw-machine-poster.jpg" aria-label="Hand-input claw machine gameplay preview" tabindex="0">
+                <source src="videos/claw-machine-hover.mp4" type="video/mp4">
+                Your browser does not support the claw machine gameplay preview.
+            </video>
+
             <a href="index.html" class="back-btn">&larr; Back to Index</a>
             <h2>Hand-Input Claw Machine</h2>
             <div class="project-text">
-                <p><strong>Your hand is the claw.</strong> This Unity motion-control prototype maps the player's hand directly to the machine: move one hand to position the claw, then open and close the other hand to control the claw's opening and grip. Grabbing a prize becomes a physical gesture instead of a button press.</p>
-                <p>The interaction is designed around how tightly the player closes their hand. Each prize has its own successful force window: too loose and it slips, too tight and the grip becomes unstable. Radial feedback makes that invisible force readable while preserving the tension of controlling the claw with your own hand.</p>
+                <p><strong>Your hand is the claw—and the grip is yours.</strong> Traditional claw machines let you position the claw, but not control how tightly it closes. In this Unity prototype, your hand controls both: open your hand and the claw opens; squeeze tighter and the claw closes further. Whether the prize slips or stays is entirely up to you.</p>
+                <p>One hand steers the claw while the other controls its grip in real time. Each prize has its own sweet spot: too loose and it slips, too tight and the grip becomes unstable. Radial feedback makes that invisible force easy to read without taking away the tension of the grab.</p>
             </div>
 
             <video controls playsinline preload="metadata" poster="images/claw-machine-poster.jpg" aria-label="Hand-input claw machine prototype gameplay">
@@ -48,7 +54,7 @@
             <div class="project-details">
                 <h3>Project Highlights</h3>
                 <ul>
-                    <li>Turned the player's hand into the claw: open and close your hand to open and close the gripper</li>
+                    <li>Mapped the player's hand continuously to the claw: squeeze tighter and the gripper closes further</li>
                     <li>Designed a two-hand motion-control model for positioning and continuous grip control</li>
                     <li>Made grip strength part of the game through prize-specific success windows</li>
                     <li>Visualized invisible hand force with immediate radial feedback</li>
