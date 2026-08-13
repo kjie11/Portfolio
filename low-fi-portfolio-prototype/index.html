@@ -5532,7 +5532,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         xrSmokeCanvas.dataset.smaa = &#x27;lusion-smaa-1x&#x27;;
       };
-      const clearXrSmoke = () =&gt; {
+      const clearXrSmoke = (preservePointer = false) =&gt; {
         if (xrSmoke.frame) window.cancelAnimationFrame(xrSmoke.frame);
         xrSmoke.frame = 0;
         xrSmoke.energy = 0;
@@ -5545,9 +5545,9 @@ html&gt;body{padding:0}&lt;/style&gt;
         xrSmoke.paintVelocityY = 0;
         xrSmoke.feedbackLastTime = 0;
         xrSmoke.renderLastTime = 0;
-        xrSmoke.pointerPoints.length = 0;
+        if (!preservePointer) xrSmoke.pointerPoints.length = 0;
         xrSmoke.pending.length = 0;
-        xrSmoke.hasPointer = false;
+        if (!preservePointer) xrSmoke.hasPointer = false;
         if (xrSmokeGl &amp;&amp; xrSmoke.ready &amp;&amp; !xrSmoke.lost) clearXrSmokeTargets();
         if (xrSmokeCanvas) {
           xrSmokeCanvas.style.opacity = &#x27;0&#x27;;
@@ -5590,7 +5590,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         xrSmokeCanvas.dataset.pointerInside = String(xrSmoke.pointerInside);
         scheduleXrMotion();
         if (xrSmoke.energy &gt; .006 || xrSmoke.pending.length) xrSmoke.frame = window.requestAnimationFrame(renderXrSmoke);
-        else clearXrSmoke();
+        else clearXrSmoke(true);
       };
       const scheduleXrSmoke = () =&gt; {
         if (!xrSmokeEnabled || xrSmoke.lost || xrSmoke.frame) return;
@@ -5706,6 +5706,10 @@ html&gt;body{padding:0}&lt;/style&gt;
         };
         scheduleXrSmoke();
       };
+      if (xrSmokeEnabled &amp;&amp; xrStage) {
+        const stageRect = xrStage.getBoundingClientRect();
+        if (stageRect.width &amp;&amp; stageRect.height) sizeXrSmoke(stageRect);
+      }
       if (xrSmokeCanvas &amp;&amp; xrSmokeGl) {
         xrSmokeCanvas.addEventListener(&#x27;webglcontextlost&#x27;, (event) =&gt; {
           event.preventDefault();
