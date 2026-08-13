@@ -36,8 +36,8 @@
             <a href="index.html" class="back-btn">&larr; Back to Index</a>
             <h2>Hand-Input Claw Machine</h2>
             <div class="project-text">
-                <p>This Unity prototype turns a familiar claw machine into a two-hand force-control experience. The left hand positions the claw, while a right-hand grip starts the cycle and controls force after contact. Each prize can define a different successful force window.</p>
-                <p>The project separates input from gameplay so the full cycle can be tested with keyboard and mouse before hardware tuning. It also explores animated claw motion, stable object following, release-specific recovery, radial force feedback, and local visual deformation.</p>
+                <p><strong>Your hand is the claw.</strong> This Unity motion-control prototype maps the player's hand directly to the machine: move one hand to position the claw, then open and close the other hand to control the claw's opening and grip. Grabbing a prize becomes a physical gesture instead of a button press.</p>
+                <p>The interaction is designed around how tightly the player closes their hand. Each prize has its own successful force window: too loose and it slips, too tight and the grip becomes unstable. Radial feedback makes that invisible force readable while preserving the tension of controlling the claw with your own hand.</p>
             </div>
 
             <video controls playsinline preload="metadata" poster="images/claw-machine-poster.jpg" aria-label="Hand-input claw machine prototype gameplay">
@@ -46,21 +46,21 @@
             </video>
 
             <div class="project-details">
-                <h3>Key Features</h3>
+                <h3>Project Highlights</h3>
                 <ul>
-                    <li>Defined a two-hand interaction model that separates positioning, triggering, and continuous grip force</li>
-                    <li>Designed the full claw cycle from targeting and descent through evaluation, delivery, release, and recovery</li>
-                    <li>Created configurable force windows so different prizes can reward different grip strategies</li>
-                    <li>Designed radial force feedback that compares current grip against a visible target region</li>
-                    <li>Separated keyboard simulation and hardware adapters from the shared gameplay state machine</li>
+                    <li>Turned the player's hand into the claw: open and close your hand to open and close the gripper</li>
+                    <li>Designed a two-hand motion-control model for positioning and continuous grip control</li>
+                    <li>Made grip strength part of the game through prize-specific success windows</li>
+                    <li>Visualized invisible hand force with immediate radial feedback</li>
+                    <li>Designed the complete physical interaction from targeting to grabbing, carrying, and release</li>
                 </ul>
 
                 <h3>Design Focus</h3>
                 <ul>
+                    <li>Make hand opening and closing feel directly connected to the claw</li>
                     <li>Turn grip strength into a learnable balance between control and risk</li>
-                    <li>Separate positioning, triggering, and continuous force across two hands</li>
                     <li>Make success windows, failure states, and recovery paths visible and predictable</li>
-                    <li>Keep real two-hand tuning, final result feedback, and object reset as pending validation</li>
+                    <li>Keep keyboard simulation available while real two-hand tuning remains in progress</li>
                 </ul>
             </div>
         </div>
