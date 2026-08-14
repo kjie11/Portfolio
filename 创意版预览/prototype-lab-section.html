@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Interaction Prototype Lab - Section Preview</title>
+<style>
+@font-face{font-family:JGS;src:url("https://of.domains/assets/fonts/Jgs-SingleLine.ttf")}@font-face{font-family:Montagu;src:url("https://of.domains/assets/fonts/MontaguSlab-VariableFont_opsz,wght.ttf")}
+:root{--paper:#f1efeb;--ink:#11110f;--muted:#68665f;--line:rgba(17,17,15,.42);--orange:#dc8b56;--cyan:#45aeb0;--green:#78936a}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}button{font:inherit;color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}::selection{background:var(--ink);color:var(--paper)}
+.section{min-height:100svh;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.brow{height:64px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font:14px JGS,"Courier New",monospace}.brow span:last-child{color:var(--muted)}
+.intro{display:grid;grid-template-columns:1.15fr .85fr;min-height:365px;border-bottom:1px solid var(--line)}.title{padding:42px 24px 50px;border-right:1px solid var(--line);position:relative}.title h1{font:400 clamp(62px,7vw,110px)/.88 Montagu,Georgia,serif;letter-spacing:-.04em;margin:0;max-width:8ch}.count{position:absolute;right:26px;top:45px;font:22px JGS,"Courier New",monospace}.summary{padding:46px 30px;display:flex;flex-direction:column;justify-content:space-between}.summary p{font-size:clamp(22px,2.1vw,33px);line-height:1.15;letter-spacing:-.02em;margin:0;max-width:22ch}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}.fact b{display:block;font:15px JGS,"Courier New",monospace;margin-bottom:7px}.fact span{font-size:13px;color:var(--muted)}
+.toolbar{min-height:84px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.tabs{display:flex;gap:10px}.tab{border:1px solid var(--line);background:transparent;min-height:42px;padding:0 17px;cursor:pointer}.tab[aria-selected="true"]{background:var(--ink);color:var(--paper)}.hint{font:13px JGS,"Courier New",monospace;color:var(--muted)}
+.archive{display:grid;grid-template-columns:repeat(6,1fr);min-height:315px}.item{position:relative;border-right:1px solid var(--line);overflow:hidden;background:#d4d0c8}.item:last-child{border:0}.item img{filter:saturate(.72);transition:transform .55s cubic-bezier(.16,1,.3,1),filter .3s}.item:hover img{transform:scale(1.04);filter:saturate(1)}.item-meta{position:absolute;inset:auto 0 0;padding:13px 12px 15px;background:linear-gradient(transparent,rgba(0,0,0,.86));color:white;min-height:104px;display:flex;flex-direction:column;justify-content:flex-end}.num{position:absolute;top:11px;left:11px;background:var(--paper);color:var(--ink);padding:5px 7px;font:12px JGS,"Courier New",monospace}.item h2{font:400 19px/1.05 Montagu,Georgia,serif;margin:0 0 5px}.item p{font:11px/1.25 JGS,"Courier New",monospace;margin:0;opacity:.8}.item[data-group="2d"] .num{box-shadow:inset 3px 0 var(--orange)}.item[data-group="3d"] .num{box-shadow:inset 3px 0 var(--cyan)}.item[data-group="platform"] .num{box-shadow:inset 3px 0 var(--green)}
+.close{min-height:94px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line)}.close p{margin:0;font-size:15px;color:var(--muted)}.link{font:15px JGS,"Courier New",monospace;border-bottom:1px solid;padding-bottom:5px}
+@media(max-width:850px){.intro{grid-template-columns:1fr}.title{border-right:0;border-bottom:1px solid var(--line);min-height:250px}.summary{min-height:280px}.toolbar{align-items:flex-start;flex-direction:column;padding-block:18px;gap:14px}.tabs{width:100%}.tab{flex:1;padding-inline:8px}.archive{grid-template-columns:repeat(2,1fr)}.item{min-height:250px;border-bottom:1px solid var(--line)}.item:nth-child(2n){border-right:0}.close{align-items:flex-start;flex-direction:column;justify-content:center;gap:12px}.close p{font-size:13px}}
+@media(max-width:480px){.brow{height:58px;padding-inline:16px}.title{padding:34px 16px}.title h1{font-size:59px}.count{right:16px;top:36px;font-size:17px}.summary{padding:32px 16px}.summary p{font-size:25px}.facts{gap:8px}.toolbar{padding-inline:16px}.hint{display:none}.archive{grid-template-columns:1fr 1fr}.item{min-height:220px}.close{padding-inline:16px}}
+@media(prefers-reduced-motion:reduce){.item img{transition:none}}
+</style>
+</head>
+<body>
+<section class="section">
+  <header class="brow"><span>COLLECTION / RAPID PROTOTYPING</span><span>2024-2025</span></header>
+  <div class="intro">
+    <div class="title"><span class="count">12</span><h1>Interaction Prototype Lab</h1></div>
+    <div class="summary"><p>A collection of small experiments exploring how one interaction idea changes across dimensions, devices and platforms.</p><div class="facts"><div class="fact"><b>2D / 05</b><span>Timing, physics, touch</span></div><div class="fact"><b>3D / 04</b><span>Space, depth, feedback</span></div><div class="fact"><b>PLATFORM / 03</b><span>Mobile, desktop, hardware</span></div></div></div>
+  </div>
+  <div class="toolbar"><div class="tabs" role="tablist" aria-label="Prototype groups"><button class="tab" role="tab" aria-selected="true" data-filter="all">All 12</button><button class="tab" role="tab" aria-selected="false" data-filter="2d">2D</button><button class="tab" role="tab" aria-selected="false" data-filter="3d">3D</button><button class="tab" role="tab" aria-selected="false" data-filter="platform">Platforms</button></div><span class="hint">SELECT A GROUP TO SCAN THE ARCHIVE</span></div>
+  <div class="archive">
+    <article class="item" data-group="2d"><img src="file:///D:/Portfolio/low-fi-portfolio-prototype/assets/cat-teaser-polaroid.webp" alt="Cat Teaser 2D prototype"><span class="num">P.01</span><div class="item-meta"><h2>Cat Teaser 2D</h2><p>PHYSICS / ANIMATION</p></div></article>
+    <article class="item" data-group="2d"><img src="file:///D:/Portfolio/low-fi-portfolio-prototype/assets/mole-rhythm-polaroid.webp" alt="Mole Rhythm prototype"><span class="num">P.02</span><div class="item-meta"><h2>Mole Rhythm</h2><p>DSP / TIMING / AUDIO</p></div></article>
+    <article class="item" data-group="3d"><img src="file:///D:/Portfolio/low-fi-portfolio-prototype/assets/claw-machine-polaroid.png" alt="Claw Machine prototype"><span class="num">P.03</span><div class="item-meta"><h2>Claw Machine</h2><p>3D PHYSICS / CONTROL</p></div></article>
+    <article class="item" data-group="platform"><img src="file:///D:/Portfolio/low-fi-portfolio-prototype/assets/four-way-kitchen-polaroid.webp" alt="Four-Way Kitchen prototype"><span class="num">P.04</span><div class="item-meta"><h2>Four-Way Kitchen</h2><p>CUSTOM INPUT / UNITY</p></div></article>
+    <article class="item" data-group="3d"><img src="file:///D:/Portfolio/low-fi-portfolio-prototype/assets/pizza-delivery-cover.png" alt="Pizza Delivery prototype"><span class="num">P.05</span><div class="item-meta"><h2>Pizza Delivery</h2><p>3D / ITERATION / TEST</p></div></article>
+    <article class="item" data-group="platform"><img src="file:///D:/Portfolio/low-fi-portfolio-prototype/assets/xr-ar-graffiti.png" alt="Spatial interaction prototype"><span class="num">P.06</span><div class="item-meta"><h2>Spatial Sketch</h2><p>GESTURE / MOBILE AR</p></div></article>
+  </div>
+  <footer class="close"><p>Six representative experiments shown. The complete archive remains grouped inside one case study.</p><a class="link" href="#">OPEN COLLECTION</a></footer>
+</section>
+<script>
+const tabs=[...document.querySelectorAll('.tab')],items=[...document.querySelectorAll('.item')];
+tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.setAttribute('aria-selected','false'));tab.setAttribute('aria-selected','true');const f=tab.dataset.filter;items.forEach(item=>item.hidden=f!=='all'&&item.dataset.group!==f)}));
+</script>
+</body>
+</html>

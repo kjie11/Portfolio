@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Delivery - RuyanQin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/detail-preview.js" defer></script>
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; }
+        .project-content img { width: 100%; margin-bottom: 8px; }
+        .project-content video { display: block; width: 100%; margin-bottom: 28px; }
+        .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
+        .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
+        .image-note, .evidence-note { color: #777; font-size: 12px; margin-bottom: 28px; }
+    </style>
+    <link rel="stylesheet" href="creative-detail.css">
+    <script src="creative-case-content.js" defer></script>
+    <script src="creative-detail.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <header class="sidebar">
+        <div class="top-section">
+            <h1 class="logo">Ruyan Qin</h1>
+            <div class="bio-section">
+                <p>Hi, I'm Ruyan, an XR Designer and UX Researcher focused on immersive interaction and user-centered prototyping in VR/AR.</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="creative-site-framework.html">All Projects</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../Assets/CV-RuyanQin_UX3.pdf" target="_blank">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-content">
+            <video class="detail-preview" autoplay muted loop playsinline controls preload="metadata" poster="../images/pizza-delivery-01-gameplay-01.png" aria-label="Pizza Delivery gameplay preview" tabindex="0">
+                <source src="../videos/pizza-delivery.mp4" type="video/mp4">
+                Your browser does not support the Pizza Delivery gameplay preview.
+            </video>
+
+            <a href="creative-site-framework.html" class="back-btn">&larr; Back to Index</a>
+            <h2>Pizza Delivery</h2>
+            <div class="project-text">
+                <p>Pizza Delivery is a casual Unity WebGL driving prototype I developed during an internship. I designed and built the tutorial and first level, then used Poki playtests to reshape the opening, driving feel, order progression, and moment-to-moment feedback.</p>
+                <p>Three completed Poki test rounds recorded 500 gameplays each. Visible average playtime rose from 1 minute 14 seconds to 1 minute 46 seconds and then 1 minute 53 seconds. The data shows the versions improving over time, but does not isolate any single change as the cause.</p>
+            </div>
+
+            <img src="../images/pizza-delivery-01-gameplay-01.png" alt="Pizza Delivery gameplay showing a delivery car, active order, timer, and coin rewards">
+            <p class="image-note">Gameplay screenshot · Driving, active order, countdown, and reward feedback</p>
+
+            <div class="project-details">
+                <h3>The Problem</h3>
+                <p>Early playtests showed players leaving before they experienced the full pickup-and-delivery loop. Some missed the WASD and Shift controls, others became stuck on buildings or road obstacles, and the growing stack of tutorials and HUD elements competed for attention. The challenge was to teach the game quickly without slowing down a short browser session.</p>
+
+                <h3>How the Design Changed</h3>
+                <ul>
+                    <li><strong>System foundation:</strong> Built the delivery economy around timed rewards, collision damage, repairs, vehicle durability, garage upgrades, and zone unlocks, then integrated the prototype with Poki.</li>
+                    <li><strong>First playtest response:</strong> Players reported difficult steering, too many obstacles, unclear keyboard controls, and an easy-to-miss Shift boost. I prioritized clearer arrows, collider fixes, fewer road blockers, a working pause flow, and a short first delivery with no timer pressure.</li>
+                    <li><strong>Progression pass:</strong> Introduced Normal, Rush, and VIP orders gradually, added zone-specific deliveries and terrain changes, and connected each completed order to cash, vehicle, and area progression.</li>
+                    <li><strong>Simplification pass:</strong> Mentor feedback showed that repeated health information, objective panels, early Garage and Zone UI, and tutorial pop-ups were overwhelming. I removed the landing and Start screens, cut character and pop-up tutorials, and moved essential arrows and key prompts closer to the car.</li>
+                </ul>
+
+                <h3>What Remained Difficult</h3>
+                <p>The final playtest notes still recorded players reaching for the arrow keys and occasionally missing the Shift prompt. Rather than treating the metric improvement as proof that onboarding was solved, I kept control discoverability as an open design issue.</p>
+
+                <h3>Key Work</h3>
+                <ul>
+                    <li>Converted recurring playtest friction into priorities for each WebGL build</li>
+                    <li>Designed staged Normal, Rush, and VIP order progression</li>
+                    <li>Connected deliveries to rewards, repairs, vehicles, and zone unlocks</li>
+                    <li>Simplified onboarding after testing revealed UI and tutorial overload</li>
+                    <li>Prepared repeatable Poki and itch.io releases with Git-based versioning</li>
+                </ul>
+
+                <h3>Solution</h3>
+                <ul>
+                    <li>A short first delivery that teaches driving through an immediate goal</li>
+                    <li>Order types introduced gradually instead of exposing every system at once</li>
+                    <li>Vehicle upgrades and locked zones that turn deliveries into longer-term progress</li>
+                    <li>In-world arrows, nearby key prompts, audio, particles, and camera feedback for important actions</li>
+                </ul>
+
+                <h3>Results</h3>
+                <ul>
+                    <li><strong>3</strong> Poki test rounds</li>
+                    <li><strong>500 recorded plays</strong> in each completed round</li>
+                    <li><strong>1:14, 1:46, and 1:53</strong> visible average playtime across the three rounds</li>
+                    <li><strong>Implemented, runtime verified, and released</strong> as a WebGL prototype</li>
+                </ul>
+
+                <img src="../portfolio-evidence/pizza-delivery/assets/poki-iteration-dashboard.png" alt="Poki dashboard comparing four Pizza Delivery test versions, including three completed rounds of 500 gameplays">
+                <p class="image-note">Poki version comparison · Three completed 500-gameplay rounds recorded average playtimes of 1:14, 1:46, and 1:53</p>
+
+                <h3>My Role</h3>
+                <ul>
+                    <li><strong>Game Designer:</strong> Defined the core loop, order types, progression, and onboarding</li>
+                    <li><strong>Unity Prototyper:</strong> Extended vehicle control and implemented gameplay, UI, and feedback systems</li>
+                    <li><strong>Experience Designer:</strong> Turned player behaviour into priorities across three test rounds</li>
+                </ul>
+
+                <h3>Learnings</h3>
+                <p>The clearest lesson was that more explanation does not always create more clarity. One iteration added several tutorials and pop-ups; the next removed most of them and brought the essential cues into the play space. Behavioural data helped set priorities, while the written playtest record kept unresolved problems visible instead of turning every release into a success story.</p>
+
+                <p class="evidence-note">Validation boundary: the documents support the sequence of feedback and design changes, but not causal attribution between any individual change and the playtime increase. Round-by-round retention, completion rate, and the original 44-second baseline dashboard remain unavailable.</p>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

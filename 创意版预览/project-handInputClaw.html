@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand-Input Claw Machine - RuyanQin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/detail-preview.js" defer></script>
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; }
+        .project-content video { display: block; width: 100%; margin-bottom: 20px; }
+        .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
+        .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
+    </style>
+    <link rel="stylesheet" href="creative-detail.css">
+    <script src="creative-case-content.js" defer></script>
+    <script src="creative-detail.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <header class="sidebar">
+        <div class="top-section">
+            <h1 class="logo">Ruyan Qin</h1>
+            <div class="bio-section">
+                <p>Hi, I'm Ruyan, an XR Designer and UX Researcher focused on immersive interaction and user-centered prototyping in VR/AR.</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="creative-site-framework.html">All Projects</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../Assets/CV-RuyanQin_UX3.pdf" target="_blank">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-content">
+            <video class="detail-preview" autoplay muted loop playsinline controls preload="metadata" poster="../images/claw-machine-poster.jpg" aria-label="Hand-input claw machine gameplay preview" tabindex="0">
+                <source src="../videos/claw-machine-hover.mp4" type="video/mp4">
+                Your browser does not support the claw machine gameplay preview.
+            </video>
+
+            <a href="creative-site-framework.html" class="back-btn">&larr; Back to Index</a>
+            <h2>Hand-Input Claw Machine</h2>
+            <div class="project-text">
+                <p><strong>Your hand is the claw—and the grip is yours.</strong> Traditional claw machines let you position the claw, but not control how tightly it closes. In this Unity prototype, your hand controls both: open your hand and the claw opens; squeeze tighter and the claw closes further. Whether the prize slips or stays is entirely up to you.</p>
+                <p>One hand steers the claw while the other controls its grip in real time. Each prize has its own sweet spot: too loose and it slips, too tight and the grip becomes unstable. Radial feedback makes that invisible force easy to read without taking away the tension of the grab.</p>
+            </div>
+
+            <video controls playsinline preload="metadata" poster="../images/claw-machine-poster.jpg" aria-label="Hand-input claw machine prototype gameplay">
+                <source src="../videos/claw-machine-full.mp4" type="video/mp4">
+                Your browser does not support the claw machine gameplay video.
+            </video>
+
+            <div class="project-details">
+                <h3>Project Highlights</h3>
+                <ul>
+                    <li>Mapped the player's hand continuously to the claw: squeeze tighter and the gripper closes further</li>
+                    <li>Designed a two-hand motion-control model for positioning and continuous grip control</li>
+                    <li>Made grip strength part of the game through prize-specific success windows</li>
+                    <li>Visualized invisible hand force with immediate radial feedback</li>
+                    <li>Designed the complete physical interaction from targeting to grabbing, carrying, and release</li>
+                </ul>
+
+                <h3>Design Focus</h3>
+                <ul>
+                    <li>Make hand opening and closing feel directly connected to the claw</li>
+                    <li>Turn grip strength into a learnable balance between control and risk</li>
+                    <li>Make success windows, failure states, and recovery paths visible and predictable</li>
+                    <li>Keep keyboard simulation available while real two-hand tuning remains in progress</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

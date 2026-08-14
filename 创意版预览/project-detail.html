@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abyss - RuyanQin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/youtube-local-preview.js" defer></script>
+    <script src="../js/detail-preview.js" defer></script>
+    <style>
+        /* 详情页专属样式，简单的单栏排版 */
+        .project-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .project-content img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .project-text {
+            font-size: 16px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="stylesheet" href="creative-detail.css">
+    <script src="creative-case-content.js" defer></script>
+    <script src="creative-detail.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <!-- 复制 index.html 的左侧 sidebar 代码放到这里，保持导航一致 -->
+    <header class="sidebar">
+        <div class="top-section">
+            <h1 class="logo">Ruyan Qin</h1>
+            <div class="bio-section">
+                <p>Hi, I’m Ruyan, an XR Designer and UX Researcher focused on immersive interaction and user-centered prototyping in VR/AR.</p>
+                <!--                <p>I design and prototype interactive experiences, and conduct user studies to evaluate and refine interaction techniques.</p>-->
+
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="creative-site-framework.html">All Projects</a></li> <!-- 改为返回首页 -->
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../Assets/CV-RuyanQin_UX3.pdf" target="_blank">CV</a></li>
+                    <!-- 其他链接... -->
+                </ul>
+            </nav>
+        </div>
+        <!-- ... -->
+    </header>
+
+    <!-- 右侧内容区域：详情展示 -->
+    <main class="main-content">
+        <div class="project-content">
+            <video class="detail-preview" autoplay muted loop playsinline controls preload="metadata" poster="../images/aybss.jpg" aria-label="Abyss gameplay preview" tabindex="0">
+                <source src="../videos/abyss-preview.mp4" type="video/mp4">
+                Your browser does not support the Abyss gameplay preview.
+            </video>
+
+            <a href="creative-site-framework.html" class="back-btn">← Back to Index</a>
+
+            <h2>Abyss - Embodied VR Horror Prototype</h2>
+            <p class="project-text">Abyss is a personal experimental VR project that maps dynamic hand movement to locomotion. Monumental environments, spatial audio, and triggered environmental storytelling work together to make the player’s body part of the emotional experience. The available record supports the design direction, while device details, recognition methods, implementation scope, and runtime validation remain pending evidence.</p>
+
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Jfq4dHgv87M?si=X2fIQ2jOro5qNJO7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="project-details">
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Dynamic hand movement mapped to embodied locomotion</li>
+                    <li>Monumental environments built around a fear-of-scale theme</li>
+                    <li>Spatial audio supporting scale and tension</li>
+                    <li>Triggered environmental storytelling within an immersive VR space</li>
+                </ul>
+
+                <h3>Design Focus</h3>
+                <ul>
+                    <li>Use body movement to support the emotional goal rather than as a detached control scheme</li>
+                    <li>Combine scale, audio, and environmental triggers instead of relying on exposition</li>
+                    <li>Keep runtime and device validation visibly separate from the documented design intent</li>
+                </ul>
+            </div>
+            <!-- 大图展示 -->
+            <img src="../images/aybss1.png" alt="Project Detail 1">
+            <img src="../images/abyss2.png" alt="Project Detail 2">
+            <img src="../images/abyss3.png" alt="Project Detail 3">
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four-Way Kitchen - RuyanQin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; }
+        .project-content img { width: 100%; margin-bottom: 20px; }
+        .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
+        .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
+    </style>
+    <link rel="stylesheet" href="creative-detail.css">
+    <script src="creative-case-content.js" defer></script>
+    <script src="creative-detail.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <header class="sidebar">
+        <div class="top-section">
+            <h1 class="logo">Ruyan Qin</h1>
+            <div class="bio-section">
+                <p>Hi, I'm Ruyan, an XR Designer and UX Researcher focused on immersive interaction and user-centered prototyping in VR/AR.</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="creative-site-framework.html">All Projects</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../Assets/CV-RuyanQin_UX3.pdf" target="_blank">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-content">
+            <a href="creative-site-framework.html" class="back-btn">&larr; Back to Index</a>
+            <h2>Four-Way Kitchen</h2>
+            <div class="project-text">
+                <p>Four-Way Kitchen is a single-player Unity action-cooking prototype arranged around four functional counter walls. Players collect ingredients, chop and cook food, assemble plates, throw items in fixed directions, and complete orders.</p>
+                <p>The interaction system explores how the same kitchen actions can remain understandable across keyboard and mouse, EMG events, MediaPipe camera gestures, and wearable pointer input. Each input mode is explicit and mutually exclusive so switching devices does not change the gameplay rules.</p>
+            </div>
+
+            <img src="../images/four-way-kitchen-polaroid.webp" alt="Four-sided kitchen gameplay with ingredient stations, chopping boards, stoves, and a central character">
+
+            <div class="project-details">
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Designed a four-sided kitchen layout that keeps sourcing, processing, cooking, and delivery spatially distinct</li>
+                    <li>Built a complete ingredient loop with chopping, timed cooking, burning, plating, recipes, and orders</li>
+                    <li>Defined deterministic four-direction throws instead of relying on unpredictable free-physics drops</li>
+                    <li>Unified keyboard, EMG, camera, and wearable inputs behind stable gameplay actions</li>
+                    <li>Added timeout, disconnect, stale-input, and residual-state handling for safer hardware interaction</li>
+                </ul>
+
+                <h3>Design Focus</h3>
+                <ul>
+                    <li>Keep the cooking loop understandable when switching between keyboard, EMG, camera, and wearable inputs</li>
+                    <li>Separate continuous movement from discrete pickup, processing, and throwing actions</li>
+                    <li>Treat timeout, disconnect, and stale signals as interaction-design constraints</li>
+                    <li>Keep full Play Mode and real dual-hand validation separate from compiled and focused-test evidence</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

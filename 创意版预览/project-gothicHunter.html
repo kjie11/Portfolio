@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic Hunter - RuyanQin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/detail-preview.js" defer></script>
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; }
+        .project-content video { display: block; width: 100%; margin-bottom: 20px; }
+        .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
+        .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
+    </style>
+    <link rel="stylesheet" href="creative-detail.css">
+    <script src="creative-case-content.js" defer></script>
+    <script src="creative-detail.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <header class="sidebar">
+        <div class="top-section">
+            <h1 class="logo">Ruyan Qin</h1>
+            <div class="bio-section">
+                <p>Hi, I'm Ruyan, an XR Designer and UX Researcher focused on immersive interaction and user-centered prototyping in VR/AR.</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="creative-site-framework.html">All Projects</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../Assets/CV-RuyanQin_UX3.pdf" target="_blank">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-content">
+            <video class="detail-preview" autoplay muted loop playsinline controls preload="metadata" poster="../images/gothic-hunter.jpg" aria-label="Gothic Hunter gameplay preview" tabindex="0">
+                <source src="../videos/gothic-hunter-preview-with-audio.mp4" type="video/mp4">
+                Your browser does not support the Gothic Hunter gameplay preview.
+            </video>
+
+            <a href="creative-site-framework.html" class="back-btn">&larr; Back to Index</a>
+            <h2>Gothic Hunter</h2>
+            <div class="project-text">
+                <p><strong>Your palm is the joystick.</strong> Built in Godot, Gothic Hunter turns wrist tilt into 2D movement, while thumb swipes trigger directional skills and a long-press gesture releases the ultimate. The result is a top-down survival game controlled through the hand itself, with keyboard input retained as a reliable fallback.</p>
+                <p>The second highlight is the <strong>Godot AI workflow</strong>: a one-sentence game brief became a playable game, not just a design document. The workflow built and iterated the Godot gameplay systems alongside character art, graveyard assets, effects, animation, and adaptive music; hands-on play, automated checks, and recorded captures kept the final experience human-directed.</p>
+            </div>
+
+            <div class="project-details">
+                <h3>Project Highlights</h3>
+                <ul>
+                    <li>Turned wrist angle into continuous movement: the palm becomes the joystick</li>
+                    <li>Mapped thumb swipes and a long-press gesture to directional skills and ultimates</li>
+                    <li>Converted a one-sentence brief into a playable game through a rapid Godot AI workflow</li>
+                    <li>Generated and integrated character art, environments, VFX, animation, and adaptive music</li>
+                    <li>Built a finite three-act run with four evolving weapons, elites, and a final boss</li>
+                </ul>
+
+                <h3>Workflow &amp; Validation</h3>
+                <ul>
+                    <li>Used one gameplay language across wearable gestures and keyboard fallback</li>
+                    <li>Reviewed every AI-assisted output through hands-on play, automated checks, and runtime capture</li>
+                    <li>Tuned dense combat with telemetry, debug jumps, pooling, and performance tests</li>
+                    <li>Implemented and tested the glove command path; final physical-glove calibration remains pending</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

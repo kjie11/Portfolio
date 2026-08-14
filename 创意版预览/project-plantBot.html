@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Bot - RuyanQin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/youtube-local-preview.js" defer></script>
+    <script src="../js/detail-preview.js" defer></script>
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; }
+        .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
+        .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
+        .process-gallery { margin: 56px 0; }
+        .process-gallery > p { max-width: 62ch; margin: 0 0 24px; color: #555; line-height: 1.7; }
+        .process-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+        .process-figure { margin: 0; }
+        .process-figure--wide { grid-column: 1 / -1; }
+        .process-figure img { display: block; width: 100%; height: 300px; object-fit: contain; background: #f2f2f0; }
+        .process-figure--wide img { height: auto; }
+        .process-figure figcaption { margin-top: 10px; color: #555; font-size: 13px; line-height: 1.5; }
+        .process-figure strong { display: block; margin-bottom: 2px; color: #111; font-size: 14px; }
+        @media (max-width: 768px) {
+            .process-gallery { margin: 40px 0; }
+            .process-grid { grid-template-columns: 1fr; gap: 24px; }
+            .process-figure--wide { grid-column: auto; }
+            .process-figure img { height: auto; }
+        }
+    </style>
+    <link rel="stylesheet" href="creative-detail.css">
+    <script src="creative-case-content.js" defer></script>
+    <script src="creative-detail.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <header class="sidebar">
+        <div class="top-section">
+            <h1 class="logo">Ruyan Qin</h1>
+            <div class="bio-section">
+                <p>Hi, I'm Ruyan, a Unity/XR Developer and Interaction Designer creating intuitive, testable experiences across VR, AR, and WebGL.</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="creative-site-framework.html">All Projects</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../Assets/CV-RuyanQin_UX3.pdf" target="_blank">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-content">
+            <video class="detail-preview" autoplay muted loop playsinline controls preload="metadata" poster="../images/plant-bot-cover.png" aria-label="Plant Bot prototype preview" tabindex="0">
+                <source src="../videos/plant-bot-preview.mp4" type="video/mp4">
+                Your browser does not support the Plant Bot prototype preview.
+            </video>
+
+            <a href="creative-site-framework.html" class="back-btn">&larr; Back to Index</a>
+            <h2>Plant Bot</h2>
+            <div class="project-text">
+                <p>Plant Bot is a physical-computing prototype that turns plant-care data into an understandable and expressive experience. Four types of environmental data are mapped to six emotional states, care prompts, and contextual AR feedback.</p>
+                <p>The project connects user research and interaction design with a web interface, Arduino/ESP32 sensing, circuit and PCB work, communication, 3D modelling and printing, Unity/AR integration, and physical assembly.</p>
+            </div>
+
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/joI6rHameEc" title="Plant Bot project video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <section class="process-gallery" aria-labelledby="process-title">
+                <h3 id="process-title">From Research to Working Prototype</h3>
+                <p>The project moved from reference research and interaction mapping into circuit design, sensor testing, physical assembly, and an integrated plant-care experience.</p>
+                <div class="process-grid">
+                    <figure class="process-figure process-figure--wide">
+                        <img src="../images/plant-bot-research.png" alt="Plant Bot research board with references, habitat observations, activities, visual directions, and prototype concepts" loading="lazy">
+                        <figcaption><strong>Research and concept direction</strong>References, habitats, activities, and form explorations shaped the physical and emotional interaction model.</figcaption>
+                    </figure>
+                    <figure class="process-figure">
+                        <img src="../images/plant-bot-circuit-development.png" alt="Plant Bot circuit diagrams, ESP32 breadboard test, and soldered prototype board" loading="lazy">
+                        <figcaption><strong>Circuit development</strong>ESP32 wiring moved from schematic and breadboard tests to a soldered prototype board.</figcaption>
+                    </figure>
+                    <figure class="process-figure">
+                        <img src="../images/plant-bot-hardware-assembly.png" alt="Plant Bot sensor, motor, ESP32, wiring, and 3D-printed enclosure during hardware assembly" loading="lazy">
+                        <figcaption><strong>Hardware assembly</strong>Sensors, motor control, display, and the printed enclosure were brought together through iterative bench testing.</figcaption>
+                    </figure>
+                    <figure class="process-figure process-figure--wide">
+                        <img src="../images/plant-bot-integrated-prototype.png" alt="Plant Bot installed beside a plant with watering feedback and a web dashboard showing soil moisture and light conditions" loading="lazy">
+                        <figcaption><strong>Integrated prototype</strong>The physical bot communicates care feedback while the companion interface exposes soil moisture and light conditions.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <div class="project-details">
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Four categories of environmental data translated into six plant states and care guidance</li>
+                    <li>A web interface that communicates plant condition and suggested actions</li>
+                    <li>Arduino/ESP32 sensing supported by circuit, PCB, and communication prototyping</li>
+                    <li>A 3D-modelled and printed physical prototype with Unity/AR feedback</li>
+                </ul>
+
+                <h3>Design Focus</h3>
+                <ul>
+                    <li>Make invisible environmental conditions emotionally legible and actionable</li>
+                    <li>Connect physical sensing, digital information, and AR feedback into one coherent care journey</li>
+                    <li>Present meaningful states and guidance instead of exposing raw sensor values</li>
+                    <li>Keep user comprehension, sensor accuracy, and AR runtime results as pending validation</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>
