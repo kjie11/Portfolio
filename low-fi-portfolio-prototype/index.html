@@ -2006,7 +2006,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       border-color: transparent !important;
       box-shadow: none !important;
     }
-    #ruyan-portfolio-wireframe .rq-xr-webgl-presenting .rq-vr-item &gt; * {
+    #ruyan-portfolio-wireframe .rq-xr-webgl-presenting .rq-vr-item:not(.xr-project) &gt; * {
       opacity: 0 !important;
     }
     #ruyan-portfolio-wireframe .rq-xr-webgl-presenting .rq-vr-item:focus-visible {
@@ -4082,6 +4082,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         xrEmbeddedSkyboxSource = parent.__RQ_XR_WEBGL_SKYBOX__ || &#x27;&#x27;;
         xrEmbeddedEffectSources = parent.__RQ_XR_WEBGL_EFFECT_TEXTURES__ || {};
       } catch (error) {}
+      if (!xrEmbeddedCardSources.augsoc &amp;&amp; xrEmbeddedCardSources[&#x27;ar-graffiti&#x27;]) xrEmbeddedCardSources.augsoc = xrEmbeddedCardSources[&#x27;ar-graffiti&#x27;];
       let xrCopiedBackgroundIndex = 0;
       const xrCopiedTouchMode = () =&gt; window.matchMedia(&#x27;(hover:none), (pointer:coarse)&#x27;).matches || navigator.maxTouchPoints &gt; 0;
       const initCopiedXrField = () =&gt; {
@@ -4135,7 +4136,7 @@ html&gt;body{padding:0}&lt;/style&gt;
           window.cancelAnimationFrame(contourFrame);
           contourFrame = window.requestAnimationFrame(drawContours);
         };
-        const gl = xrDomeCanvas.getContext(&#x27;webgl&#x27;, { alpha: true, antialias: false });
+        const gl = xrDomeCanvas.getContext(&#x27;webgl&#x27;, { alpha: true, antialias: false, preserveDrawingBuffer: true });
         if (!gl) { scheduleContours(); return; }
         const vertex = `attribute vec2 p;varying vec2 screen;void main(){screen=p;gl_Position=vec4(p,0.,1.);}`;
         const fragment = `precision highp float;varying vec2 screen;uniform sampler2D fromTex,toTex;uniform float mixAmount,aspect;uniform vec2 mouse;vec2 cover(vec2 q){if(aspect&gt;1.)q.y=(q.y-.5)/aspect+.5;else q.x=(q.x-.5)*aspect+.5;return clamp(q,0.,1.);}vec3 fishEye(vec2 p){float len=max(length(p),.0001),angle=len*1.4;return vec3(p/len*sin(angle),-cos(angle));}vec2 domeUV(vec2 p){vec3 dir=fishEye(p);float yaw=-(mouse.x-.5)*.3,pitch=-(mouse.y-.5)*.2;dir.xz=mat2(cos(yaw),-sin(yaw),sin(yaw),cos(yaw))*dir.xz;dir.yz=mat2(cos(pitch),-sin(pitch),sin(pitch),cos(pitch))*dir.yz;return cover(dir.xy*.5+.5);}void main(){vec2 q=domeUV(screen);vec4 color=mix(texture2D(fromTex,q),texture2D(toTex,q),smoothstep(0.,1.,mixAmount));float shade=smoothstep(1.5,.1,length(screen));gl_FragColor=color*vec4(vec3(.64+.36*shade),1.);}`;
@@ -4155,20 +4156,23 @@ html&gt;body{padding:0}&lt;/style&gt;
         const load = (source) =&gt; new Promise((resolve) =&gt; {
           const image = new Image();
           image.onload = () =&gt; {
-            const texture = gl.createTexture();
-            gl.bindTexture(gl.TEXTURE_2D, texture);
-            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
-            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-            resolve(texture);
+            try {
+              const texture = gl.createTexture();
+              gl.bindTexture(gl.TEXTURE_2D, texture);
+              gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+              gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+              gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+              gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+              gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+              gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+              resolve(texture);
+            } catch (error) { resolve(null); }
           };
           image.onerror = () =&gt; resolve(null);
           image.src = source;
         });
         Promise.all(imageSources.map(load)).then((textures) =&gt; {
+          xrDomeCanvas.dataset.ready = &#x27;true&#x27;;
           let current = 0;
           let target = 0;
           let blend = 1;
@@ -5188,7 +5192,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       };
       const syncXrSmokeInteractiveBackground = () =&gt; {
         const gl = xrSmokeGl;
-        const backgroundCanvas = xrDomeCanvas?.width ? xrDomeCanvas : xrDistortionCanvas;
+        const backgroundCanvas = xrDomeCanvas?.dataset.ready === &#x27;true&#x27; &amp;&amp; xrDomeCanvas.width ? xrDomeCanvas : xrDistortionCanvas;
         if (!gl || !xrSmoke.sceneTexture || !backgroundCanvas?.width || !backgroundCanvas.height) return false;
         try {
           gl.bindTexture(gl.TEXTURE_2D, xrSmoke.sceneTexture);
@@ -5826,7 +5830,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         ready: false,
         loading: null,
         introStart: 0,
-        introComplete: false
+        introComplete: true
       };
       const compileXrShader = (gl, type, source) =&gt; {
         const shader = gl.createShader(type);
