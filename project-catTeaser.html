@@ -8,6 +8,7 @@
     <style>
         .project-content { max-width: 800px; margin: 0 auto; }
         .project-content img { width: 100%; margin-bottom: 20px; }
+        .project-content video { display: block; width: 100%; margin-bottom: 20px; }
         .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
         .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
     </style>
@@ -33,6 +34,10 @@
 
     <main class="main-content">
         <div class="project-content">
+            <video class="detail-preview" autoplay muted loop playsinline controls preload="metadata" poster="images/cat-teaser-polaroid.webp" aria-label="Cat Teaser 2D gameplay preview" tabindex="0">
+                <source src="videos/cat-teaser-preview.mp4" type="video/mp4">
+                Your browser does not support the Cat Teaser 2D preview.
+            </video>
             <a href="index.html" class="back-btn">&larr; Back to Index</a>
             <h2>Cat Teaser 2D</h2>
             <div class="project-text">
@@ -40,7 +45,10 @@
                 <p>The prototype combines rope physics, velocity-and-acceleration flick detection, cat behaviour, multiple targets, and shared mouse and wearable-input paths.</p>
             </div>
 
-            <img src="images/cat-teaser-polaroid.webp" alt="Illustrated Cat Teaser 2D scene with two cats, a fish, and playful motion marks">
+            <video controls playsinline preload="metadata" poster="images/cat-teaser-polaroid.webp" aria-label="Cat Teaser 2D full gameplay video">
+                <source src="videos/cat-teaser-full.mp4" type="video/mp4">
+                Your browser does not support the Cat Teaser 2D full gameplay video.
+            </video>
 
             <div class="project-details">
                 <h3>Key Features</h3>

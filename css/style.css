@@ -115,6 +115,10 @@ ul {
     opacity: 1;
 }
 
+.project-item.video-cover .hover-preview {
+    opacity: 1;
+}
+
 .project-placeholder {
     background: #242424;
 }
