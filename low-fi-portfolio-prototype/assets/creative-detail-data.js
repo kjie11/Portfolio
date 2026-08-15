@@ -1,6 +1,7 @@
 window.RUYAN_CREATIVE_DETAIL_DATA = {
   "order": [
     "cat-teaser",
+    "duck-trombone",
     "mole-rhythm",
     "claw-machine",
     "four-way-kitchen",
@@ -23,11 +24,11 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
   "projects": {
     "cat-teaser": {
       "file": "project-catTeaser.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-catTeaser.html",
+      "url": "http://127.0.0.1:4389/project-catTeaser.html",
       "actions": [
         {
-          "disabled": true,
-          "href": "",
+          "disabled": false,
+          "href": "http://127.0.0.1:4389/videos/cat-teaser-full.mp4",
           "label": "Watch Full Video"
         },
         {
@@ -56,23 +57,23 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
         }
       ],
       "hero": {
-        "alt": "Illustrated Cat Teaser 2D scene with two cats, a fish, and playful motion marks",
-        "ariaLabel": "",
-        "autoplay": false,
-        "controls": false,
-        "loop": false,
-        "muted": false,
-        "poster": "",
-        "src": "http://127.0.0.1:4389/images/cat-teaser-polaroid.webp",
-        "tag": "img"
+        "alt": "",
+        "ariaLabel": "Cat Teaser 2D gameplay preview",
+        "autoplay": true,
+        "controls": true,
+        "loop": true,
+        "muted": true,
+        "poster": "http://127.0.0.1:4389/images/cat-teaser-polaroid.webp",
+        "src": "http://127.0.0.1:4389/videos/cat-teaser-preview.mp4",
+        "tag": "video"
       },
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-moleRhythm.html",
+          "href": "http://127.0.0.1:4389/project-moleRhythm.html",
           "label": "Next project"
         }
       ],
@@ -131,15 +132,20 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "summaryHtml": "\n                <p>Cat Teaser 2D is a Unity interaction prototype built around a custom rope simulation. Players control the handle rather than the feather directly, creating the delay and inertia needed for anticipation, deception, and well-timed misses.</p>\n                <p>The prototype combines rope physics, velocity-and-acceleration flick detection, cat behaviour, multiple targets, and shared mouse and wearable-input paths.</p>\n            ",
       "summaryText": "Cat Teaser 2D is a Unity interaction prototype built around a custom rope simulation. Players control the handle rather than the feather directly, creating the delay and inertia needed for anticipation, deception, and well-timed misses. The prototype combines rope physics, velocity-and-acceleration flick detection, cat behaviour, multiple targets, and shared mouse and wearable-input paths.",
       "title": "Cat Teaser 2D",
-      "videoSection": null
+      "videoSection": {
+        "ariaLabel": "Cat Teaser 2D full prototype video",
+        "poster": "http://127.0.0.1:4389/images/cat-teaser-polaroid.webp",
+        "src": "http://127.0.0.1:4389/videos/cat-teaser-full.mp4",
+        "title": "Full Prototype Video"
+      }
     },
     "mole-rhythm": {
       "file": "project-moleRhythm.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-moleRhythm.html",
+      "url": "http://127.0.0.1:4389/project-moleRhythm.html",
       "actions": [
         {
-          "disabled": true,
-          "href": "",
+          "disabled": false,
+          "href": "http://127.0.0.1:4389/videos/mole-rhythm-full.mp4",
           "label": "Watch Full Video"
         },
         {
@@ -180,15 +186,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       },
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-catTeaser.html",
+          "href": "http://127.0.0.1:4389/project-catTeaser.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-handInputClaw.html",
+          "href": "http://127.0.0.1:4389/project-handInputClaw.html",
           "label": "Next project"
         }
       ],
@@ -248,15 +254,20 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "summaryHtml": "\n                <p>Mole Rhythm reimagines whack-a-mole as a five-finger music game. Five holes map directly to thumb, index, middle, ring, and little finger. Players bend the matching finger when a mole reaches its target pose, using character motion rather than a falling-note track to read the rhythm.</p>\n                <p>The chart pipeline analyzes a fixed music track offline, then applies deterministic density, repetition, weaker-finger, and two-finger constraints. This keeps output reproducible and allows Normal, Easy, and Very Easy variants without modifying the source chart.</p>\n            ",
       "summaryText": "Mole Rhythm reimagines whack-a-mole as a five-finger music game. Five holes map directly to thumb, index, middle, ring, and little finger. Players bend the matching finger when a mole reaches its target pose, using character motion rather than a falling-note track to read the rhythm. The chart pipeline analyzes a fixed music track offline, then applies deterministic density, repetition, weaker-finger, and two-finger constraints. This keeps output reproducible and allows Normal, Easy, and Very Easy variants without modifying the source chart.",
       "title": "Mole Rhythm",
-      "videoSection": null
+      "videoSection": {
+        "ariaLabel": "Mole Rhythm full prototype video",
+        "poster": "http://127.0.0.1:4389/images/mole-rhythm-poster.jpg",
+        "src": "http://127.0.0.1:4389/videos/mole-rhythm-full.mp4",
+        "title": "Full Prototype Video"
+      }
     },
     "claw-machine": {
       "file": "project-handInputClaw.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-handInputClaw.html",
+      "url": "http://127.0.0.1:4389/project-handInputClaw.html",
       "actions": [
         {
-          "disabled": true,
-          "href": "",
+          "disabled": false,
+          "href": "http://127.0.0.1:4389/videos/claw-machine-full.mp4",
           "label": "Watch Full Video"
         },
         {
@@ -297,15 +308,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       },
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-moleRhythm.html",
+          "href": "http://127.0.0.1:4389/project-moleRhythm.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-fourWayKitchen.html",
+          "href": "http://127.0.0.1:4389/project-fourWayKitchen.html",
           "label": "Next project"
         }
       ],
@@ -366,11 +377,16 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "summaryHtml": "\n                <p><strong>Your hand is the claw—and the grip is yours.</strong> Traditional claw machines let you position the claw, but not control how tightly it closes. In this Unity prototype, your hand controls both: open your hand and the claw opens; squeeze tighter and the claw closes further. Whether the prize slips or stays is entirely up to you.</p>\n                <p>One hand steers the claw while the other controls its grip in real time. Each prize has its own sweet spot: too loose and it slips, too tight and the grip becomes unstable. Radial feedback makes that invisible force easy to read without taking away the tension of the grab.</p>\n            ",
       "summaryText": "Your hand is the claw—and the grip is yours. Traditional claw machines let you position the claw, but not control how tightly it closes. In this Unity prototype, your hand controls both: open your hand and the claw opens; squeeze tighter and the claw closes further. Whether the prize slips or stays is entirely up to you. One hand steers the claw while the other controls its grip in real time. Each prize has its own sweet spot: too loose and it slips, too tight and the grip becomes unstable. Radial feedback makes that invisible force easy to read without taking away the tension of the grab.",
       "title": "Hand-Input Claw Machine",
-      "videoSection": null
+      "videoSection": {
+        "ariaLabel": "Hand-Input Claw Machine full prototype video",
+        "poster": "http://127.0.0.1:4389/images/claw-machine-poster.jpg",
+        "src": "http://127.0.0.1:4389/videos/claw-machine-full.mp4",
+        "title": "Full Prototype Video"
+      }
     },
     "four-way-kitchen": {
       "file": "project-fourWayKitchen.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-fourWayKitchen.html",
+      "url": "http://127.0.0.1:4389/project-fourWayKitchen.html",
       "actions": [
         {
           "disabled": true,
@@ -415,15 +431,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       },
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-handInputClaw.html",
+          "href": "http://127.0.0.1:4389/project-handInputClaw.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-pizzaDelivery.html",
+          "href": "http://127.0.0.1:4389/project-pizzaDelivery.html",
           "label": "Next project"
         }
       ],
@@ -488,7 +504,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "pizza-delivery": {
       "file": "project-pizzaDelivery.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-pizzaDelivery.html",
+      "url": "http://127.0.0.1:4389/project-pizzaDelivery.html",
       "actions": [
         {
           "disabled": true,
@@ -504,7 +520,8 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "extraImages": [
         {
           "alt": "Pizza Delivery gameplay showing a delivery car, active order, timer, and coin rewards",
-          "src": "http://127.0.0.1:4389/images/pizza-delivery-01-gameplay-01.png"
+          "src": "http://127.0.0.1:4389/images/pizza-delivery-01-gameplay-01.png",
+          "caption": "Gameplay screenshot · Driving, active order, countdown, and reward feedback"
         },
         {
           "alt": "Poki dashboard comparing four Pizza Delivery test versions, including three completed rounds of 500 gameplays",
@@ -542,15 +559,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       },
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-fourWayKitchen.html",
+          "href": "http://127.0.0.1:4389/project-fourWayKitchen.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-ARGraffiti.html",
+          "href": "http://127.0.0.1:4389/project-ARGraffiti.html",
           "label": "Next project"
         }
       ],
@@ -646,7 +663,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "augsoc": {
       "file": "project-ARGraffiti.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-ARGraffiti.html",
+      "url": "http://127.0.0.1:4389/project-ARGraffiti.html",
       "actions": [
         {
           "disabled": false,
@@ -703,6 +720,16 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "sections": [
         {
           "items": [
+            "Comparable 2D and 3D AR creation modes in Unity for Meta Quest 3",
+            "Spraying, path drawing, dragging, and scaling interactions",
+            "Questionnaires and interviews conducted with 18 participants",
+            "Research evidence used to guide interaction iteration"
+          ],
+          "paragraphs": [],
+          "title": "Key Features"
+        },
+        {
+          "items": [
             "Keep interaction variables comparable across both creation modes",
             "Combine observed behaviour with stated participant preference",
             "Avoid claiming specific findings until the detailed study record is available"
@@ -739,7 +766,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "abyss": {
       "file": "project-detail.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-detail.html",
+      "url": "http://127.0.0.1:4389/project-detail.html",
       "actions": [
         {
           "disabled": false,
@@ -797,15 +824,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       },
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-ARGraffiti.html",
+          "href": "http://127.0.0.1:4389/project-ARGraffiti.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-gothicHunter.html",
+          "href": "http://127.0.0.1:4389/project-gothicHunter.html",
           "label": "Next project"
         }
       ],
@@ -857,7 +884,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "emotional-mask": {
       "file": "project-emotionalMask.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-emotionalMask.html",
+      "url": "http://127.0.0.1:4389/project-emotionalMask.html",
       "actions": [
         {
           "disabled": false,
@@ -892,15 +919,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "hero": null,
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-neonBeatRunner.html",
+          "href": "http://127.0.0.1:4389/project-neonBeatRunner.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-emgNinja.html",
+          "href": "http://127.0.0.1:4389/project-emgNinja.html",
           "label": "Next project"
         }
       ],
@@ -953,7 +980,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "ar-escape-room": {
       "file": "project-AREscapeRoom.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-AREscapeRoom.html",
+      "url": "http://127.0.0.1:4389/project-AREscapeRoom.html",
       "actions": [
         {
           "disabled": false,
@@ -998,15 +1025,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       },
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-plantBot.html",
+          "href": "http://127.0.0.1:4389/project-plantBot.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-magicBus.html",
+          "href": "http://127.0.0.1:4389/project-magicBus.html",
           "label": "Next project"
         }
       ],
@@ -1075,7 +1102,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "speaking-world": {
       "file": "project-speakingWorld.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-speakingWorld.html",
+      "url": "http://127.0.0.1:4389/project-speakingWorld.html",
       "actions": [
         {
           "disabled": false,
@@ -1120,15 +1147,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       },
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-gothicHunter.html",
+          "href": "http://127.0.0.1:4389/project-gothicHunter.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-plantBot.html",
+          "href": "http://127.0.0.1:4389/project-plantBot.html",
           "label": "Next project"
         }
       ],
@@ -1180,7 +1207,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "plant-bot": {
       "file": "project-plantBot.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-plantBot.html",
+      "url": "http://127.0.0.1:4389/project-plantBot.html",
       "actions": [
         {
           "disabled": false,
@@ -1193,7 +1220,28 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
           "label": "Try Live Demo"
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        {
+          "alt": "Plant Bot research board with references, habitat observations, activities, visual directions, and prototype concepts",
+          "caption": "Research and concept direction · References, habitats, activities, and form explorations shaped the physical and emotional interaction model.",
+          "src": "http://127.0.0.1:4389/images/plant-bot-research.png"
+        },
+        {
+          "alt": "Plant Bot circuit diagrams, ESP32 breadboard test, and soldered prototype board",
+          "caption": "Circuit development · ESP32 wiring moved from schematic and breadboard tests to a soldered prototype board.",
+          "src": "http://127.0.0.1:4389/images/plant-bot-circuit-development.png"
+        },
+        {
+          "alt": "Plant Bot sensor, motor, ESP32, wiring, and 3D-printed enclosure during hardware assembly",
+          "caption": "Hardware assembly · Sensors, motor control, display, and the printed enclosure were brought together through iterative bench testing.",
+          "src": "http://127.0.0.1:4389/images/plant-bot-hardware-assembly.png"
+        },
+        {
+          "alt": "Plant Bot installed beside a plant with watering feedback and a web dashboard showing soil moisture and light conditions",
+          "caption": "Integrated prototype · The physical bot communicates care feedback while the companion interface exposes soil moisture and light conditions.",
+          "src": "http://127.0.0.1:4389/images/plant-bot-integrated-prototype.png"
+        }
+      ],
       "facts": [
         {
           "label": "Role",
@@ -1225,21 +1273,28 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       },
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-speakingWorld.html",
+          "href": "http://127.0.0.1:4389/project-speakingWorld.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-AREscapeRoom.html",
+          "href": "http://127.0.0.1:4389/project-AREscapeRoom.html",
           "label": "Next project"
         }
       ],
       "pageTitle": "Plant Bot - RuyanQin",
       "projectClass": "project-content",
       "sections": [
+        {
+          "items": [],
+          "paragraphs": [
+            "The project moved from reference research and interaction mapping into circuit design, sensor testing, physical assembly, and an integrated plant-care experience."
+          ],
+          "title": "From Research to Working Prototype"
+        },
         {
           "items": [
             "Four categories of environmental data translated into six plant states and care guidance",
@@ -1295,7 +1350,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "gothic-hunter": {
       "file": "project-gothicHunter.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-gothicHunter.html",
+      "url": "http://127.0.0.1:4389/project-gothicHunter.html",
       "actions": [
         {
           "disabled": true,
@@ -1340,15 +1395,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       },
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-detail.html",
+          "href": "http://127.0.0.1:4389/project-detail.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-speakingWorld.html",
+          "href": "http://127.0.0.1:4389/project-speakingWorld.html",
           "label": "Next project"
         }
       ],
@@ -1414,7 +1469,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "magic-bus": {
       "file": "project-magicBus.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-magicBus.html",
+      "url": "http://127.0.0.1:4389/project-magicBus.html",
       "actions": [
         {
           "disabled": false,
@@ -1455,15 +1510,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       },
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-AREscapeRoom.html",
+          "href": "http://127.0.0.1:4389/project-AREscapeRoom.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-whiteLavender.html",
+          "href": "http://127.0.0.1:4389/project-whiteLavender.html",
           "label": "Next project"
         }
       ],
@@ -1496,7 +1551,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "white-lavender": {
       "file": "project-whiteLavender.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-whiteLavender.html",
+      "url": "http://127.0.0.1:4389/project-whiteLavender.html",
       "actions": [
         {
           "disabled": false,
@@ -1527,15 +1582,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "hero": null,
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-magicBus.html",
+          "href": "http://127.0.0.1:4389/project-magicBus.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-neonBeatRunner.html",
+          "href": "http://127.0.0.1:4389/project-neonBeatRunner.html",
           "label": "Next project"
         }
       ],
@@ -1577,11 +1632,11 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "neon-beatrunner": {
       "file": "project-neonBeatRunner.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-neonBeatRunner.html",
+      "url": "http://127.0.0.1:4389/project-neonBeatRunner.html",
       "actions": [
         {
-          "disabled": true,
-          "href": "",
+          "disabled": false,
+          "href": "http://127.0.0.1:4389/videos/neon-beatrunner-full.mp4",
           "label": "Watch Full Video"
         },
         {
@@ -1609,18 +1664,28 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
           "value": "Runtime-verified with demo audio; player validation pending"
         }
       ],
-      "hero": null,
+      "hero": {
+        "alt": "",
+        "ariaLabel": "Neon BeatRunner gameplay preview",
+        "autoplay": true,
+        "controls": true,
+        "loop": true,
+        "muted": true,
+        "poster": "",
+        "src": "http://127.0.0.1:4389/videos/neon-beatrunner-preview.mp4",
+        "tag": "video"
+      },
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-whiteLavender.html",
+          "href": "http://127.0.0.1:4389/project-whiteLavender.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-emotionalMask.html",
+          "href": "http://127.0.0.1:4389/project-emotionalMask.html",
           "label": "Next project"
         }
       ],
@@ -1689,11 +1754,16 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "summaryHtml": "\n                <p>Neon BeatRunner is a Godot rhythm-platformer prototype that converts offline audio analysis into reachable jumps, timed enemies, and graded combat feedback. The character runs automatically while obstacles and enemies are scheduled to reach fixed judgement points at target song times.</p>\n                <p>Audio analysis, gameplay arrangement, and runtime presentation are separated so every onset does not become an action. Absolute song time drives movement and judgement, while an arrangement layer limits consecutive jumps, action conflicts, and event density.</p>\n            ",
       "summaryText": "Neon BeatRunner is a Godot rhythm-platformer prototype that converts offline audio analysis into reachable jumps, timed enemies, and graded combat feedback. The character runs automatically while obstacles and enemies are scheduled to reach fixed judgement points at target song times. Audio analysis, gameplay arrangement, and runtime presentation are separated so every onset does not become an action. Absolute song time drives movement and judgement, while an arrangement layer limits consecutive jumps, action conflicts, and event density.",
       "title": "Neon BeatRunner",
-      "videoSection": null
+      "videoSection": {
+        "ariaLabel": "Neon BeatRunner full gameplay video",
+        "poster": "",
+        "src": "http://127.0.0.1:4389/videos/neon-beatrunner-full.mp4",
+        "title": "Full Gameplay Video"
+      }
     },
     "emg-ninja": {
       "file": "project-emgNinja.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-emgNinja.html",
+      "url": "http://127.0.0.1:4389/project-emgNinja.html",
       "actions": [
         {
           "disabled": true,
@@ -1738,15 +1808,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       },
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-emotionalMask.html",
+          "href": "http://127.0.0.1:4389/project-emotionalMask.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-vrInteraction.html",
+          "href": "http://127.0.0.1:4389/project-vrInteraction.html",
           "label": "Next project"
         }
       ],
@@ -1775,7 +1845,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "vr-interaction": {
       "file": "project-vrInteraction.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-vrInteraction.html",
+      "url": "http://127.0.0.1:4389/project-vrInteraction.html",
       "actions": [
         {
           "disabled": true,
@@ -1810,15 +1880,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "hero": null,
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-emgNinja.html",
+          "href": "http://127.0.0.1:4389/project-emgNinja.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-webxrGallery.html",
+          "href": "http://127.0.0.1:4389/project-webxrGallery.html",
           "label": "Next project"
         }
       ],
@@ -1881,7 +1951,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "webxr-gallery": {
       "file": "project-webxrGallery.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-webxrGallery.html",
+      "url": "http://127.0.0.1:4389/project-webxrGallery.html",
       "actions": [
         {
           "disabled": true,
@@ -1916,15 +1986,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "hero": null,
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-vrInteraction.html",
+          "href": "http://127.0.0.1:4389/project-vrInteraction.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-wearableGame.html",
+          "href": "http://127.0.0.1:4389/project-wearableGame.html",
           "label": "Next project"
         }
       ],
@@ -1986,7 +2056,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     },
     "wearable-game": {
       "file": "project-wearableGame.html",
-      "url": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-wearableGame.html",
+      "url": "http://127.0.0.1:4389/project-wearableGame.html",
       "actions": [
         {
           "disabled": true,
@@ -2021,11 +2091,11 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "hero": null,
       "nav": [
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/project-webxrGallery.html",
+          "href": "http://127.0.0.1:4389/project-webxrGallery.html",
           "label": "Previous project"
         },
         {
-          "href": "http://127.0.0.1:4389/%E5%88%9B%E6%84%8F%E7%89%88%E9%A2%84%E8%A7%88/creative-site-framework.html",
+          "href": "http://127.0.0.1:4389/creative-site-framework.html",
           "label": "All projects"
         }
       ],
@@ -2085,6 +2155,78 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "summaryText": "This wearable product prototype translated research with fitness beginners into level, reward, and real-time feedback concepts. A Unity prototype made the gamified experience testable. My recorded responsibilities include research analysis, product design, Unity game development, and user-test iteration. Hardware form, sample size, test measures, detailed changes, and individual contribution boundaries remain pending evidence.",
       "title": "Wearable Game Experience",
       "videoSection": null
+    },
+    "duck-trombone": {
+      "file": "project-duckTrombone.html",
+      "url": "http://127.0.0.1:4389/project-duckTrombone.html",
+      "actions": [
+        {
+          "disabled": false,
+          "href": "http://127.0.0.1:4389/videos/duck-trombone-full.mp4",
+          "label": "Watch Full Video"
+        },
+        {
+          "disabled": true,
+          "href": "",
+          "label": "Try Live Demo"
+        }
+      ],
+      "extraImages": [],
+      "facts": [
+        {
+          "label": "Format",
+          "value": "IMU-driven music game prototype"
+        },
+        {
+          "label": "Input",
+          "value": "Wrist rotation angle"
+        },
+        {
+          "label": "Output",
+          "value": "Musical pitch and trombone control"
+        },
+        {
+          "label": "Evidence",
+          "value": "Preview and full prototype video"
+        }
+      ],
+      "hero": {
+        "alt": "",
+        "ariaLabel": "Duck Trombone Champion preview",
+        "autoplay": true,
+        "controls": true,
+        "loop": true,
+        "muted": true,
+        "poster": "",
+        "src": "http://127.0.0.1:4389/videos/duck-trombone-preview.mp4",
+        "tag": "video"
+      },
+      "nav": [
+        {
+          "href": "http://127.0.0.1:4389/project-catTeaser.html",
+          "label": "Previous project"
+        },
+        {
+          "href": "",
+          "label": "All projects"
+        },
+        {
+          "href": "http://127.0.0.1:4389/project-handInputClaw.html",
+          "label": "Next project"
+        }
+      ],
+      "pageTitle": "Duck Trombone Champion - RuyanQin",
+      "projectClass": "project-content",
+      "sections": [],
+      "summaryHtml": "<p>An IMU-driven music game prototype that maps wrist rotation angle to musical pitch, turning wrist movement into direct trombone control.</p>",
+      "summaryText": "An IMU-driven music game prototype that maps wrist rotation angle to musical pitch, turning wrist movement into direct trombone control.",
+      "title": "Duck Trombone Champion",
+      "videoSection": {
+        "ariaLabel": "Duck Trombone Champion full prototype video",
+        "poster": "",
+        "src": "http://127.0.0.1:4389/videos/duck-trombone-full.mp4",
+        "title": "Full Prototype Video"
+      }
     }
   }
 };

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .project-content { max-width: 800px; margin: 0 auto; }
-        .project-media-empty { width: 100%; aspect-ratio: 16 / 9; margin-bottom: 20px; }
+        .project-media { display: block; width: 100%; aspect-ratio: 16 / 9; margin-bottom: 20px; background: #000; }
         .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
         .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
     </style>
@@ -29,7 +29,9 @@
                 <p>Neon BeatRunner is a Godot rhythm-platformer prototype that converts offline audio analysis into reachable jumps, timed enemies, and graded combat feedback. The character runs automatically while obstacles and enemies are scheduled to reach fixed judgement points at target song times.</p>
                 <p>Audio analysis, gameplay arrangement, and runtime presentation are separated so every onset does not become an action. Absolute song time drives movement and judgement, while an arrangement layer limits consecutive jumps, action conflicts, and event density.</p>
             </div>
-            <div class="project-media-empty" aria-hidden="true"></div>
+            <video class="project-media" controls playsinline preload="metadata" aria-label="Neon BeatRunner full gameplay video">
+                <source src="videos/neon-beatrunner-full.mp4" type="video/mp4">
+            </video>
             <div class="project-details">
                 <h3>Key Features</h3>
                 <ul>

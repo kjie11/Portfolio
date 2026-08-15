@@ -223,19 +223,37 @@
 
       var section = frameDocument.createElement("section");
       var heading = frameDocument.createElement("h2");
-      var watch = frameDocument.createElement("a");
-      var frame = frameDocument.createElement("iframe");
+      var media;
       section.className = "creative-detail-video-section";
       heading.textContent = videoSection.title;
-      watch.href = localAssetUrl(videoSection.watch);
-      watch.textContent = "Watch on YouTube";
-      markExternal(watch, videoSection.watch);
-      frame.className = "creative-detail-video-frame";
-      frame.src = localAssetUrl(videoSection.embed);
-      frame.title = videoSection.title;
-      frame.loading = "lazy";
-      frame.allowFullscreen = true;
-      section.append(heading, watch, frame);
+      section.appendChild(heading);
+
+      if (videoSection.watch) {
+        var watch = frameDocument.createElement("a");
+        watch.href = localAssetUrl(videoSection.watch);
+        watch.textContent = "Watch on YouTube";
+        markExternal(watch, videoSection.watch);
+        section.appendChild(watch);
+      }
+
+      if (videoSection.src) {
+        media = frameDocument.createElement("video");
+        media.src = localAssetUrl(videoSection.src);
+        media.poster = localAssetUrl(videoSection.poster);
+        media.controls = true;
+        media.playsInline = true;
+        media.preload = "metadata";
+        media.setAttribute("aria-label", videoSection.ariaLabel);
+      } else {
+        media = frameDocument.createElement("iframe");
+        media.src = localAssetUrl(videoSection.embed);
+        media.title = videoSection.title;
+        media.loading = "lazy";
+        media.allowFullscreen = true;
+      }
+
+      media.className = "creative-detail-video-frame";
+      section.appendChild(media);
       container.appendChild(section);
     }
 
@@ -249,6 +267,12 @@
         image.src = localAssetUrl(imageData.src);
         image.alt = imageData.alt;
         container.appendChild(image);
+
+        if (imageData.caption) {
+          var caption = frameDocument.createElement("p");
+          caption.textContent = imageData.caption;
+          container.appendChild(caption);
+        }
       });
     }
 

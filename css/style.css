@@ -25,12 +25,15 @@ ul {
 /* 2. 主容器布局 (Flexbox) */
 .container {
     display: flex;
+    width: min(100%, 1800px);
     min-height: 100vh;
+    margin: 0 auto;
 }
 
 /* 3. 左侧侧边栏设计 */
 .sidebar {
-    width: 280px; /* 左侧固定宽度 */
+    flex: 0 0 320px;
+    width: 320px; /* 左侧固定宽度 */
     padding: 40px;
     height: 100vh; /* 占满视口高度 */
     position: sticky; /* 关键：固定在屏幕左侧 */
@@ -79,7 +82,8 @@ ul {
 
 /* 4. 右侧内容区域 */
 .main-content {
-    flex: 1; /* 占据剩余空间 */
+    flex: 1 1 0;
+    min-width: 0;
     padding: 40px;
     background-color: #fff;
 }
@@ -271,6 +275,196 @@ ul {
 }
 
 .brainco-grid .img-wrapper {
+    aspect-ratio: 16 / 9;
+}
+
+.brainco-work .side-work-header h2 {
+    max-width: none;
+    font-size: clamp(44px, 4.3vw, 64px);
+    white-space: nowrap;
+}
+
+.brainco-work .side-work-header {
+    grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.85fr);
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.brainco-work .side-work-header p {
+    max-width: 44ch;
+}
+
+.brainco-work {
+    margin-top: 72px;
+    padding: 32px 0 48px;
+}
+
+.brainco-feature .img-wrapper {
+    aspect-ratio: 11 / 4;
+}
+
+.brainco-feature-stage {
+    grid-column: 1 / -1;
+    position: relative;
+}
+
+.brainco-feature .project-shade,
+.brainco-feature .project-overlay {
+    opacity: 1;
+}
+
+.brainco-feature .project-overlay {
+    padding: clamp(20px, 3vw, 36px);
+}
+
+.feature-label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.brainco-preview-toggle {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    z-index: 3;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 14px;
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: 0;
+    background: rgba(18, 18, 18, 0.72);
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.brainco-preview-toggle:hover,
+.brainco-preview-toggle:focus-visible {
+    background: #fff;
+    color: #111;
+}
+
+.brainco-preview-toggle:focus-visible {
+    outline: 2px solid #d35400;
+    outline-offset: 3px;
+}
+
+.brainco-feature-nav {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    width: 56px;
+    height: 56px;
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    border-radius: 0;
+    background: rgba(18, 18, 18, 0.72);
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 1;
+    padding: 0;
+    touch-action: manipulation;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.brainco-feature-nav--previous {
+    left: 24px;
+}
+
+.brainco-feature-nav--next {
+    right: 24px;
+}
+
+.brainco-feature-stage:hover .brainco-feature-nav,
+.brainco-feature-stage:focus-within .brainco-feature-nav {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.brainco-feature-nav:hover,
+.brainco-feature-nav:focus-visible {
+    background: #fff;
+    color: #111;
+}
+
+.brainco-feature-nav:focus-visible {
+    outline: 2px solid #d35400;
+    outline-offset: 3px;
+}
+
+.brainco-collection {
+    position: relative;
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid #333;
+}
+
+.brainco-rail-control {
+    position: absolute;
+    top: calc(50% + 8px);
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #333;
+    border-radius: 0;
+    background: #fff;
+    color: #242424;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    padding: 0;
+    touch-action: manipulation;
+    transform: translateY(-50%);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.brainco-rail-control--previous { left: 0; }
+.brainco-rail-control--next { right: 0; }
+
+.brainco-rail-control:hover,
+.brainco-rail-control:focus-visible {
+    background: #242424;
+    color: #fff;
+}
+
+.brainco-rail-control:focus-visible,
+.brainco-rail:focus-visible {
+    outline: 2px solid #d35400;
+    outline-offset: 3px;
+}
+
+.brainco-rail {
+    display: grid;
+    grid-auto-columns: calc((100% - 60px) / 4);
+    grid-auto-flow: column;
+    gap: 20px;
+    overflow: hidden;
+    overscroll-behavior-x: contain;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.brainco-rail-card {
+    scroll-snap-align: start;
+}
+
+.brainco-rail-card.is-selected .img-wrapper {
+    outline: 3px solid #d35400;
+    outline-offset: -3px;
+}
+
+.brainco-rail-card .img-wrapper {
     aspect-ratio: 16 / 9;
 }
 
@@ -533,6 +727,7 @@ ul {
 
     .sidebar {
         width: 100%;
+        flex-basis: auto;
         height: auto;
         position: relative;
         padding-bottom: 20px;
@@ -591,6 +786,55 @@ ul {
 
     .brainco-grid {
         grid-template-columns: 1fr;
+    }
+
+    .brainco-work .side-work-header h2 {
+        white-space: normal;
+    }
+
+    .brainco-work .side-work-header {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .brainco-work {
+        margin-top: 48px;
+    }
+
+    .brainco-feature .img-wrapper {
+        aspect-ratio: 16 / 9;
+    }
+
+    .brainco-preview-toggle {
+        right: 14px;
+        bottom: 14px;
+    }
+
+    .brainco-feature-nav {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .brainco-feature-nav--previous {
+        left: 14px;
+    }
+
+    .brainco-feature-nav--next {
+        right: 14px;
+    }
+
+    .brainco-collection {
+        margin-top: 28px;
+    }
+
+    .brainco-rail-control {
+        width: 44px;
+        height: 44px;
+    }
+
+    .brainco-rail {
+        grid-auto-columns: 100%;
+        gap: 14px;
     }
 
 }

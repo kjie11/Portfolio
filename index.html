@@ -250,8 +250,10 @@
             </a>
 
             <!-- Neon BeatRunner -->
-            <a href="project-neonBeatRunner.html" class="project-item" aria-label="Neon BeatRunner: rhythm-platformer systems and deterministic audio timing">
+            <a href="project-neonBeatRunner.html" class="project-item preview-card" aria-label="Neon BeatRunner: rhythm-platformer systems and deterministic audio timing">
                 <div class="img-wrapper project-placeholder">
+                    <img src="images/neon-beatrunner-poster.jpg" alt="Neon BeatRunner gameplay with a character holding a rhythm target while navigating obstacles">
+                    <video class="hover-preview" muted loop playsinline preload="none" data-src="videos/neon-beatrunner-preview.mp4" aria-hidden="true"></video>
                     <span class="project-shade" aria-hidden="true"></span>
                     <span class="project-overlay">
                         <strong class="project-title">Neon BeatRunner</strong>
@@ -274,24 +276,82 @@
 
         </div>
 
-        <!-- ponytail: reuse the collection section rhythm until BrainCo needs a distinct multi-card layout. -->
         <section class="side-work brainco-work" id="brainco-prototypes" aria-labelledby="brainco-title">
             <header class="side-work-header">
                 <h2 id="brainco-title">BrainCo Prototypes</h2>
                 <p>Creative game prototypes exploring how EMG gestures can become immediate, expressive gameplay input.</p>
             </header>
             <div class="brainco-grid">
-                <a href="project-emgNinja.html" class="project-item preview-card eager-preview">
-                    <div class="img-wrapper">
-                        <img src="images/emg-ninja-cover.jpg" alt="EMG gesture-controlled ninja game prototype">
-                        <video class="hover-preview" autoplay muted loop playsinline preload="auto" src="videos/emg-ninja-preview.mp4" aria-hidden="true"></video>
-                        <span class="project-shade" aria-hidden="true"></span>
-                        <span class="project-overlay">
-                            <strong class="project-title">EMG Gesture Ninja</strong>
-                            <span class="project-role">EMG gesture interaction and gameplay prototyping</span>
-                        </span>
-                    </div>
-                </a>
+                <div class="brainco-feature-stage">
+                    <a href="project-emgNinja.html" class="project-item preview-card brainco-feature" id="brainco-feature">
+                        <div class="img-wrapper">
+                            <img src="images/emg-ninja-cover.jpg" alt="EMG gesture-controlled ninja game prototype">
+                            <video class="hover-preview" autoplay muted loop playsinline preload="none" data-src="videos/emg-ninja-preview.mp4" aria-hidden="true"></video>
+                            <span class="project-shade" aria-hidden="true"></span>
+                            <span class="project-overlay">
+                                <span class="feature-label">Featured Prototype</span>
+                                <strong class="project-title">EMG Gesture Ninja</strong>
+                                <span class="project-role">EMG gesture interaction and gameplay prototyping</span>
+                            </span>
+                        </div>
+                    </a>
+                    <button class="brainco-feature-nav brainco-feature-nav--previous" type="button" data-direction="-1" aria-label="Previous BrainCo project">&#8592;</button>
+                    <button class="brainco-feature-nav brainco-feature-nav--next" type="button" data-direction="1" aria-label="Next BrainCo project">&#8594;</button>
+                    <button class="brainco-preview-toggle" type="button" aria-label="Play EMG Gesture Ninja preview" aria-pressed="false">Play preview</button>
+                </div>
+            </div>
+            <div class="brainco-collection">
+                <button class="brainco-rail-control brainco-rail-control--previous" type="button" data-direction="-1" aria-controls="brainco-rail" aria-label="Previous projects">&#8592;</button>
+                <div class="brainco-rail" id="brainco-rail" tabindex="0" aria-label="BrainCo project collection">
+                    <a href="project-emgNinja.html" class="project-item preview-card brainco-rail-card is-selected" aria-current="true">
+                        <div class="img-wrapper">
+                            <img src="images/emg-ninja-cover.jpg" alt="EMG gesture-controlled ninja game prototype">
+                            <video class="hover-preview" muted loop playsinline preload="none" data-src="videos/emg-ninja-preview.mp4" aria-hidden="true"></video>
+                            <span class="project-shade" aria-hidden="true"></span>
+                            <span class="project-overlay"><strong class="project-title">EMG Gesture Ninja</strong><span class="project-role">EMG gesture interaction and gameplay prototyping</span></span>
+                        </div>
+                    </a>
+                    <a href="project-catTeaser.html" class="project-item preview-card brainco-rail-card">
+                        <div class="img-wrapper">
+                            <img src="images/cat-teaser-polaroid.webp" alt="Illustrated Cat Teaser 2D scene with two cats, a fish, and playful motion marks">
+                            <video class="hover-preview" muted loop playsinline preload="none" data-src="videos/cat-teaser-preview.mp4" aria-hidden="true"></video>
+                            <span class="project-shade" aria-hidden="true"></span>
+                            <span class="project-overlay"><strong class="project-title">Cat Teaser 2D</strong><span class="project-role">Interaction design and rope physics</span></span>
+                        </div>
+                    </a>
+                    <a href="project-fourWayKitchen.html" class="project-item brainco-rail-card">
+                        <div class="img-wrapper">
+                            <img src="images/four-way-kitchen-polaroid.webp" alt="Four-sided kitchen gameplay with ingredient stations, chopping boards, stoves, and a central character">
+                            <span class="project-shade" aria-hidden="true"></span>
+                            <span class="project-overlay"><strong class="project-title">Four-Way Kitchen</strong><span class="project-role">Multi-input game prototype</span></span>
+                        </div>
+                    </a>
+                    <a href="project-handInputClaw.html" class="project-item preview-card brainco-rail-card">
+                        <div class="img-wrapper">
+                            <img src="images/claw-machine-poster.jpg" alt="Hand-input claw machine gameplay preview">
+                            <video class="hover-preview" muted loop playsinline preload="none" data-src="videos/claw-machine-hover.mp4" aria-hidden="true"></video>
+                            <span class="project-shade" aria-hidden="true"></span>
+                            <span class="project-overlay"><strong class="project-title">Hand-Input Claw Machine</strong><span class="project-role">Force-control gameplay prototype</span></span>
+                        </div>
+                    </a>
+                    <a href="project-neonBeatRunner.html" class="project-item preview-card brainco-rail-card">
+                        <div class="img-wrapper">
+                            <img src="images/neon-beatrunner-poster.jpg" alt="Neon BeatRunner gameplay with a character holding a rhythm target while navigating obstacles">
+                            <video class="hover-preview" muted loop playsinline preload="none" data-src="videos/neon-beatrunner-preview.mp4" aria-hidden="true"></video>
+                            <span class="project-shade" aria-hidden="true"></span>
+                            <span class="project-overlay"><strong class="project-title">Neon BeatRunner</strong><span class="project-role">Rhythm-platformer systems</span></span>
+                        </div>
+                    </a>
+                    <a href="project-gothicHunter.html" class="project-item preview-card brainco-rail-card">
+                        <div class="img-wrapper">
+                            <img src="images/gothic-hunter.jpg" alt="Gothic Hunter runtime graybox gameplay">
+                            <video class="hover-preview" muted loop playsinline preload="none" data-src="videos/gothic-hunter-preview-with-audio.mp4" aria-hidden="true"></video>
+                            <span class="project-shade" aria-hidden="true"></span>
+                            <span class="project-overlay"><strong class="project-title">Gothic Hunter</strong><span class="project-role">Combat systems and rapid prototyping</span></span>
+                        </div>
+                    </a>
+                </div>
+                <button class="brainco-rail-control brainco-rail-control--next" type="button" data-direction="1" aria-controls="brainco-rail" aria-label="Next projects">&#8594;</button>
             </div>
         </section>
 
@@ -308,11 +368,19 @@
     </main>
 </div>
 <script>
-const previewCards=[...document.querySelectorAll('.preview-card')],reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
-function stopPreview(card){const video=card.querySelector('.hover-preview');if(!video)return;if(!card.classList.contains('eager-preview')){video.pause();video.currentTime=0}card.classList.remove('is-previewing')}
-async function playPreview(card){const video=card.querySelector('.hover-preview');if(!video||reducedMotion.matches)return;if(!video.src){video.src=video.dataset.src;video.load()}try{await video.play();card.classList.add('is-previewing')}catch{stopPreview(card)}}
-previewCards.forEach(card=>{card.addEventListener('pointerenter',event=>{if(event.pointerType!=='touch')playPreview(card)});card.addEventListener('pointerleave',()=>stopPreview(card));card.addEventListener('focusin',()=>playPreview(card));card.addEventListener('focusout',()=>stopPreview(card))});document.addEventListener('visibilitychange',()=>{if(document.hidden)previewCards.forEach(stopPreview)});
-if(reducedMotion.matches)previewCards.filter(card=>card.classList.contains('eager-preview')).forEach(card=>card.querySelector('.hover-preview').pause());
+const previewCards=[...document.querySelectorAll('.preview-card:not(.brainco-feature)')],reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+function stopPreview(card){const video=card.querySelector('.hover-preview');if(!video)return;video.pause();video.currentTime=0;card.classList.remove('is-previewing')}
+async function playPreview(card){const video=card.querySelector('.hover-preview');if(!video||reducedMotion.matches)return false;if(!video.src){video.src=video.dataset.src;video.load()}try{await video.play();card.classList.add('is-previewing');return true}catch{stopPreview(card);return false}}
+previewCards.forEach(card=>{card.addEventListener('pointerenter',event=>{if(event.pointerType!=='touch')playPreview(card)});card.addEventListener('pointerleave',()=>stopPreview(card));card.addEventListener('focusin',()=>playPreview(card));card.addEventListener('focusout',()=>stopPreview(card))});
+document.querySelectorAll('.brainco-rail-control').forEach(button=>{button.addEventListener('click',()=>{const rail=document.getElementById(button.getAttribute('aria-controls'));rail.scrollBy({left:Number(button.dataset.direction)*rail.clientWidth,behavior:reducedMotion.matches?'auto':'smooth'})})});
+const braincoFeature=document.querySelector('#brainco-feature'),braincoCards=[...document.querySelectorAll('.brainco-rail-card')],featureImage=braincoFeature.querySelector('img'),featureVideo=braincoFeature.querySelector('video'),featureTitle=braincoFeature.querySelector('.project-title'),featureRole=braincoFeature.querySelector('.project-role'),featureToggle=document.querySelector('.brainco-preview-toggle');let braincoIndex=0;
+async function playFeaturePreview(){if(reducedMotion.matches||!featureVideo.dataset.src)return false;if(!featureVideo.src){featureVideo.src=featureVideo.dataset.src;featureVideo.load()}try{await featureVideo.play();braincoFeature.classList.add('is-previewing');featureToggle.setAttribute('aria-pressed','true');featureToggle.textContent='Pause preview';return true}catch{stopPreview(braincoFeature);return false}}
+function selectBraincoProject(index){braincoIndex=(index+braincoCards.length)%braincoCards.length;const card=braincoCards[braincoIndex],image=card.querySelector('img'),video=card.querySelector('video'),title=card.querySelector('.project-title').textContent,role=card.querySelector('.project-role').textContent;stopPreview(braincoFeature);braincoFeature.href=card.href;featureImage.src=image.currentSrc||image.src;featureImage.alt=image.alt;featureTitle.textContent=title;featureRole.textContent=role;featureVideo.pause();featureVideo.removeAttribute('src');featureVideo.dataset.src=video?.dataset.src||video?.getAttribute('src')||'';featureVideo.load();featureToggle.hidden=!video;featureToggle.setAttribute('aria-pressed','false');featureToggle.textContent='Play preview';featureToggle.setAttribute('aria-label',`Play ${title} preview`);braincoCards.forEach((item,itemIndex)=>{const selected=itemIndex===braincoIndex;item.classList.toggle('is-selected',selected);if(selected)item.setAttribute('aria-current','true');else item.removeAttribute('aria-current')});card.scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth',block:'nearest',inline:'center'});playFeaturePreview()}
+braincoCards.forEach((card,index)=>card.addEventListener('click',event=>{event.preventDefault();selectBraincoProject(index)}));
+document.querySelectorAll('.brainco-feature-nav').forEach(button=>button.addEventListener('click',()=>selectBraincoProject(braincoIndex+Number(button.dataset.direction))));
+featureToggle.addEventListener('click',async()=>{if(braincoFeature.classList.contains('is-previewing')){stopPreview(braincoFeature);featureToggle.setAttribute('aria-pressed','false');featureToggle.textContent='Play preview'}else await playFeaturePreview()});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){previewCards.forEach(stopPreview);stopPreview(braincoFeature)}});
+playFeaturePreview();
 </script>
 </body>
 </html>
