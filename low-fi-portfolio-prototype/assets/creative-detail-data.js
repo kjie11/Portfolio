@@ -16,6 +16,9 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
     "white-lavender",
     "neon-beatrunner",
     "emotional-mask",
+    "cascadeur",
+    "ue-vfx",
+    "after-class",
     "emg-ninja",
     "vr-interaction",
     "webxr-gallery",
@@ -2226,6 +2229,267 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
         "poster": "",
         "src": "http://127.0.0.1:4389/videos/duck-trombone-full.mp4",
         "title": "Full Prototype Video"
+      }
+    },
+    "cascadeur": {
+      "file": "project-cascadeur.html",
+      "url": "../project-cascadeur.html",
+      "actions": [
+        {
+          "disabled": true,
+          "href": "",
+          "label": "Watch Full Video"
+        },
+        {
+          "disabled": true,
+          "href": "",
+          "label": "Try Live Demo"
+        }
+      ],
+      "extraImages": [],
+      "facts": [
+        {
+          "label": "Format",
+          "value": "Video-based motion capture practice"
+        },
+        {
+          "label": "Tool",
+          "value": "Cascadeur"
+        },
+        {
+          "label": "Focus",
+          "value": "Recorded movement to editable character animation"
+        }
+      ],
+      "hero": {
+        "alt": "Cascadeur workspace showing video-based motion capture applied to a character",
+        "ariaLabel": "Cascadeur video-based motion capture practice",
+        "autoplay": false,
+        "controls": true,
+        "loop": false,
+        "muted": false,
+        "poster": "../images/cascadeur-cover.png",
+        "src": "../videos/cascadeur.mp4",
+        "tag": "video"
+      },
+      "nav": [
+        {
+          "href": "project-emotionalMask.html",
+          "label": "Previous project"
+        },
+        {
+          "href": "",
+          "label": "All projects"
+        },
+        {
+          "href": "project-ueVfx.html",
+          "label": "Next project"
+        }
+      ],
+      "pageTitle": "Cascadeur Motion Capture - RuyanQin",
+      "projectClass": "project-content",
+      "sections": [
+        {
+          "items": [
+            "Using recorded video as the motion reference",
+            "Reviewing captured movement on a 3D character",
+            "Refining poses and timing in Cascadeur"
+          ],
+          "paragraphs": [],
+          "title": "Practice Focus"
+        }
+      ],
+      "summaryHtml": "<p>A video-based motion capture exercise in Cascadeur, exploring how recorded movement can be translated into editable character animation.</p><p>The practice focused on reviewing the captured motion against the source video, then refining poses and timing on the animation timeline.</p>",
+      "summaryText": "A video-based motion capture exercise in Cascadeur, exploring how recorded movement can be translated into editable character animation. The practice focused on reviewing the captured motion against the source video, then refining poses and timing on the animation timeline.",
+      "title": "Cascadeur Motion Capture"
+    },
+    "ue-vfx": {
+      "file": "project-ueVfx.html",
+      "url": "../project-ueVfx.html",
+      "actions": [
+        {
+          "disabled": true,
+          "href": "",
+          "label": "Watch Full Video"
+        },
+        {
+          "disabled": true,
+          "href": "",
+          "label": "Try Live Demo"
+        }
+      ],
+      "extraImages": [],
+      "facts": [
+        {
+          "label": "Format",
+          "value": "Real-time VFX practice"
+        },
+        {
+          "label": "Tool",
+          "value": "Unreal Engine"
+        },
+        {
+          "label": "Focus",
+          "value": "Motion, lighting, water, and scene scale"
+        }
+      ],
+      "hero": {
+        "alt": "Unreal Engine scene showing a real-time VFX practice over a reflective water environment",
+        "ariaLabel": "Unreal Engine real-time VFX practice",
+        "autoplay": false,
+        "controls": true,
+        "loop": false,
+        "muted": false,
+        "poster": "../images/ue-vfx-cover.png",
+        "src": "../videos/ue-vfx.mp4",
+        "tag": "video"
+      },
+      "nav": [
+        {
+          "href": "project-cascadeur.html",
+          "label": "Previous project"
+        },
+        {
+          "href": "",
+          "label": "All projects"
+        },
+        {
+          "href": "project-afterClass.html",
+          "label": "Next project"
+        }
+      ],
+      "pageTitle": "Unreal Engine VFX Practice - RuyanQin",
+      "projectClass": "project-content",
+      "sections": [
+        {
+          "items": [
+            "Building and reviewing a real-time effect in Unreal Engine",
+            "Testing the effect within an environmental scene",
+            "Evaluating motion, scale, and visual readability during runtime"
+          ],
+          "paragraphs": [],
+          "title": "Practice Focus"
+        }
+      ],
+      "summaryHtml": "<p>A real-time VFX practice piece created as part of my Unreal Engine learning.</p><p>The exercise focused on testing how the effect reads in motion and against the lighting, water, and scale of the surrounding scene.</p>",
+      "summaryText": "A real-time VFX practice piece created as part of my Unreal Engine learning. The exercise focused on testing how the effect reads in motion and against the lighting, water, and scale of the surrounding scene.",
+      "title": "Unreal Engine VFX Practice"
+    },
+    "after-class": {
+      "file": "project-afterClass.html",
+      "url": "../project-afterClass.html",
+      "actions": [
+        {
+          "disabled": false,
+          "href": "https://www.youtube.com/watch?v=275NSp7rIuA",
+          "label": "Watch Full Video"
+        },
+        {
+          "disabled": true,
+          "href": "",
+          "label": "Try Live Demo"
+        }
+      ],
+      "extraImages": [],
+      "facts": [
+        {
+          "label": "Format",
+          "value": "Immersive escape room"
+        },
+        {
+          "label": "Interaction",
+          "value": "RFID, dual projection, physical puzzles"
+        },
+        {
+          "label": "Evidence",
+          "value": "Team assignment report dated 24 June 2026"
+        }
+      ],
+      "hero": {
+        "alt": "After Class escape room showing projected ghost imagery inside a dark classroom",
+        "ariaLabel": "Muted After Class escape room preview",
+        "autoplay": true,
+        "controls": true,
+        "loop": true,
+        "muted": true,
+        "poster": "../images/after-class-cover.png",
+        "src": "../videos/after-class-preview.mp4",
+        "tag": "video"
+      },
+      "nav": [
+        {
+          "href": "project-ueVfx.html",
+          "label": "Previous project"
+        },
+        {
+          "href": "",
+          "label": "All projects"
+        }
+      ],
+      "pageTitle": "After Class - RuyanQin",
+      "projectClass": "project-content",
+      "sections": [
+        {
+          "items": [
+            "Three schoolbags created a linear puzzle flow, revealing the story in a controlled sequence",
+            "An answer sheet gave players a continuous goal while they identified the student, cause of death, and time of death",
+            "UV clues, diaries, a body model, ritual objects, and medication connected physical puzzles to narrative information",
+            "The Stage 1 ritual transformed the classroom through wall and desk projections"
+          ],
+          "paragraphs": [],
+          "title": "Experience Design"
+        },
+        {
+          "items": [
+            "Unity delivered the 3D animated wall projection",
+            "Python with Py5 powered the 2D Die Xian desk projection",
+            "RFID cards embedded in four key props triggered video and animation sequences",
+            "COGS coordinated game state, sensor input, and projection output, with Media Master supporting the wireless projector connection"
+          ],
+          "paragraphs": [],
+          "title": "Technical System"
+        },
+        {
+          "items": [
+            "Supported projector testing and technical setup",
+            "Tested the software flow and trigger sequence",
+            "Produced the Stage 1 digital-number puzzle cards"
+          ],
+          "paragraphs": [],
+          "title": "My Contribution"
+        },
+        {
+          "items": [
+            "Redesigned the opening puzzle to connect it more strongly to the narrative",
+            "Strengthened visual cues between stages",
+            "Added UV-highlighted ritual instructions so critical steps were harder to miss",
+            "Introduced a staff hint system for the final showcase"
+          ],
+          "paragraphs": [
+            "A seven-person playtest compared three game-design students with four participants from other disciplines. The first group completed the experience in roughly 30-40 minutes, while the second took about one hour and needed clearer guidance."
+          ],
+          "title": "Testing and Iteration"
+        },
+        {
+          "items": [
+            "Eight groups of three to five players took part",
+            "Approximately half completed the full experience within the extended 50-minute allowance",
+            "The ordinary-to-horror atmosphere shift and RFID-triggered projections received the strongest positive responses",
+            "Remaining issues included puzzle clarity, colour visibility in low light, and unclear links between narrative clues and number sequences"
+          ],
+          "paragraphs": [
+            "Project details and results are based on the team's assignment report dated 24 June 2026."
+          ],
+          "title": "Showcase Results"
+        }
+      ],
+      "summaryHtml": "<p>After Class is a single-room immersive escape room built around Die Xian, a Taiwanese folkloric ritual for communicating with spirits. Players enter an ordinary classroom and reconstruct the story of a deceased student through sequential puzzles, physical props, diaries, and projected narrative.</p><p>The experience was designed as a two-phase emotional arc: a familiar classroom gradually becomes an uncanny horror environment, while the ghost story reveals an underlying narrative about school bullying and its consequences.</p>",
+      "summaryText": "After Class is a single-room immersive escape room built around Die Xian, a Taiwanese folkloric ritual for communicating with spirits. Players enter an ordinary classroom and reconstruct the story of a deceased student through sequential puzzles, physical props, diaries, and projected narrative. The experience was designed as a two-phase emotional arc: a familiar classroom gradually becomes an uncanny horror environment, while the ghost story reveals an underlying narrative about school bullying and its consequences.",
+      "title": "After Class",
+      "videoSection": {
+        "embed": "https://www.youtube.com/embed/275NSp7rIuA",
+        "title": "Project Video",
+        "watch": "https://www.youtube.com/watch?v=275NSp7rIuA"
       }
     }
   }

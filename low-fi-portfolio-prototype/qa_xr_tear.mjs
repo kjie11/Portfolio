@@ -382,8 +382,8 @@ if (results.desktopBefore.release > .01) throw new Error('XR sequence started be
 if (results.desktopBefore.paperBackground !== results.desktopBefore.pageBackground || results.mobileTitle.paperBackground !== results.mobileTitle.pageBackground) throw new Error('Closed XR paper does not match the page background');
 if (results.desktopBefore.smokeAlphaCount || results.desktopTitle.smokeAlphaCount || results.desktopTearing.smokeAlphaCount) throw new Error('XR smoke appeared before the paper released');
 if (results.desktopTitle.release > .01 || results.desktopTitle.cardOpacity.some(value => value > .01)) throw new Error('XR paper or cards moved before the title animation completed');
-if (results.desktopWaiting.release > .01 || results.desktopWaiting.cardOpacity.some(value => value > .01)) throw new Error('Desktop XR tear started without a second scroll after the title');
-if (results.desktopWaiting.autoTearState !== 'waiting' || results.desktopWaiting.autoTearDelay !== 1400) throw new Error('Desktop XR idle auto-tear timer did not wait after the title');
+if (results.desktopWaiting.release > .01 || results.desktopWaiting.cardOpacity.some(value => value > .01)) throw new Error('Desktop XR tear started before the title hold finished');
+if (results.desktopWaiting.autoTearState !== 'triggered' || results.desktopWaiting.autoTearDelay !== 0) throw new Error('Desktop XR tear did not start immediately after the title');
 if (results.desktopTearing.cardOpacity.some(value => value > .01)) throw new Error('Cards appear before the tear completes');
 if (Math.abs(results.desktopScrollLock.end - results.desktopScrollLock.start) > 1) throw new Error('Desktop page scrolled downward before the XR paper fully opened');
 if (results.desktopScrollRelease.end <= results.desktopScrollRelease.start + 1) throw new Error('Desktop downward scroll remained locked after the XR paper opened');
@@ -399,8 +399,8 @@ if (results.mobileSettled.openingRatio < .72 || results.mobileSettled.gapError >
 if (results.mobileSettled.verticalProgress < .999 || results.mobileSettled.horizontalProgress < .999 || results.mobileSettled.axisSpeedRatio <= 0) throw new Error('Mobile tear axes did not complete together using the stage aspect ratio');
 if ((results.mobileSettled.paperFade > .01 || results.mobileSettled.paperOpacity < .99) && results.mobileSettled.horizontalProgress < .999) throw new Error('Mobile paper faded before the horizontal tear fully opened');
 if (results.mobileTitle.release > .01 || results.mobileTitle.cardOpacity.some(value => value > .01)) throw new Error('Mobile XR paper or cards moved before the title animation completed');
-if (results.mobileWaiting.release > .01 || results.mobileWaiting.cardOpacity.some(value => value > .01)) throw new Error('Mobile XR tear started without a second scroll after the title');
-if (results.mobileWaiting.autoTearState !== 'waiting' || results.mobileWaiting.autoTearDelay !== 1400) throw new Error('Mobile XR idle auto-tear timer did not wait after the title');
+if (results.mobileWaiting.release > .01 || results.mobileWaiting.cardOpacity.some(value => value > .01)) throw new Error('Mobile XR tear started before the title hold finished');
+if (results.mobileWaiting.autoTearState !== 'triggered' || results.mobileWaiting.autoTearDelay !== 0) throw new Error('Mobile XR tear did not start immediately after the title');
 if (Math.max(...results.mobileCards.cardOpacity) < .9) throw new Error('Mobile cards did not appear');
 if (Math.abs(results.desktopPinStart.top) > 2 || Math.abs(results.desktopPinMiddle.top) > 2 || Math.abs(results.desktopPinStart.left) > 2 || Math.abs(results.desktopPinMiddle.left) > 2) throw new Error('Desktop XR stage did not remain pinned to the viewport');
 if (Math.abs(results.desktopPinMiddle.width - results.desktopPinMiddle.viewportWidth) > 2) throw new Error('Desktop XR stage is not full viewport width');

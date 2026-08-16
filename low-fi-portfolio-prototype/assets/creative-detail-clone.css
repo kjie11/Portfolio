@@ -194,7 +194,7 @@
   background-color: transparent;
   background-image: linear-gradient(var(--detail-ink), var(--detail-ink));
   background-repeat: no-repeat;
-  background-position: left top;
+  background-position: right center;
   background-size: 0 100%;
   color: var(--detail-ink);
   font-family: "JGS", "Segoe UI", Arial, sans-serif;
@@ -203,10 +203,14 @@
   transition: background-size 240ms cubic-bezier(0.16, 1, 0.3, 1), color 240ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-#ruyan-portfolio-wireframe [data-rq-panel="creative-detail"] .creative-detail-back:hover,
-#ruyan-portfolio-wireframe [data-rq-panel="creative-detail"] .creative-detail-back:focus-visible {
+#ruyan-portfolio-wireframe [data-rq-panel="creative-detail"] .creative-detail-back:hover {
   background-size: 100% 100%;
   color: var(--detail-paper);
+}
+
+#ruyan-portfolio-wireframe [data-rq-panel="creative-detail"] .creative-detail-back:focus-visible {
+  outline: 2px solid var(--detail-ink);
+  outline-offset: 3px;
 }
 
 #ruyan-portfolio-wireframe [data-rq-panel="creative-detail"] .creative-detail-title,
@@ -365,11 +369,40 @@
 
 #ruyan-portfolio-wireframe [data-rq-panel="creative-detail"] .creative-detail-video-frame {
   display: block;
+  position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   margin-top: 28px;
   overflow: hidden;
   border: 1px solid var(--detail-line);
+}
+
+#ruyan-portfolio-wireframe [data-rq-panel="creative-detail"] .creative-detail-youtube-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#ruyan-portfolio-wireframe [data-rq-panel="creative-detail"] .creative-detail-youtube-preview span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 72px;
+  height: 50px;
+  place-items: center;
+  border-radius: 12px;
+  color: #fff;
+  background: rgba(17, 17, 15, 0.82);
+  font-size: 24px;
+  line-height: 1;
+  text-indent: 3px;
+  transform: translate(-50%, -50%);
+}
+
+#ruyan-portfolio-wireframe [data-rq-panel="creative-detail"] .creative-detail-youtube-preview:hover span,
+#ruyan-portfolio-wireframe [data-rq-panel="creative-detail"] .creative-detail-youtube-preview:focus-visible span {
+  background: #c00;
 }
 
 #ruyan-portfolio-wireframe [data-rq-panel="creative-detail"] .creative-detail-video-section {
