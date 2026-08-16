@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After Class - RuyanQin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/youtube-local-preview.js" defer></script>
+    <style>
+        .project-content { max-width: 800px; margin: 0 auto; }
+        .project-content video { display: block; width: 100%; margin-bottom: 28px; }
+        .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
+        .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
+        .evidence-note { color: #666; font-size: 13px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="sidebar">
+        <div class="top-section">
+            <h1 class="logo">Ruyan Qin</h1>
+            <div class="bio-section">
+                <p>Hi, I'm Ruyan, a Unity/XR Developer and Interaction Designer creating intuitive, testable experiences across VR, AR, and WebGL.</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">All Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="Assets/CV-RuyanQin_UX3.pdf" target="_blank">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-content">
+            <video class="detail-preview" autoplay muted loop playsinline controls preload="metadata" poster="images/after-class-cover.png" aria-label="Muted After Class escape room preview" tabindex="0">
+                <source src="videos/after-class-preview.mp4" type="video/mp4">
+                Your browser does not support the After Class preview.
+            </video>
+            <a href="index.html#side-work" class="back-btn">&larr; Back to Side Work</a>
+            <h2>After Class</h2>
+            <div class="project-text">
+                <p>After Class is a single-room immersive escape room built around Die Xian, a Taiwanese folkloric ritual for communicating with spirits. Players enter an ordinary classroom and reconstruct the story of a deceased student through sequential puzzles, physical props, diaries, and projected narrative.</p>
+                <p>The experience was designed as a two-phase emotional arc: a familiar classroom gradually becomes an uncanny horror environment, while the ghost story reveals an underlying narrative about school bullying and its consequences.</p>
+            </div>
+
+            <div class="project-details">
+                <h3>Full Experience Video</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/275NSp7rIuA" title="After Class full experience video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+
+                <h3>Experience Design</h3>
+                <ul>
+                    <li>Three schoolbags created a linear puzzle flow, revealing the story in a controlled sequence</li>
+                    <li>An answer sheet gave players a continuous goal while they identified the student, cause of death, and time of death</li>
+                    <li>UV clues, diaries, a body model, ritual objects, and medication connected physical puzzles to narrative information</li>
+                    <li>The Stage 1 ritual transformed the classroom through wall and desk projections</li>
+                </ul>
+
+                <h3>Technical System</h3>
+                <ul>
+                    <li>Unity delivered the 3D animated wall projection</li>
+                    <li>Python with Py5 powered the 2D Die Xian desk projection</li>
+                    <li>RFID cards embedded in four key props triggered video and animation sequences</li>
+                    <li>COGS coordinated game state, sensor input, and projection output, with Media Master supporting the wireless projector connection</li>
+                </ul>
+
+                <h3>My Contribution</h3>
+                <ul>
+                    <li>Supported projector testing and technical setup</li>
+                    <li>Tested the software flow and trigger sequence</li>
+                    <li>Produced the Stage 1 digital-number puzzle cards</li>
+                </ul>
+
+                <h3>Testing and Iteration</h3>
+                <p>A seven-person playtest compared three game-design students with four participants from other disciplines. The first group completed the experience in roughly 30–40 minutes, while the second took about one hour and needed clearer guidance.</p>
+                <ul>
+                    <li>Redesigned the opening puzzle to connect it more strongly to the narrative</li>
+                    <li>Strengthened visual cues between stages</li>
+                    <li>Added UV-highlighted ritual instructions so critical steps were harder to miss</li>
+                    <li>Introduced a staff hint system for the final showcase</li>
+                </ul>
+
+                <h3>Showcase Results</h3>
+                <ul>
+                    <li>Eight groups of three to five players took part</li>
+                    <li>Approximately half completed the full experience within the extended 50-minute allowance</li>
+                    <li>The ordinary-to-horror atmosphere shift and RFID-triggered projections received the strongest positive responses</li>
+                    <li>Remaining issues included puzzle clarity, colour visibility in low light, and unclear links between narrative clues and number sequences</li>
+                </ul>
+
+                <p class="evidence-note">Project details and results are based on the team's assignment report dated 24 June 2026.</p>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

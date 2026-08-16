@@ -278,10 +278,19 @@ ul {
     aspect-ratio: 16 / 9;
 }
 
-.brainco-work .side-work-header h2 {
+.featured-work-header h2,
+.brainco-work .side-work-header h2,
+#side-work .side-work-header h2 {
     max-width: none;
-    font-size: clamp(44px, 4.3vw, 64px);
+    font-size: clamp(40px, 3.7vw, 56px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    color: #242424;
     white-space: nowrap;
+}
+
+.featured-work-header {
+    margin-bottom: 24px;
 }
 
 .brainco-work .side-work-header {
@@ -300,8 +309,53 @@ ul {
     padding: 32px 0 48px;
 }
 
+#side-work {
+    margin-top: 56px;
+    padding: 24px 0 48px;
+}
+
+#side-work .side-work-header {
+    grid-template-columns: auto minmax(280px, 1fr);
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#side-work .side-work-header h2 {
+    font-size: clamp(30px, 2.6vw, 40px);
+}
+
+#side-work .side-work-header p {
+    justify-self: end;
+    font-size: 14px;
+}
+
+#side-work .gallery-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+#side-work .img-wrapper {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 0;
+}
+
+#side-work .project-overlay {
+    padding: 14px;
+}
+
+#side-work .project-title {
+    font-size: 18px;
+    line-height: 1.15;
+}
+
+#side-work .project-role {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
 .brainco-feature .img-wrapper {
-    aspect-ratio: 11 / 4;
+    aspect-ratio: 21 / 9;
 }
 
 .brainco-feature-stage {
@@ -664,6 +718,12 @@ ul {
 }
 
 /* 响应式设计：在手机上自动变成单列 */
+@media (max-width: 1200px) {
+    #side-work .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     .skills-three-columns {
         grid-template-columns: 1fr;
@@ -797,6 +857,10 @@ ul {
         white-space: normal;
     }
 
+    .featured-work-header h2 {
+        white-space: normal;
+    }
+
     .brainco-work .side-work-header {
         grid-template-columns: 1fr;
         gap: 18px;
@@ -806,18 +870,55 @@ ul {
         margin-top: 48px;
     }
 
+    #side-work {
+        margin-top: 40px;
+        padding: 24px 0 32px;
+    }
+
+    #side-work .side-work-header {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    #side-work .side-work-header h2 {
+        font-size: 34px;
+    }
+
+    #side-work .side-work-header p {
+        justify-self: start;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    #side-work .gallery-grid {
+        gap: 12px;
+    }
+
+    #side-work .project-overlay {
+        padding: 10px;
+    }
+
+    #side-work .project-title {
+        font-size: 16px;
+    }
+
+    #side-work .project-role {
+        display: none;
+    }
+
     .brainco-feature .img-wrapper {
         aspect-ratio: 16 / 9;
     }
 
     .brainco-preview-toggle {
+        top: 14px;
         right: 14px;
-        bottom: 14px;
+        bottom: auto;
     }
 
     .brainco-feature-nav {
-        opacity: 1;
-        pointer-events: auto;
+        display: none;
     }
 
     .brainco-feature-nav--previous {
