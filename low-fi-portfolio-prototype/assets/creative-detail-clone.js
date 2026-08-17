@@ -73,11 +73,11 @@
               '<div class="creative-detail-actions" data-creative-detail-actions></div>' +
             '</aside>' +
             '<div class="creative-detail-main-column">' +
+              '<div data-creative-detail-video></div>' +
               '<div data-creative-detail-sections></div>' +
               '<div data-creative-detail-images></div>' +
             '</div>' +
           '</div>' +
-          '<div data-creative-detail-video></div>' +
           '<footer><nav class="creative-detail-project-nav" data-creative-detail-nav aria-label="Project navigation"></nav></footer>' +
         '</article>' +
       '</main>';
@@ -87,6 +87,12 @@
     var originalTitle = frameDocument.title;
     var homeScrollY = 0;
     var lastTrigger = null;
+    var historyProjectKey = "rqCreativeDetailProject";
+    var historyScrollKey = "rqCreativeHomeScrollY";
+
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
 
     function localAssetUrl(value) {
       if (!value) return "";
@@ -377,12 +383,19 @@
       renderNavigation(project.nav);
     }
 
-    function openProject(key, trigger) {
+    function openProject(key, trigger, updateHistory) {
       if (!data.projects[key]) return;
 
       if (panel.hidden) {
-        lastTrigger = trigger;
+        if (trigger) lastTrigger = trigger;
         homeScrollY = frameWindow.scrollY;
+      }
+
+      if (updateHistory !== false) {
+        var nextState = Object.assign({}, window.history.state || {});
+        nextState[historyProjectKey] = key;
+        nextState[historyScrollKey] = homeScrollY;
+        window.history.pushState(nextState, "");
       }
 
       root.querySelectorAll("[data-rq-panel]").forEach(function (item) {
@@ -403,10 +416,22 @@
       var home = root.querySelector('[data-rq-panel="home"]');
       if (home) home.hidden = false;
       frameDocument.title = originalTitle;
-      frameWindow.scrollTo(0, homeScrollY);
       frameWindow.requestAnimationFrame(function () {
-        if (lastTrigger && lastTrigger.isConnected) lastTrigger.focus();
+        frameWindow.scrollTo(0, homeScrollY);
+        if (lastTrigger && lastTrigger.isConnected) lastTrigger.focus({ preventScroll: true });
       });
+    }
+
+    function handleHistoryChange(event) {
+      var state = event.state || {};
+      var key = state[historyProjectKey];
+
+      if (key && data.projects[key]) {
+        homeScrollY = Number(state[historyScrollKey]) || homeScrollY;
+        openProject(key, null, false);
+      } else {
+        showHome();
+      }
     }
 
     function handleTrigger(event) {
@@ -429,12 +454,28 @@
       var projectControl = event.target.closest("[data-creative-detail-project]");
 
       if (homeControl) {
-        showHome();
+        if (window.history.state && window.history.state[historyProjectKey]) {
+          window.history.back();
+        } else {
+          showHome();
+        }
       } else if (projectControl && projectControl.dataset.creativeDetailProject) {
-        renderProject(projectControl.dataset.creativeDetailProject);
+        var key = projectControl.dataset.creativeDetailProject;
+        var nextState = Object.assign({}, window.history.state || {});
+        nextState[historyProjectKey] = key;
+        nextState[historyScrollKey] = homeScrollY;
+        window.history.replaceState(nextState, "");
+        renderProject(key);
         frameWindow.scrollTo(0, 0);
       }
     });
+
+    window.addEventListener("popstate", handleHistoryChange);
+
+    if (window.history.state && window.history.state[historyProjectKey]) {
+      homeScrollY = Number(window.history.state[historyScrollKey]) || 0;
+      openProject(window.history.state[historyProjectKey], null, false);
+    }
 
     root.dataset.rqCreativeDetailInstalled = "true";
   }

@@ -309,7 +309,7 @@ results.cardDetailOpened = await desktop.frame.evaluate(() => ({
   visible: !document.querySelector('[data-rq-panel="detail"]').hidden,
   title: document.querySelector('[data-rq-detail-title]').textContent,
   imageSrc: document.querySelector('[data-rq-detail-visual] img')?.getAttribute('src') || '',
-  videoHref: document.querySelector('[data-rq-detail-video]').href
+  videoSrc: document.querySelector('[data-rq-detail-video-frame] iframe')?.src || ''
 }));
 await desktop.frame.click('[data-rq-detail-back]');
 await desktop.page.waitForTimeout(180);
@@ -444,7 +444,7 @@ if (results.mobileGazeAfter.some((value, index) => value !== results.mobileGazeB
 if (results.mobileCards.smokeAlphaCount || results.mobileCards.smokeEnergy || results.mobileCards.smokeOpen) throw new Error('Touch layout unexpectedly enabled XR smoke');
 if (results.xrCardMedia.length !== 5 || results.xrCardMedia.some(media => !media.src.startsWith('assets/xr-') || !media.alt)) throw new Error('XR cards did not load all five real project previews');
 if (!results.cardDetailOpened.visible || !results.cardDetailOpened.title.includes('Abyss')) throw new Error('XR card keyboard navigation did not open its project detail');
-if (!results.cardDetailOpened.imageSrc.endsWith('assets/xr-abyss.jpg') || results.cardDetailOpened.videoHref !== 'https://www.youtube.com/watch?v=Jfq4dHgv87M') throw new Error('XR detail did not expose the project preview and video link');
+if (!results.cardDetailOpened.imageSrc.endsWith('assets/xr-abyss.jpg') || !results.cardDetailOpened.videoSrc.includes('/embed/Jfq4dHgv87M')) throw new Error('XR detail did not expose the project preview and full video');
 if (!results.polaroidDetailOpened.visible || results.polaroidDetailOpened.title !== 'Cat Teaser 2D') throw new Error('Polaroid keyboard navigation did not open its project detail');
 if (results.polaroidWheelMiddle <= results.polaroidWheelBefore + 1 || results.polaroidWheelMiddle >= results.polaroidWheelSettled.left - 1) throw new Error('Polaroid wheel motion did not animate through an intermediate position');
 if (results.polaroidWheelSettled.moving || results.polaroidWheelSettled.centerError > 2) throw new Error('Polaroid wheel motion did not settle on the centered card');
