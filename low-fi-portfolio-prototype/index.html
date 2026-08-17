@@ -1186,6 +1186,45 @@ html&gt;body{padding:0}&lt;/style&gt;
       flex-direction: column;
       justify-content: center;
     }
+    #ruyan-portfolio-wireframe .rq-page-step-nav {
+      display: flex;
+      justify-content: center;
+      margin-block: clamp(18px, 2.8vw, 32px);
+    }
+    #ruyan-portfolio-wireframe .rq-page-step-nav--top { margin-top: 0; }
+    #ruyan-portfolio-wireframe .rq-page-step-nav--bottom { margin-bottom: 0; }
+    #ruyan-portfolio-wireframe .rq-page-step-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      padding: 0;
+      border: 1px solid var(--rq-line);
+      border-radius: 50%;
+      background: var(--rq-page);
+      color: var(--rq-ink);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+    #ruyan-portfolio-wireframe .rq-page-step-arrow {
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+    }
+    #ruyan-portfolio-wireframe .rq-page-step-nav--top .rq-page-step-arrow { transform: rotate(225deg); }
+    #ruyan-portfolio-wireframe .rq-page-step-nav--bottom .rq-page-step-arrow { transform: rotate(45deg); }
+    #ruyan-portfolio-wireframe .rq-page-step-button:hover {
+      border-color: var(--rq-ink);
+      background: var(--rq-ink);
+      color: var(--rq-page);
+    }
+    #ruyan-portfolio-wireframe .rq-page-step-button:focus-visible {
+      outline: 3px solid var(--rq-accent-cyan);
+      outline-offset: 4px;
+    }
     #ruyan-portfolio-wireframe .rq-about {
       align-content: center;
     }
@@ -1748,6 +1787,15 @@ html&gt;body{padding:0}&lt;/style&gt;
       background: #0b0d0e;
       border: 0;
     }
+    #ruyan-portfolio-wireframe .rq-xr-sticky > .rq-page-step-nav {
+      position: absolute;
+      z-index: 30;
+      left: 50%;
+      margin: 0;
+      transform: translateX(-50%);
+    }
+    #ruyan-portfolio-wireframe .rq-xr-sticky > .rq-page-step-nav--top { top: 20px; }
+    #ruyan-portfolio-wireframe .rq-xr-sticky > .rq-page-step-nav--bottom { bottom: 20px; }
     #ruyan-portfolio-wireframe .rq-xr-stage {
       position: relative;
       width: 100%;
@@ -2705,6 +2753,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       #ruyan-portfolio-wireframe .rq-flying-polaroid { display: none; }
       #ruyan-portfolio-wireframe .rq-scroll-index { transition: none; }
       #ruyan-portfolio-wireframe .rq-page-scroll-indicator { transition: none; }
+      #ruyan-portfolio-wireframe .rq-page-step-button { transition: none; }
       #ruyan-portfolio-wireframe .rq-case-arrow,
       #ruyan-portfolio-wireframe .rq-pizza-name &gt; span:last-child,
       #ruyan-portfolio-wireframe .rq-feature-media-column .rq-media { transition: none; }
@@ -2856,16 +2905,6 @@ html&gt;body{padding:0}&lt;/style&gt;
           &lt;article class=&quot;rq-project&quot; data-rq-detail-project=&quot;cascadeur&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Cascadeur motion capture practice project&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;&lt;img src=&quot;../images/cascadeur-cover.png&quot; alt=&quot;Cascadeur workspace showing video-based motion capture applied to a character&quot;&gt;&lt;/div&gt;&lt;h3&gt;Cascadeur Motion Capture&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Video-based motion capture practice in Cascadeur&lt;/p&gt;&lt;/article&gt;
           &lt;article class=&quot;rq-project&quot; data-rq-detail-project=&quot;ue-vfx&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Unreal Engine VFX practice project&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;&lt;img src=&quot;../images/ue-vfx-cover.png&quot; alt=&quot;Unreal Engine scene showing a real-time VFX practice over a reflective water environment&quot;&gt;&lt;/div&gt;&lt;h3&gt;Unreal Engine VFX Practice&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;VFX practice from my Unreal Engine learning&lt;/p&gt;&lt;/article&gt;
           &lt;article class=&quot;rq-project&quot; data-rq-detail-project=&quot;after-class&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View After Class immersive escape room project&quot;&gt;&lt;div class=&quot;rq-media&quot;&gt;&lt;img src=&quot;../images/after-class-cover.png&quot; alt=&quot;After Class escape room showing projected ghost imagery inside a dark classroom&quot;&gt;&lt;/div&gt;&lt;h3&gt;After Class&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Immersive escape room, RFID interaction, and dual projection&lt;/p&gt;&lt;/article&gt;
-        &lt;/div&gt;
-      &lt;/section&gt;
-
-      &lt;section class=&quot;rq-section&quot;&gt;
-        &lt;div class=&quot;rq-section-head&quot;&gt;&lt;h2&gt;From Input to Experience&lt;/h2&gt;&lt;p&gt;A repeatable process for turning unfamiliar technologies into interactions people can understand and test.&lt;/p&gt;&lt;/div&gt;
-        &lt;div class=&quot;rq-capabilities&quot;&gt;
-          &lt;div class=&quot;rq-capability&quot;&gt;&lt;h3&gt;01 · Capture input&lt;/h3&gt;&lt;p&gt;Read gestures, body signals, sensors, or player behaviour.&lt;/p&gt;&lt;/div&gt;
-          &lt;div class=&quot;rq-capability&quot;&gt;&lt;h3&gt;02 · Map interaction&lt;/h3&gt;&lt;p&gt;Define actions, system states, thresholds, and feedback.&lt;/p&gt;&lt;/div&gt;
-          &lt;div class=&quot;rq-capability&quot;&gt;&lt;h3&gt;03 · Prototype in Unity&lt;/h3&gt;&lt;p&gt;Build the smallest playable system that can answer the design question.&lt;/p&gt;&lt;/div&gt;
-          &lt;div class=&quot;rq-capability&quot;&gt;&lt;h3&gt;04 · Test and refine&lt;/h3&gt;&lt;p&gt;Use observation, interviews, and behavioural data to guide iteration.&lt;/p&gt;&lt;/div&gt;
         &lt;/div&gt;
       &lt;/section&gt;
 
@@ -6658,6 +6697,55 @@ html&gt;body{padding:0}&lt;/style&gt;
         { title: &#x27;Plant Bot&#x27;, section: plantBotSection, projects: projectsInSection(plantBotSection) },
         { title: &#x27;Sidework&#x27;, section: playgroundSection, projects: projectsInSection(playgroundSection) }
       ].filter((group) =&gt; group.section);
+      const pageSections = Array.from(homePanel?.querySelectorAll(&#x27;.rq-section&#x27;) || []);
+      const firstPageSectionIndex = pageSections.indexOf(embodiedSection);
+      const pageSectionsToNavigate = firstPageSectionIndex &gt;= 0 ? pageSections.slice(firstPageSectionIndex) : [];
+      const homeIntro = homePanel?.querySelector(&#x27;.rq-hero&#x27;);
+      const sectionTitle = (section, fallback) =&gt; section?.querySelector(&#x27;h2&#x27;)?.textContent?.trim() || fallback;
+      const addPageStepControl = (section, placement, target, label, targetLabel) =&gt; {
+        if (!target) return;
+        const nav = document.createElement(&#x27;nav&#x27;);
+        nav.className = `rq-page-step-nav rq-page-step-nav--${placement}`;
+        nav.setAttribute(&#x27;aria-label&#x27;, `${placement === &#x27;top&#x27; ? &#x27;Previous&#x27; : &#x27;Next&#x27;} section navigation`);
+        const button = document.createElement(&#x27;button&#x27;);
+        button.type = &#x27;button&#x27;;
+        button.className = &#x27;rq-page-step-button&#x27;;
+        button.setAttribute(&#x27;aria-label&#x27;, `${label}: ${targetLabel}`);
+        const arrow = document.createElement(&#x27;span&#x27;);
+        arrow.className = &#x27;rq-page-step-arrow&#x27;;
+        arrow.setAttribute(&#x27;aria-hidden&#x27;, &#x27;true&#x27;);
+        button.append(arrow);
+        button.addEventListener(&#x27;click&#x27;, () =&gt; {
+          target.scrollIntoView({ behavior: reduceMotion ? &#x27;auto&#x27; : &#x27;smooth&#x27;, block: &#x27;start&#x27; });
+        });
+        nav.append(button);
+        const xrNavigationHost = section === xrSection ? section.querySelector(&#x27;.rq-xr-sticky&#x27;) : null;
+        if (xrNavigationHost) xrNavigationHost.append(nav);
+        else if (placement === &#x27;top&#x27;) section.prepend(nav);
+        else section.append(nav);
+      };
+      pageSectionsToNavigate.forEach((section, index) =&gt; {
+        section.dataset.rqPageStep = String(index + 1);
+        if (section.classList.contains(&#x27;rq-case-feature&#x27;)) return;
+        const previousSection = pageSectionsToNavigate[index - 1];
+        const nextSection = pageSectionsToNavigate[index + 1];
+        if (previousSection) {
+          addPageStepControl(
+            section,
+            &#x27;top&#x27;,
+            previousSection,
+            &#x27;Previous section&#x27;,
+            sectionTitle(previousSection, &#x27;previous section&#x27;)
+          );
+        }
+        addPageStepControl(
+          section,
+          &#x27;bottom&#x27;,
+          nextSection || homeIntro,
+          nextSection ? &#x27;Next section&#x27; : &#x27;Back to top&#x27;,
+          nextSection ? sectionTitle(nextSection, &#x27;next section&#x27;) : &#x27;introduction&#x27;
+        );
+      });
       const renderedRailGroups = new Map();
       const railGroupTimers = new Map();
       const setActiveRailGroup = (groupIndex) =&gt; {
