@@ -385,6 +385,9 @@ ul {
     background: rgba(18, 18, 18, 0.72);
     color: #fff;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
     font: inherit;
     font-size: 12px;
     transition: background 0.2s ease, color 0.2s ease;

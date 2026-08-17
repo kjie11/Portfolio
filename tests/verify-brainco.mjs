@@ -15,7 +15,7 @@ const checks = [
   ["no featured label", !section.includes("Featured Prototype")],
   ["featured autoplay only", (section.match(/\bautoplay\b/g) || []).length === 1],
   ["lazy preview source", section.includes('data-src="videos/emg-ninja-preview.mp4"')],
-  ["preview button", section.includes("brainco-preview-toggle")],
+  ["project link on every feature", section.includes('class="brainco-preview-toggle"') && section.includes("Enter Project") && script.includes("featureLink.href=card.href") && !script.includes("featureToggle.hidden")],
   ["seven-item collection", (section.match(/brainco-rail-card/g) || []).length === 7],
   ["rail controls", (section.match(/class="brainco-rail-control(?:\s[^"]*)?"/g) || []).length === 2],
   ["44px target", css.includes("min-width: 44px") && css.includes("min-height: 44px")],

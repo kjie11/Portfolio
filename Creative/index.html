@@ -997,11 +997,14 @@ html&gt;body{padding:0}&lt;/style&gt;
       gap: clamp(12px, 2.4vw, 28px);
       color: var(--rq-secondary-ink);
     }
-    #ruyan-portfolio-wireframe .rq-nav-links span:last-child {
-      border: 1px solid var(--rq-line);
-      border-radius: 999px;
-      padding: 7px 10px;
-      color: var(--rq-ink);
+    #ruyan-portfolio-wireframe .rq-nav-links a {
+      color: inherit;
+      text-decoration: none;
+    }
+    #ruyan-portfolio-wireframe .rq-nav-links a:hover { color: var(--rq-ink); }
+    #ruyan-portfolio-wireframe .rq-nav-links a:focus-visible {
+      outline: 2px solid var(--rq-ink);
+      outline-offset: 4px;
     }
     #ruyan-portfolio-wireframe .rq-hero {
       display: grid;
@@ -1293,6 +1296,51 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
     #ruyan-portfolio-wireframe .rq-polaroid-track::-webkit-scrollbar { display: none; }
     #ruyan-portfolio-wireframe .rq-polaroid-track[data-wheel-moving=&quot;true&quot;] { scroll-snap-type: none; }
+    #ruyan-portfolio-wireframe .rq-polaroid-nav {
+      position: absolute;
+      z-index: 6;
+      top: 50%;
+      left: clamp(8px, 1.5vw, 18px);
+      right: clamp(8px, 1.5vw, 18px);
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      transform: translateY(-50%);
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-nav-button {
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      padding: 0;
+      border: 1px solid var(--rq-line);
+      border-radius: 50%;
+      background: var(--rq-surface);
+      color: var(--rq-ink);
+      cursor: pointer;
+      pointer-events: auto;
+      transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-nav-button span {
+      width: 13px;
+      height: 13px;
+      border-left: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg) translate(1px, -1px);
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-nav-button:last-child span {
+      transform: rotate(225deg) translate(1px, -1px);
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-nav-button:hover {
+      border-color: var(--rq-ink);
+      background: var(--rq-block);
+      transform: scale(1.04);
+    }
+    #ruyan-portfolio-wireframe .rq-polaroid-nav-button:active { transform: scale(.96); }
+    #ruyan-portfolio-wireframe .rq-polaroid-nav-button:focus-visible {
+      outline: 3px solid var(--rq-ink);
+      outline-offset: 4px;
+    }
     #ruyan-portfolio-wireframe .rq-polaroid-rail {
       position: relative;
       z-index: 3;
@@ -2696,7 +2744,6 @@ html&gt;body{padding:0}&lt;/style&gt;
     @media (max-width: 720px) {
       #ruyan-portfolio-wireframe .rq-name { gap: 8px; font-size: .9rem; }
       #ruyan-portfolio-wireframe .rq-nav-avatar { flex-basis: 32px; width: 32px; height: 32px; }
-      #ruyan-portfolio-wireframe .rq-nav-links span:nth-child(-n+4) { display: none; }
       #ruyan-portfolio-wireframe .rq-detail-grid,
       #ruyan-portfolio-wireframe .rq-about { grid-template-columns: 1fr; }
       #ruyan-portfolio-wireframe .rq-hero { grid-template-columns: 1fr; gap: 26px; min-height: 0; padding: 28px 0; }
@@ -2745,6 +2792,8 @@ html&gt;body{padding:0}&lt;/style&gt;
       #ruyan-portfolio-wireframe .rq-scroll-index,
       #ruyan-portfolio-wireframe .rq-scroll-flight { display: none; }
       #ruyan-portfolio-wireframe .rq-polaroid { flex-basis: min(78vw, 260px); }
+      #ruyan-portfolio-wireframe .rq-polaroid-nav { left: 8px; right: 8px; }
+      #ruyan-portfolio-wireframe .rq-polaroid-nav-button { width: 48px; height: 48px; }
     }
     @media (hover: none) {
       #ruyan-portfolio-wireframe .rq-case-arrow {
@@ -2763,6 +2812,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       #ruyan-portfolio-wireframe .rq-type-cursor { display: none; animation: none; }
       #ruyan-portfolio-wireframe .rq-pizza-title em { transform: none; }
       #ruyan-portfolio-wireframe .rq-polaroid { transition: none; }
+      #ruyan-portfolio-wireframe .rq-polaroid-nav-button { transition: none; }
       #ruyan-portfolio-wireframe .rq-flying-polaroid { display: none; }
       #ruyan-portfolio-wireframe .rq-scroll-index { transition: none; }
       #ruyan-portfolio-wireframe .rq-page-scroll-indicator { transition: none; }
@@ -2794,7 +2844,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;div class=&quot;rq-shell&quot;&gt;
       &lt;nav class=&quot;rq-nav&quot; aria-label=&quot;Portfolio navigation&quot;&gt;
         &lt;div class=&quot;rq-name&quot;&gt;&lt;span class=&quot;rq-nav-avatar&quot; aria-hidden=&quot;true&quot;&gt;&lt;img src=&quot;assets/profile-avatar-ascii-2049.webp&quot; alt=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;RUYAN QIN&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;rq-nav-links&quot;&gt;&lt;span&gt;Embodied&lt;/span&gt;&lt;span&gt;XR&lt;/span&gt;&lt;span&gt;Process&lt;/span&gt;&lt;span&gt;About&lt;/span&gt;&lt;span&gt;CV&lt;/span&gt;&lt;span&gt;EN / 中文&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;rq-nav-links&quot;&gt;&lt;a href=&quot;#rq-about&quot; data-rq-about-link&gt;About&lt;/a&gt;&lt;a href=&quot;assets/ruyan-qin-cv-en.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CV&lt;/a&gt;&lt;/div&gt;
       &lt;/nav&gt;
 
       &lt;header class=&quot;rq-hero&quot;&gt;
@@ -2814,7 +2864,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;div class=&quot;rq-polaroid-scene&quot;&gt;
           &lt;div class=&quot;rq-polaroid-stage&quot; data-rq-polaroid-stage&gt;
             &lt;svg class=&quot;rq-polaroid-rope&quot; viewBox=&quot;0 0 1000 74&quot; preserveAspectRatio=&quot;none&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M -20 7 Q 500 69 1020 7&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
-            &lt;div class=&quot;rq-polaroid-track&quot; data-rq-polaroid-track aria-label=&quot;Embodied interaction projects&quot;&gt;
+            &lt;div class=&quot;rq-polaroid-track&quot; id=&quot;rq-polaroid-track&quot; data-rq-polaroid-track aria-label=&quot;Embodied interaction projects&quot;&gt;
             &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;four-way-kitchen&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Four-Way Kitchen project details&quot; style=&quot;--rq-tilt:-2.5deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;assets/four-way-kitchen-polaroid.webp&quot; alt=&quot;Four-sided kitchen gameplay with ingredient stations, chopping boards, stoves, and a central character&quot;&gt;&lt;/div&gt;&lt;h3&gt;Four-Way Kitchen&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Unity · C# · Custom Input Controllers&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
             &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;mole-rhythm&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Mole Rhythm project details&quot; style=&quot;--rq-tilt:1.8deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;assets/mole-rhythm-polaroid.webp&quot; alt=&quot;Pixel-art rhythm game with five mole performers and a falling mallet&quot;&gt;&lt;/div&gt;&lt;h3&gt;Mole Rhythm&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Unity · C# · DSP Timing · Audio Analysis&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
             &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;cat-teaser&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Cat Teaser 2D project details&quot; style=&quot;--rq-tilt:-1.2deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;assets/cat-teaser-polaroid.webp&quot; alt=&quot;Illustrated Cat Teaser 2D scene with two cats, a fish, and playful motion marks&quot;&gt;&lt;/div&gt;&lt;h3&gt;Cat Teaser 2D&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Unity · C# · 2D Physics · Animation&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
@@ -2823,6 +2873,7 @@ html&gt;body{padding:0}&lt;/style&gt;
             &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;gothic-hunter&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Gothic Hunter project details&quot; style=&quot;--rq-tilt:-1.8deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;../images/gothic-hunter.jpg&quot; alt=&quot;Gothic Hunter runtime combat during a dense survival encounter&quot;&gt;&lt;/div&gt;&lt;h3&gt;Gothic Hunter&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Godot · C# · Gameplay Systems · Runtime Validation&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
             &lt;article class=&quot;rq-polaroid&quot; data-rq-detail-project=&quot;neon-beatrunner&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;View Neon BeatRunner project details&quot; style=&quot;--rq-tilt:1.3deg&quot;&gt;&lt;div class=&quot;rq-polaroid-image rq-polaroid-image-photo&quot;&gt;&lt;img src=&quot;../images/neon-beatrunner-poster.jpg&quot; alt=&quot;Neon BeatRunner gameplay with a character holding a rhythm target while navigating obstacles&quot;&gt;&lt;/div&gt;&lt;h3&gt;Neon BeatRunner&lt;/h3&gt;&lt;p class=&quot;rq-project-meta&quot;&gt;Godot · C# · Librosa · Deterministic Timing&lt;/p&gt;&lt;div class=&quot;rq-polaroid-action&quot;&gt;&lt;span&gt;[ENTER] VIEW CASE&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/article&gt;
             &lt;/div&gt;
+            &lt;div class=&quot;rq-polaroid-nav&quot; role=&quot;group&quot; aria-label=&quot;Browse embodied interaction projects&quot;&gt;&lt;button class=&quot;rq-polaroid-nav-button&quot; type=&quot;button&quot; data-rq-polaroid-prev aria-controls=&quot;rq-polaroid-track&quot; aria-label=&quot;Previous project&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;&lt;button class=&quot;rq-polaroid-nav-button&quot; type=&quot;button&quot; data-rq-polaroid-next aria-controls=&quot;rq-polaroid-track&quot; aria-label=&quot;Next project&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;&lt;/div&gt;
             &lt;p class=&quot;rq-polaroid-active&quot; aria-live=&quot;polite&quot;&gt;ACTIVE_FILE: &lt;strong data-rq-polaroid-active&gt;Four-Way Kitchen&lt;/strong&gt;&lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -2923,7 +2974,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 
       &lt;section class=&quot;rq-section rq-about&quot; id=&quot;rq-about&quot;&gt;
         &lt;h2&gt;About Ruyan&lt;/h2&gt;
-        &lt;div&gt;&lt;p&gt;Short personal story connecting Computer Science, XR/VR study, embodied interaction, and evidence-led prototyping.&lt;/p&gt;&lt;div class=&quot;rq-actions&quot;&gt;&lt;a class=&quot;rq-action rq-action-primary&quot; href=&quot;#&quot;&gt;Read more&lt;/a&gt;&lt;a class=&quot;rq-action&quot; href=&quot;#&quot;&gt;Download CV&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;p&gt;Short personal story connecting Computer Science, XR/VR study, embodied interaction, and evidence-led prototyping.&lt;/p&gt;&lt;div class=&quot;rq-actions&quot;&gt;&lt;a class=&quot;rq-action rq-action-primary&quot; href=&quot;#&quot;&gt;Read more&lt;/a&gt;&lt;a class=&quot;rq-action&quot; href=&quot;assets/ruyan-qin-cv-en.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CV (EN)&lt;/a&gt;&lt;a class=&quot;rq-action&quot; href=&quot;assets/ruyan-qin-cv-zh.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CV (中文)&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;/section&gt;
 
       &lt;footer class=&quot;rq-footer&quot;&gt;&lt;span&gt;Open to embodied interaction, XR, creative technology, and Unity roles.&lt;/span&gt;&lt;span&gt;Email · LinkedIn · GitHub&lt;/span&gt;&lt;/footer&gt;
@@ -2939,7 +2990,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 
   &lt;section class=&quot;rq-screen&quot; data-rq-panel=&quot;detail&quot; aria-label=&quot;Project detail wireframe&quot; hidden&gt;
     &lt;div class=&quot;rq-shell&quot;&gt;
-      &lt;nav class=&quot;rq-nav&quot; aria-label=&quot;Portfolio navigation&quot;&gt;&lt;div class=&quot;rq-name&quot;&gt;&lt;span class=&quot;rq-nav-avatar&quot; aria-hidden=&quot;true&quot;&gt;&lt;img src=&quot;assets/profile-avatar-ascii-2049.webp&quot; alt=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;RUYAN QIN&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;rq-nav-links&quot;&gt;&lt;span&gt;Work&lt;/span&gt;&lt;span&gt;VR / XR&lt;/span&gt;&lt;span&gt;About&lt;/span&gt;&lt;span&gt;CV&lt;/span&gt;&lt;span&gt;EN / 中文&lt;/span&gt;&lt;/div&gt;&lt;/nav&gt;
+      &lt;nav class=&quot;rq-nav&quot; aria-label=&quot;Portfolio navigation&quot;&gt;&lt;div class=&quot;rq-name&quot;&gt;&lt;span class=&quot;rq-nav-avatar&quot; aria-hidden=&quot;true&quot;&gt;&lt;img src=&quot;assets/profile-avatar-ascii-2049.webp&quot; alt=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;RUYAN QIN&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;rq-nav-links&quot;&gt;&lt;a href=&quot;#rq-about&quot; data-rq-about-link&gt;About&lt;/a&gt;&lt;a href=&quot;assets/ruyan-qin-cv-en.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CV&lt;/a&gt;&lt;/div&gt;&lt;/nav&gt;
 
       &lt;header class=&quot;rq-detail-hero&quot;&gt;
         &lt;div class=&quot;rq-media rq-detail-visual&quot; data-rq-detail-visual&gt;&lt;/div&gt;
@@ -2980,6 +3031,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     (() =&gt; {
       const root = document.getElementById(&#x27;ruyan-portfolio-wireframe&#x27;);
       const panels = root.querySelectorAll(&#x27;[data-rq-panel]&#x27;);
+      const aboutSection = root.querySelector(&#x27;#rq-about&#x27;);
       const xrProjectOrder = [&#x27;four-way-kitchen&#x27;, &#x27;mole-rhythm&#x27;, &#x27;cat-teaser&#x27;, &#x27;claw-machine&#x27;, &#x27;gothic-hunter&#x27;, &#x27;neon-beatrunner&#x27;, &#x27;pizza-delivery&#x27;, &#x27;augsoc&#x27;, &#x27;plant-bot&#x27;, &#x27;abyss&#x27;, &#x27;emotional-mask&#x27;, &#x27;ar-escape-room&#x27;, &#x27;speaking-world&#x27;, &#x27;emg-ninja&#x27;, &#x27;vr-interaction&#x27;, &#x27;wearable-game&#x27;, &#x27;webxr-gallery&#x27;, &#x27;white-lavender&#x27;, &#x27;magic-bus&#x27;];
       const xrProjectDetails = {
         &#x27;four-way-kitchen&#x27;: {
@@ -3512,6 +3564,15 @@ html&gt;body{padding:0}&lt;/style&gt;
       const initialHistoryState = readNavigationState();
       replaceNavigationState({ ...initialHistoryState, rqPortfolio: { view: &#x27;home&#x27;, scrollY: window.scrollY } });
       root.addEventListener(&#x27;click&#x27;, (event) =&gt; {
+        const aboutLink = event.target.closest(&#x27;[data-rq-about-link]&#x27;);
+        if (aboutLink) {
+          event.preventDefault();
+          const currentState = readNavigationState();
+          replaceNavigationState({ ...currentState, rqPortfolio: { view: &#x27;home&#x27;, scrollY: aboutSection?.offsetTop || 0 } });
+          setPortfolioPanel(&#x27;home&#x27;);
+          window.requestAnimationFrame(() =&gt; aboutSection?.scrollIntoView({ block: &#x27;start&#x27; }));
+          return;
+        }
         const card = event.target.closest(&#x27;[data-rq-detail-project]&#x27;);
         if (!card || !root.contains(card)) return;
         showXrProjectDetail(card.dataset.rqDetailProject, card);
@@ -3715,6 +3776,8 @@ html&gt;body{padding:0}&lt;/style&gt;
       const polaroidStage = root.querySelector(&#x27;[data-rq-polaroid-stage]&#x27;);
       const polaroidIndex = root.querySelector(&#x27;[data-rq-polaroid-index]&#x27;);
       const polaroidActiveLabel = root.querySelector(&#x27;[data-rq-polaroid-active]&#x27;);
+      const polaroidPrev = root.querySelector(&#x27;[data-rq-polaroid-prev]&#x27;);
+      const polaroidNext = root.querySelector(&#x27;[data-rq-polaroid-next]&#x27;);
       let polaroidLoopWidth = 0;
       let polaroidCount = 0;
       let activeProjectId = &#x27;&#x27;;
@@ -3772,6 +3835,14 @@ html&gt;body{padding:0}&lt;/style&gt;
         normalizePolaroidLoop();
         centerPolaroidCard(closestCardToStageCenter(), reduceMotion ? &#x27;auto&#x27; : &#x27;smooth&#x27;);
       };
+      const stepPolaroid = (direction) =&gt; {
+        normalizePolaroidLoop();
+        const current = closestCardToStageCenter();
+        const target = direction &lt; 0 ? current?.previousElementSibling : current?.nextElementSibling;
+        centerPolaroidCard(target, reduceMotion ? &#x27;auto&#x27; : &#x27;smooth&#x27;);
+      };
+      polaroidPrev?.addEventListener(&#x27;click&#x27;, () =&gt; stepPolaroid(-1));
+      polaroidNext?.addEventListener(&#x27;click&#x27;, () =&gt; stepPolaroid(1));
       const animateCardToIndex = (card, target) =&gt; {
         if (!card || !target) return;
         if (reduceMotion || window.innerWidth &lt;= 720) {
