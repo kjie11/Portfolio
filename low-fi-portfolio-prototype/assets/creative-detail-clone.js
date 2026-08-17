@@ -4,16 +4,6 @@
   var iframe = document.querySelector("iframe");
   if (!iframe) return;
 
-  if (iframe.srcdoc && (location.protocol === "http:" || location.protocol === "https:")) {
-    var html = iframe.srcdoc;
-    var baseHref = new URL(".", location.href).href;
-    if (!/<base[\s>]/i.test(html)) {
-      html = html.replace(/<head>/i, "<head><base href=\"" + baseHref.replace(/"/g, "&quot;") + "\">");
-    }
-    iframe.removeAttribute("srcdoc");
-    iframe.src = URL.createObjectURL(new Blob([html], { type: "text/html" }));
-  }
-
   function install() {
     var data = window.RUYAN_CREATIVE_DETAIL_DATA;
     var css = window.RUYAN_CREATIVE_DETAIL_CSS;
