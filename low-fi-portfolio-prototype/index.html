@@ -2632,7 +2632,8 @@ html&gt;body{padding:0}&lt;/style&gt;
       padding: 0;
       border-radius: 16px;
     }
-    #ruyan-portfolio-wireframe .rq-detail-visual img {
+    #ruyan-portfolio-wireframe .rq-detail-visual img,
+    #ruyan-portfolio-wireframe .rq-detail-visual video {
       display: block;
       width: 100%;
       height: 100%;
@@ -3104,7 +3105,7 @@ html&gt;body{padding:0}&lt;/style&gt;
           visual: &#x27;Gothic Hunter runtime combat&#x27;,
           image: &#x27;../images/gothic-hunter.jpg&#x27;,
           imageAlt: &#x27;Gothic Hunter runtime combat during a dense survival encounter&#x27;,
-          video: &#x27;&#x27;,
+          video: &#x27;../videos/gothicHunterShort.mp4&#x27;,
           overview: &#x27;Wrist tilt drives movement, thumb swipes trigger directional skills, and a long press releases the ultimate; keyboard input remains a reliable fallback. An AI-assisted Godot workflow turned the brief into a playable three-act run with evolving weapons, elites, and a boss. Hands-on play, automated checks, and runtime captures guided the final scope and feel.&#x27;,
           keyWork: [&#x27;Defined the three-act run, elites, boss, four-stage weapons, and two ultimates.&#x27;, &#x27;Built input abstraction, object pooling, encounter direction, and scene generation.&#x27;, &#x27;Tuned density, damage, projectiles, drops, and directional slash behaviour.&#x27;, &#x27;Rebuilt zombie locomotion with layered 2D bones and verified dense runtime scenes.&#x27;],
           map: [&#x27;Three-act director&#x27;, &#x27;Enemy pool and pressure&#x27;, &#x27;Weapon growth and input&#x27;, &#x27;Boss and run result&#x27;],
@@ -3464,7 +3465,19 @@ html&gt;body{padding:0}&lt;/style&gt;
         if (!project) return false;
         detailSlots.title.textContent = project.title;
         detailSlots.summary.textContent = project.summary;
-        if (project.image) {
+        const localVideoUrl = /\.mp4(?:[?#]|$)/i.test(project.video || &#x27;&#x27;) ? project.video : &#x27;&#x27;;
+        if (localVideoUrl) {
+          const video = document.createElement(&#x27;video&#x27;);
+          video.src = localVideoUrl;
+          video.poster = project.image || &#x27;&#x27;;
+          video.controls = true;
+          video.autoplay = true;
+          video.muted = true;
+          video.loop = true;
+          video.playsInline = true;
+          video.setAttribute(&#x27;aria-label&#x27;, `${project.title} gameplay video`);
+          detailSlots.visual.replaceChildren(video);
+        } else if (project.image) {
           const image = document.createElement(&#x27;img&#x27;);
           image.src = project.image;
           image.alt = project.imageAlt || project.visual || project.title;
@@ -3614,7 +3627,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         &#x27;cat-teaser&#x27;: &#x27;../videos/cat-teaser-preview.mp4&#x27;,
         &#x27;duck-trombone&#x27;: &#x27;../videos/duck-trombone-preview.mp4&#x27;,
         &#x27;claw-machine&#x27;: &#x27;../videos/claw-machine-hover.mp4&#x27;,
-        &#x27;gothic-hunter&#x27;: &#x27;../videos/gothic-hunter-preview-with-audio.mp4&#x27;,
+        &#x27;gothic-hunter&#x27;: &#x27;../videos/gothicHunterShort.mp4&#x27;,
         &#x27;neon-beatrunner&#x27;: &#x27;../videos/neon-beatrunner-preview.mp4&#x27;,
         abyss: &#x27;../videos/abyss-preview.mp4&#x27;,
         &#x27;ar-escape-room&#x27;: &#x27;../videos/ar-escape-room-preview.mp4&#x27;,

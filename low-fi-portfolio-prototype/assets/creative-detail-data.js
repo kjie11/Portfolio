@@ -1393,7 +1393,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
         "loop": true,
         "muted": true,
         "poster": "http://127.0.0.1:4389/images/gothic-hunter.jpg",
-        "src": "http://127.0.0.1:4389/videos/gothic-hunter-preview-with-audio.mp4",
+        "src": "../videos/gothicHunterShort.mp4",
         "tag": "video"
       },
       "nav": [
