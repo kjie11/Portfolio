@@ -392,8 +392,8 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "url": "http://127.0.0.1:4389/project-fourWayKitchen.html",
       "actions": [
         {
-          "disabled": true,
-          "href": "",
+          "disabled": false,
+          "href": "http://127.0.0.1:4389/videos/four-way-kitchen-full.mp4",
           "label": "Watch Full Video"
         },
         {
@@ -422,15 +422,15 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
         }
       ],
       "hero": {
-        "alt": "Four-sided kitchen gameplay with ingredient stations, chopping boards, stoves, and a central character",
-        "ariaLabel": "",
-        "autoplay": false,
-        "controls": false,
-        "loop": false,
-        "muted": false,
-        "poster": "",
-        "src": "http://127.0.0.1:4389/images/four-way-kitchen-polaroid.webp",
-        "tag": "img"
+        "alt": "",
+        "ariaLabel": "Four-Way Kitchen gameplay preview",
+        "autoplay": true,
+        "controls": true,
+        "loop": true,
+        "muted": true,
+        "poster": "http://127.0.0.1:4389/images/four-way-kitchen-poster.webp",
+        "src": "http://127.0.0.1:4389/videos/four-way-kitchen-preview.mp4",
+        "tag": "video"
       },
       "nav": [
         {
@@ -503,7 +503,12 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "summaryHtml": "\n                <p>Four-Way Kitchen is a single-player Unity action-cooking prototype arranged around four functional counter walls. Players collect ingredients, chop and cook food, assemble plates, throw items in fixed directions, and complete orders.</p>\n                <p>The interaction system explores how the same kitchen actions can remain understandable across keyboard and mouse, EMG events, MediaPipe camera gestures, and wearable pointer input. Each input mode is explicit and mutually exclusive so switching devices does not change the gameplay rules.</p>\n            ",
       "summaryText": "Four-Way Kitchen is a single-player Unity action-cooking prototype arranged around four functional counter walls. Players collect ingredients, chop and cook food, assemble plates, throw items in fixed directions, and complete orders. The interaction system explores how the same kitchen actions can remain understandable across keyboard and mouse, EMG events, MediaPipe camera gestures, and wearable pointer input. Each input mode is explicit and mutually exclusive so switching devices does not change the gameplay rules.",
       "title": "Four-Way Kitchen",
-      "videoSection": null
+      "videoSection": {
+        "ariaLabel": "Four-Way Kitchen full prototype video",
+        "poster": "http://127.0.0.1:4389/images/four-way-kitchen-poster.webp",
+        "src": "http://127.0.0.1:4389/videos/four-way-kitchen-full.mp4",
+        "title": "Full Prototype Video"
+      }
     },
     "pizza-delivery": {
       "file": "project-pizzaDelivery.html",

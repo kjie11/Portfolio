@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .project-content { max-width: 800px; margin: 0 auto; }
-        .project-content img { width: 100%; margin-bottom: 20px; }
+        .project-content img, .project-content video { width: 100%; margin-bottom: 20px; }
         .project-text { font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
         .back-btn { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: underline; }
     </style>
@@ -40,7 +40,9 @@
                 <p>The interaction system explores how the same kitchen actions can remain understandable across keyboard and mouse, EMG events, MediaPipe camera gestures, and wearable pointer input. Each input mode is explicit and mutually exclusive so switching devices does not change the gameplay rules.</p>
             </div>
 
-            <img src="images/four-way-kitchen-polaroid.webp" alt="Four-sided kitchen gameplay with ingredient stations, chopping boards, stoves, and a central character">
+            <video autoplay muted loop playsinline controls poster="images/four-way-kitchen-poster.webp" aria-label="Four-Way Kitchen gameplay preview">
+                <source src="videos/four-way-kitchen-preview.mp4" type="video/mp4">
+            </video>
 
             <div class="project-details">
                 <h3>Key Features</h3>
@@ -59,6 +61,11 @@
                     <li>Treat timeout, disconnect, and stale signals as interaction-design constraints</li>
                     <li>Keep full Play Mode and real dual-hand validation separate from compiled and focused-test evidence</li>
                 </ul>
+
+                <h3>Full Prototype Video</h3>
+                <video controls playsinline preload="metadata" poster="images/four-way-kitchen-poster.webp" aria-label="Four-Way Kitchen full prototype video">
+                    <source src="videos/four-way-kitchen-full.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </main>
