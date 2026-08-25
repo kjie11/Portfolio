@@ -1816,6 +1816,30 @@ html&gt;body{padding:0}&lt;/style&gt;
       color: var(--rq-ink);
       font-weight: 500;
     }
+    @media (min-width: 761px) and (max-height: 850px) {
+      #ruyan-portfolio-wireframe .rq-section:not(.rq-xr-section):not(.rq-about) {
+        padding-top: clamp(30px, 5vh, 42px);
+        padding-bottom: clamp(30px, 5vh, 42px);
+      }
+      #ruyan-portfolio-wireframe .rq-section-head { margin-bottom: 20px; }
+      #ruyan-portfolio-wireframe .rq-polaroid-stage { padding: clamp(64px, 10vh, 82px) 0 20px; }
+      #ruyan-portfolio-wireframe .rq-polaroid-track { padding-top: 12px; padding-bottom: 22px; }
+      #ruyan-portfolio-wireframe .rq-polaroid { flex-basis: clamp(230px, 35vh, 288px); }
+      #ruyan-portfolio-wireframe .rq-page-step-nav { margin-top: 16px; margin-bottom: 16px; }
+      #ruyan-portfolio-wireframe .rq-page-step-nav--top { margin-top: 0; }
+      #ruyan-portfolio-wireframe .rq-page-step-nav--bottom { margin-bottom: 0; }
+    }
+    @media (min-width: 761px) and (max-height: 700px) {
+      #ruyan-portfolio-wireframe .rq-section:not(.rq-xr-section):not(.rq-about) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      #ruyan-portfolio-wireframe .rq-polaroid-stage { padding-top: 56px; padding-bottom: 14px; }
+      #ruyan-portfolio-wireframe .rq-polaroid-track { padding-top: 10px; padding-bottom: 18px; }
+      #ruyan-portfolio-wireframe .rq-page-step-nav { margin-top: 12px; margin-bottom: 12px; }
+      #ruyan-portfolio-wireframe .rq-page-step-nav--top { margin-top: 0; }
+      #ruyan-portfolio-wireframe .rq-page-step-nav--bottom { margin-bottom: 0; }
+    }
     #ruyan-portfolio-wireframe .rq-xr-section {
       position: relative;
       width: 100vw;
