@@ -15,7 +15,7 @@
     hero: {
       tag: "video",
       src: "../videos/emg-ninja-preview.mp4",
-      poster: "../images/emg-ninja-cover.jpg",
+      poster: "assets/emg-ninja-cover.jpg",
       ariaLabel: "EMG gesture-controlled ninja game preview",
       autoplay: true,
       controls: true,

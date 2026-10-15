@@ -1679,7 +1679,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
         "controls": true,
         "loop": true,
         "muted": true,
-        "poster": "../images/neon-beatrunner-poster.jpg",
+        "poster": "assets/neon-beatrunner-poster.jpg",
         "src": "http://127.0.0.1:4389/videos/neon-beatrunner-preview.mp4",
         "tag": "video"
       },
@@ -1764,7 +1764,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
       "title": "Neon BeatRunner",
       "videoSection": {
         "ariaLabel": "Neon BeatRunner full gameplay video",
-        "poster": "../images/neon-beatrunner-poster.jpg",
+        "poster": "assets/neon-beatrunner-poster.jpg",
         "src": "http://127.0.0.1:4389/videos/neon-beatrunner-full.mp4",
         "title": "Full Gameplay Video"
       }
@@ -2273,7 +2273,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
         "controls": true,
         "loop": false,
         "muted": false,
-        "poster": "../images/cascadeur-cover.png",
+        "poster": "assets/cascadeur-cover.png",
         "src": "../videos/cascadeur.mp4",
         "tag": "video"
       },
@@ -2345,7 +2345,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
         "controls": true,
         "loop": false,
         "muted": false,
-        "poster": "../images/ue-vfx-cover.png",
+        "poster": "assets/ue-vfx-cover.png",
         "src": "../videos/ue-vfx.mp4",
         "tag": "video"
       },
@@ -2417,7 +2417,7 @@ window.RUYAN_CREATIVE_DETAIL_DATA = {
         "controls": true,
         "loop": true,
         "muted": true,
-        "poster": "../images/after-class-cover.png",
+        "poster": "assets/after-class-cover.png",
         "src": "../videos/after-class-preview.mp4",
         "tag": "video"
       },
