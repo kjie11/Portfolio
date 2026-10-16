@@ -176,7 +176,7 @@
         video.muted = Boolean(hero.muted);
         video.loop = Boolean(hero.loop);
         video.playsInline = true;
-        video.controls = Boolean(hero.controls);
+        video.controls = true;
         video.setAttribute("aria-label", hero.ariaLabel);
         video.appendChild(source);
         container.appendChild(video);
@@ -471,9 +471,5 @@
   }
 
   iframe.addEventListener("load", install);
-  try {
-    if (iframe.contentDocument && iframe.contentDocument.readyState === "complete") install();
-  } catch (error) {
-    return;
-  }
+  install();
 })();
